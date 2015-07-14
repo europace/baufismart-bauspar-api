@@ -47,6 +47,8 @@ compileJava {
 dependencies {
 
   def springVersion = '4.1.4.RELEASE'
+  def slf4jVersion = '1.7.6'
+  def log4jVersion = '2.0-rc1'
 
   compile("org.springframework.boot:spring-boot-starter:$springBootStarterVersion") {
     exclude module: "spring-boot-starter-logging"
@@ -59,6 +61,13 @@ dependencies {
   compile("org.springframework.boot:spring-boot-starter-log4j2:$springBootStarterVersion")
   compile("org.springframework:spring-core:$springVersion")
 
+
+  compile("org.slf4j:slf4j-api:$slf4jVersion")
+  compile("org.slf4j:jcl-over-slf4j:$slf4jVersion")
+  compile("org.slf4j:jul-to-slf4j:$slf4jVersion")
+  compile("org.apache.logging.log4j:log4j-slf4j-impl:$log4jVersion")
+  compile("org.apache.logging.log4j:log4j-api:$log4jVersion")
+  compile("org.apache.logging.log4j:log4j-core:$log4jVersion")
 
   compile('com.fasterxml.jackson.datatype:jackson-datatype-joda:2.3.3')
 
