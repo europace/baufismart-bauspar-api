@@ -37,9 +37,6 @@ compileJava {
   targetCompatibility = "1.8"
 }
 
-sourceSets.main.java.srcDirs = []
-sourceSets.main.groovy.srcDirs += ["src/main/java"]
-
 dependencies {
 
   testCompile('org.easytesting:fest-assert:1.4')
