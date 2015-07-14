@@ -6,15 +6,22 @@ project.ext {
 }
 
 buildscript {
+  ext {
+    springBootStarterVersion = '1.2.1.RELEASE'
+  }
   repositories {
     mavenLocal()
     maven { url "http://nexus-beta.hypoport.local/nexus/content/repositories/efi" }
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootStarterVersion")
   }
 }
 
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'maven'
+apply plugin: 'spring-boot'
 
 sourceSets {
   main {
@@ -38,6 +45,22 @@ compileJava {
 }
 
 dependencies {
+
+  def springVersion = '4.1.4.RELEASE'
+
+  compile("org.springframework.boot:spring-boot-starter:$springBootStarterVersion") {
+    exclude module: "spring-boot-starter-logging"
+  }
+  compile("org.springframework.boot:spring-boot-starter-web:$springBootStarterVersion") {
+    exclude module: "spring-boot-starter-logging"
+    exclude module: "logback-classic"
+  }
+  compile("org.springframework.boot:spring-boot-starter-actuator:$springBootStarterVersion")
+  compile("org.springframework.boot:spring-boot-starter-log4j2:$springBootStarterVersion")
+  compile("org.springframework:spring-core:$springVersion")
+
+
+  compile('com.fasterxml.jackson.datatype:jackson-datatype-joda:2.3.3')
 
   testCompile('org.easytesting:fest-assert:1.4')
   testCompile('org.mockito:mockito-all:1.9.5')
