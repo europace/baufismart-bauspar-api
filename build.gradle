@@ -1,0 +1,63 @@
+project.ext {
+  groupId = 'de.hypoport.efi'
+  artifactId = 'bausparschnittstelle'
+  version = new Date().format('yyyy-MM-dd-HH-mm-ss')
+  nexusUrl = 'http://nexus-beta.hypoport.local/nexus/content/repositories/efi-releases'
+}
+
+buildscript {
+  repositories {
+    mavenLocal()
+    maven { url "http://nexus-beta.hypoport.local/nexus/content/repositories/efi" }
+  }
+}
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'maven'
+
+sourceSets {
+  main {
+    output.classesDir = "$buildDir/classes/main"
+    output.resourcesDir = "$buildDir/classes/main"
+  }
+  test {
+    output.classesDir = "$buildDir/classes/test"
+    output.resourcesDir = "$buildDir/classes/test"
+  }
+}
+
+repositories {
+  mavenLocal()
+  maven { url 'http://nexus-beta.hypoport.local/nexus/content/repositories/efi' }
+}
+
+compileJava {
+  sourceCompatibility = "1.8"
+  targetCompatibility = "1.8"
+}
+
+sourceSets.main.java.srcDirs = []
+sourceSets.main.groovy.srcDirs += ["src/main/java"]
+
+dependencies {
+
+  testCompile('org.easytesting:fest-assert:1.4')
+  testCompile('org.mockito:mockito-all:1.9.5')
+  testCompile('junit:junit:4.11')
+}
+
+
+task tagGit << {
+  exec {
+    commandLine 'git', 'tag', "${project.ext.version}"
+  }
+  exec {
+    commandLine 'git', 'push', '--tags'
+  }
+}
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.1'
+  distributionUrl = 'http://nexus-beta.hypoport.local/nexus/service/local/repositories/hypoport-shared-releases/content/gradle/gradle/2.1/gradle-2.1.zip'
+}
