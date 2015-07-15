@@ -47,8 +47,8 @@ public class BausparDokumenteController {
   private String getDokument(String path) throws IOException {
     InputStream inputStream = new ClassPathResource(path).getInputStream();
     Base64.Encoder encoder = Base64.getEncoder();
-    String theString = IOUtils.toString(inputStream, "UTF-8");
-    byte[] base64Encoded = encoder.encode(theString.getBytes());
+    byte[] bytes = IOUtils.toByteArray(inputStream);
+    byte[] base64Encoded = encoder.encode(bytes);
     return new String(base64Encoded);
   }
 }

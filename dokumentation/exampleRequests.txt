@@ -3,9 +3,11 @@ Work in Progress:
 
 Starte Berechung:
 
-curl -X GET -d '{"berechnungsZiel":"SPARRATE","zinsabsicherung":null,"laufzeitBisZuteilungInMonaten":null,"vertragsbeginn":null,"verrechnung":null,"bausparsumme":100000,"einmalzahlung":10000,"sparBeitrag":null,"tilgungsRate":null}'
--H 'Content-Type:application/json;charset=UTF-8' -H 'Accept: application/json' -v localhost:8080/bausparangebot/
+curl -X GET -d '{"berechnungsZiel":"SPARRATE","zinsabsicherung":null,"laufzeitBisZuteilungInMonaten":null,"vertragsbeginn":null,"verrechnung":null,"bausparsumme":100000,"einmalzahlung":10000,"sparBeitrag":null,"tilgungsRate":null}' -H 'Content-Type:application/json;charset=UTF-8' -H 'Accept: application/json' -v localhost:8080/bausparangebot/
 
 Erzeuge Dokument:
 
 $ curl -X GET -d '{ }' -H 'Content-Type:application/json;charset=UTF-8' -H 'Accept: application/json' -v localhost:8080/dokumente/
+
+
+ curl -s -X GET -d '{ }' -H 'Content-Type:application/json;charset=UTF-8' -H 'Accept: application/json' localhost:8080/dokumente/|jq -r '.erzeugteDokumente[0].dokumentBase64Encoded'|base64 -D>test.pdf
