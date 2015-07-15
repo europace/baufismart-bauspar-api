@@ -13,7 +13,7 @@ import static javax.servlet.http.HttpServletResponse.SC_OK;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
-@RestController(value = "/")
+@RestController
 public class BausparBerechnungController {
 
   @RequestMapping(value = "bausparangebot/", method = GET, produces = APPLICATION_JSON_VALUE + ";charset=UTF-8")
