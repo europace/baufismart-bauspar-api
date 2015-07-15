@@ -22,6 +22,8 @@ public class BausparBerechnungController {
   BausparBerechungsErgebnis getCurrentCustomizingState(@RequestBody Berechnungsdaten berechnungsdaten, HttpServletResponse rsp) {
 
     rsp.setStatus(SC_OK);
-    return new BausparBerechungsErgebnis();
+    BausparBerechungsErgebnis bausparBerechungsErgebnis = new BausparBerechungsErgebnis();
+    bausparBerechungsErgebnis.setTarif("4711");
+    return bausparBerechungsErgebnis;
   }
 }
