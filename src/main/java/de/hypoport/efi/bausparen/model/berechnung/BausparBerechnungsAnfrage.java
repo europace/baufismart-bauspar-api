@@ -1,9 +1,9 @@
-package de.hypoport.efi.bausparen.model;
+package de.hypoport.efi.bausparen.model.berechnung;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Berechnungsdaten {
+public class BausparBerechnungsAnfrage {
 
   BerechnungsZiel berechnungsZiel;
   Berechnungsart zinsabsicherung;

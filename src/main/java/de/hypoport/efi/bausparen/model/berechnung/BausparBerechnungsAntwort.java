@@ -1,6 +1,6 @@
-package de.hypoport.efi.bausparen.model;
+package de.hypoport.efi.bausparen.model.berechnung;
 
-public class BausparBerechungsErgebnis {
+public class BausparBerechnungsAntwort {
 
   String tarif;
 
