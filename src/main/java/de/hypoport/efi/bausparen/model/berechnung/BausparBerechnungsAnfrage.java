@@ -6,7 +6,7 @@ import java.time.LocalDate;
 public class BausparBerechnungsAnfrage {
 
   BerechnungsZiel berechnungsZiel;
-  Berechnungsart zinsabsicherung;
+  Berechnungsart berechnungsart;
   Integer laufzeitBisZuteilungInMonaten;
   LocalDate vertragsbeginn;
   Abschlussgebuehrenbehandlung verrechnung;
@@ -24,12 +24,12 @@ public class BausparBerechnungsAnfrage {
     this.berechnungsZiel = berechnungsZiel;
   }
 
-  public Berechnungsart getZinsabsicherung() {
-    return zinsabsicherung;
+  public Berechnungsart getBerechnungsart() {
+    return berechnungsart;
   }
 
-  public void setZinsabsicherung(Berechnungsart zinsabsicherung) {
-    this.zinsabsicherung = zinsabsicherung;
+  public void setBerechnungsart(Berechnungsart berechnungsart) {
+    this.berechnungsart = berechnungsart;
   }
 
   public Integer getLaufzeitBisZuteilungInMonaten() {

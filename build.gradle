@@ -49,6 +49,7 @@ dependencies {
   def springVersion = '4.1.4.RELEASE'
   def slf4jVersion = '1.7.6'
   def log4jVersion = '2.0-rc1'
+  def springfoxVersion = '2.0.3'
 
   compile("org.springframework.boot:spring-boot-starter:$springBootStarterVersion") {
     exclude module: "spring-boot-starter-logging"
@@ -71,6 +72,10 @@ dependencies {
   compile("org.apache.logging.log4j:log4j-core:$log4jVersion")
 
   compile('com.fasterxml.jackson.datatype:jackson-datatype-joda:2.3.3')
+
+
+  compile("io.springfox:springfox-swagger2:${springfoxVersion}")
+  compile("io.springfox:springfox-swagger-ui:${springfoxVersion}")
 
   testCompile('org.easytesting:fest-assert:1.4')
   testCompile('org.mockito:mockito-all:1.9.5')
