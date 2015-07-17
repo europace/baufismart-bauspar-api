@@ -46,11 +46,8 @@ public class Application {
         .title("Europace Bauspar API")
         .description("<img src='https://media.giphy.com/media/xTiTnkAp58qbDdQN8Y/giphy.gif'/>")
         .termsOfServiceUrl("http://www.hypoport.de")
-        .contact("hypoport")
-        .license("Apache License Version 2.0")
-        .license("Apache License Version 2.0")
+        .contact("gbitteamspeed@hypoport.de")
         .licenseUrl("https://github.com/springfox/springfox/blob/master/LICENSE")
-        .version("2.0")
         .build();
   }
 }
