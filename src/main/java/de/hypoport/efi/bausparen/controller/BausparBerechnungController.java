@@ -2,11 +2,13 @@ package de.hypoport.efi.bausparen.controller;
 
 import de.hypoport.efi.bausparen.model.berechnung.BausparBerechnungsAnfrage;
 import de.hypoport.efi.bausparen.model.berechnung.BausparBerechnungsAntwort;
+import de.hypoport.efi.bausparen.proofofconcept.ProofOfConceptBausparBerechnung;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import io.swagger.annotations.AuthorizationScope;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,6 +25,8 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @Api(value = "/bausparangebot", description = "Bausparberechnungs Operationen")
 public class BausparBerechnungController {
 
+  @Autowired
+  private ProofOfConceptBausparBerechnung bausparBerechnung;
 
   @RequestMapping(value = "bausparangebot/", method = POST, produces = APPLICATION_JSON_VALUE + ";charset=UTF-8")
   @ApiOperation(
@@ -38,8 +42,6 @@ public class BausparBerechnungController {
   BausparBerechnungsAntwort berechneBausparAngebot(@RequestBody BausparBerechnungsAnfrage berechnungsdaten, HttpServletResponse rsp) {
 
     rsp.setStatus(SC_OK);
-    BausparBerechnungsAntwort bausparBerechungsErgebnis = new BausparBerechnungsAntwort();
-    bausparBerechungsErgebnis.setTarif("4711");
-    return bausparBerechungsErgebnis;
+    return bausparBerechnung.berechneBausparAngebot(berechnungsdaten);
   }
 }
