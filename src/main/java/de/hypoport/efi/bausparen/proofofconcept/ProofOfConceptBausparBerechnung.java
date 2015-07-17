@@ -2,6 +2,7 @@ package de.hypoport.efi.bausparen.proofofconcept;
 
 import de.hypoport.efi.bausparen.model.berechnung.BausparBerechnungsAnfrage;
 import de.hypoport.efi.bausparen.model.berechnung.BausparBerechnungsAntwort;
+import de.hypoport.efi.bausparen.model.berechnung.Bausparangebot;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -11,7 +12,9 @@ public class ProofOfConceptBausparBerechnung {
 
   public BausparBerechnungsAntwort berechneBausparAngebot(BausparBerechnungsAnfrage berechnungsdaten) {
     BausparBerechnungsAntwort bausparBerechungsErgebnis = new BausparBerechnungsAntwort();
-    bausparBerechungsErgebnis.setTarif(TEST_TARIF);
+    Bausparangebot bausparangebot = new Bausparangebot();
+    bausparangebot.setTarif("Tarif DV 1");
+    bausparBerechungsErgebnis.getBerechneteBausparAngebote().add(bausparangebot);
 
     return bausparBerechungsErgebnis;
   }
