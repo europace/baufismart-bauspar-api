@@ -17,13 +17,14 @@ import javax.servlet.http.HttpServletResponse;
 import static javax.servlet.http.HttpServletResponse.SC_OK;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @RestController
 @Api(value = "/bausparangebot", description = "Bausparberechnungs Operationen")
 public class BausparBerechnungController {
 
 
-  @RequestMapping(value = "bausparangebot/", method = GET, produces = APPLICATION_JSON_VALUE + ";charset=UTF-8")
+  @RequestMapping(value = "bausparangebot/", method = POST, produces = APPLICATION_JSON_VALUE + ";charset=UTF-8")
   @ApiOperation(
       value = "Berechne Bauspar Angebot",
       response = BausparBerechnungsAntwort.class)
