@@ -1,12 +1,21 @@
 package de.hypoport.efi.bausparen.model.berechnung;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.deser.std.DateDeserializers;
+import com.fasterxml.jackson.databind.ser.std.DateSerializer;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class SparPhase {
 
   Zahlungsrhythmus zahlungsrhythmus; //check
+  @JsonSerialize(using = DateSerializer.class)
+  @JsonDeserialize(using = DateDeserializers.DateDeserializer.class)
   LocalDate sparBeginnAb; // check
+  @JsonSerialize(using = DateSerializer.class)
+  @JsonDeserialize(using = DateDeserializers.DateDeserializer.class)
   LocalDate sparEnde; // check
   BigDecimal guthabenzinsInProzent;//check
   BigDecimal guthabenzinsBetragInEuro; //check

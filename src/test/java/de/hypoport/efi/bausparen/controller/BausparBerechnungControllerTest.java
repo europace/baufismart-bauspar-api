@@ -6,6 +6,7 @@ import de.hypoport.efi.bausparen.model.berechnung.anfrage.BausparBerechnungsAnfr
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class BausparBerechnungControllerTest {
 
@@ -17,6 +18,7 @@ public class BausparBerechnungControllerTest {
     berechnungsdaten.setBausparsummeInEuro(new BigDecimal("100000"));
     berechnungsdaten.setBerechnungsZiel(BerechnungsZiel.SPARRATE);
     berechnungsdaten.setEinmalzahlungInEuro(new BigDecimal("10000"));
+    berechnungsdaten.setVertragsbeginn(LocalDate.now());
 
     System.out.println(objectMapper.writeValueAsString(berechnungsdaten));
   }

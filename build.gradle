@@ -7,7 +7,7 @@ project.ext {
 
 buildscript {
   ext {
-    springBootStarterVersion = '1.2.1.RELEASE'
+    springBootStarterVersion = '1.2.5.RELEASE'
   }
   repositories {
     mavenLocal()
@@ -44,12 +44,16 @@ compileJava {
   targetCompatibility = "1.8"
 }
 
+configurations {
+  all*.exclude module: 'spring-boot-starter-logging'
+}
+
 dependencies {
 
   def springVersion = '4.1.4.RELEASE'
   def slf4jVersion = '1.7.6'
   def log4jVersion = '2.0-rc1'
-  def springfoxVersion = '2.0.3'
+  def springfoxVersion = '2.1.1'
 
   compile("org.springframework.boot:spring-boot-starter:$springBootStarterVersion") {
     exclude module: "spring-boot-starter-logging"
@@ -71,8 +75,8 @@ dependencies {
   compile("org.apache.logging.log4j:log4j-api:$log4jVersion")
   compile("org.apache.logging.log4j:log4j-core:$log4jVersion")
 
-  compile('com.fasterxml.jackson.datatype:jackson-datatype-joda:2.3.3')
-
+  //compile('com.fasterxml.jackson.datatype:jackson-datatype-joda:2.3.3')
+  //compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.4.0')
 
   compile("io.springfox:springfox-swagger2:${springfoxVersion}")
   compile("io.springfox:springfox-swagger-ui:${springfoxVersion}")

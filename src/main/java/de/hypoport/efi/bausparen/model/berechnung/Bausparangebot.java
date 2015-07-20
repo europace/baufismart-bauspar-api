@@ -1,5 +1,10 @@
 package de.hypoport.efi.bausparen.model.berechnung;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.deser.std.DateDeserializers;
+import com.fasterxml.jackson.databind.ser.std.DateSerializer;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
@@ -13,12 +18,16 @@ public class Bausparangebot {
   BigDecimal sparbeitragInEuro;//check
 
   Integer laufzeitBisZuteilungInMonaten;//check
+  @JsonSerialize(using = DateSerializer.class)
+  @JsonDeserialize(using = DateDeserializers.DateDeserializer.class)
   LocalDate zuteilungsTermin;//check
   BigDecimal zahlungsbetragEinmalzahlungInEuro;//check
 
   SparPhase sparPhase;
   BausparDarlehen bausparDarlehen;
 
+  @JsonSerialize(using = DateSerializer.class)
+  @JsonDeserialize(using = DateDeserializers.DateDeserializer.class)
   LocalDate vertragsBeginn;//check
   Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung; //check
   BigDecimal abschlussgebuehrHoeheInProzent;//check
