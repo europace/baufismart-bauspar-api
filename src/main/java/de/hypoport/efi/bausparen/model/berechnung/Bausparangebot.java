@@ -2,40 +2,36 @@ package de.hypoport.efi.bausparen.model.berechnung;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 public class Bausparangebot {
-  String tarif;
-  BerechnungsZiel berechnungsziel;
-  Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung;
-  BigDecimal abschlussgebuehrHoeheInProzent;
-  BigDecimal abschlussgebuehrBetragInEuro;
-  BigDecimal kontogebuehrJaehrlichInEuro;
-  BigDecimal kontogebuehrGesamtSparphaseInEuro;
-  BigDecimal kontogebuehrGesamtDarlehensphaseInEuro;
-  BigDecimal kontogebuehrGesamtInEuro;
-  BigDecimal guthabenzinsInProzent;
-  BigDecimal guthabenzinsBetragInEuro;
-  BigDecimal bonuszinsInProzent;
-  BigDecimal bonuszinsBetragInProzent;
-  BigDecimal guthabenBeiZuteilungInEuro;
-  BigDecimal hoeheBauspardarlehenInEuro;
-  BigDecimal bausparsummeInEuro;
-  BigDecimal regelsparbeitragInEuro;
-  BigDecimal sollzinsInProzent;
-  BigDecimal effektiverJahreszinsInProzent;
-  Integer darlehenslaufzeitInMonaten;
-  LocalDate tilgungsende;
-  BigDecimal hoeheLetzterTilgungsbeitragInEuro;
-  BigDecimal gesamtkostenDarlehenInEuro;
-  BigDecimal gesamtleistungDarlehenInEuro;
-  BigDecimal gesamtleistungSparphaseInEuro;
-  BigDecimal gesamtleistungKomplettInEuro;
 
-  Integer gesamtlaufzeitKomplettInMonaten;
+  String tarif; //check
+  BerechnungsZiel berechnungsziel; //TODO noch klaeren enum plus werte
 
-  BigDecimal zahlungsbetragEinmalzahlungInEuro;
-  Zahlung tilgungsrate;
-  Zahlung sparbeitrag;
+  BigDecimal bausparsummeInEuro;//check
+  BigDecimal sparbeitragInEuro;//check
+
+  Integer laufzeitBisZuteilungInMonaten;//check
+  LocalDate zuteilungsTermin;//check
+  BigDecimal zahlungsbetragEinmalzahlungInEuro;//check
+
+  SparPhase sparPhase;
+  BausparDarlehen bausparDarlehen;
+
+  LocalDate vertragsBeginn;//check
+  Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung; //check
+  BigDecimal abschlussgebuehrHoeheInProzent;//check
+  BigDecimal abschlussgebuehrBetragInEuro;//check
+  BigDecimal kontogebuehrJaehrlichInEuro;//check
+
+  BigDecimal kontogebuehrGesamtSparphaseInEuro;//check
+  BigDecimal kontogebuehrGesamtDarlehensphaseInEuro;//check
+  BigDecimal kontogebuehrGesamtInEuro;//check
+  BigDecimal gesamtleistungKomplettInEuro;//check
+  Integer gesamtlaufzeitKomplettInMonaten;//check
+
+  List<FachlicheMeldung> meldungen;
 
   public String getTarif() {
     return tarif;
@@ -51,6 +47,70 @@ public class Bausparangebot {
 
   public void setBerechnungsziel(BerechnungsZiel berechnungsziel) {
     this.berechnungsziel = berechnungsziel;
+  }
+
+  public BigDecimal getBausparsummeInEuro() {
+    return bausparsummeInEuro;
+  }
+
+  public void setBausparsummeInEuro(BigDecimal bausparsummeInEuro) {
+    this.bausparsummeInEuro = bausparsummeInEuro;
+  }
+
+  public BigDecimal getSparbeitragInEuro() {
+    return sparbeitragInEuro;
+  }
+
+  public void setSparbeitragInEuro(BigDecimal sparbeitragInEuro) {
+    this.sparbeitragInEuro = sparbeitragInEuro;
+  }
+
+  public Integer getLaufzeitBisZuteilungInMonaten() {
+    return laufzeitBisZuteilungInMonaten;
+  }
+
+  public void setLaufzeitBisZuteilungInMonaten(Integer laufzeitBisZuteilungInMonaten) {
+    this.laufzeitBisZuteilungInMonaten = laufzeitBisZuteilungInMonaten;
+  }
+
+  public LocalDate getZuteilungsTermin() {
+    return zuteilungsTermin;
+  }
+
+  public void setZuteilungsTermin(LocalDate zuteilungsTermin) {
+    this.zuteilungsTermin = zuteilungsTermin;
+  }
+
+  public BigDecimal getZahlungsbetragEinmalzahlungInEuro() {
+    return zahlungsbetragEinmalzahlungInEuro;
+  }
+
+  public void setZahlungsbetragEinmalzahlungInEuro(BigDecimal zahlungsbetragEinmalzahlungInEuro) {
+    this.zahlungsbetragEinmalzahlungInEuro = zahlungsbetragEinmalzahlungInEuro;
+  }
+
+  public SparPhase getSparPhase() {
+    return sparPhase;
+  }
+
+  public void setSparPhase(SparPhase sparPhase) {
+    this.sparPhase = sparPhase;
+  }
+
+  public BausparDarlehen getBausparDarlehen() {
+    return bausparDarlehen;
+  }
+
+  public void setBausparDarlehen(BausparDarlehen bausparDarlehen) {
+    this.bausparDarlehen = bausparDarlehen;
+  }
+
+  public LocalDate getVertragsBeginn() {
+    return vertragsBeginn;
+  }
+
+  public void setVertragsBeginn(LocalDate vertragsBeginn) {
+    this.vertragsBeginn = vertragsBeginn;
   }
 
   public Abschlussgebuehrenbehandlung getAbschlussgebuehrenbehandlung() {
@@ -109,134 +169,6 @@ public class Bausparangebot {
     this.kontogebuehrGesamtInEuro = kontogebuehrGesamtInEuro;
   }
 
-  public BigDecimal getGuthabenzinsInProzent() {
-    return guthabenzinsInProzent;
-  }
-
-  public void setGuthabenzinsInProzent(BigDecimal guthabenzinsInProzent) {
-    this.guthabenzinsInProzent = guthabenzinsInProzent;
-  }
-
-  public BigDecimal getGuthabenzinsBetragInEuro() {
-    return guthabenzinsBetragInEuro;
-  }
-
-  public void setGuthabenzinsBetragInEuro(BigDecimal guthabenzinsBetragInEuro) {
-    this.guthabenzinsBetragInEuro = guthabenzinsBetragInEuro;
-  }
-
-  public BigDecimal getBonuszinsInProzent() {
-    return bonuszinsInProzent;
-  }
-
-  public void setBonuszinsInProzent(BigDecimal bonuszinsInProzent) {
-    this.bonuszinsInProzent = bonuszinsInProzent;
-  }
-
-  public BigDecimal getBonuszinsBetragInProzent() {
-    return bonuszinsBetragInProzent;
-  }
-
-  public void setBonuszinsBetragInProzent(BigDecimal bonuszinsBetragInProzent) {
-    this.bonuszinsBetragInProzent = bonuszinsBetragInProzent;
-  }
-
-  public BigDecimal getGuthabenBeiZuteilungInEuro() {
-    return guthabenBeiZuteilungInEuro;
-  }
-
-  public void setGuthabenBeiZuteilungInEuro(BigDecimal guthabenBeiZuteilungInEuro) {
-    this.guthabenBeiZuteilungInEuro = guthabenBeiZuteilungInEuro;
-  }
-
-  public BigDecimal getHoeheBauspardarlehenInEuro() {
-    return hoeheBauspardarlehenInEuro;
-  }
-
-  public void setHoeheBauspardarlehenInEuro(BigDecimal hoeheBauspardarlehenInEuro) {
-    this.hoeheBauspardarlehenInEuro = hoeheBauspardarlehenInEuro;
-  }
-
-  public BigDecimal getBausparsummeInEuro() {
-    return bausparsummeInEuro;
-  }
-
-  public void setBausparsummeInEuro(BigDecimal bausparsummeInEuro) {
-    this.bausparsummeInEuro = bausparsummeInEuro;
-  }
-
-  public BigDecimal getRegelsparbeitragInEuro() {
-    return regelsparbeitragInEuro;
-  }
-
-  public void setRegelsparbeitragInEuro(BigDecimal regelsparbeitragInEuro) {
-    this.regelsparbeitragInEuro = regelsparbeitragInEuro;
-  }
-
-  public BigDecimal getSollzinsInProzent() {
-    return sollzinsInProzent;
-  }
-
-  public void setSollzinsInProzent(BigDecimal sollzinsInProzent) {
-    this.sollzinsInProzent = sollzinsInProzent;
-  }
-
-  public BigDecimal getEffektiverJahreszinsInProzent() {
-    return effektiverJahreszinsInProzent;
-  }
-
-  public void setEffektiverJahreszinsInProzent(BigDecimal effektiverJahreszinsInProzent) {
-    this.effektiverJahreszinsInProzent = effektiverJahreszinsInProzent;
-  }
-
-  public Integer getDarlehenslaufzeitInMonaten() {
-    return darlehenslaufzeitInMonaten;
-  }
-
-  public void setDarlehenslaufzeitInMonaten(Integer darlehenslaufzeitInMonaten) {
-    this.darlehenslaufzeitInMonaten = darlehenslaufzeitInMonaten;
-  }
-
-  public LocalDate getTilgungsende() {
-    return tilgungsende;
-  }
-
-  public void setTilgungsende(LocalDate tilgungsende) {
-    this.tilgungsende = tilgungsende;
-  }
-
-  public BigDecimal getHoeheLetzterTilgungsbeitragInEuro() {
-    return hoeheLetzterTilgungsbeitragInEuro;
-  }
-
-  public void setHoeheLetzterTilgungsbeitragInEuro(BigDecimal hoeheLetzterTilgungsbeitragInEuro) {
-    this.hoeheLetzterTilgungsbeitragInEuro = hoeheLetzterTilgungsbeitragInEuro;
-  }
-
-  public BigDecimal getGesamtleistungDarlehenInEuro() {
-    return gesamtleistungDarlehenInEuro;
-  }
-
-  public void setGesamtleistungDarlehenInEuro(BigDecimal gesamtleistungDarlehenInEuro) {
-    this.gesamtleistungDarlehenInEuro = gesamtleistungDarlehenInEuro;
-  }
-
-  public BigDecimal getGesamtkostenDarlehenInEuro() {
-    return gesamtkostenDarlehenInEuro;
-  }
-
-  public void setGesamtkostenDarlehenInEuro(BigDecimal gesamtkostenDarlehenInEuro) {
-    this.gesamtkostenDarlehenInEuro = gesamtkostenDarlehenInEuro;
-  }
-
-  public BigDecimal getGesamtleistungSparphaseInEuro() {
-    return gesamtleistungSparphaseInEuro;
-  }
-
-  public void setGesamtleistungSparphaseInEuro(BigDecimal gesamtleistungSparphaseInEuro) {
-    this.gesamtleistungSparphaseInEuro = gesamtleistungSparphaseInEuro;
-  }
-
   public BigDecimal getGesamtleistungKomplettInEuro() {
     return gesamtleistungKomplettInEuro;
   }
@@ -253,28 +185,11 @@ public class Bausparangebot {
     this.gesamtlaufzeitKomplettInMonaten = gesamtlaufzeitKomplettInMonaten;
   }
 
-  public BigDecimal getZahlungsbetragEinmalzahlungInEuro() {
-    return zahlungsbetragEinmalzahlungInEuro;
+  public List<FachlicheMeldung> getMeldungen() {
+    return meldungen;
   }
 
-  public void setZahlungsbetragEinmalzahlungInEuro(BigDecimal zahlungsbetragEinmalzahlungInEuro) {
-    this.zahlungsbetragEinmalzahlungInEuro = zahlungsbetragEinmalzahlungInEuro;
+  public void setMeldungen(List<FachlicheMeldung> meldungen) {
+    this.meldungen = meldungen;
   }
-
-  public Zahlung getTilgungsrate() {
-    return tilgungsrate;
-  }
-
-  public void setTilgungsrate(Zahlung tilgungsrate) {
-    this.tilgungsrate = tilgungsrate;
-  }
-
-  public Zahlung getSparbeitrag() {
-    return sparbeitrag;
-  }
-
-  public void setSparbeitrag(Zahlung sparbeitrag) {
-    this.sparbeitrag = sparbeitrag;
-  }
-
 }
