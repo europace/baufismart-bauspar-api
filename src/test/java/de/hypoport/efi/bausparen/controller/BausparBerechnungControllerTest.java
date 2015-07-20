@@ -1,8 +1,8 @@
 package de.hypoport.efi.bausparen.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import de.hypoport.efi.bausparen.model.berechnung.BausparBerechnungsAnfrage;
 import de.hypoport.efi.bausparen.model.berechnung.BerechnungsZiel;
+import de.hypoport.efi.bausparen.model.berechnung.anfrage.BausparBerechnungsAnfrage;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -14,9 +14,9 @@ public class BausparBerechnungControllerTest {
     ObjectMapper objectMapper = new ObjectMapper();
 
     BausparBerechnungsAnfrage berechnungsdaten = new BausparBerechnungsAnfrage();
-    berechnungsdaten.setBausparsumme(new BigDecimal("100000"));
+    berechnungsdaten.setBausparsummeInEuro(new BigDecimal("100000"));
     berechnungsdaten.setBerechnungsZiel(BerechnungsZiel.SPARRATE);
-    berechnungsdaten.setEinmalzahlung(new BigDecimal("10000"));
+    berechnungsdaten.setEinmalzahlungInEuro(new BigDecimal("10000"));
 
     System.out.println(objectMapper.writeValueAsString(berechnungsdaten));
   }

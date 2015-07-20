@@ -1,8 +1,8 @@
 package de.hypoport.efi.bausparen.proofofconcept;
 
-import de.hypoport.efi.bausparen.model.berechnung.BausparBerechnungsAnfrage;
 import de.hypoport.efi.bausparen.model.berechnung.BausparBerechnungsAntwort;
 import de.hypoport.efi.bausparen.model.berechnung.Bausparangebot;
+import de.hypoport.efi.bausparen.model.berechnung.anfrage.BausparBerechnungsAnfrage;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,7 +1,7 @@
 package de.hypoport.efi.bausparen.controller;
 
-import de.hypoport.efi.bausparen.model.berechnung.BausparBerechnungsAnfrage;
 import de.hypoport.efi.bausparen.model.berechnung.BausparBerechnungsAntwort;
+import de.hypoport.efi.bausparen.model.berechnung.anfrage.BausparBerechnungsAnfrage;
 import de.hypoport.efi.bausparen.proofofconcept.ProofOfConceptBausparBerechnung;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
