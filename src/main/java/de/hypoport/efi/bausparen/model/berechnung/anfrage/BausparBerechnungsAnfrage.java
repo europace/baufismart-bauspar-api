@@ -8,28 +8,21 @@ import java.time.LocalDate;
 
 public class BausparBerechnungsAnfrage {
 
-  String zielTarif; //check
-  BerechnungsZiel berechnungsZiel; //check
   BerechnungsArt berechnungsArt; //check
-  Integer laufzeitBisZuteilungInMonaten; //check
+  String zielTarif; //check
   LocalDate vertragsbeginn; //check
+  BerechnungsZiel berechnungsZiel; //check
+  BigDecimal bausparsummeInEuro; //check
+  BigDecimal abzuloesendesDarlehenInEuro; //check
+  Integer laufzeitBisZuteilungInMonaten; //check
+
   Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung; //check
 
   DarlehensWunsch darlehensWunsch; //check
 
-  BigDecimal bausparsummeInEuro; //check
-  BigDecimal einmalzahlungInEuro;//check
-  BigDecimal sparBeitragInEuro; //check
-  BigDecimal tilgungsRateInEuro; //check
-  LocalDate sparBeitragsZahlungBis; //check
+  SparBeitraege sparBeitraege;
 
-  public BerechnungsZiel getBerechnungsZiel() {
-    return berechnungsZiel;
-  }
-
-  public void setBerechnungsZiel(BerechnungsZiel berechnungsZiel) {
-    this.berechnungsZiel = berechnungsZiel;
-  }
+  TilgungsBeitrag tilgungsBeitrag;
 
   public BerechnungsArt getBerechnungsArt() {
     return berechnungsArt;
@@ -37,62 +30,6 @@ public class BausparBerechnungsAnfrage {
 
   public void setBerechnungsArt(BerechnungsArt berechnungsArt) {
     this.berechnungsArt = berechnungsArt;
-  }
-
-  public Integer getLaufzeitBisZuteilungInMonaten() {
-    return laufzeitBisZuteilungInMonaten;
-  }
-
-  public void setLaufzeitBisZuteilungInMonaten(Integer laufzeitBisZuteilungInMonaten) {
-    this.laufzeitBisZuteilungInMonaten = laufzeitBisZuteilungInMonaten;
-  }
-
-  public LocalDate getVertragsbeginn() {
-    return vertragsbeginn;
-  }
-
-  public void setVertragsbeginn(LocalDate vertragsbeginn) {
-    this.vertragsbeginn = vertragsbeginn;
-  }
-
-  public Abschlussgebuehrenbehandlung getAbschlussgebuehrenbehandlung() {
-    return abschlussgebuehrenbehandlung;
-  }
-
-  public void setAbschlussgebuehrenbehandlung(Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung) {
-    this.abschlussgebuehrenbehandlung = abschlussgebuehrenbehandlung;
-  }
-
-  public BigDecimal getBausparsummeInEuro() {
-    return bausparsummeInEuro;
-  }
-
-  public void setBausparsummeInEuro(BigDecimal bausparsummeInEuro) {
-    this.bausparsummeInEuro = bausparsummeInEuro;
-  }
-
-  public BigDecimal getEinmalzahlungInEuro() {
-    return einmalzahlungInEuro;
-  }
-
-  public void setEinmalzahlungInEuro(BigDecimal einmalzahlungInEuro) {
-    this.einmalzahlungInEuro = einmalzahlungInEuro;
-  }
-
-  public BigDecimal getSparBeitragInEuro() {
-    return sparBeitragInEuro;
-  }
-
-  public void setSparBeitragInEuro(BigDecimal sparBeitragInEuro) {
-    this.sparBeitragInEuro = sparBeitragInEuro;
-  }
-
-  public BigDecimal getTilgungsRateInEuro() {
-    return tilgungsRateInEuro;
-  }
-
-  public void setTilgungsRateInEuro(BigDecimal tilgungsRateInEuro) {
-    this.tilgungsRateInEuro = tilgungsRateInEuro;
   }
 
   public String getZielTarif() {
@@ -103,6 +40,54 @@ public class BausparBerechnungsAnfrage {
     this.zielTarif = zielTarif;
   }
 
+  public LocalDate getVertragsbeginn() {
+    return vertragsbeginn;
+  }
+
+  public void setVertragsbeginn(LocalDate vertragsbeginn) {
+    this.vertragsbeginn = vertragsbeginn;
+  }
+
+  public BerechnungsZiel getBerechnungsZiel() {
+    return berechnungsZiel;
+  }
+
+  public void setBerechnungsZiel(BerechnungsZiel berechnungsZiel) {
+    this.berechnungsZiel = berechnungsZiel;
+  }
+
+  public BigDecimal getBausparsummeInEuro() {
+    return bausparsummeInEuro;
+  }
+
+  public void setBausparsummeInEuro(BigDecimal bausparsummeInEuro) {
+    this.bausparsummeInEuro = bausparsummeInEuro;
+  }
+
+  public BigDecimal getAbzuloesendesDarlehenInEuro() {
+    return abzuloesendesDarlehenInEuro;
+  }
+
+  public void setAbzuloesendesDarlehenInEuro(BigDecimal abzuloesendesDarlehenInEuro) {
+    this.abzuloesendesDarlehenInEuro = abzuloesendesDarlehenInEuro;
+  }
+
+  public Integer getLaufzeitBisZuteilungInMonaten() {
+    return laufzeitBisZuteilungInMonaten;
+  }
+
+  public void setLaufzeitBisZuteilungInMonaten(Integer laufzeitBisZuteilungInMonaten) {
+    this.laufzeitBisZuteilungInMonaten = laufzeitBisZuteilungInMonaten;
+  }
+
+  public Abschlussgebuehrenbehandlung getAbschlussgebuehrenbehandlung() {
+    return abschlussgebuehrenbehandlung;
+  }
+
+  public void setAbschlussgebuehrenbehandlung(Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung) {
+    this.abschlussgebuehrenbehandlung = abschlussgebuehrenbehandlung;
+  }
+
   public DarlehensWunsch getDarlehensWunsch() {
     return darlehensWunsch;
   }
@@ -111,11 +96,19 @@ public class BausparBerechnungsAnfrage {
     this.darlehensWunsch = darlehensWunsch;
   }
 
-  public LocalDate getSparBeitragsZahlungBis() {
-    return sparBeitragsZahlungBis;
+  public SparBeitraege getSparBeitraege() {
+    return sparBeitraege;
   }
 
-  public void setSparBeitragsZahlungBis(LocalDate sparBeitragsZahlungBis) {
-    this.sparBeitragsZahlungBis = sparBeitragsZahlungBis;
+  public void setSparBeitraege(SparBeitraege sparBeitraege) {
+    this.sparBeitraege = sparBeitraege;
+  }
+
+  public TilgungsBeitrag getTilgungsBeitrag() {
+    return tilgungsBeitrag;
+  }
+
+  public void setTilgungsBeitrag(TilgungsBeitrag tilgungsBeitrag) {
+    this.tilgungsBeitrag = tilgungsBeitrag;
   }
 }
