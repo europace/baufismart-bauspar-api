@@ -1,16 +1,31 @@
 package de.hypoport.efi.bausparen.model.dokumente;
 
+import java.time.LocalDate;
+
 public class Antragsteller {
 
-  String name;
-  String vorName;
+  Anrede anrede; //check
+  String titel; //check
+  String nachName; //check
+  String vorName; //check
+  LocalDate geburtsDatum; //check
+  String geburtsName; //check
+  String staatsangehoerigkeit; //check
 
-  public String getName() {
-    return name;
+  Adresse adresse;//check
+
+  Kontakt kontakt;//check
+
+  FamilienStand familienStand;//check
+
+  KontoDaten kontoDaten;//check
+
+  public String getNachName() {
+    return nachName;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setNachName(String nachName) {
+    this.nachName = nachName;
   }
 
   public String getVorName() {
