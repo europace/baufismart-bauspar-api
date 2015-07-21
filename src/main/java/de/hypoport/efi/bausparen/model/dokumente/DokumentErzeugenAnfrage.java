@@ -11,11 +11,11 @@ public class DokumentErzeugenAnfrage {
   String tarif; //check
 
   BigDecimal bausparSummeInEuro; //check
-  BigDecimal abzuloesendesDarlehenInEuro;
+  BigDecimal abzuloesendesDarlehenInEuro; //check
 
-  List<SparBeitrag> sparBeitraege;
+  List<SparBeitrag> sparBeitraege;//check
 
-  Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung;
+  Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung;//check
 
   List<Antragsteller> antragsteller;//check
 
