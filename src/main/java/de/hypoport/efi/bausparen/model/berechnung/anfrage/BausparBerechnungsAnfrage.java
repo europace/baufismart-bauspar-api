@@ -5,6 +5,7 @@ import de.hypoport.efi.bausparen.model.berechnung.BerechnungsZiel;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 public class BausparBerechnungsAnfrage {
 
@@ -20,7 +21,7 @@ public class BausparBerechnungsAnfrage {
 
   DarlehensWunsch darlehensWunsch; //check
 
-  SparBeitraege sparBeitraege;
+  List<SparBeitrag> sparBeitraege;
 
   TilgungsBeitrag tilgungsBeitrag;
 
@@ -96,11 +97,11 @@ public class BausparBerechnungsAnfrage {
     this.darlehensWunsch = darlehensWunsch;
   }
 
-  public SparBeitraege getSparBeitraege() {
+  public List<SparBeitrag> getSparBeitraege() {
     return sparBeitraege;
   }
 
-  public void setSparBeitraege(SparBeitraege sparBeitraege) {
+  public void setSparBeitraege(List<SparBeitrag> sparBeitraege) {
     this.sparBeitraege = sparBeitraege;
   }
 

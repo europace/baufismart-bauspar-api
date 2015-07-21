@@ -53,7 +53,8 @@ public class Application {
 
   private Predicate<String> apiPaths() {
     return or(
-        regex("/bausparangebot.*")
+        regex("/bausparangebot.*"),
+        regex("/dokumente.*")
     );
   }
 

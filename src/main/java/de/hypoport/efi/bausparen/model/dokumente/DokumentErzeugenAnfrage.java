@@ -1,19 +1,21 @@
 package de.hypoport.efi.bausparen.model.dokumente;
 
+import java.util.List;
+
 public class DokumentErzeugenAnfrage {
 
-  Antragsteller antragsteller;//check
+  List<Antragsteller> antragsteller;//check
 
   String nameKreditInstitut;//check
   ZahlungsForm zahlungsForm;//check
 
   VermittlerDaten vermittlerDaten;//check
 
-  public Antragsteller getAntragsteller() {
+  public List<Antragsteller> getAntragsteller() {
     return antragsteller;
   }
 
-  public void setAntragsteller(Antragsteller antragsteller) {
+  public void setAntragsteller(List<Antragsteller> antragsteller) {
     this.antragsteller = antragsteller;
   }
 
