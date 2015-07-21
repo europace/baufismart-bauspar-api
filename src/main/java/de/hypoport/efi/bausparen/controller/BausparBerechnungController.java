@@ -34,7 +34,6 @@ public class BausparBerechnungController {
       @ApiResponse(code = 400, message = "Ungueltige Anfrage"),
       @ApiResponse(code = 404, message = "Bausparkasse kann kein Angebot erstellen")}
   )
-
   public
   @ResponseBody
   BausparBerechnungsAntwort berechneBausparAngebot(@RequestBody BausparBerechnungsAnfrage berechnungsdaten, HttpServletResponse rsp) {

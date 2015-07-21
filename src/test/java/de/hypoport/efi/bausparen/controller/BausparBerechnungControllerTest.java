@@ -13,6 +13,7 @@ public class BausparBerechnungControllerTest {
   @Test
   public void testGenerateRequest() throws Exception {
     ObjectMapper objectMapper = new ObjectMapper();
+    objectMapper.findAndRegisterModules();
 
     BausparBerechnungsAnfrage berechnungsdaten = new BausparBerechnungsAnfrage();
     berechnungsdaten.setBausparsummeInEuro(new BigDecimal("100000"));
