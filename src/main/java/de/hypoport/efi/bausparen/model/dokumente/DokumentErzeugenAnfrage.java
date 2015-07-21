@@ -9,5 +9,35 @@ public class DokumentErzeugenAnfrage {
 
   VermittlerDaten vermittlerDaten;//check
 
+  public Antragsteller getAntragsteller() {
+    return antragsteller;
+  }
 
+  public void setAntragsteller(Antragsteller antragsteller) {
+    this.antragsteller = antragsteller;
+  }
+
+  public String getNameKreditInstitut() {
+    return nameKreditInstitut;
+  }
+
+  public void setNameKreditInstitut(String nameKreditInstitut) {
+    this.nameKreditInstitut = nameKreditInstitut;
+  }
+
+  public ZahlungsForm getZahlungsForm() {
+    return zahlungsForm;
+  }
+
+  public void setZahlungsForm(ZahlungsForm zahlungsForm) {
+    this.zahlungsForm = zahlungsForm;
+  }
+
+  public VermittlerDaten getVermittlerDaten() {
+    return vermittlerDaten;
+  }
+
+  public void setVermittlerDaten(VermittlerDaten vermittlerDaten) {
+    this.vermittlerDaten = vermittlerDaten;
+  }
 }
