@@ -1,5 +1,6 @@
 package de.hypoport.efi.bausparen;
 
+import com.fasterxml.jackson.databind.util.ISO8601DateFormat;
 import com.google.common.base.Predicate;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -13,6 +14,8 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+import java.time.LocalDate;
 
 import static com.google.common.base.Predicates.or;
 import static springfox.documentation.builders.PathSelectors.regex;
@@ -32,6 +35,8 @@ public class Application {
     return new Docket(DocumentationType.SWAGGER_2)
         .groupName("europace-bauspar-api")
         .apiInfo(apiInfo())
+        .directModelSubstitute(LocalDate.class,
+                               String.class)
         .select()
         .paths(apiPaths())
         .build();
@@ -42,6 +47,7 @@ public class Application {
   public Jackson2ObjectMapperBuilder jacksonBuilder() {
     Jackson2ObjectMapperBuilder builder = new Jackson2ObjectMapperBuilder();
     builder.findModulesViaServiceLoader(true);
+    builder.dateFormat(new ISO8601DateFormat());
     return builder;
   }
 

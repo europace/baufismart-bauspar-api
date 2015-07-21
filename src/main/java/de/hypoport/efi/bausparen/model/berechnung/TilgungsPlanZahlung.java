@@ -1,8 +1,9 @@
 package de.hypoport.efi.bausparen.model.berechnung;
 
-import org.joda.time.LocalDate;
+
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class TilgungsPlanZahlung {
 

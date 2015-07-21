@@ -1,5 +1,7 @@
 package de.hypoport.efi.bausparen.model.berechnung;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
@@ -19,6 +21,7 @@ public class Bausparangebot {
   SparPhase sparPhase;
   BausparDarlehen bausparDarlehen;
 
+  @ApiModelProperty(value = "Datum im Format 'yyyy-mm-dd'")
   LocalDate vertragsBeginn;//check
   Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung; //check
   BigDecimal abschlussgebuehrHoeheInProzent;//check
