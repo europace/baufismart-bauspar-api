@@ -1,10 +1,5 @@
 package de.hypoport.efi.bausparen.model.berechnung;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.databind.deser.std.DateDeserializers;
-import com.fasterxml.jackson.databind.ser.std.DateSerializer;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -16,8 +11,6 @@ public class BausparDarlehen {
   BigDecimal sollzinsInProzent;//check
   BigDecimal effektiverJahreszinsInProzent;//check
   Integer darlehenslaufzeitInMonaten;//check
-  @JsonSerialize(using = DateSerializer.class)
-  @JsonDeserialize(using = DateDeserializers.DateDeserializer.class)
   LocalDate tilgungsende;//check
   BigDecimal hoeheLetzterTilgungsbeitragInEuro;//check
   BigDecimal gesamtleistungDarlehenInEuro;//check

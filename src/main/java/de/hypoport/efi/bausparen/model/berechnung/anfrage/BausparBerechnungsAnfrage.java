@@ -1,9 +1,5 @@
 package de.hypoport.efi.bausparen.model.berechnung.anfrage;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.databind.deser.std.DateDeserializers;
-import com.fasterxml.jackson.databind.ser.std.DateSerializer;
 import de.hypoport.efi.bausparen.model.berechnung.Abschlussgebuehrenbehandlung;
 import de.hypoport.efi.bausparen.model.berechnung.BerechnungsZiel;
 
@@ -16,8 +12,6 @@ public class BausparBerechnungsAnfrage {
   BerechnungsZiel berechnungsZiel; //check
   BerechnungsArt berechnungsArt; //check
   Integer laufzeitBisZuteilungInMonaten; //check
-  @JsonSerialize(using = DateSerializer.class)
-  @JsonDeserialize(using = DateDeserializers.DateDeserializer.class)
   LocalDate vertragsbeginn; //check
   Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung; //check
 
@@ -27,8 +21,6 @@ public class BausparBerechnungsAnfrage {
   BigDecimal einmalzahlungInEuro;//check
   BigDecimal sparBeitragInEuro; //check
   BigDecimal tilgungsRateInEuro; //check
-  @JsonSerialize(using = DateSerializer.class)
-  @JsonDeserialize(using = DateDeserializers.DateDeserializer.class)
   LocalDate sparBeitragsZahlungBis; //check
 
   public BerechnungsZiel getBerechnungsZiel() {

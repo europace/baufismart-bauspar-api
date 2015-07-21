@@ -1,17 +1,10 @@
 package de.hypoport.efi.bausparen.model.berechnung;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.databind.deser.std.DateDeserializers;
-import com.fasterxml.jackson.databind.ser.std.DateSerializer;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class SparPlanZahlung {
 
-  @JsonSerialize(using = DateSerializer.class)
-  @JsonDeserialize(using = DateDeserializers.DateDeserializer.class)
   LocalDate datum;
   BigDecimal saldoNachZahlungInEuro;
   BigDecimal zahlungInEuro;
