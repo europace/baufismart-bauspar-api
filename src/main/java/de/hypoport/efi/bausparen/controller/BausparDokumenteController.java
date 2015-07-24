@@ -38,7 +38,7 @@ public class BausparDokumenteController {
   )
   public
   @ResponseBody
-  DokumentErzeugenAntwort getCurrentCustomizingState(@RequestBody DokumentErzeugenAnfrage dokumentErzeugenAnfrage, HttpServletResponse rsp) throws Exception {
+  DokumentErzeugenAntwort erstelleDokumente(@RequestBody DokumentErzeugenAnfrage dokumentErzeugenAnfrage, HttpServletResponse rsp) throws Exception {
 
     rsp.setStatus(SC_OK);
     DokumentErzeugenAntwort antwort = erzeugeAntwort();
