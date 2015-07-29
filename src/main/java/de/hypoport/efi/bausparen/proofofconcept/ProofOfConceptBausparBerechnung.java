@@ -21,7 +21,7 @@ public class ProofOfConceptBausparBerechnung {
     bausparangebot.setTarif("Tarif DV 1");
     bausparangebot.setVertragsBeginn(now());
     bausparangebot.setAbschlussgebuehrBetragInEuro(new BigDecimal("100"));
-    bausparBerechungsErgebnis.setBerechneteBausparAngebote(asList(bausparangebot));
+    bausparBerechungsErgebnis.setBerechnetesBausparAngebot(bausparangebot);
 
     return bausparBerechungsErgebnis;
   }

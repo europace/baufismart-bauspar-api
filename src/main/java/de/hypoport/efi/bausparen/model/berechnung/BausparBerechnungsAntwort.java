@@ -1,16 +1,14 @@
 package de.hypoport.efi.bausparen.model.berechnung;
 
-import java.util.List;
-
 public class BausparBerechnungsAntwort {
 
-  List<Bausparangebot> berechneteBausparAngebote;
+  Bausparangebot berechnetesBausparAngebot;
 
-  public List<Bausparangebot> getBerechneteBausparAngebote() {
-    return berechneteBausparAngebote;
+  public Bausparangebot getBerechnetesBausparAngebot() {
+    return berechnetesBausparAngebot;
   }
 
-  public void setBerechneteBausparAngebote(List<Bausparangebot> berechneteBausparAngebote) {
-    this.berechneteBausparAngebote = berechneteBausparAngebote;
+  public void setBerechnetesBausparAngebot(Bausparangebot berechnetesBausparAngebot) {
+    this.berechnetesBausparAngebot = berechnetesBausparAngebot;
   }
 }
