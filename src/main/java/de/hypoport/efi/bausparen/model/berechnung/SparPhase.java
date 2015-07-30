@@ -6,8 +6,6 @@ import java.time.LocalDate;
 public class SparPhase {
 
   Zahlungsrhythmus zahlungsrhythmus; //check
-  LocalDate sparBeginnAb; // check
-  LocalDate sparEnde; // check
   BigDecimal guthabenzinsInProzent;//check
   BigDecimal guthabenzinsBetragInEuro; //check
   BigDecimal bonuszinsInProzent; //check
@@ -16,7 +14,7 @@ public class SparPhase {
   BigDecimal regelsparbeitragInEuro;//check
   BigDecimal gesamtleistungSparphaseInEuro;//check
 
-  SparPlan sparPlan;//check
+  SparPlan sparPlan;//pruefen
 
   public Zahlungsrhythmus getZahlungsrhythmus() {
     return zahlungsrhythmus;
@@ -24,22 +22,6 @@ public class SparPhase {
 
   public void setZahlungsrhythmus(Zahlungsrhythmus zahlungsrhythmus) {
     this.zahlungsrhythmus = zahlungsrhythmus;
-  }
-
-  public LocalDate getSparBeginnAb() {
-    return sparBeginnAb;
-  }
-
-  public void setSparBeginnAb(LocalDate sparBeginnAb) {
-    this.sparBeginnAb = sparBeginnAb;
-  }
-
-  public LocalDate getSparEnde() {
-    return sparEnde;
-  }
-
-  public void setSparEnde(LocalDate sparEnde) {
-    this.sparEnde = sparEnde;
   }
 
   public BigDecimal getGuthabenzinsInProzent() {

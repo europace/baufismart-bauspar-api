@@ -9,29 +9,19 @@ import java.util.List;
 
 public class BausparBerechnungsAnfrage {
 
-  BerechnungsArt berechnungsArt; //check
   String zielTarif; //check
-  LocalDate vertragsbeginn; //check
   BerechnungsZiel berechnungsZiel; //check
   BigDecimal bausparsummeInEuro; //check
   BigDecimal abzuloesendesDarlehenInEuro; //check
   Integer laufzeitBisZuteilungInMonaten; //check
-
-  Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung; //check
-
-  DarlehensWunsch darlehensWunsch; //check
-
+  LocalDate zuteilungstermin;
   List<SparBeitrag> sparBeitraege;
 
   TilgungsBeitrag tilgungsBeitrag;
 
-  public BerechnungsArt getBerechnungsArt() {
-    return berechnungsArt;
-  }
+  Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung; //check
 
-  public void setBerechnungsArt(BerechnungsArt berechnungsArt) {
-    this.berechnungsArt = berechnungsArt;
-  }
+  DarlehensWunsch darlehensWunsch; //check
 
   public String getZielTarif() {
     return zielTarif;
@@ -39,14 +29,6 @@ public class BausparBerechnungsAnfrage {
 
   public void setZielTarif(String zielTarif) {
     this.zielTarif = zielTarif;
-  }
-
-  public LocalDate getVertragsbeginn() {
-    return vertragsbeginn;
-  }
-
-  public void setVertragsbeginn(LocalDate vertragsbeginn) {
-    this.vertragsbeginn = vertragsbeginn;
   }
 
   public BerechnungsZiel getBerechnungsZiel() {

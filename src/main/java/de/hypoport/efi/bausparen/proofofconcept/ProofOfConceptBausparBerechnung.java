@@ -19,8 +19,6 @@ public class ProofOfConceptBausparBerechnung {
     BausparBerechnungsAntwort bausparBerechungsErgebnis = new BausparBerechnungsAntwort();
     Bausparangebot bausparangebot = new Bausparangebot();
     bausparangebot.setTarif("Tarif DV 1");
-    bausparangebot.setVertragsBeginn(now());
-    bausparangebot.setAbschlussgebuehrBetragInEuro(new BigDecimal("100"));
     bausparBerechungsErgebnis.setBerechnetesBausparAngebot(bausparangebot);
 
     return bausparBerechungsErgebnis;

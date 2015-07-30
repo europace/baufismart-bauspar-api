@@ -9,28 +9,23 @@ import java.util.List;
 public class Bausparangebot {
 
   String tarif; //check
-  BerechnungsZiel berechnungsziel; //TODO noch klaeren enum plus werte
+  BerechnungsZiel berechnungsziel;
 
   BigDecimal bausparsummeInEuro;//check
   BigDecimal sparbeitragInEuro;//check
 
   Integer laufzeitBisZuteilungInMonaten;//check
   LocalDate zuteilungsTermin;//check
-  BigDecimal zahlungsbetragEinmalzahlungInEuro;//check
 
-  SparPhase sparPhase;
   BausparDarlehen bausparDarlehen;
 
-  @ApiModelProperty(value = "Datum im Format 'yyyy-mm-dd'")
-  LocalDate vertragsBeginn;//check
-  Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung; //check
-  BigDecimal abschlussgebuehrHoeheInProzent;//check
-  BigDecimal abschlussgebuehrBetragInEuro;//check
+  BigDecimal zahlungsbetragEinmalzahlungInEuro;//check
+  SparPhase sparPhase;
+
+  Abschlussgebuehr abschlussgebuehr;
+
   BigDecimal kontogebuehrJaehrlichInEuro;//check
 
-  BigDecimal kontogebuehrGesamtSparphaseInEuro;//check
-  BigDecimal kontogebuehrGesamtDarlehensphaseInEuro;//check
-  BigDecimal kontogebuehrGesamtInEuro;//check
   BigDecimal gesamtleistungKomplettInEuro;//check
   Integer gesamtlaufzeitKomplettInMonaten;//check
 
@@ -108,36 +103,12 @@ public class Bausparangebot {
     this.bausparDarlehen = bausparDarlehen;
   }
 
-  public LocalDate getVertragsBeginn() {
-    return vertragsBeginn;
+  public Abschlussgebuehr getAbschlussgebuehr() {
+    return abschlussgebuehr;
   }
 
-  public void setVertragsBeginn(LocalDate vertragsBeginn) {
-    this.vertragsBeginn = vertragsBeginn;
-  }
-
-  public Abschlussgebuehrenbehandlung getAbschlussgebuehrenbehandlung() {
-    return abschlussgebuehrenbehandlung;
-  }
-
-  public void setAbschlussgebuehrenbehandlung(Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung) {
-    this.abschlussgebuehrenbehandlung = abschlussgebuehrenbehandlung;
-  }
-
-  public BigDecimal getAbschlussgebuehrHoeheInProzent() {
-    return abschlussgebuehrHoeheInProzent;
-  }
-
-  public void setAbschlussgebuehrHoeheInProzent(BigDecimal abschlussgebuehrHoeheInProzent) {
-    this.abschlussgebuehrHoeheInProzent = abschlussgebuehrHoeheInProzent;
-  }
-
-  public BigDecimal getAbschlussgebuehrBetragInEuro() {
-    return abschlussgebuehrBetragInEuro;
-  }
-
-  public void setAbschlussgebuehrBetragInEuro(BigDecimal abschlussgebuehrBetragInEuro) {
-    this.abschlussgebuehrBetragInEuro = abschlussgebuehrBetragInEuro;
+  public void setAbschlussgebuehr(Abschlussgebuehr abschlussgebuehr) {
+    this.abschlussgebuehr = abschlussgebuehr;
   }
 
   public BigDecimal getKontogebuehrJaehrlichInEuro() {
@@ -146,30 +117,6 @@ public class Bausparangebot {
 
   public void setKontogebuehrJaehrlichInEuro(BigDecimal kontogebuehrJaehrlichInEuro) {
     this.kontogebuehrJaehrlichInEuro = kontogebuehrJaehrlichInEuro;
-  }
-
-  public BigDecimal getKontogebuehrGesamtSparphaseInEuro() {
-    return kontogebuehrGesamtSparphaseInEuro;
-  }
-
-  public void setKontogebuehrGesamtSparphaseInEuro(BigDecimal kontogebuehrGesamtSparphaseInEuro) {
-    this.kontogebuehrGesamtSparphaseInEuro = kontogebuehrGesamtSparphaseInEuro;
-  }
-
-  public BigDecimal getKontogebuehrGesamtDarlehensphaseInEuro() {
-    return kontogebuehrGesamtDarlehensphaseInEuro;
-  }
-
-  public void setKontogebuehrGesamtDarlehensphaseInEuro(BigDecimal kontogebuehrGesamtDarlehensphaseInEuro) {
-    this.kontogebuehrGesamtDarlehensphaseInEuro = kontogebuehrGesamtDarlehensphaseInEuro;
-  }
-
-  public BigDecimal getKontogebuehrGesamtInEuro() {
-    return kontogebuehrGesamtInEuro;
-  }
-
-  public void setKontogebuehrGesamtInEuro(BigDecimal kontogebuehrGesamtInEuro) {
-    this.kontogebuehrGesamtInEuro = kontogebuehrGesamtInEuro;
   }
 
   public BigDecimal getGesamtleistungKomplettInEuro() {

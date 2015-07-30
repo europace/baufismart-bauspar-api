@@ -23,7 +23,7 @@ public class BausparBerechnungControllerTest {
 
     BausparBerechnungsAnfrage berechnungsdaten = new BausparBerechnungsAnfrage();
     berechnungsdaten.setBausparsummeInEuro(new BigDecimal("100000"));
-    berechnungsdaten.setBerechnungsZiel(BerechnungsZiel.SPARRATE);
+    berechnungsdaten.setBerechnungsZiel(BerechnungsZiel.SPARBEITRAG_INKL_VL);
 
     SparBeitrag sparBeitrag = new SparBeitrag();
     sparBeitrag.setBeitrag(new BigDecimal("100"));
@@ -32,7 +32,6 @@ public class BausparBerechnungControllerTest {
     sparBeitrag.setZahlungsrhythmus(Zahlungsrhythmus.MONATLICH);
 
     berechnungsdaten.setSparBeitraege(asList(sparBeitrag));
-    berechnungsdaten.setVertragsbeginn(LocalDate.now());
 
     System.out.println(objectMapper.writeValueAsString(berechnungsdaten));
   }

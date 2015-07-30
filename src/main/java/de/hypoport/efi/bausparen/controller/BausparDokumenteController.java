@@ -34,7 +34,7 @@ public class BausparDokumenteController {
       response = DokumentErzeugenAntwort.class)
   @ApiResponses(value = {
       @ApiResponse(code = 200, message = "Dokument erzeugt"),
-      @ApiResponse(code = 404, message = "Dokument konnte nicht erzeugt werden")} //TODO code passt nicht
+      @ApiResponse(code = 500, message = "Dokument konnte nicht erzeugt werden")} //TODO code passt nicht
   )
   public
   @ResponseBody

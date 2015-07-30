@@ -2,6 +2,9 @@
 
 # Schnittstellenbeschreibung Europace Bausparvertragberechnungsschnittstelle
 
+## Offene fachliche Fragen aus Entwicklersicht
+
+* Warum wird beim Zuteilungsdatum (Anfrage und Antwort) zwischen Laufzeit und Termin differenziert? Reicht nicht Termin als Feld?
 
 ## TODO
 
@@ -33,6 +36,7 @@ EUROPACE definiert das Schema für die Schnittstelle. Jede Bausparkasse stellt s
 ## Technik
 
 **TODO** Relevanz prüfen
+
 Hypoport/EUROPACE präferiert für die Implementierung der Schnittstelle das technische Format HTTP/S – REST – Style (JSON). Alternativ ist die Implementierung eines Webservices möglich. Da es sich um einen durch alle Projektbeteiligten zu definierenden Standard handelt, ist es notwendig, dass die beteiligten Bausparkassen sich einigen, welche der beschriebenen technischen Möglichkeiten verwendet wird.
 Die Lieferung von Dokumenten zu den berechneten Bausparangeboten erfolgt  asynchron.
 

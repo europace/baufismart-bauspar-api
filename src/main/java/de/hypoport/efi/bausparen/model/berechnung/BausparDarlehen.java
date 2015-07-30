@@ -12,11 +12,8 @@ public class BausparDarlehen {
   BigDecimal effektiverJahreszinsInProzent;//check
   Integer darlehenslaufzeitInMonaten;//check
   LocalDate tilgungsende;//check
-  BigDecimal hoeheLetzterTilgungsbeitragInEuro;//check
-  BigDecimal gesamtleistungDarlehenInEuro;//check
-  BigDecimal gesamtkostenDarlehenInEuro;//check
 
-  TilgungsPlan tilgungsPlan;//check
+  TilgungsPlan tilgungsPlan;//pruefen
 
   public BigDecimal getZahlungsBeitragTilgungsRateInEuro() {
     return zahlungsBeitragTilgungsRateInEuro;
@@ -72,30 +69,6 @@ public class BausparDarlehen {
 
   public void setTilgungsende(LocalDate tilgungsende) {
     this.tilgungsende = tilgungsende;
-  }
-
-  public BigDecimal getHoeheLetzterTilgungsbeitragInEuro() {
-    return hoeheLetzterTilgungsbeitragInEuro;
-  }
-
-  public void setHoeheLetzterTilgungsbeitragInEuro(BigDecimal hoeheLetzterTilgungsbeitragInEuro) {
-    this.hoeheLetzterTilgungsbeitragInEuro = hoeheLetzterTilgungsbeitragInEuro;
-  }
-
-  public BigDecimal getGesamtleistungDarlehenInEuro() {
-    return gesamtleistungDarlehenInEuro;
-  }
-
-  public void setGesamtleistungDarlehenInEuro(BigDecimal gesamtleistungDarlehenInEuro) {
-    this.gesamtleistungDarlehenInEuro = gesamtleistungDarlehenInEuro;
-  }
-
-  public BigDecimal getGesamtkostenDarlehenInEuro() {
-    return gesamtkostenDarlehenInEuro;
-  }
-
-  public void setGesamtkostenDarlehenInEuro(BigDecimal gesamtkostenDarlehenInEuro) {
-    this.gesamtkostenDarlehenInEuro = gesamtkostenDarlehenInEuro;
   }
 
   public TilgungsPlan getTilgungsPlan() {
