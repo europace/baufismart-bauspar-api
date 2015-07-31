@@ -75,8 +75,7 @@ dependencies {
   compile("org.apache.logging.log4j:log4j-api:$log4jVersion")
   compile("org.apache.logging.log4j:log4j-core:$log4jVersion")
 
-  //compile('com.fasterxml.jackson.datatype:jackson-datatype-joda:2.3.3')
-  compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.4.0')
+  compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.6.0')
 
   compile("io.springfox:springfox-swagger2:${springfoxVersion}")
   compile("io.springfox:springfox-swagger-ui:${springfoxVersion}")

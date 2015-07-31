@@ -6,6 +6,7 @@ import de.hypoport.efi.bausparen.model.berechnung.anfrage.BausparBerechnungsAnfr
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 import static java.time.LocalDate.now;
 import static java.util.Arrays.asList;
@@ -19,6 +20,7 @@ public class ProofOfConceptBausparBerechnung {
     BausparBerechnungsAntwort bausparBerechungsErgebnis = new BausparBerechnungsAntwort();
     Bausparangebot bausparangebot = new Bausparangebot();
     bausparangebot.setTarif("Tarif DV 1");
+    bausparangebot.setZuteilungsTermin(LocalDate.now().plusYears(10));
     bausparBerechungsErgebnis.setBerechnetesBausparAngebot(bausparangebot);
 
     return bausparBerechungsErgebnis;

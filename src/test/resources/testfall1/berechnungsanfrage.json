@@ -1,7 +1,6 @@
 {
   "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
   "abzuloesendesDarlehenInEuro": 50000,
-  "bausparsummeInEuro": 50000,
   "berechnungsZiel": "SPARBEITRAG_INKL_VL",
   "darlehensWunsch": "MIT_DARLEHEN",
   "laufzeitBisZuteilungInMonaten": 120,

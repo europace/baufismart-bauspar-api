@@ -42,14 +42,6 @@ public class Application {
         .build();
   }
 
-  @Bean
-  @Primary
-  public Jackson2ObjectMapperBuilder jacksonBuilder() {
-    Jackson2ObjectMapperBuilder builder = new Jackson2ObjectMapperBuilder();
-    builder.findModulesViaServiceLoader(true);
-    builder.dateFormat(new ISO8601DateFormat());
-    return builder;
-  }
 
   private Predicate<String> apiPaths() {
     return or(

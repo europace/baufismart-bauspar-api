@@ -1,7 +1,6 @@
 package de.hypoport.efi.bausparen.model.berechnung;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 public class SparPhase {
 
