@@ -1,0 +1,69 @@
+{
+  "berechnetesBausparAngebot": {
+    "abschlussgebuehr": {
+      "abschlussgebuehrBetragInEuro": 500,
+      "abschlussgebuehrHoeheInProzent": 1,
+      "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG"
+    },
+    "bausparDarlehen": {
+      "darlehenslaufzeitInMonaten": 180,
+      "effektiverJahreszinsInProzent": 2.93,
+      "hoeheBauspardarlehenInEuro": 29544.07,
+      "sollzinsInProzent": 2.75,
+      "tilgungsPlan": {
+        "zahlungen": [
+          {
+            "datum": "string",
+            "gebuehrenInEuro": 0,
+            "kontofuehrungsGebuehrInEuro": 0,
+            "saldoNachZahlungInEuro": 0,
+            "tilgungInEuro": 0,
+            "zahlungInEuro": 0,
+            "zinsInEuro": 0
+          }
+        ]
+      },
+      "tilgungsende": "2039-09-30",
+      "zahlungsBeitragTilgungsRateInEuro": 200,
+      "zahlungsrhythmus": "MONATLICH"
+    },
+    "bausparsummeInEuro": 50000,
+    "berechnungsziel": "SPARBEITRAG_INKL_VL",
+    "gesamtlaufzeitKomplettInMonaten": 25,
+    "gesamtleistungKomplettInEuro": 56677.04,
+    "kontogebuehrJaehrlichInEuro": 0,
+    "laufzeitBisZuteilungInMonaten": 120,
+    "meldungen": [
+      {
+        "text": "string"
+      }
+    ],
+    "sparPhase": {
+      "bonuszinsBetragInEuro": 0,
+      "bonuszinsInProzent": 0,
+      "gesamtleistungSparphaseInEuro": 20699.60,
+      "guthabenBeiZuteilungInEuro": 20455.93,
+      "guthabenzinsBetragInEuro": 256.33,
+      "guthabenzinsInProzent": 0.476,
+      "regelsparbeitragInEuro": 168.33,
+      "sparPlan": {
+        "zahlungen": [
+          {
+            "abgeltungsSteuerInEuro": 0,
+            "datum": "string",
+            "gebuehrenInEuro": 0,
+            "kontofuehrungsGebuehrInEuro": 0,
+            "saldoNachZahlungInEuro": 0,
+            "zahlungInEuro": 0,
+            "zinsInEuro": 0
+          }
+        ]
+      },
+      "zahlungsrhythmus": "MONATLICH"
+    },
+    "sparbeitragInEuro": 0,
+    "tarif": "string",
+    "zahlungsbetragEinmalzahlungInEuro": 0,
+    "zuteilungsTermin": "string"
+  }
+}
