@@ -31,12 +31,12 @@ Die Schnittstellenimplementierung muss sich keine Zwischenergebnisse merken.
 
 Der Prozess gestaltet sich im Detail wie folgt:
 
-1) Die von der Bausparkasse bereitgestellten Tarife werden von EUROPACE unter der URL `ttp://host/sst` abgefragt. Daraus folgt: Es muss eine REST Resource mit der Tarifliste
+1) Die von der Bausparkasse bereitgestellten Tarife werden von EUROPACE unter der URL `http://host/europace/v1/bauspartarife/` mit einem GET Befehl abgefragt. Daraus folgt: Es muss eine REST Resource mit der Tarifliste
 bereitgestellt werden.
 
-2) Anhand der Tarifliste und der Finanzierunganfrage werden REST-Anfragen an die Berechnungsschnittstelle gesendet. Es wird erwartet, dass ein Angebot pro Anfrage berechnet wird. Kann kein annehmbares Angebot berechnet werden, so werden dem Angebot Meldungen beigefügt, die es dem Nutzer ermöglichen, die Anfrage so anzupassen, dass ein Angebot berechnet werden kann.
+2) Anhand der Tarifliste und der Finanzierunganfrage werden REST-Anfragen an die Berechnungsschnittstelle unter der URL `http://host/europace/v1/bausparangebot/` mit einem POST Befehl gesendet. Es wird erwartet, dass ein Angebot pro Anfrage berechnet wird. Kann kein annehmbares Angebot berechnet werden, so werden dem Angebot Meldungen beigefügt, die es dem Nutzer ermöglichen, die Anfrage so anzupassen, dass ein Angebot berechnet werden kann.
 
-3) Für ein berechnetes Angebot werden über eine weitere REST-Anfrage die Dokumente zum Angebot generiert. 
+3) Für ein berechnetes Angebot werden über eine weitere REST-Anfrage unter der URL `http://host/europace/v1/dokumente/` mit einem GET Befehl die zum Angebot generierten Dokumente geholt. 
 
 Weitere Informationen und eine genauere Beschreibung der REST-Schnittstelle sowie die Beschreibung der Daten werden in Beispiel Aufrufen und weiteren Tabellen dargestellt.
   
