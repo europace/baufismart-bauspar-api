@@ -1,6 +1,5 @@
-
-
-# Schnittstellenbeschreibung Europace Bausparvertragberechnungsschnittstelle
+# EUROPACE Bausspar API Dokumentation
+============================
 
 ## Offene fachliche Fragen aus Entwicklersicht
 
@@ -16,17 +15,34 @@
 * Technikdokument unten anpassen für Schnittstellenbeschreibung
 * Schnittstellenversionierung definieren und beschreiben
 
+
+
 ## Beschreibung.
-
-Eine Schnittstelle zur Einbindung von Bausparangeboten als Tilgungsersatzprodukt und zur Zinsabsicherung in eine Finanzierung
-
+Eine Schnittstelle zur Einbindung von Bausparangeboten als Tilgungsersatzprodukt und zur Zinsabsicherung in eine Finanzierung.
+Ziel der Schnittstelle ist es Angebote von verschiedenen Bausparkasse in Europace anzubieten. Die Schnittstelle wird als REST-Schnittstelle 
+(Representational State Transfer) realisiert. Die Schnittstelle beschreibt eine standardisierte Prozess zur Berechnung und Integration von 
+Bausparprodukten in EUROPACE.  
 
 ## Prozess
 
-**TODO** Detaillieren
+Schritt EUROPACE schickt den Bausparwunsch an die durch die jeweilige Bausparkasse bereitzustellende Schnittstelle. Die Berechnung des Bausparangebots erfolgt bei der Bausparkasse. 
+An EUROPACE wird das berechnete Bausparangebot inkl. der benötigten ausgefüllten Dokumente zurückgeliefert. EUROPACE fügt das Bausparangebot in die Finanzierung ein.
 
-EUROPACE schickt den Bausparwunsch an die durch die jeweilige Bausparkasse bereitzustellende Schnittstelle. Die Berechnung des Bausparangebots erfolgt bei der Bausparkasse. An EUROPACE wird das berechnete Bausparangebot inkl. der benötigten ausgefüllten Dokumente zurückgeliefert. EUROPACE fügt das Bausparangebot in die Finanzierung ein.
+Der Schnittstellen Prozess ist Zustandslos, dass bedeutet bei jedem Methodenaufruf werden alle relevanten Daten mitgesendet.
+Die Schnittstellen Implementierung muss sich keine Zwischenergebnisse merken.
 
+Der Prozess gestaltet sich im Detail wie folgt:
+
+1) Die von der Bausparkasse bereitgestellten Tarife werden von EUROPACE abgefragt. Daraus folgt es muss eine REST Resource mit der Tarifliste 
+bereitgestellt werden.
+
+2) Anhand der Tarifliste und der Finanazierunganfrage werden Rest-Anfragen an die Berechnungsschnittstelle gesendet. Es wird erwartet, das ein Angebot pro Anfrage berechnet wird. Kann kein Angebot berechnet werden gibt es die Möglichkeit 
+einfach keine Antwort zu senden. Oder ein Angebot mit Meldungen die es dem Nutzer ermöglichen die Anfrage so anzupassen, das ein Angebit berechnet werden kann. 
+
+3) Für ein berechnetes Angebot werden über eine weitere REST-Anfrage die Dokumente zum Angebot generiert. 
+
+Weitere Information und genauer Beschreibung der REST-Schnittstelle so wie die Beschreibung der Daten werden in Beispiel Aufrufen und weiteren Tabellen dargetsellt.
+  
 ## Schnittstellendesign
 
 **TODO** Durch echte Schemabeschreibung ersetzen mit Hinweis auf Excel und Swagger in Prototyp
@@ -40,10 +56,7 @@ Geldbeträge werden als reine Zahlwerte mit 2 Nachkommastellen übertragen. Die 
 
 ## Technik
 
-**TODO** Relevanz prüfen
-
-Hypoport/EUROPACE präferiert für die Implementierung der Schnittstelle das technische Format HTTP/S – REST – Style (JSON). Alternativ ist die Implementierung eines Webservices möglich. Da es sich um einen durch alle Projektbeteiligten zu definierenden Standard handelt, ist es notwendig, dass die beteiligten Bausparkassen sich einigen, welche der beschriebenen technischen Möglichkeiten verwendet wird.
-Die Lieferung von Dokumenten zu den berechneten Bausparangeboten erfolgt  asynchron.
+Die Kommunikation erfolgt über HTTP/S und REST (Representational State Transfer). Zur Absicherung und Verschlüsselung wird SSL eingesetzt. Die Daten werden im JSON-Format übertragen. Die Lieferung von Dokumenten zu den berechneten Bausparangeboten erfolgt asynchron.
 
 ## Abwärtskompatiblität
 
@@ -51,20 +64,11 @@ Die Lieferung von Dokumenten zu den berechneten Bausparangeboten erfolgt  asynch
 
 ## Security
 
-**TODO** Reicht das aus?
-
-Die Sicherheitsvorkehrungen entsprechen dem Standard HTTPS, Client- und Server- Zertifikat mit Freischaltung der IP-Adressen.
+Die Sicherheitsvorkehrungen entsprechen dem Standard SSL über HTTPS, Client- und Server- Zertifikate mit Freischaltung der IP-Adressen.
 
 ## Nichtfunktionale Anforderungen
+
 Die Antwortzeiten vom Absenden des Request bis zum Erhalt der Antwort (ausgenommen Dokumente, die asynchron nachgeliefert werden können) liegen unterhalb von 500 ms, damit dem Anwender das Bausparangebot ohne bemerkbare Verzögerung angezeigt werden kann.
-Die Schnittstelle muss in der Lage sein eine erwartete Last von bis zu 10 Requests pro Sekunde zu verarbeiten. Die Schnittstelle muss grundsätzlich 24 Stunden an allen Wochentagen verfügbar sein. Ausgenommen hiervon sind Wartungsintervalle die außerhalb der Geschäftszeiten liegen.  Beeinträchtigungen im Betrieb der Plattform durch Wartungsarbeiten können so vermieden werden.
+Die Schnittstelle muss in der Lage sein eine erwartete Last von bis zu 10 Requests pro Sekunde zu verarbeiten. Die Schnittstelle muss grundsätzlich 24 Stunden an allen Wochentagen verfügbar sein. Ausgenommen hiervon sind Wartungsintervalle die außerhalb der Geschäftszeiten liegen. Beeinträchtigungen im Betrieb der Plattform durch Wartungsarbeiten können so vermieden werden.
 
-## Systeme
 
-Neben dem Produktivsystem wird ein stabiles Testsystem benötigt. Die Weiterentwicklung sollte auf eigens dafür vorgesehen Entwicklungssystemen erfolgen, um die Stabilität des Testsystems zu gewährleisten.
-
-## Implementierungsphase
-
-**TODO** Relevanz prüfen
-
-In der Implementierungsphase setzt Hypoport/EUROPACE auf ein agiles Vorgehen, welches eine enge Kommunikation der Experten voraussetzt. Die Entwicklung sollte zwischen den Beteiligten so abgestimmt sein, dass frühe Tests eine zielführende Implementierung sicherstellen. Ein „aneinander vorbei Entwicklen“ wird so vermieden.
