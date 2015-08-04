@@ -8,40 +8,37 @@
 ## TODO
 
 * Excel Feldbeschreibung einbinden
-* Schnittstellen -usecases/-interaktionen beschreiben
 * REST Messages und URLs beschreiben
 * Beispielkommunikation einbinden
-* Entscheiden, ob und wie Default Impl Teil der Schnittstellenbeschreibung wird
-* Technikdokument unten anpassen für Schnittstellenbeschreibung
 * Schnittstellenversionierung definieren und beschreiben
 
 
 
 ## Beschreibung.
+
 Eine Schnittstelle zur Einbindung von Bausparangeboten als Tilgungsersatzprodukt und zur Zinsabsicherung in eine Finanzierung.
-Ziel der Schnittstelle ist es Angebote von verschiedenen Bausparkasse in Europace anzubieten. Die Schnittstelle wird als REST-Schnittstelle 
-(Representational State Transfer) realisiert. Die Schnittstelle beschreibt eine standardisierte Prozess zur Berechnung und Integration von 
+Ziel der Schnittstelle ist es, Angebote von verschiedenen Bausparkassen in Europace anzubieten. Die Schnittstelle wird als REST-Schnittstelle
+(Representational State Transfer) realisiert. Die Schnittstelle beschreibt einen standardisierten Prozess zur Berechnung und Integration von
 Bausparprodukten in EUROPACE.  
 
 ## Prozess
 
-Schritt EUROPACE schickt den Bausparwunsch an die durch die jeweilige Bausparkasse bereitzustellende Schnittstelle. Die Berechnung des Bausparangebots erfolgt bei der Bausparkasse. 
+Als ersten Schritt schickt EUROPACE den Bausparwunsch an die durch die jeweilige Bausparkasse bereitzustellende Schnittstelle. Die Berechnung des Bausparangebots erfolgt bei der Bausparkasse.
 An EUROPACE wird das berechnete Bausparangebot inkl. der benötigten ausgefüllten Dokumente zurückgeliefert. EUROPACE fügt das Bausparangebot in die Finanzierung ein.
 
-Der Schnittstellen Prozess ist Zustandslos, dass bedeutet bei jedem Methodenaufruf werden alle relevanten Daten mitgesendet.
-Die Schnittstellen Implementierung muss sich keine Zwischenergebnisse merken.
+Der Schnittstellenprozess ist zustandslos, das bedeutet bei jedem Methodenaufruf werden alle relevanten Daten mitgesendet.
+Die Schnittstellenimplementierung muss sich keine Zwischenergebnisse merken.
 
 Der Prozess gestaltet sich im Detail wie folgt:
 
-1) Die von der Bausparkasse bereitgestellten Tarife werden von EUROPACE abgefragt. Daraus folgt es muss eine REST Resource mit der Tarifliste 
+1) Die von der Bausparkasse bereitgestellten Tarife werden von EUROPACE unter der URL `ttp://host/sst` abgefragt. Daraus folgt: Es muss eine REST Resource mit der Tarifliste
 bereitgestellt werden.
 
-2) Anhand der Tarifliste und der Finanazierunganfrage werden Rest-Anfragen an die Berechnungsschnittstelle gesendet. Es wird erwartet, das ein Angebot pro Anfrage berechnet wird. Kann kein Angebot berechnet werden gibt es die Möglichkeit 
-einfach keine Antwort zu senden. Oder ein Angebot mit Meldungen die es dem Nutzer ermöglichen die Anfrage so anzupassen, das ein Angebit berechnet werden kann. 
+2) Anhand der Tarifliste und der Finanzierunganfrage werden REST-Anfragen an die Berechnungsschnittstelle gesendet. Es wird erwartet, dass ein Angebot pro Anfrage berechnet wird. Kann kein annehmbares Angebot berechnet werden, so werden dem Angebot Meldungen beigefügt, die es dem Nutzer ermöglichen, die Anfrage so anzupassen, dass ein Angebot berechnet werden kann.
 
 3) Für ein berechnetes Angebot werden über eine weitere REST-Anfrage die Dokumente zum Angebot generiert. 
 
-Weitere Information und genauer Beschreibung der REST-Schnittstelle so wie die Beschreibung der Daten werden in Beispiel Aufrufen und weiteren Tabellen dargetsellt.
+Weitere Informationen und eine genauere Beschreibung der REST-Schnittstelle sowie die Beschreibung der Daten werden in Beispiel Aufrufen und weiteren Tabellen dargestellt.
   
 ## Schnittstellendesign
 
@@ -64,7 +61,7 @@ Die Kommunikation erfolgt über HTTP/S und REST (Representational State Transfer
 
 ## Security
 
-Die Sicherheitsvorkehrungen entsprechen dem Standard SSL über HTTPS, Client- und Server- Zertifikate mit Freischaltung der IP-Adressen.
+Die Sicherheitsvorkehrungen entsprechen dem Standard SSL über HTTPS unter Verwendung von Client- und Server- Zertifikaten mit Freischaltung der IP-Adressen.
 
 ## Nichtfunktionale Anforderungen
 
