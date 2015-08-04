@@ -50,7 +50,7 @@ configurations {
 
 dependencies {
 
-  def springVersion = '4.1.4.RELEASE'
+  def springVersion = '4.1.7.RELEASE'
   def slf4jVersion = '1.7.6'
   def log4jVersion = '2.0-rc1'
   def springfoxVersion = '2.1.1'
@@ -80,6 +80,7 @@ dependencies {
   compile("io.springfox:springfox-swagger2:${springfoxVersion}")
   compile("io.springfox:springfox-swagger-ui:${springfoxVersion}")
 
+  testCompile("org.springframework:spring-test:$springVersion")
   testCompile('org.easytesting:fest-assert:1.4')
   testCompile('org.mockito:mockito-all:1.9.5')
   testCompile('junit:junit:4.11')
