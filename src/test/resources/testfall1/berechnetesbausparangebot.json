@@ -12,6 +12,7 @@
       "sollzinsInProzent": 2.75,
       "tilgungsPlan": {
         "zahlungen": [
+          {"datum":"2025-09-01", "gebuehrenInEuro":0,"kontofuehrungsGebuehrInEuro":0,"saldoNachZahlungInEuro":-29544.07,"zahlungInEuro":-29544.07,"zinsInEuro":0},
           {"datum":"2025-09-30", "gebuehrenInEuro":0,"kontofuehrungsGebuehrInEuro":0,"saldoNachZahlungInEuro":-29411.78,"zahlungInEuro":200,"zinsInEuro":67.71},
           {"datum":"2025-10-31", "gebuehrenInEuro":0,"kontofuehrungsGebuehrInEuro":0,"saldoNachZahlungInEuro":-29279.18,"zahlungInEuro":200,"zinsInEuro":67.4},
           {"datum":"2025-11-30", "gebuehrenInEuro":0,"kontofuehrungsGebuehrInEuro":0,"saldoNachZahlungInEuro":-29146.28,"zahlungInEuro":200,"zinsInEuro":67.1},
@@ -208,25 +209,21 @@
           {"datum":"2040-07-31", "gebuehrenInEuro":0,"kontofuehrungsGebuehrInEuro":0,"saldoNachZahlungInEuro":-308.77,"zahlungInEuro":200,"zinsInEuro":1.16},
           {"datum":"2040-08-31", "gebuehrenInEuro":0,"kontofuehrungsGebuehrInEuro":0,"saldoNachZahlungInEuro":-109.48,"zahlungInEuro":200,"zinsInEuro":0.71},
           {"datum":"2040-09-30", "gebuehrenInEuro":0,"kontofuehrungsGebuehrInEuro":0,"saldoNachZahlungInEuro":0,"zahlungInEuro":109.73,"zinsInEuro":0.25}
-
-
-
-
         ]
       },
-      "tilgungsende": "2039-09-30",
+      "tilgungsende": "2040-09-30",
       "zahlungsBeitragTilgungsRateInEuro": 200,
       "zahlungsrhythmus": "MONATLICH"
     },
     "bausparsummeInEuro": 50000,
     "berechnungsziel": "SPARBEITRAG_INKL_VL",
-    "gesamtlaufzeitKomplettInMonaten": 25,
+    "gesamtlaufzeitKomplettInMonaten": 300,
     "gesamtleistungKomplettInEuro": 56677.04,
     "kontogebuehrJaehrlichInEuro": 0,
     "laufzeitBisZuteilungInMonaten": 120,
     "meldungen": [
       {
-        "text": "Beispielmeldung"
+        "text": "Hier könnte Ihr Hinweistext stehen! TODO Meldungsmachbarkeitsstatus einführen"
       }
     ],
     "sparPhase": {
@@ -373,8 +370,8 @@
       },
       "zahlungsrhythmus": "MONATLICH"
     },
-    "sparbeitragInEuro": 0,
-    "tarif": "string",
+    "sparbeitragInEuro": 168.33,
+    "tarif": "T1",
     "zahlungsbetragEinmalzahlungInEuro": 0,
     "zuteilungsTermin": "2025-09-01"
   }
