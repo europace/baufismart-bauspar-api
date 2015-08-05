@@ -1,0 +1,16 @@
+{
+  "tarife": [
+    {
+      "id": "T1",
+      "name": "Bauspartarif 1"
+    },
+    {
+      "id": "T2",
+      "name": "Bauspartarif 2"
+    },
+    {
+      "id": "T3",
+      "name": "Bauspartarif 3"
+    }
+  ]
+}
