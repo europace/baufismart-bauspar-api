@@ -11,7 +11,7 @@ public class DokumentErzeugenAnfrage {
   String tarif; //check
 
   BigDecimal bausparSummeInEuro; //check
-  BigDecimal abzuloesendesDarlehenInEuro; //check
+  BigDecimal auszahlungsbetragBeiZuteilung; //check
 
   List<SparBeitrag> sparBeitraege;//check
 
@@ -19,8 +19,6 @@ public class DokumentErzeugenAnfrage {
 
   List<Antragsteller> antragsteller;//check
 
-  String nameKreditInstitut;//check
-  ZahlungsForm zahlungsForm;//check
 
   VermittlerDaten vermittlerDaten;//check
 
@@ -40,12 +38,12 @@ public class DokumentErzeugenAnfrage {
     this.bausparSummeInEuro = bausparSummeInEuro;
   }
 
-  public BigDecimal getAbzuloesendesDarlehenInEuro() {
-    return abzuloesendesDarlehenInEuro;
+  public BigDecimal getAuszahlungsbetragBeiZuteilung() {
+    return auszahlungsbetragBeiZuteilung;
   }
 
-  public void setAbzuloesendesDarlehenInEuro(BigDecimal abzuloesendesDarlehenInEuro) {
-    this.abzuloesendesDarlehenInEuro = abzuloesendesDarlehenInEuro;
+  public void setAuszahlungsbetragBeiZuteilung(BigDecimal auszahlungsbetragBeiZuteilung) {
+    this.auszahlungsbetragBeiZuteilung = auszahlungsbetragBeiZuteilung;
   }
 
   public List<SparBeitrag> getSparBeitraege() {
@@ -70,22 +68,6 @@ public class DokumentErzeugenAnfrage {
 
   public void setAntragsteller(List<Antragsteller> antragsteller) {
     this.antragsteller = antragsteller;
-  }
-
-  public String getNameKreditInstitut() {
-    return nameKreditInstitut;
-  }
-
-  public void setNameKreditInstitut(String nameKreditInstitut) {
-    this.nameKreditInstitut = nameKreditInstitut;
-  }
-
-  public ZahlungsForm getZahlungsForm() {
-    return zahlungsForm;
-  }
-
-  public void setZahlungsForm(ZahlungsForm zahlungsForm) {
-    this.zahlungsForm = zahlungsForm;
   }
 
   public VermittlerDaten getVermittlerDaten() {

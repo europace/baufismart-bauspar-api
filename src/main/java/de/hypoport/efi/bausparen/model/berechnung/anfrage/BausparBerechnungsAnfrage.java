@@ -12,7 +12,7 @@ public class BausparBerechnungsAnfrage {
   String zielTarif; //check
   BerechnungsZiel berechnungsZiel; //check
   BigDecimal bausparsummeInEuro; //check
-  BigDecimal abzuloesendesDarlehenInEuro; //check
+  BigDecimal auszahlungsbetragBeiZuteilung; //check
   Integer laufzeitBisZuteilungInMonaten; //check
   LocalDate zuteilungstermin;
   List<SparBeitrag> sparBeitraege;
@@ -47,12 +47,12 @@ public class BausparBerechnungsAnfrage {
     this.bausparsummeInEuro = bausparsummeInEuro;
   }
 
-  public BigDecimal getAbzuloesendesDarlehenInEuro() {
-    return abzuloesendesDarlehenInEuro;
+  public BigDecimal getAuszahlungsbetragBeiZuteilung() {
+    return auszahlungsbetragBeiZuteilung;
   }
 
-  public void setAbzuloesendesDarlehenInEuro(BigDecimal abzuloesendesDarlehenInEuro) {
-    this.abzuloesendesDarlehenInEuro = abzuloesendesDarlehenInEuro;
+  public void setAuszahlungsbetragBeiZuteilung(BigDecimal auszahlungsbetragBeiZuteilung) {
+    this.auszahlungsbetragBeiZuteilung = auszahlungsbetragBeiZuteilung;
   }
 
   public Integer getLaufzeitBisZuteilungInMonaten() {

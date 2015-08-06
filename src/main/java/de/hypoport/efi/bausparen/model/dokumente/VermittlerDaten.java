@@ -2,7 +2,7 @@ package de.hypoport.efi.bausparen.model.dokumente;
 
 public class VermittlerDaten {
 
-  String vorName;//check
+  String vorname;//check
   String nachName;//check
 
   String strasseHausnummer;//check
@@ -10,12 +10,12 @@ public class VermittlerDaten {
   String postleitzahl;//check
   String ort;//check
 
-  public String getVorName() {
-    return vorName;
+  public String getVorname() {
+    return vorname;
   }
 
-  public void setVorName(String vorName) {
-    this.vorName = vorName;
+  public void setVorname(String vorname) {
+    this.vorname = vorname;
   }
 
   public String getNachName() {

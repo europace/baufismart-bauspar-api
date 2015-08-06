@@ -8,6 +8,7 @@ import de.hypoport.efi.bausparen.model.berechnung.SparPlanZahlung;
 import de.hypoport.efi.bausparen.model.berechnung.TilgungsPlan;
 import de.hypoport.efi.bausparen.model.berechnung.TilgungsPlanZahlung;
 import de.hypoport.efi.bausparen.model.berechnung.anfrage.BausparBerechnungsAnfrage;
+import de.hypoport.efi.bausparen.model.dokumente.DokumentErzeugenAnfrage;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -42,11 +43,11 @@ public class FachlicheBeispiele {
     assertNotNull(bausparBerechnungsAnfrage.getZielTarif());
     assertNotNull(bausparBerechnungsAnfrage.getBerechnungsZiel());
 
-    if (bausparBerechnungsAnfrage.getAbzuloesendesDarlehenInEuro() == null) {
+    if (bausparBerechnungsAnfrage.getAuszahlungsbetragBeiZuteilung() == null) {
       assertNotNull(bausparBerechnungsAnfrage.getBausparsummeInEuro() != null);
     }
     if (bausparBerechnungsAnfrage.getBausparsummeInEuro() == null) {
-      assertNotNull(bausparBerechnungsAnfrage.getAbzuloesendesDarlehenInEuro() != null);
+      assertNotNull(bausparBerechnungsAnfrage.getAuszahlungsbetragBeiZuteilung() != null);
     }
     assertNotNull(bausparBerechnungsAnfrage.getDarlehensWunsch());
 
@@ -66,6 +67,16 @@ public class FachlicheBeispiele {
 
     pruefeSparplan(berechnetesBausparAngebot.getSparPhase().getSparPlan(), berechnetesBausparAngebot.getAbschlussgebuehr().getAbschlussgebuehrBetragInEuro().negate());
     pruefeTilgungsplan(berechnetesBausparAngebot.getBausparDarlehen().getTilgungsPlan());
+
+  }
+
+  @Test
+  public void dokumentenAnfrageIstSyntaktischKorrekt() throws IOException {
+
+    DokumentErzeugenAnfrage dokumentErzeugenAnfrage = objectMapper.readValue(getClass().getResourceAsStream("/testfall1/dokumenteanfrage.json"), DokumentErzeugenAnfrage.class);
+
+    assertNotNull(dokumentErzeugenAnfrage);
+
 
   }
 

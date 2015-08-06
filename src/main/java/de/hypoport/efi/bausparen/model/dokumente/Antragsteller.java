@@ -7,7 +7,7 @@ public class Antragsteller {
   Anrede anrede; //check
   String titel; //check
   String nachName; //check
-  String vorName; //check
+  String vorname; //check
   LocalDate geburtsDatum; //check
   String geburtsName; //check
   String staatsangehoerigkeit; //check
@@ -18,7 +18,7 @@ public class Antragsteller {
 
   FamilienStand familienStand;//check
 
-  KontoDaten kontoDaten;//check
+  ZahlungsDaten zahlungsDaten;//check
 
   public String getNachName() {
     return nachName;
@@ -28,12 +28,12 @@ public class Antragsteller {
     this.nachName = nachName;
   }
 
-  public String getVorName() {
-    return vorName;
+  public String getVorname() {
+    return vorname;
   }
 
-  public void setVorName(String vorName) {
-    this.vorName = vorName;
+  public void setVorname(String vorname) {
+    this.vorname = vorname;
   }
 
   public Anrede getAnrede() {
@@ -100,11 +100,11 @@ public class Antragsteller {
     this.familienStand = familienStand;
   }
 
-  public KontoDaten getKontoDaten() {
-    return kontoDaten;
+  public ZahlungsDaten getZahlungsDaten() {
+    return zahlungsDaten;
   }
 
-  public void setKontoDaten(KontoDaten kontoDaten) {
-    this.kontoDaten = kontoDaten;
+  public void setZahlungsDaten(ZahlungsDaten zahlungsDaten) {
+    this.zahlungsDaten = zahlungsDaten;
   }
 }
