@@ -23,12 +23,13 @@ import java.util.Base64;
 import static javax.servlet.http.HttpServletResponse.SC_OK;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @RestController
 @Api(value = "/dokumente", description = "Dokumente Service")
 public class BausparDokumenteController {
 
-  @RequestMapping(value = "dokumente/", method = GET, produces = APPLICATION_JSON_VALUE + ";charset=UTF-8")
+  @RequestMapping(value = "dokumente/", method = POST, produces = APPLICATION_JSON_VALUE + ";charset=UTF-8")
   @ApiOperation(
       value = "Erzeuge Dokument",
       response = DokumentErzeugenAntwort.class)
