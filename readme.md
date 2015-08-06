@@ -11,7 +11,8 @@
 * REST Messages und URLs beschreiben
 * Beispielkommunikation einbinden
 * Schnittstellenversionierung definieren und beschreiben
-
+* Dokumente-SST muss Angebotsdaten mitgeliefert bekommen
+* Dokumente Antwort um Unvollständigkeits Meldung (für Loggingzwecke) ergänzen
 
 
 ## Beschreibung.

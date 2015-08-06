@@ -1,9 +1,14 @@
 package de.hypoport.efi.bausparen.model.dokumente;
 
+import de.hypoport.efi.bausparen.model.berechnung.FachlicheMeldung;
+
+import java.util.List;
+
 public class Dokument {
 
   String dokumentName;
   String dokumentBase64Encoded;
+  List<FachlicheMeldung> vollstaendigkeitsMeldungen;
 
   public String getDokumentName() {
     return dokumentName;

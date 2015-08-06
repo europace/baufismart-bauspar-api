@@ -1,8 +1,9 @@
 {
   "berechnetesBausparAngebot": {
+    "tarif": "T1",
+    "berechnungsziel": "SPARBEITRAG_INKL_VL",
     "abschlussgebuehr": {
       "abschlussgebuehrBetragInEuro": 500,
-      "abschlussgebuehrHoeheInProzent": 1,
       "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG"
     },
     "bausparDarlehen": {
@@ -216,14 +217,15 @@
       "zahlungsrhythmus": "MONATLICH"
     },
     "bausparsummeInEuro": 50000,
-    "berechnungsziel": "SPARBEITRAG_INKL_VL",
+
     "gesamtlaufzeitKomplettInMonaten": 300,
     "gesamtleistungKomplettInEuro": 56677.04,
     "kontogebuehrJaehrlichInEuro": 0,
     "laufzeitBisZuteilungInMonaten": 120,
     "meldungen": [
       {
-        "text": "Hier könnte Ihr Hinweistext stehen! TODO Meldungsmachbarkeitsstatus einführen"
+        "text": "Hier könnte Ihr Hinweistext stehen!",
+        "status": "HINWEIS"
       }
     ],
     "sparPhase": {
@@ -233,7 +235,7 @@
       "guthabenBeiZuteilungInEuro": 20455.93,
       "guthabenzinsBetragInEuro": 256.33,
       "guthabenzinsInProzent": 0.476,
-      "regelsparbeitragInEuro": 168.33,
+      "regelsparbeitragInEuro": 150.0,
       "sparPlan": {
         "zahlungen": [
           {"abgeltungsSteuerInEuro":0, "datum":"2015-09-30", "gebuehrenInEuro":0,"kontofuehrungsGebuehrInEuro":0,"saldoNachZahlungInEuro":168.33,"zahlungInEuro":668.33,"zinsInEuro":0},
@@ -371,7 +373,7 @@
       "zahlungsrhythmus": "MONATLICH"
     },
     "sparbeitragInEuro": 168.33,
-    "tarif": "T1",
+
     "zahlungsbetragEinmalzahlungInEuro": 0,
     "zuteilungsTermin": "2025-09-01"
   }
