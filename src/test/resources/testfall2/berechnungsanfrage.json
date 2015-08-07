@@ -1,8 +1,15 @@
 {
   "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
-  "auszahlungsbetragBeiZuteilung": 50000,
+  "auszahlungsbetragBeiZuteilung": 150000,
   "berechnungsZiel": "SPARBEITRAG_INKL_VL",
   "darlehensWunsch": "MIT_DARLEHEN",
-  "laufzeitBisZuteilungInMonaten": 120,
-  "zielTarif": "T1"
+  "laufzeitBisZuteilungInMonaten": 240,
+  "zielTarif": "T2",
+  "sparBeitraege": [
+    {
+      "beitrag": 10000,
+      "zahlungAb": "2015-09-30",
+      "zahlungsrhythmus": "EINMALIG"
+    }
+  ],
 }
