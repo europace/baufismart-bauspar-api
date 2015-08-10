@@ -31,6 +31,8 @@ public class Bausparangebot {
 
   List<FachlicheMeldung> meldungen;
 
+  private LocalDate vertragsBeginn;
+
   public String getTarif() {
     return tarif;
   }
@@ -141,5 +143,13 @@ public class Bausparangebot {
 
   public void setMeldungen(List<FachlicheMeldung> meldungen) {
     this.meldungen = meldungen;
+  }
+
+  public LocalDate getVertragsBeginn() {
+    return vertragsBeginn;
+  }
+
+  public void setVertragsBeginn(LocalDate vertragsBeginn) {
+    this.vertragsBeginn = vertragsBeginn;
   }
 }
