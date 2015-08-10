@@ -23,6 +23,33 @@ public class BausparBerechnungsAnfrage {
 
   DarlehensWunsch darlehensWunsch; //check
 
+  String vermittlerNr;
+  String requestId;
+
+  public LocalDate getZuteilungstermin() {
+    return zuteilungstermin;
+  }
+
+  public void setZuteilungstermin(LocalDate zuteilungstermin) {
+    this.zuteilungstermin = zuteilungstermin;
+  }
+
+  public String getVermittlerNr() {
+    return vermittlerNr;
+  }
+
+  public void setVermittlerNr(String vermittlerNr) {
+    this.vermittlerNr = vermittlerNr;
+  }
+
+  public String getRequestId() {
+    return requestId;
+  }
+
+  public void setRequestId(String requestId) {
+    this.requestId = requestId;
+  }
+
   public String getZielTarif() {
     return zielTarif;
   }
