@@ -76,41 +76,49 @@ Die Schnittstelle wird über REST URLs dargestellt, die Nachrichten im JSON Form
 
       {
         "abschlussgebuehrenbehandlung": "VERRECHUNG",
-x        "auszahlungsbetragBeiZuteilung": 50000,
-x        "bausparsummeInEuro": 50000,
-x        "berechnungsZiel": "SPARBEITRAG_INKL_VL",
+        "auszahlungsbetragBeiZuteilung": 50000,
+        "bausparsummeInEuro": 50000,
+        "berechnungsZiel": "SPARBEITRAG_INKL_VL",
         "darlehensWunsch": "MIT_DARLEHEN",
         "laufzeitBisZuteilungInMonaten": 112,
         "requestId": "XAJNvEbn",
-x        "sparBeitraege": [
-x          {
-x            "beitrag": 150,
-x            "zahlungAb": "2015-09-01",
-x            "zahlungBis": "2025-12-31",
-x            "zahlungsrhythmus": "MONATLICH"
-x          }
-x        ],
+        "sparBeitraege": [
+          {
+           "beitrag": 150,
+            "zahlungAb": "2015-09-01",
+            "zahlungBis": "2025-12-31",
+            "zahlungsrhythmus": "MONATLICH"
+          }
+        ],
         "tilgungsBeitrag": {
           "rateInEuro": 150,
           "zahlungsrhythmus": "MONATLICH"
         },
         "vermittlerNr": "A123456",
-x        "zielTarif": "T1",
-x        "zuteilungstermin": "2026-01-01"
+        "zielTarif": "T1",
+        "zuteilungstermin": "2026-01-01"
       }
 
-| Feld                          | Typ           | Beschreibung |
-| zielTarif                     | String        | Die technische Tarif ID, so wie sie von GET /tarife geliefert wird. |
-| berechnungsZiel               | Auflistung    | Mögliche Werte: ``SPARBEITRAG_INKL_VL``, ``BAUSPARSUMME``, ``ZUTEILUNGSTERMIN``, ``LAUFZEIT_BIS_ZUTEILUNG`` |
-| bausparSummeInEuro            | Zahl          | Gewünschte Bausparsumme in Euro |
-| auszahlungsbetragBeiZuteilung | Zahl          | Der Betrag des Bausparvertrags der bei Zuteilung ausgezahlt wird in Euro |
-| laufzeitBisZuteilungInMonaten | Zahl          | Die Anzahl Monate zwischen Vertragsbeginn und Zuteilungsdatum. Entweder wird dieses Feld oder ``zuteilungstermin`` geliefert.|
-| zuteilungstermin              | Datum         | Das gewünschte Zuteilungsdatum. Alternativ kann ``aufzeitBisZuteilungInMonaten`` geliefert werden. |
-| sparBeitraege                 | Liste         | Ermöglicht die Erfassung mehrerer unterschiedlicher Sparzahlungen oder Einmalzahlungen. |
-| sparBeitraege[i].beitrag      | Zahl          | Der Sparbeitrag dieser Zahlung ein Euro. |
-| sparBeitraege[i].zahlungAb    | Datum         | Der Startzeitpunkt ab dem dieser Sparbeitrag geleistet wird. |
-| sparBeitraege[i].zahlungBis   | Datum         | Der letzte Zeitpunkt bis zu dem dieser Sparbeitrag geleistet wird. |
-| sparBeitraege[i].zahlungsrhythmus | Auflistung | Legt fest, in welchen Intervallen dieser Sparbeitrag gezahlt wird. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
+| Feld                               | Typ           | Beschreibung |
+|------------------------------------|---------------|--------------|
+| zielTarif                          | String        | Die technische Tarif ID, so wie sie von GET /tarife geliefert wird. |
+| berechnungsZiel                    | Auflistung    | Mögliche Werte: ``SPARBEITRAG_INKL_VL``, ``BAUSPARSUMME``, ``ZUTEILUNGSTERMIN``, ``LAUFZEIT_BIS_ZUTEILUNG`` |
+| bausparSummeInEuro                 | Zahl          | Gewünschte Bausparsumme in Euro |
+| auszahlungsbetragBeiZuteilung      | Zahl          | Der Betrag des Bausparvertrags der bei Zuteilung ausgezahlt wird in Euro |
+| laufzeitBisZuteilungInMonaten      | Zahl          | Die Anzahl Monate zwischen Vertragsbeginn und Zuteilungsdatum. Entweder wird dieses Feld oder ``zuteilungstermin`` geliefert.|
+| zuteilungstermin                   | Datum         | Das gewünschte Zuteilungsdatum. Alternativ kann ``laufzeitBisZuteilungInMonaten`` geliefert werden. |
+| sparBeitraege                      | Liste         | Ermöglicht die Erfassung mehrerer unterschiedlicher Sparzahlungen oder Einmalzahlungen. |
+| sparBeitraege[i].beitrag           | Zahl          | Der Sparbeitrag dieser Zahlung ein Euro. |
+| sparBeitraege[i].zahlungAb         | Datum         | Der Startzeitpunkt ab dem dieser Sparbeitrag geleistet wird. |
+| sparBeitraege[i].zahlungBis        | Datum         | Der letzte Zeitpunkt bis zu dem dieser Sparbeitrag geleistet wird. |
+| sparBeitraege[i].zahlungsrhythmus  | Auflistung    | Legt fest, in welchen Intervallen dieser Sparbeitrag gezahlt wird. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
+| tilgungsBeitrag.rateInEuro         | Zahl          | Höhe der Tilgungsrate(Zins und Tilgung des Darlehens)|
+| tilgungsBeitrag.zahlungsrhythmus   | Auflistung    | Legt fest, in welchen Intervallen die Tilgungsrate gezahlt wird. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
+| abschlussgebuehrenbehandlung       | Auflistung    | Wenn nicht vorgegeben, dann gibt die BSK die Abschlussgebührenverrechnung vor. Mögliche Werte sind: ``VERRECHUNG``, ``SOFORTZAHLUNG``. |
+| darlehensWunsch                    | Auflistung    | Soll ein Bauspar- oder Zuteilungsdarlehen in Anspruch genommen werden? Mögliche Werte sind: ``MIT_DARLEHEN``, ``OHNE_DARLEHEN``. |
+| vermittlerNr                       | String        | Die ID des Vermittlers im Europace System. |
+| requestId                          | String        | Ordnet die Anfrage einer EUROPACE Anfrage für Loggingzwecke zu. |
+
 
 #### Antwort
 
@@ -181,19 +189,62 @@ x        "zuteilungstermin": "2026-01-01"
           },
           "sparbeitragInEuro": 0,
           "tarif": "string",
-          "vertragsBeginn": "string",
+          "vertragsBeginn": "2015-09-01",
           "zahlungsbetragEinmalzahlungInEuro": 0,
           "zuteilungsTermin": "string"
         }
       }
 
-EUROPACE definiert das Schema für die Schnittstelle. Jede Bausparkasse stellt sicher, dass ihre Schnittstelle nach dem definierten
-Standard-Schema arbeitet. Die Daten, die über diese Schnittstelle ausgetauscht werden umfassen in der Anfrage Daten zum Bausparwunsch,
-zum Antragsteller und zum Vertrieb. Die Antwort enthält einen vollständig berechneten Bausparvertrag inkl. Sparplan, sowie die Berechnung
-des Bauspardarlehens inkl. Tilgungsplan. Eine erste Auflistung der Daten befindet sich im Anhang. Die genannten Datenfelder stellen einen
-Rahmen, der nach aktueller Einschätzung erforderlichen Datenfelder dar (zum aktuellen Zeitpunkt kann nicht ausgeschlossen werden, dass
-einzelne Felder im Rahmen der Detaildefinition des Schemas hinzugefügt oder entfernt werden). Feldformate und Details werden im
-Projektverlauf durch Hypoport/EUROPACE definiert.
+| Name	|	Typ	|	Beschreibung
+|--------|------|-------------------|
+|	tarif	                        |	String	|	der Tarif wird auf Seiten der BSK ermittelt
+| berechnungsZiel               | Aufzählung    | Mögliche Werte: ``SPARBEITRAG_INKL_VL``, ``BAUSPARSUMME``, ``ZUTEILUNGSTERMIN``, ``LAUFZEIT_BIS_ZUTEILUNG`` |
+|	bausparsummeInEuro	          |	Zahl	|	 Betrag der Bausparsumme in Euro |
+|	sparbeitragInEuro	            |	Zahl	|	Sparbeitrag |
+|	laufzeitBisZuteilungInMonaten	|	Zahl	|	Anzahl Monate bis zur Zuteilung |
+|	zuteilungsTermin	            |	Datum	|	Zuteilungstermin |
+|	bausparDarlehen.hoeheBauspardarlehenInEuro	|	Zahl |	 Höhe des Bauspardarlehens in Euro.|
+|	bausparDarlehen.zahlungsRhythmus	|	Aufzählung	|	Zahlungsrhythmus für die Tilgungsrate.  Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
+|	bausparDarlehen.zahlungsBeitragTilgungsRateInEuro	|	Euro	|	Höhe der Tilgungsrate(Zins und Tilgung des Darlehens pro angegebenen Rhythmus) |
+|	zahlungsbetragEinmalzahlungInEuro	|	Zahl |	Einmalzahlung in Euro |
+|	sparPhase.zahlungsRhythmus	|	Aufzählung	|	Zahlungsrhytmus für den Sparbeitrag.  Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
+|	vertragsBeginn	|	Datum	|	|
+|	abschlussgebuehrenbehandlung	|	Aufzählung	| Mögliche Werte sind: ``VERRECHUNG``, ``SOFORTZAHLUNG``. |
+|	abschlussgebuehrHoeheInProzent	|	Zahl |	Abschlussgebühr in Prozent |
+|	abschlussgebuehrBetragInEuro	|	Zahl |	Abschlussgebühr in Euro|
+|	kontoGebuehrJaehrlichInEuro	|	Zahl	| |
+|	sparPhase.guthabenzinsInProzent	|	Zahl |		|
+|	sparPhase.guthabenzinsBetragInEuro	|	Zahl |		|
+|	sparPhase.bonuszinsInProzent	|	Zahl |		|
+|	sparPhase.bonuszinsBetragInEuro	|	Zahl 	|		|
+|	sparPhase.guthabenBeiZuteilungInEuro	| Zahl |	 	|
+|	sparPhase.regelsparbeitragInEuro	|	Zahl	|	 	 	|
+|	sparPhase.gesamtleistungSparphaseInEuro	|	Zahl |	|
+|	bausparDarlehen.sollzinsInProzent	|	Zahl |	 	 	|
+|	bausparDarlehen.effektiverJahreszinsInProzent	|	Zahl |	 	 	|
+|	bausparDarlehen.darlehenslaufzeitInMonaten	|	Zahl	|		 	|
+|	bausparDarlehen.tilgungsende	|	Datum	|		 	|
+|	gesamtleistungKomplettInEuro	|	Euro	|	|
+|	gesamtlaufzeitKomplettInMonaten	|	Zahl |	 |
+|	bausparDarlehen.tilgungsPlan	|	TILGUNGSPLAN	|	Jede einzelne Zahlung des Bauspardarlehens bis zur Vollablösung. |
+|	bausparDarlehen.tilgungsPlan.zahlungen[].datum	|	Datum	|	|
+|	bausparDarlehen.tilgungsPlan.zahlungen[].gebuehrenInEuro	|	Zahl	|	|
+|	bausparDarlehen.tilgungsPlan.zahlungen[].kontofuehrungsGebuehrInEuro	|	Zahl	|	|
+|	bausparDarlehen.tilgungsPlan.zahlungen[].saldoNachZahlungInEuro	|	Zahl	|	|
+|	bausparDarlehen.tilgungsPlan.zahlungen[].tilgungInEuro	|	Zahl	|	|
+|	bausparDarlehen.tilgungsPlan.zahlungen[].zahlungInEuro	|	Zahl	|	|
+|	bausparDarlehen.tilgungsPlan.zahlungen[].zinsInEuro	|	Zahl	|	|
+|	sparPhase.sparPlan	|	SPARPLAN	|	Jede Zahlung in das Bausparkonto in der Sparphase. |
+|	sparPhase.sparPlan.zahlungen[].datum	|	Zahl	|	|
+|	sparPhase.sparPlan.zahlungen[].abgeltungsSteuerInEuro	|	Zahl	|	|
+|	sparPhase.sparPlan.zahlungen[].gebuehrenInEuro	|	Zahl	|	|
+|	sparPhase.sparPlan.zahlungen[].kontofuehrungsGebuehrInEuro	|	Zahl	|	|
+|	sparPhase.sparPlan.zahlungen[].saldoNachZahlungInEuro	|	Zahl	|	|
+|	sparPhase.sparPlan.zahlungen[].zahlungInEuro	|	Zahl	|	Die Sparrate |
+|	sparPhase.sparPlan.zahlungen[].zinsInEuro	|	Zahl	|	Der Betrag an Guthabenzinsen der zu diesem Datum mit dem Bausparvertrag verrechnet wird. |
+| meldungen.text	|	STRING	|	menschlich lesbare Fehlerbeschreibung |
+| meldungen.status	|	Aufzählung	| Auswirkung der Meldung auf die Annehmbarkeit des Bausparantrags. Mögliche Werte: ``HINWEIS``, ``BERECHNUNG_NICHT_MOEGLICH_AUFGRUND_FEHLENDER_DATEN``, ``VOLLSTAENDIGKEIT_DOKUMENT``, ``NICHT_MACHBAR``, ``TECHNISCHER_FEHLER``.|
+| meldungen.zuordnung	|	Aufzählung	|	menschlich lesbare Fehlerbeschreibung. Mögliche Werte: ``DARLEHENSNEHMER1``, ``DARLEHENSNEHMER2``, ``VORHABEN``. |
 
 
 EUROPACE definiert das Schema für die Schnittstelle. Jede Bausparkasse stellt sicher, dass ihre Schnittstelle nach dem definierten
