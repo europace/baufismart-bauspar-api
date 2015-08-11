@@ -21,14 +21,14 @@
       "titel": null,
       "vorname": "Max",
       "nachName": "Muster",
-      "geburtsDatum": null,
+      "geburtsDatum":"1970-03-20",
       "geburtsName": null,
-      "staatsangehoerigkeit": "Deutsch",
+      "staatsangehoerigkeit": "Französisch",
       "adresse": {
-        "strasse": "Steinweg.",
-        "hausNummer": "8",
-        "wohnOrt": "Garmisch-Partenkirchen",
-        "postleitzahl": "82475",
+        "strasse": "Wohnstraße.",
+        "hausNummer": "12",
+        "wohnOrt": "Berlin",
+        "postleitzahl": "10115",
         "landWohnsitz": "DE"
       },
       "kontakt": {
@@ -36,7 +36,36 @@
         "mobilNummer": null,
         "eMailAdresse": null
       },
-      "familienStand": "LEDIG",
+      "familienStand": "LEBENSPARTNER",
+
+      "zahlungsDaten": {
+        "iban": null,
+        "nameKreditInstitut": null,
+        "zahlungsForm": "LASTSCHRIFT"
+      }
+
+    },
+    {
+      "anrede": "FRAU",
+      "titel": null,
+      "vorname": "Anne",
+      "nachName": "Musterfrau",
+      "geburtsDatum": "1974-02-21",
+      "geburtsName": null,
+      "staatsangehoerigkeit": "Schweizerisch",
+      "adresse": {
+        "strasse": "Heideweg.",
+        "hausNummer": "1a",
+        "wohnOrt": "Berlin",
+        "postleitzahl": "10119",
+        "landWohnsitz": "DE"
+      },
+      "kontakt": {
+        "telefonNummer": null,
+        "mobilNummer": null,
+        "eMailAdresse": null
+      },
+      "familienStand": "LEBENSPARTNER",
 
       "zahlungsDaten": {
         "iban": null,
