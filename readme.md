@@ -7,12 +7,11 @@
 
 ## TODO
 
-* Excel Feldbeschreibung einbinden
-* REST Messages und URLs beschreiben
+* Excel Dokumentanfrage in SST Beschreibung übertragen
+* Excel Dokumentantwort in SST Beschreibung übertragen
 * Beispielkommunikation einbinden
 * Schnittstellenversionierung definieren und beschreiben
 * Dokumente-SST muss Angebotsdaten mitgeliefert bekommen
-* Dokumente Antwort um Unvollständigkeits Meldung (für Loggingzwecke) ergänzen
 
 
 ## Beschreibung.
@@ -44,12 +43,37 @@ bereitgestellt werden.
 3) Für ein berechnetes Angebot werden über eine weitere REST-Anfrage unter der URL `http://host/europace/v1/dokumente/` mit einem GET Befehl die zum Angebot generierten Dokumente geholt. 
 
 Weitere Informationen und eine genauere Beschreibung der REST-Schnittstelle sowie die Beschreibung der Daten werden in Beispiel Aufrufen und weiteren Tabellen dargestellt.
-  
+
+
+## Schnittstellenprototyp
+
+In diesem Github Projekt existiert ein minimaler Schnittstellenprototyp, der Anfragen im beschriebenen Schnittstellenformat annimmt und Minimalantworten zurücksendet. Gleichzeitig ist
+eine interaktive Dokumentation des Schnittstellenformats über SwaggerUI eingebunden. Voraussetzung zum Übersetzen und Ausführen des Prototyps ist eine Internetverbindung und das Java 8 JDK
+( http://www.oracle.com/technetwork/java/javase/downloads/index.html ).
+
+Das Prototyp Projekt ist in Java implementiert. Es benutzt Spring Boot als Container und Gradle als Buildsystem.
+
+Aus dem Projektverzeichnis läßt es sich mit dem Befehl ``$ ./gradlew run`` übersetzen und ausführen.
+
+
 ## Schnittstellendesign
 
 **TODO** Durch echte Schemabeschreibung ersetzen mit Hinweis auf Excel und Swagger in Prototyp
 
+EUROPACE definiert das Schema für die Schnittstelle. Jede Bausparkasse stellt sicher, dass ihre Schnittstelle nach dem definierten
+Standard-Schema arbeitet. Die Daten, die über diese Schnittstelle ausgetauscht werden umfassen in der Anfrage Daten zum Bausparwunsch,
+zum Antragsteller und zum Vertrieb. Die Antwort enthält einen vollständig berechneten Bausparvertrag inkl. Sparplan, sowie die Berechnung
+des Bauspardarlehens inkl. Tilgungsplan. Eine erste Auflistung der Daten befindet sich im Anhang. Die genannten Datenfelder stellen einen
+Rahmen, der nach aktueller Einschätzung erforderlichen Datenfelder dar (zum aktuellen Zeitpunkt kann nicht ausgeschlossen werden, dass
+einzelne Felder im Rahmen der Detaildefinition des Schemas hinzugefügt oder entfernt werden).
+
 Die Schnittstelle wird über REST URLs dargestellt, die Nachrichten im JSON Format empfangen und zurückliefern. Das genaue Format ist in diesem Projekt definiert.
+
+**Festlegungen:**
+Prozentwerte werden 100-basiert übertragen. 1% wird als 1.0 übertragen, 100% als 100,0. Prozentwerte sind am Suffix InProzent am Attributnamen erkennbar.
+Geldbeträge werden als reine Zahlwerte mit 2 Nachkommastellen übertragen. Die Währung ist immer Euro. Alle Geldbetrag-Attribute sind am Suffix InEuro erkennbar.
+Datumsangaben werden als Zeichenketten im Format yyyy-mm-dd übertragen.
+
 
 ### Schnittstellenresource GET /bauspartarife/
 
@@ -205,7 +229,7 @@ Die Schnittstelle wird über REST URLs dargestellt, die Nachrichten im JSON Form
 | zuteilungsTermin                                                      | Datum        | Zuteilungstermin                                                                                                                                                  |
 | bausparDarlehen.hoeheBauspardarlehenInEuro                            | Zahl         | Höhe des Bauspardarlehens in Euro.                                                                                                                                |
 | bausparDarlehen.zahlungsRhythmus                                      | Aufzählung   | Zahlungsrhythmus für die Tilgungsrate.  Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``.                 |
-| bausparDarlehen.zahlungsBeitragTilgungsRateInEuro                     | Euro         | Höhe der Tilgungsrate(Zins und Tilgung des Darlehens pro angegebenen Rhythmus)                                                                                    |
+| bauparDarlehen.zahlungsBeitragTilgungsRateInEuro                     | Euro         | Höhe der Tilgungsrate(Zins und Tilgung des Darlehens pro angegebenen Rhythmus)                                                                                    |
 | zahlungsbetragEinmalzahlungInEuro                                     | Zahl         | Einmalzahlung in Euro                                                                                                                                             |
 | sparPhase.zahlungsRhythmus                                            | Aufzählung   | Zahlungsrhytmus für den Sparbeitrag.  Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``.                   |
 | vertragsBeginn                                                        | Datum        |                                                                                                                                                                   |
@@ -247,18 +271,7 @@ Die Schnittstelle wird über REST URLs dargestellt, die Nachrichten im JSON Form
 | meldungen.zuordnung                                                   | Aufzählung   | menschlich lesbare Fehlerbeschreibung. Mögliche Werte: ``DARLEHENSNEHMER1``, ``DARLEHENSNEHMER2``, ``VORHABEN``.                                                  |
 
 
-EUROPACE definiert das Schema für die Schnittstelle. Jede Bausparkasse stellt sicher, dass ihre Schnittstelle nach dem definierten
-Standard-Schema arbeitet. Die Daten, die über diese Schnittstelle ausgetauscht werden umfassen in der Anfrage Daten zum Bausparwunsch,
-zum Antragsteller und zum Vertrieb. Die Antwort enthält einen vollständig berechneten Bausparvertrag inkl. Sparplan, sowie die Berechnung
-des Bauspardarlehens inkl. Tilgungsplan. Eine erste Auflistung der Daten befindet sich im Anhang. Die genannten Datenfelder stellen einen
-Rahmen, der nach aktueller Einschätzung erforderlichen Datenfelder dar (zum aktuellen Zeitpunkt kann nicht ausgeschlossen werden, dass
-einzelne Felder im Rahmen der Detaildefinition des Schemas hinzugefügt oder entfernt werden). Feldformate und Details werden im
-Projektverlauf durch Hypoport/EUROPACE definiert.
 
-**Festlegungen:**
-
-Prozentwerte werden 100-basiert übertragen. 1% wird als 1.0 übertragen, 100% als 100,0. Prozentwerte sind am Suffix InProzent am Attributnamen erkennbar.
-Geldbeträge werden als reine Zahlwerte mit 2 Nachkommastellen übertragen. Die Währung ist immer Euro. Am Geldbeträge sind am Suffix InEuro erkennbar.
 
 
 ## Abwärtskompatiblität
