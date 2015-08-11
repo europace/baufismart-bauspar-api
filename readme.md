@@ -195,56 +195,56 @@ Die Schnittstelle wird über REST URLs dargestellt, die Nachrichten im JSON Form
         }
       }
 
-| Name	|	Typ	|	Beschreibung
-|--------|------|-------------------|
-|	tarif	                        |	String	|	der Tarif wird auf Seiten der BSK ermittelt
-| berechnungsZiel               | Aufzählung    | Mögliche Werte: ``SPARBEITRAG_INKL_VL``, ``BAUSPARSUMME``, ``ZUTEILUNGSTERMIN``, ``LAUFZEIT_BIS_ZUTEILUNG`` |
-|	bausparsummeInEuro	          |	Zahl	|	 Betrag der Bausparsumme in Euro |
-|	sparbeitragInEuro	            |	Zahl	|	Sparbeitrag |
-|	laufzeitBisZuteilungInMonaten	|	Zahl	|	Anzahl Monate bis zur Zuteilung |
-|	zuteilungsTermin	            |	Datum	|	Zuteilungstermin |
-|	bausparDarlehen.hoeheBauspardarlehenInEuro	|	Zahl |	 Höhe des Bauspardarlehens in Euro.|
-|	bausparDarlehen.zahlungsRhythmus	|	Aufzählung	|	Zahlungsrhythmus für die Tilgungsrate.  Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
-|	bausparDarlehen.zahlungsBeitragTilgungsRateInEuro	|	Euro	|	Höhe der Tilgungsrate(Zins und Tilgung des Darlehens pro angegebenen Rhythmus) |
-|	zahlungsbetragEinmalzahlungInEuro	|	Zahl |	Einmalzahlung in Euro |
-|	sparPhase.zahlungsRhythmus	|	Aufzählung	|	Zahlungsrhytmus für den Sparbeitrag.  Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
-|	vertragsBeginn	|	Datum	|	|
-|	abschlussgebuehrenbehandlung	|	Aufzählung	| Mögliche Werte sind: ``VERRECHUNG``, ``SOFORTZAHLUNG``. |
-|	abschlussgebuehrHoeheInProzent	|	Zahl |	Abschlussgebühr in Prozent |
-|	abschlussgebuehrBetragInEuro	|	Zahl |	Abschlussgebühr in Euro|
-|	kontoGebuehrJaehrlichInEuro	|	Zahl	| |
-|	sparPhase.guthabenzinsInProzent	|	Zahl |		|
-|	sparPhase.guthabenzinsBetragInEuro	|	Zahl |		|
-|	sparPhase.bonuszinsInProzent	|	Zahl |		|
-|	sparPhase.bonuszinsBetragInEuro	|	Zahl 	|		|
-|	sparPhase.guthabenBeiZuteilungInEuro	| Zahl |	 	|
-|	sparPhase.regelsparbeitragInEuro	|	Zahl	|	 	 	|
-|	sparPhase.gesamtleistungSparphaseInEuro	|	Zahl |	|
-|	bausparDarlehen.sollzinsInProzent	|	Zahl |	 	 	|
-|	bausparDarlehen.effektiverJahreszinsInProzent	|	Zahl |	 	 	|
-|	bausparDarlehen.darlehenslaufzeitInMonaten	|	Zahl	|		 	|
-|	bausparDarlehen.tilgungsende	|	Datum	|		 	|
-|	gesamtleistungKomplettInEuro	|	Euro	|	|
-|	gesamtlaufzeitKomplettInMonaten	|	Zahl |	 |
-|	bausparDarlehen.tilgungsPlan	|	TILGUNGSPLAN	|	Jede einzelne Zahlung des Bauspardarlehens bis zur Vollablösung. |
-|	bausparDarlehen.tilgungsPlan.zahlungen[].datum	|	Datum	|	|
-|	bausparDarlehen.tilgungsPlan.zahlungen[].gebuehrenInEuro	|	Zahl	|	|
-|	bausparDarlehen.tilgungsPlan.zahlungen[].kontofuehrungsGebuehrInEuro	|	Zahl	|	|
-|	bausparDarlehen.tilgungsPlan.zahlungen[].saldoNachZahlungInEuro	|	Zahl	|	|
-|	bausparDarlehen.tilgungsPlan.zahlungen[].tilgungInEuro	|	Zahl	|	|
-|	bausparDarlehen.tilgungsPlan.zahlungen[].zahlungInEuro	|	Zahl	|	|
-|	bausparDarlehen.tilgungsPlan.zahlungen[].zinsInEuro	|	Zahl	|	|
-|	sparPhase.sparPlan	|	SPARPLAN	|	Jede Zahlung in das Bausparkonto in der Sparphase. |
-|	sparPhase.sparPlan.zahlungen[].datum	|	Zahl	|	|
-|	sparPhase.sparPlan.zahlungen[].abgeltungsSteuerInEuro	|	Zahl	|	|
-|	sparPhase.sparPlan.zahlungen[].gebuehrenInEuro	|	Zahl	|	|
-|	sparPhase.sparPlan.zahlungen[].kontofuehrungsGebuehrInEuro	|	Zahl	|	|
-|	sparPhase.sparPlan.zahlungen[].saldoNachZahlungInEuro	|	Zahl	|	|
-|	sparPhase.sparPlan.zahlungen[].zahlungInEuro	|	Zahl	|	Die Sparrate |
-|	sparPhase.sparPlan.zahlungen[].zinsInEuro	|	Zahl	|	Der Betrag an Guthabenzinsen der zu diesem Datum mit dem Bausparvertrag verrechnet wird. |
-| meldungen.text	|	STRING	|	menschlich lesbare Fehlerbeschreibung |
-| meldungen.status	|	Aufzählung	| Auswirkung der Meldung auf die Annehmbarkeit des Bausparantrags. Mögliche Werte: ``HINWEIS``, ``BERECHNUNG_NICHT_MOEGLICH_AUFGRUND_FEHLENDER_DATEN``, ``VOLLSTAENDIGKEIT_DOKUMENT``, ``NICHT_MACHBAR``, ``TECHNISCHER_FEHLER``.|
-| meldungen.zuordnung	|	Aufzählung	|	menschlich lesbare Fehlerbeschreibung. Mögliche Werte: ``DARLEHENSNEHMER1``, ``DARLEHENSNEHMER2``, ``VORHABEN``. |
+| Name                                                                  | Typ          | Beschreibung                                                                                                                                                      |
+|-----------------------------------------------------------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| tarif                                                                 | String       | der Tarif wird auf Seiten der BSK ermittelt                                                                                                                       |
+| berechnungsZiel                                                       | Aufzählung   | Mögliche Werte: ``SPARBEITRAG_INKL_VL``, ``BAUSPARSUMME``, ``ZUTEILUNGSTERMIN``, ``LAUFZEIT_BIS_ZUTEILUNG``                                                       |
+| bausparsummeInEuro                                                    | Zahl         | Betrag der Bausparsumme in Euro                                                                                                                                   |
+| sparbeitragInEuro                                                     | Zahl         | Sparbeitrag                                                                                                                                                       |
+| laufzeitBisZuteilungInMonaten                                         | Zahl         | Anzahl Monate bis zur Zuteilung                                                                                                                                   |
+| zuteilungsTermin                                                      | Datum        | Zuteilungstermin                                                                                                                                                  |
+| bausparDarlehen.hoeheBauspardarlehenInEuro                            | Zahl         | Höhe des Bauspardarlehens in Euro.                                                                                                                                |
+| bausparDarlehen.zahlungsRhythmus                                      | Aufzählung   | Zahlungsrhythmus für die Tilgungsrate.  Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``.                 |
+| bausparDarlehen.zahlungsBeitragTilgungsRateInEuro                     | Euro         | Höhe der Tilgungsrate(Zins und Tilgung des Darlehens pro angegebenen Rhythmus)                                                                                    |
+| zahlungsbetragEinmalzahlungInEuro                                     | Zahl         | Einmalzahlung in Euro                                                                                                                                             |
+| sparPhase.zahlungsRhythmus                                            | Aufzählung   | Zahlungsrhytmus für den Sparbeitrag.  Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``.                   |
+| vertragsBeginn                                                        | Datum        |                                                                                                                                                                   |
+| abschlussgebuehrenbehandlung                                          | Aufzählung   | Mögliche Werte sind: ``VERRECHUNG``, ``SOFORTZAHLUNG``.                                                                                                           |
+| abschlussgebuehrHoeheInProzent                                        | Zahl         | Abschlussgebühr in Prozent                                                                                                                                        |
+| abschlussgebuehrBetragInEuro                                          | Zahl         | Abschlussgebühr in Euro                                                                                                                                           |
+| kontoGebuehrJaehrlichInEuro                                           | Zahl         |                                                                                                                                                                   |
+| sparPhase.guthabenzinsInProzent                                       | Zahl         |                                                                                                                                                                   |
+| sparPhase.guthabenzinsBetragInEuro                                    | Zahl         |                                                                                                                                                                   |
+| sparPhase.bonuszinsInProzent                                          | Zahl         |                                                                                                                                                                   |
+| sparPhase.bonuszinsBetragInEuro                                       | Zahl         |                                                                                                                                                                   |
+| sparPhase.guthabenBeiZuteilungInEuro                                  | Zahl         |                                                                                                                                                                   |
+| sparPhase.regelsparbeitragInEuro                                      | Zahl         |                                                                                                                                                                   |
+| sparPhase.gesamtleistungSparphaseInEuro                               | Zahl         |                                                                                                                                                                   |
+| bausparDarlehen.sollzinsInProzent                                     | Zahl         |                                                                                                                                                                   |
+| bausparDarlehen.effektiverJahreszinsInProzent                         | Zahl         |                                                                                                                                                                   |
+| bausparDarlehen.darlehenslaufzeitInMonaten                            | Zahl         |                                                                                                                                                                   |
+| bausparDarlehen.tilgungsende                                          | Datum        |                                                                                                                                                                   |
+| gesamtleistungKomplettInEuro                                          | Euro         |                                                                                                                                                                   |
+| gesamtlaufzeitKomplettInMonaten                                       | Zahl         |                                                                                                                                                                   |
+| bausparDarlehen.tilgungsPlan                                          | TILGUNGSPLAN | Jede einzelne Zahlung des Bauspardarlehens bis zur Vollablösung.                                                                                                  |
+| bausparDarlehen.tilgungsPlan.zahlungen[].datum                        | Datum        |                                                                                                                                                                   |
+| bausparDarlehen.tilgungsPlan.zahlungen[].gebuehrenInEuro              | Zahl         |                                                                                                                                                                   |
+| bausparDarlehen.tilgungsPlan.zahlungen[].kontofuehrungsGebuehrInEuro  | Zahl         |                                                                                                                                                                   |
+| bausparDarlehen.tilgungsPlan.zahlungen[].saldoNachZahlungInEuro       | Zahl         |                                                                                                                                                                   |
+| bausparDarlehen.tilgungsPlan.zahlungen[].tilgungInEuro                | Zahl         |                                                                                                                                                                   |
+| bausparDarlehen.tilgungsPlan.zahlungen[].zahlungInEuro                | Zahl         |                                                                                                                                                                   |
+| bausparDarlehen.tilgungsPlan.zahlungen[].zinsInEuro                   | Zahl         |                                                                                                                                                                   |
+| sparPhase.sparPlan                                                    | SPARPLAN     | Jede Zahlung in das Bausparkonto in der Sparphase.                                                                                                                |
+| sparPhase.sparPlan.zahlungen[].datum                                  | Zahl         |                                                                                                                                                                   |
+| sparPhase.sparPlan.zahlungen[].abgeltungsSteuerInEuro                 | Zahl         |                                                                                                                                                                   |
+| sparPhase.sparPlan.zahlungen[].gebuehrenInEuro                        | Zahl         |                                                                                                                                                                   |
+| sparPhase.sparPlan.zahlungen[].kontofuehrungsGebuehrInEuro            | Zahl         |                                                                                                                                                                   |
+| sparPhase.sparPlan.zahlungen[].saldoNachZahlungInEuro                 | Zahl         |                                                                                                                                                                   |
+| sparPhase.sparPlan.zahlungen[].zahlungInEuro                          | Zahl         | Die Sparrate                                                                                                                                                      |
+| sparPhase.sparPlan.zahlungen[].zinsInEuro                             | Zahl         | Der Betrag an Guthabenzinsen der zu diesem Datum mit dem Bausparvertrag verrechnet wird.                                                                          |
+| meldungen.text                                                        | STRING       | menschlich lesbare Fehlerbeschreibung   |                                                                                                                         |
+| meldungen.status                                                      | Aufzählung   | Auswirkung der Meldung auf die Annehmbarkeit des Bausparantrags. Mögliche Werte: ``HINWEIS``, ``BERECHNUNG_NICHT_MOEGLICH_AUFGRUND_FEHLENDER_DATEN``, ``VOLLSTAENDIGKEIT_DOKUMENT``, ``NICHT_MACHBAR``, ``TECHNISCHER_FEHLER``.                                                                                       |
+| meldungen.zuordnung                                                   | Aufzählung   | menschlich lesbare Fehlerbeschreibung. Mögliche Werte: ``DARLEHENSNEHMER1``, ``DARLEHENSNEHMER2``, ``VORHABEN``.                                                  |
 
 
 EUROPACE definiert das Schema für die Schnittstelle. Jede Bausparkasse stellt sicher, dass ihre Schnittstelle nach dem definierten
