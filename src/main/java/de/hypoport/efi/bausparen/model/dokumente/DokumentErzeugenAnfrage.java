@@ -16,11 +16,16 @@ public class DokumentErzeugenAnfrage {
   List<SparBeitrag> sparBeitraege;//check
 
   Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung;//check
+  BigDecimal abschlussgebuehrHoeheInEuro;
+
+  BigDecimal zahlungsbetragEinmalzahlungInEuro;
 
   List<Antragsteller> antragsteller;//check
 
 
   VermittlerDaten vermittlerDaten;//check
+
+  SparphaseDokument sparphaseDokument;
 
   public String getTarif() {
     return tarif;
@@ -76,5 +81,29 @@ public class DokumentErzeugenAnfrage {
 
   public void setVermittlerDaten(VermittlerDaten vermittlerDaten) {
     this.vermittlerDaten = vermittlerDaten;
+  }
+
+  public BigDecimal getZahlungsbetragEinmalzahlungInEuro() {
+    return zahlungsbetragEinmalzahlungInEuro;
+  }
+
+  public void setZahlungsbetragEinmalzahlungInEuro(BigDecimal zahlungsbetragEinmalzahlungInEuro) {
+    this.zahlungsbetragEinmalzahlungInEuro = zahlungsbetragEinmalzahlungInEuro;
+  }
+
+  public SparphaseDokument getSparphaseDokument() {
+    return sparphaseDokument;
+  }
+
+  public void setSparphaseDokument(SparphaseDokument sparphaseDokument) {
+    this.sparphaseDokument = sparphaseDokument;
+  }
+
+  public BigDecimal getAbschlussgebuehrHoeheInEuro() {
+    return abschlussgebuehrHoeheInEuro;
+  }
+
+  public void setAbschlussgebuehrHoeheInEuro(BigDecimal abschlussgebuehrHoeheInEuro) {
+    this.abschlussgebuehrHoeheInEuro = abschlussgebuehrHoeheInEuro;
   }
 }
