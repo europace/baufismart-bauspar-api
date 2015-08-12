@@ -12,6 +12,7 @@
 * Beispielkommunikation einbinden
 * Schnittstellenversionierung definieren und beschreiben
 * Dokumente-SST muss Angebotsdaten mitgeliefert bekommen
+* Vollständigkeitsprüfung beschreiben
 
 
 ## Beschreibung.
@@ -57,8 +58,6 @@ Aus dem Projektverzeichnis läßt es sich mit dem Befehl ``$ ./gradlew run`` üb
 
 
 ## Schnittstellendesign
-
-**TODO** Durch echte Schemabeschreibung ersetzen mit Hinweis auf Excel und Swagger in Prototyp
 
 EUROPACE definiert das Schema für die Schnittstelle. Jede Bausparkasse stellt sicher, dass ihre Schnittstelle nach dem definierten
 Standard-Schema arbeitet. Die Daten, die über diese Schnittstelle ausgetauscht werden umfassen in der Anfrage Daten zum Bausparwunsch,
@@ -271,6 +270,39 @@ Datumsangaben werden als Zeichenketten im Format yyyy-mm-dd übertragen.
 | meldungen.zuordnung                                                   | Aufzählung   | menschlich lesbare Fehlerbeschreibung. Mögliche Werte: ``DARLEHENSNEHMER1``, ``DARLEHENSNEHMER2``, ``VORHABEN``.                                                  |
 
 
+### Schnittstellenressource POST /dokumente/
+
+##### Anfrage
+
+TODO erst Modell erweitern
+
+
+#### Antwort
+    {
+      "erzeugteDokumente": [
+        {
+          "dokumentBase64Encoded": "string",
+          "dokumentName": "string",
+          "vollstaendigkeitsMeldungen": [
+            {
+              "status": "HINWEIS",
+              "text": "string",
+              "zuordnung": "DARLEHENSNEHMER1"
+            }
+          ]
+        }
+      ]
+    }
+
+| Name                                                                  | Typ          | Beschreibung                                                                                                                                                      |
+|-----------------------------------------------------------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| erzeugteDokumente[].dokumentBase64Encoded                             | String       | Der Inhalt des Dokuments als Base64 kodierter String.                                                                                                             |
+| erzeugteDokumente[].dokumentName                                      | String       | Der Name des Dokuments zur Anzeige im Frontend.                                                                                                                   |
+| erzeugteDokumente[].vollstaendigkeitsMeldungen                        | Liste        | Alle Meldungen zu nicht automatisch ausfüllbaren Feldern in diesem Dokument.                                                                                      |
+| erzeugteDokumente[].vollstaendigkeitsMeldungen[].status               | Aufzählung   | Immer ``VOLLSTAENDIGKEIT_DOKUMENT``.                                                                                                                              |
+| erzeugteDokumente[].vollstaendigkeitsMeldungen[].text                 | String       | Beschreibung des fehlenden Feldes.                                                                                                                                |
+| erzeugteDokumente[].vollstaendigkeitsMeldungen[].zuordnung            | Aufzählung   | Beschreibung welcher Anfrageteil betroffen ist: ``DARLEHENSNEHMER1``, ``DARLEHENSNEHMER2``, ``VORHABEN``.                                                         |
+|-----------------------------------------------------------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 
 

@@ -25,4 +25,12 @@ public class Dokument {
   public void setDokumentBase64Encoded(String dokumentBase64Encoded) {
     this.dokumentBase64Encoded = dokumentBase64Encoded;
   }
+
+  public List<FachlicheMeldung> getVollstaendigkeitsMeldungen() {
+    return vollstaendigkeitsMeldungen;
+  }
+
+  public void setVollstaendigkeitsMeldungen(List<FachlicheMeldung> vollstaendigkeitsMeldungen) {
+    this.vollstaendigkeitsMeldungen = vollstaendigkeitsMeldungen;
+  }
 }
