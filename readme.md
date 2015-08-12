@@ -272,6 +272,11 @@ Datumsangaben werden als Zeichenketten im Format yyyy-mm-dd übertragen.
 
 ### Schnittstellenressource POST /dokumente/
 
+Die Schnittstellenressource /dokumente erlaubt, die für den Abschluss des Bausparvertrages notwendigen Dokumente im PDF Format zu generieren und mit den Feldern aus der Anfrage automatisch vorauszufüllen.
+Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für den Fall, dass nicht alle zum Ausfüllen benötigten Felder mitgeliefert werden, wird ein teilausgefülltes Dokument geliefert.
+Über das Feld "vollstaendigkeitsMeldungen" besteht die Möglichkeit, Nutzerfeedback über fehlende Angaben zu geben. Dies ist über das Feld "meldungen" auch bereits in der Berechnungsantwort möglich.
+
+
 ##### Anfrage
 
 TODO erst Modell erweitern
@@ -301,7 +306,7 @@ TODO erst Modell erweitern
 | erzeugteDokumente[].vollstaendigkeitsMeldungen                        | Liste        | Alle Meldungen zu nicht automatisch ausfüllbaren Feldern in diesem Dokument.                                                                                      |
 | erzeugteDokumente[].vollstaendigkeitsMeldungen[].status               | Aufzählung   | Immer ``VOLLSTAENDIGKEIT_DOKUMENT``.                                                                                                                              |
 | erzeugteDokumente[].vollstaendigkeitsMeldungen[].text                 | String       | Beschreibung des fehlenden Feldes.                                                                                                                                |
-| erzeugteDokumente[].vollstaendigkeitsMeldungen[].zuordnung            | Aufzählung   | Beschreibung welcher Anfrageteil betroffen ist: ``DARLEHENSNEHMER1``, ``DARLEHENSNEHMER2``, ``VORHABEN``.                                                         |
+| erzeugteDokumente[].vollstaendigkeitsMeldungen[].zuordnung            | Aufzählug   | Beschreibung welcher Anfrageteil betroffen ist: ``DARLEHENSNEHMER1``, ``DARLEHENSNEHMER2``, ``VORHABEN``.                                                         |
 |-----------------------------------------------------------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
 
