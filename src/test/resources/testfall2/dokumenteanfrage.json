@@ -23,9 +23,9 @@
       "nachName": "Muster",
       "geburtsDatum":"1970-03-20",
       "geburtsName": null,
-      "staatsangehoerigkeit": "Französisch",
+      "staatsangehoerigkeit": "Franzoesisch",
       "adresse": {
-        "strasse": "Wohnstraße.",
+        "strasse": "Wohnstrasse.",
         "hausNummer": "12",
         "wohnOrt": "Berlin",
         "postleitzahl": "10115",
