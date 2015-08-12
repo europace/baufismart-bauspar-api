@@ -5,14 +5,21 @@
   "bausparSummeInEuro": 150000,
   "auszahlungsbetragBeiZuteilung": 150000,
 
-  "sparBeitraege": [
-    {
-      "beitrag": 333.75,
-      "zahlungAb": "2015-09-30",
-      "zahlungBis": "2028-01-31",
-      "zahlungsrhythmus": "MONATLICH"
-    }
-  ],
+  "sparphaseDokument":
+  {
+    "regelsparbeitragInEuro": 333.75,
+    "sparBeginnAb": "2015-09-30",
+    "sparEnde": "2028-01-31",
+    "zahlungsRhythmus": "MONATLICH"
+  }
+,
+  "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
+
+  "abschlussgebuehrHoeheInEuro": 1500,
+
+  "zahlungsbetragEinmalzahlungInEuro" : 10000,
+
+
   "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
 
   "antragsteller": [

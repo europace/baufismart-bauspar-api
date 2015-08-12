@@ -13,7 +13,7 @@ public class DokumentErzeugenAnfrage {
   BigDecimal bausparSummeInEuro; //check
   BigDecimal auszahlungsbetragBeiZuteilung; //check
 
-  List<SparBeitrag> sparBeitraege;//check
+
 
   Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung;//check
   BigDecimal abschlussgebuehrHoeheInEuro;
@@ -51,13 +51,6 @@ public class DokumentErzeugenAnfrage {
     this.auszahlungsbetragBeiZuteilung = auszahlungsbetragBeiZuteilung;
   }
 
-  public List<SparBeitrag> getSparBeitraege() {
-    return sparBeitraege;
-  }
-
-  public void setSparBeitraege(List<SparBeitrag> sparBeitraege) {
-    this.sparBeitraege = sparBeitraege;
-  }
 
   public Abschlussgebuehrenbehandlung getAbschlussgebuehrenbehandlung() {
     return abschlussgebuehrenbehandlung;
