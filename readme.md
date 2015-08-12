@@ -7,10 +7,8 @@
 
 ## TODO
 
-* Excel Dokumentanfrage in SST Beschreibung übertragen
 * Beispielkommunikation einbinden
 * Schnittstellenversionierung definieren und beschreiben
-* Dokumente-SST muss Angebotsdaten mitgeliefert bekommen
 * Vollständigkeitsprüfung beschreiben
 
 
