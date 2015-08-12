@@ -8,7 +8,6 @@
 ## TODO
 
 * Excel Dokumentanfrage in SST Beschreibung übertragen
-* Excel Dokumentantwort in SST Beschreibung übertragen
 * Beispielkommunikation einbinden
 * Schnittstellenversionierung definieren und beschreiben
 * Dokumente-SST muss Angebotsdaten mitgeliefert bekommen
@@ -88,11 +87,37 @@ Datumsangaben werden als Zeichenketten im Format yyyy-mm-dd übertragen.
 
 #### Felder Antwort
 
-| Feld   | Typ    | Beschreibung |
-| id     | String | Eine innerhalb der Schnittstelle eindeutige technische Id des Tarifs |
+| Feld   | Typ    | Beschreibung 																	  |
+|--------|--------|-----------------------------------------------------------------------------------|
+| id     | String | Eine innerhalb der Schnittstelle eindeutige technische Id des Tarifs 			  |
 | name   | String | Der Name des Tarifs so wie er auf Nutzerfrontends und in Dokumenten verwendet wird|
 
 ### Schnittstellenressource POST /bausparangebot/
+
+Die Schnittstellenressource /bausparangebot erlaubt das Berechnen von Bausparangeboten. Vorläufig wird eine 1:1 Berechnung vorgesehen, d.h. eine Anfrage führt zu einem berechneten Angebot.
+Fehlende Werte in der Anfrage sollten durch die Implementierung durch sinnvolle Standardwerte ergänzt werden. Die Schnittstelle kennt unterschiedliche Berechnungsziele, nach denen sich unterscheidet,
+welche Inputdaten geliefert werden.
+
+| Berechnungsziel        | Inputwerte                                                                        | Ergebniswerte                 |
+|------------------------|-----------------------------------------------------------------------------------|-------------------------------|
+| SPARBEITRAG_INKL_VL    | laufzeitBisZuteilungInMonaten oder zuteilungstermin, bausparsumme                 | Sparbeitrag, Tilgungsbeitrag  |
+| BAUSPARSUMME           | laufzeitBisZuteilungInMonaten oder zuteilungstermin, Sparbeitrag, Tilgungsbeitrag | Bausparsumme                  |
+| ZUTEILUNGSTERMIN       | Sparbeitrag, Bausparsumme                                                         | zuteilungstermin              |
+| LAUFZEIT_BIS_ZUTEILUNG | Sparbeitrag, Bausparsumme                                                         | laufzeitBisZuteilungInMonaten |
+
+
+Treten während der Berechnung Unstimmigkeiten auf, weil die Inputdaten nicht zum Tarif passen, z.B. aufgrund einer zu großen Bausparsumme, so soll die Schnittstelle
+dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Meldungen vor. Jede Meldung trägt einen Status, der die Auswirkung der Meldung anzeigt.
+
+| Meldungsstatus                                     | Auswirkung                                                                                                                              |
+|----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| HINWEIS                                            | Keine, der Bausparvertrag ist in der berechneten Form abschließbar                                                                      |
+| BERECHNUNG_NICHT_MOEGLICH_AUFGRUND_FEHLENDER_DATEN | Es fehlen Daten, um ein vollständiges Angebot zu erstellen. Nicht abschließbar. Berechnete Angebotsdaten u.U. nicht vollständig.        |
+| VOLLSTAENDIGKEIT_DOKUMENT                          | Nur für /dokumente Schnittstelle relevant.                                                                                              |
+| NICHT_MACHBAR                                      | Das Angebot konnte berechnet werden, ist aber aufgrund fachlicher Einschränkungen so nicht abschließbar. Beispiel: Sparrate zu niedrig. |
+| TECHNISCHER_FEHLER                                 | Es ist ein technischer Fehler während der Berechnung aufgetreten. Das Angebot wird verworfen.                                           |
+
+
 
 
 #### Anfrage
@@ -267,14 +292,15 @@ Datumsangaben werden als Zeichenketten im Format yyyy-mm-dd übertragen.
 | sparPhase.sparPlan.zahlungen[].zinsInEuro                             | Zahl         | Der Betrag an Guthabenzinsen der zu diesem Datum mit dem Bausparvertrag verrechnet wird.                                                                          |
 | meldungen.text                                                        | STRING       | menschlich lesbare Fehlerbeschreibung   |                                                                                                                         |
 | meldungen.status                                                      | Aufzählung   | Auswirkung der Meldung auf die Annehmbarkeit des Bausparantrags. Mögliche Werte: ``HINWEIS``, ``BERECHNUNG_NICHT_MOEGLICH_AUFGRUND_FEHLENDER_DATEN``, ``VOLLSTAENDIGKEIT_DOKUMENT``, ``NICHT_MACHBAR``, ``TECHNISCHER_FEHLER``.                                                                                       |
-| meldungen.zuordnung                                                   | Aufzählung   | menschlich lesbare Fehlerbeschreibung. Mögliche Werte: ``DARLEHENSNEHMER1``, ``DARLEHENSNEHMER2``, ``VORHABEN``.                                                  |
+| meldungen.zuordnung                                                   | Aufzählung   | Zuordnung der Meldung zum Datenhaushalt des Frontends. Mögliche Werte: ``DARLEHENSNEHMER1``, ``DARLEHENSNEHMER2``, ``VORHABEN``.                                                  |
 
 
 ### Schnittstellenressource POST /dokumente/
 
 Die Schnittstellenressource /dokumente erlaubt, die für den Abschluss des Bausparvertrages notwendigen Dokumente im PDF Format zu generieren und mit den Feldern aus der Anfrage automatisch vorauszufüllen.
 Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für den Fall, dass nicht alle zum Ausfüllen benötigten Felder mitgeliefert werden, wird ein teilausgefülltes Dokument geliefert.
-Über das Feld "vollstaendigkeitsMeldungen" besteht die Möglichkeit, Nutzerfeedback über fehlende Angaben zu geben. Dies ist über das Feld "meldungen" auch bereits in der Berechnungsantwort möglich.
+Über das Feld "vollstaendigkeitsMeldungen" besteht die Möglichkeit, Nutzerfeedback über fehlende Angaben zu geben. Dies ist über das Feld "meldungen" auch bereits in der Berechnungsantwort möglich. Das Feld zuordnung erlaubt es dabei,
+die fehlenden Daten grob dem Datenhaushalt des Frontends zuzuordnen.
 
 
 ##### Anfrage
@@ -306,8 +332,7 @@ TODO erst Modell erweitern
 | erzeugteDokumente[].vollstaendigkeitsMeldungen                        | Liste        | Alle Meldungen zu nicht automatisch ausfüllbaren Feldern in diesem Dokument.                                                                                      |
 | erzeugteDokumente[].vollstaendigkeitsMeldungen[].status               | Aufzählung   | Immer ``VOLLSTAENDIGKEIT_DOKUMENT``.                                                                                                                              |
 | erzeugteDokumente[].vollstaendigkeitsMeldungen[].text                 | String       | Beschreibung des fehlenden Feldes.                                                                                                                                |
-| erzeugteDokumente[].vollstaendigkeitsMeldungen[].zuordnung            | Aufzählug   | Beschreibung welcher Anfrageteil betroffen ist: ``DARLEHENSNEHMER1``, ``DARLEHENSNEHMER2``, ``VORHABEN``.                                                         |
-|-----------------------------------------------------------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| erzeugteDokumente[].vollstaendigkeitsMeldungen[].zuordnung            | Aufzählug    | Beschreibung welcher Anfrageteil betroffen ist: ``DARLEHENSNEHMER1``, ``DARLEHENSNEHMER2``, ``VORHABEN``.                                                         |
 
 
 
@@ -323,5 +348,6 @@ Die Sicherheitsvorkehrungen entsprechen dem Standard SSL über HTTPS unter Verwe
 
 Die Antwortzeiten vom Absenden des Request bis zum Erhalt der Antwort (ausgenommen Dokumente, die asynchron nachgeliefert werden können) liegen unterhalb von 500 ms, damit dem Anwender das Bausparangebot ohne bemerkbare Verzögerung angezeigt werden kann.
 Die Schnittstelle muss in der Lage sein eine erwartete Last von bis zu 10 Requests pro Sekunde zu verarbeiten. Die Schnittstelle muss grundsätzlich 24 Stunden an allen Wochentagen verfügbar sein. Ausgenommen hiervon sind Wartungsintervalle die außerhalb der Geschäftszeiten liegen. Beeinträchtigungen im Betrieb der Plattform durch Wartungsarbeiten können so vermieden werden.
+
 
 
