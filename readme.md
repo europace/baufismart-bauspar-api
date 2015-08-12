@@ -305,8 +305,97 @@ die fehlenden Daten grob dem Datenhaushalt des Frontends zuzuordnen.
 
 ##### Anfrage
 
-TODO erst Modell erweitern
+{
+  "tarif": "T1",
+  "bausparSummeInEuro": 50000,
+  "auszahlungsbetragBeiZuteilung": 50000,
+  "sparphaseDokument":
+    {
+      "regelsparbeitragInEuro": 168.33,
+      "sparBeginnAb": "2015-09-30",
+      "sparEnde": "2025-08-31",
+      "zahlungsRhythmus": "MONATLICH"
+    }
+  ,
+  "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
+  "abschlussgebuehrHoeheInEuro": 500,
+  "zahlungsbetragEinmalzahlungInEuro" : 0,
+  "antragsteller": [
+    {
+      "anrede": "HERR",
+      "titel": null,
+      "vorname": "Max",
+      "nachName": "Muster",
+      "geburtsDatum": null,
+      "geburtsName": null,
+      "staatsangehoerigkeit": "Deutsch",
+      "adresse": {
+        "strasse": "Steinweg.",
+        "hausNummer": "8",
+        "wohnOrt": "Garmisch-Partenkirchen",
+        "postleitzahl": "82475",
+        "landWohnsitz": "DE"
+      },
+      "kontakt": {
+        "telefonNummer": null,
+        "mobilNummer": null,
+        "eMailAdresse": null
+      },
+      "familienStand": "LEDIG",
+      "zahlungsDaten": {
+        "iban": null,
+        "nameKreditInstitut": null,
+        "zahlungsForm": "LASTSCHRIFT"
+      }
+    }
+  ],
+  "vermittlerDaten": {
+    "nachName": null,
+    "ort": null,
+    "postleitzahl": null,
+    "strasseHausnummer": null,
+    "vorname": null
+  }
+}
 
+
+| Name                                                                  | Typ          | Beschreibung                                                                                                                                                      |
+|-----------------------------------------------------------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| tarif                                                                 | String       | der Tarif wird auf Seiten der BSK ermittelt                                                                                                                       |
+| bausparsummeInEuro                                                    | Zahl         | Betrag der Bausparsumme in Euro                                                                                                                                   |
+| auszahlungsbetragBeiZuteilung                                         | Zahl         | Auszahlungssumme                                                                                                                                                  |
+| sparphaseDokument.regelsparbeitragInEuro                              | Zahl         | Sparbeitrag                                                                                                                                                       |
+| sparphaseDokument.sparBeginnAb                                        | Datum        | Sparbeginn                                                                                                                                                        |
+| sparphaseDokument.sparEnde                                            | Datum        | Ende Sparphase                                                                                                                                                    |
+| sparphaseDokument.sparBeginnAb                                        | Datum        | Sparbeginn                                                                                                                                                        |
+| abschlussgebuehrenbehandlung                                          | Aufzählung   | Mögliche Werte sind: ``VERRECHUNG``, ``SOFORTZAHLUNG``.                                                                                                           |
+| abschlussgebuehrHoeheInEuro                                           | Zahl         | Abschlußgebühr                                                                                                                                                    |
+| zahlungsbetragEinmalzahlungInEuro                                     | Zahl         | Einmalzahlung in Euro                                                                                                                                             |
+| antragsteller.anrede                                                  | Aufzählung   | Mögliche Werte sind: ``HERR``, ``FRAU``.                                                                                                                          |
+| antragsteller.titel                                                   | String       | Titel                                                                                                                                                             |
+| antragsteller.vorname                                                 | String       | Vorname                                                                                                                                                           |
+| antragsteller.nachname                                                | String       | Nachname                                                                                                                                                          |
+| antragsteller.geburtsDatum                                            | Datum        |                                                                                                                                                                   |
+| antragsteller.geburtsName                                             | String       |                                                                                                                                                                   |
+| antragsteller.staatsangehoerigkeit                                    | String       |                                                                                                                                                                   |
+| antragsteller.adresse.strasse                                         | String       |                                                                                                                                                                   |
+| antragsteller.adresse.hausNummer                                      | String       |                                                                                                                                                                   |
+| antragsteller.adresse.postleitzahl                                    | String       |                                                                                                                                                                   |
+| antragsteller.adresse.wohnOrt                                         | String       |                                                                                                                                                                   |
+| antragsteller.adresse.landWohnsitz                                    | String       |                                                                                                                                                                   |
+| antragsteller.kontakt.telefonNummer                                   | String       |                                                                                                                                                                   |
+| antragsteller.kontakt.mobilNummer                                     | String       |                                                                                                                                                                   |
+| antragsteller.kontakt.eMailAdresse                                    | String       |                                                                                                                                                                   |
+| antragsteller.familienStand                                           | Aufzählung   | Mögliche Werte sind: ``LEDIG``, ``VERHEIRATET``,  ``LEBENSPARTNER``, ``GESCHIEDEN``, ``VERWITWET``, ``GETRENNT_LEBEND``.                                          |
+| antragsteller.zahlungsDaten.iban                                      | String       |                                                                                                                                                                   |
+| antragsteller.zahlungsDaten.nameKreditInstitut                        | String       |                                                                                                                                                                   |
+| antragsteller.zahlungsDaten.zahlungsForm                              | Aufzählung   | Mögliche Werte sind: ``LASTSCHRIFT``, ``UEBERWEISUNG``.                                                                                                           |
+| vermittlerDaten.nachName                                              | String       |                                                                                                                                                                   |
+| vermittlerDaten.ort                                                   | String       |                                                                                                                                                                   |
+| vermittlerDaten.postleitzahl                                          | String       |                                                                                                                                                                   |
+| vermittlerDaten.strasseHausnummer                                     | String       |                                                                                                                                                                   |
+| vermittlerDaten.vorname                                               | String       |                                                                                                                                                                   |
+                                                                                                                                                                                                                                                           
 
 #### Antwort
     {
