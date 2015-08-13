@@ -9,7 +9,6 @@
 
 * Beispielkommunikation einbinden
 * Schnittstellenversionierung definieren und beschreiben
-* Vollständigkeitsprüfung beschreiben
 
 
 ## Beschreibung.

@@ -27,9 +27,10 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @RestController
 @Api(value = "/dokumente", description = "Dokumente Service")
+@RequestMapping(value = "${url.prefix}/dokumente")
 public class BausparDokumenteController {
 
-  @RequestMapping(value = "dokumente/", method = POST, produces = APPLICATION_JSON_VALUE + ";charset=UTF-8")
+  @RequestMapping(value = "/", method = POST, produces = APPLICATION_JSON_VALUE + ";charset=UTF-8")
   @ApiOperation(
       value = "Erzeuge Dokument",
       response = DokumentErzeugenAntwort.class)
