@@ -90,10 +90,7 @@
 "datum": "2029-11-30", "gebuehrenInEuro": 0,"kontofuehrungsGebuehrInEuro": 0, "saldoNachZahlungInEuro": -79839.6, "zahlungInEuro":600, "zinsInEuro": 183.92
 }
 ,
-{
-"datum":"2029-12-31", "gebuehrenInEuro": 0, "kontofuehrungsGebuehrInEuro": 0,"saldoNachZahlungInEuro": -79422.57, "zahlungInEuro": 600, "zinsInEuro":182.97
-}
-      ,
+{"datum":"2029-12-31", "gebuehrenInEuro": 0, "kontofuehrungsGebuehrInEuro": 0,"saldoNachZahlungInEuro": -79422.57, "zahlungInEuro": 600, "zinsInEuro":182.97},
         {"datum":"2030-01-31", "gebuehrenInEuro":0,"kontofuehrungsGebuehrInEuro":0,"saldoNachZahlungInEuro":-79004.58,"zahlungInEuro":600,"zinsInEuro":182.01},
         {"datum":"2030-02-28", "gebuehrenInEuro":0,"kontofuehrungsGebuehrInEuro":0,"saldoNachZahlungInEuro":-78585.63,"zahlungInEuro":600,"zinsInEuro":181.05},
         {"datum":"2030-03-31", "gebuehrenInEuro":0,"kontofuehrungsGebuehrInEuro":0,"saldoNachZahlungInEuro":-78165.72,"zahlungInEuro":600,"zinsInEuro":180.09},

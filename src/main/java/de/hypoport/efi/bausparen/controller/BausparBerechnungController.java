@@ -32,8 +32,8 @@ public class BausparBerechnungController {
       value = "Berechne Bauspar Angebot",
       response = BausparBerechnungsAntwort.class)
   @ApiResponses(value = {
-      @ApiResponse(code = 400, message = "Ungueltige Anfrage"),
-      @ApiResponse(code = 404, message = "Bausparkasse kann kein Angebot erstellen")}
+      @ApiResponse(code = 200, message = "Es wird eine gültige Schnittstellenantwort geliefert"),
+      @ApiResponse(code = 500, message = "Es konnte keine Schnittstellenantwort erstellt werden")}
   )
   public
   @ResponseBody

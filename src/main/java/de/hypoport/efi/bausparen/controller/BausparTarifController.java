@@ -4,6 +4,8 @@ import de.hypoport.efi.bausparen.model.tarife.BausparTarif;
 import de.hypoport.efi.bausparen.model.tarife.BausparTarifInformationen;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,7 +26,10 @@ public class BausparTarifController {
   @ApiOperation(
       value = "Beschreibt die Bauspartarife dieser Bausparkasse",
       response = BausparTarifInformationen.class)
-
+  @ApiResponses(value = {
+      @ApiResponse(code = 200, message = "Es wird eine gültige Schnittstellenantwort geliefert"),
+      @ApiResponse(code = 500, message = "Es konnte keine Schnittstellenantwort erstellt werden")}
+  )
   public
   @ResponseBody
   BausparTarifInformationen getBausparTarife(HttpServletResponse rsp) {

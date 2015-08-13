@@ -14,8 +14,8 @@ Das Europace System erstellt aus diesen Daten die Anfrage aus der Datei [berechn
 
 Die Bausparberechnungsschnittstelle anwortet zum Beispiel wie in der Datei [berechnetesbausparangebot.json](berechnetesbausparangebot.json).
 
-Um Dokumente zu generieren schickt EUROPACE die Anfrage aus der Datei [dokumentenanfrage.json](dokumentenanfrage.json).
+Um Dokumente zu generieren schickt EUROPACE die Anfrage aus der Datei [dokumenteanfrage.json](dokumenteanfrage.json).
  
-Und bekommt von der Dokumetenschnittstelle zum Beispiel diese Antwort [dokumentenantwort.json](dokumentenantwort.json).
+Und bekommt von der Dokumetenschnittstelle zum Beispiel diese Antwort [dokumenteantwort.json](dokumenteantwort.json).
 
 

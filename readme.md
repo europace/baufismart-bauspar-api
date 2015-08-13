@@ -1,43 +1,31 @@
 # EUROPACE Bauspar API Dokumentation
-============================
-
-## Offene fachliche Fragen aus Entwicklersicht
-
-* Warum wird beim Zuteilungsdatum (Anfrage und Antwort) zwischen Laufzeit und Termin differenziert? Reicht nicht Termin als Feld?
-
-## TODO
-
-* Beispielkommunikation einbinden
-* Schnittstellenversionierung definieren und beschreiben
 
 
 ## Beschreibung.
 
-Eine Schnittstelle zur Einbindung von Bausparangeboten als Tilgungsersatzprodukt und zur Zinsabsicherung in eine Finanzierung.
-Ziel der Schnittstelle ist es, Angebote von verschiedenen Bausparkassen in Europace anzubieten. Die Schnittstelle wird als REST-Schnittstelle
-(Representational State Transfer) realisiert. Die Schnittstelle beschreibt einen standardisierten Prozess zur Berechnung und Integration von
-Bausparprodukten in EUROPACE.  
+Diese Schnittstelle dient der Einbindung von Bausparangeboten als Tilgungsersatzprodukt und zur Zinsabsicherung in einer Finanzierung sowie als singuläre Bausparangebote in reinen Bausparfrontends. Da sie produktanbieterunabhängig gestaltet ist, ermöglicht sie Angebote von verschiedenen Bausparkassen in Europace anzubieten. Die Schnittstelle wird als REST-Schnittstelle
+(Representational State Transfer) realisiert. 
 
 ## Technik
 
-Die Kommunikation erfolgt über HTTP/S und REST (Representational State Transfer). Zur Absicherung und Verschlüsselung wird SSL eingesetzt. Die Daten werden im JSON-Format übertragen. Die Lieferung von Dokumenten zu den berechneten Bausparangeboten erfolgt asynchron.
+Die Kommunikation erfolgt über HTTP/S und REST (Representational State Transfer). Zur Absicherung und Verschlüsselung wird SSL eingesetzt. Die Daten werden im JSON-Format übertragen. Die Lieferung von Dokumenten zu den berechneten Bausparangeboten erfolgt in der ersten Version synchron.
 
 ## Prozess
 
 Als ersten Schritt schickt EUROPACE den Bausparwunsch an die durch die jeweilige Bausparkasse bereitzustellende Schnittstelle. Die Berechnung des Bausparangebots erfolgt bei der Bausparkasse.
-An EUROPACE wird das berechnete Bausparangebot inkl. der benötigten ausgefüllten Dokumente zurückgeliefert. EUROPACE fügt das Bausparangebot in die Finanzierung ein.
+An EUROPACE wird das berechnete Bausparangebot zurückgeliefert. EUROPACE fügt das Bausparangebot in die Finanzierung ein. In einem zweiten Schritt werden die benötigten ausgefüllten Dokumente über die Schnittstelle angefragt. 
 
 Der Schnittstellenprozess ist zustandslos, das bedeutet bei jedem Methodenaufruf werden alle relevanten Daten mitgesendet.
 Die Schnittstellenimplementierung muss sich keine Zwischenergebnisse merken.
 
 Der Prozess gestaltet sich im Detail wie folgt:
 
-1) Die von der Bausparkasse bereitgestellten Tarife werden von EUROPACE unter der URL `http://host//europace-bausparen/v1/bauspartarife/` mit einem GET Befehl abgefragt. Daraus folgt: Es muss eine REST Resource mit der Tarifliste
+1) Die von der Bausparkasse bereitgestellten Tarife werden von EUROPACE unter der URL `http://host/europace-bausparen/v1/bauspartarife/` mit einem GET Befehl abgefragt. Daraus folgt: Es muss eine REST Resource mit der Tarifliste
 bereitgestellt werden.
 
 2) Anhand der Tarifliste und der Finanzierunganfrage werden REST-Anfragen an die Berechnungsschnittstelle unter der URL `http://host/europace-bausparen/v1/bausparangebot/` mit einem POST Befehl gesendet. Es wird erwartet, dass ein Angebot pro Anfrage berechnet wird. Kann kein annehmbares Angebot berechnet werden, so werden dem Angebot Meldungen beigefügt, die es dem Nutzer ermöglichen, die Anfrage so anzupassen, dass ein Angebot berechnet werden kann.
 
-3) Für ein berechnetes Angebot werden über eine weitere REST-Anfrage unter der URL `http://host/europace-bausparen/v1/dokumente/` mit einem GET Befehl die zum Angebot generierten Dokumente geholt. 
+3) Für ein berechnetes Angebot werden über eine weitere REST-Anfrage unter der URL `http://host/europace-bausparen/v1/dokumente/` mit einem POST Befehl die zum Angebot generierten Dokumente geholt. 
 
 Weitere Informationen und eine genauere Beschreibung der REST-Schnittstelle sowie die Beschreibung der Daten werden in Beispiel Aufrufen und weiteren Tabellen dargestellt.
 
@@ -56,18 +44,18 @@ Aus dem Projektverzeichnis läßt es sich mit dem Befehl ``$ ./gradlew run`` üb
 ## Schnittstellendesign
 
 EUROPACE definiert das Schema für die Schnittstelle. Jede Bausparkasse stellt sicher, dass ihre Schnittstelle nach dem definierten
-Standard-Schema arbeitet. Die Daten, die über diese Schnittstelle ausgetauscht werden umfassen in der Anfrage Daten zum Bausparwunsch,
+Standard-Schema arbeitet. Die Daten, die über diese Schnittstelle ausgetauscht werden, umfassen in der Anfrage Daten zum Bausparwunsch,
 zum Antragsteller und zum Vertrieb. Die Antwort enthält einen vollständig berechneten Bausparvertrag inkl. Sparplan, sowie die Berechnung
-des Bauspardarlehens inkl. Tilgungsplan. Eine erste Auflistung der Daten befindet sich im Anhang. Die genannten Datenfelder stellen einen
+des Bauspardarlehens inkl. Tilgungsplan. Eine erste Auflistung der Daten befindet am Ende des Abschnitts. Die genannten Datenfelder stellen einen
 Rahmen, der nach aktueller Einschätzung erforderlichen Datenfelder dar (zum aktuellen Zeitpunkt kann nicht ausgeschlossen werden, dass
 einzelne Felder im Rahmen der Detaildefinition des Schemas hinzugefügt oder entfernt werden).
 
-Die Schnittstelle wird über REST URLs dargestellt, die Nachrichten im JSON Format empfangen und zurückliefern. Das genaue Format ist in diesem Projekt definiert.
+Die Schnittstelle wird über REST URLs dargestellt, die Nachrichten im JSON Format empfangen und zurückliefern. Das genaue Format ist in diesem Projekt definiert. Als Encoding für Anfragen und Antworten wird UTF-8 verwendet.
 
 **Festlegungen:**
-Prozentwerte werden 100-basiert übertragen. 1% wird als 1.0 übertragen, 100% als 100,0. Prozentwerte sind am Suffix InProzent am Attributnamen erkennbar.
-Geldbeträge werden als reine Zahlwerte mit 2 Nachkommastellen übertragen. Die Währung ist immer Euro. Alle Geldbetrag-Attribute sind am Suffix InEuro erkennbar.
-Datumsangaben werden als Zeichenketten im Format yyyy-mm-dd übertragen.
+* Prozentwerte werden 100-basiert übertragen. 1% wird als 1.0 übertragen, 100% als 100,0. Prozentwerte sind am Suffix InProzent am Attributnamen erkennbar.
+* Geldbeträge werden als reine Zahlwerte mit 2 Nachkommastellen übertragen. Die Währung ist immer Euro. Alle Geldbetrag-Attribute sind am Suffix InEuro erkennbar.
+* Datumsangaben werden als Zeichenketten im Format yyyy-mm-dd übertragen.
 
 
 ### Schnittstellenresource GET /bauspartarife/
@@ -91,17 +79,8 @@ Datumsangaben werden als Zeichenketten im Format yyyy-mm-dd übertragen.
 
 ### Schnittstellenressource POST /bausparangebot/
 
-Die Schnittstellenressource /bausparangebot erlaubt das Berechnen von Bausparangeboten. Vorläufig wird eine 1:1 Berechnung vorgesehen, d.h. eine Anfrage führt zu einem berechneten Angebot.
-Fehlende Werte in der Anfrage sollten durch die Implementierung durch sinnvolle Standardwerte ergänzt werden. Die Schnittstelle kennt unterschiedliche Berechnungsziele, nach denen sich unterscheidet,
-welche Inputdaten geliefert werden.
-
-| Berechnungsziel        | Inputwerte                                                                        | Ergebniswerte                 |
-|------------------------|-----------------------------------------------------------------------------------|-------------------------------|
-| SPARBEITRAG_INKL_VL    | laufzeitBisZuteilungInMonaten oder zuteilungstermin, bausparsumme                 | Sparbeitrag, Tilgungsbeitrag  |
-| BAUSPARSUMME           | laufzeitBisZuteilungInMonaten oder zuteilungstermin, Sparbeitrag, Tilgungsbeitrag | Bausparsumme                  |
-| ZUTEILUNGSTERMIN       | Sparbeitrag, Bausparsumme                                                         | zuteilungstermin              |
-| LAUFZEIT_BIS_ZUTEILUNG | Sparbeitrag, Bausparsumme                                                         | laufzeitBisZuteilungInMonaten |
-
+Die Schnittstellenressource /bausparangebot erlaubt das Berechnen von Bausparangeboten. Vorläufig wird eine 1:1 Berechnung vorgesehen, d.h. eine Anfrage führt zu *einem* berechneten Angebot.
+Fehlende Werte in der Anfrage sollten durch die Implementierung durch sinnvolle Standardwerte ergänzt werden. Die Schnittstelle kennt unterschiedliche Berechnungsziele, nach denen sich unterscheidet, welche Inputdaten geliefert werden.
 
 Treten während der Berechnung Unstimmigkeiten auf, weil die Inputdaten nicht zum Tarif passen, z.B. aufgrund einer zu großen Bausparsumme, so soll die Schnittstelle
 dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Meldungen vor. Jede Meldung trägt einen Status, der die Auswirkung der Meldung anzeigt.
@@ -296,8 +275,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 
 Die Schnittstellenressource /dokumente erlaubt, die für den Abschluss des Bausparvertrages notwendigen Dokumente im PDF Format zu generieren und mit den Feldern aus der Anfrage automatisch vorauszufüllen.
 Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für den Fall, dass nicht alle zum Ausfüllen benötigten Felder mitgeliefert werden, wird ein teilausgefülltes Dokument geliefert.
-Über das Feld "vollstaendigkeitsMeldungen" besteht die Möglichkeit, Nutzerfeedback über fehlende Angaben zu geben. Dies ist über das Feld "meldungen" auch bereits in der Berechnungsantwort möglich. Das Feld zuordnung erlaubt es dabei,
-die fehlenden Daten grob dem Datenhaushalt des Frontends zuzuordnen.
+Über das Feld "vollstaendigkeitsMeldungen" besteht die Möglichkeit, Nutzerfeedback über fehlende Angaben zu geben.  Das Feld zuordnung erlaubt es dabei, die fehlenden Daten grob dem Datenhaushalt des Frontends zuzuordnen.
 
 
 ##### Anfrage
@@ -427,9 +405,14 @@ die fehlenden Daten grob dem Datenhaushalt des Frontends zuzuordnen.
 
 Die folgenden 2 Beispielen zeigen wie die Kommunikation zwischen EUROPACE und den Schnittstellen erfolgt.
 
-  1. [testfall1.md](test/java/resources/testfall1/testfall1.md)
-  2. [testfall2.md](test/java/resources/testfall2/testfall2.md)
+  1. [testfall1.md](src/test/resources/testfall1/testfall1.md)
+  2. [testfall2.md](src/test/resources/testfall2/testfall2.md)
 
+## Fehlerbehandlung
+
+Solange die Schnittstelle eine gültige Antwort erstellen kann, (auch wenn diese Meldungen enthält) wird HTTP Statuscode 200 geliefert.
+ Kann die Schnittstellenimplementierung in einem Fall nicht mit einem gültigen JSON Dokument antworten, so wird HTTP Statuscode 500
+ geliefert ggf. mit einer Fehlemeldung.
 
 ## Abwärtskompatiblität
 
@@ -438,7 +421,6 @@ Die folgenden 2 Beispielen zeigen wie die Kommunikation zwischen EUROPACE und de
 ## Versionierung
 
 Die Version der Schnittstelle wird durch das Versionspräfix in der URL (aktuell v1) kenntlich gemacht. Zusätzlich zur aktuellen Version sollte mindestens die Version davor ebenfalls verfügbar sein um API Upgrades zu erleichtern.
-TODO spezifizieren, wann Versionspräfix geändert wird.
 
 
 ## Security
@@ -449,6 +431,7 @@ Die Sicherheitsvorkehrungen entsprechen dem Standard SSL über HTTPS unter Verwe
 
 Die Antwortzeiten vom Absenden des Request bis zum Erhalt der Antwort (ausgenommen Dokumente, die asynchron nachgeliefert werden können) liegen unterhalb von 500 ms, damit dem Anwender das Bausparangebot ohne bemerkbare Verzögerung angezeigt werden kann.
 Die Schnittstelle muss in der Lage sein eine erwartete Last von bis zu 10 Requests pro Sekunde zu verarbeiten. Die Schnittstelle muss grundsätzlich 24 Stunden an allen Wochentagen verfügbar sein. Ausgenommen hiervon sind Wartungsintervalle die außerhalb der Geschäftszeiten liegen. Beeinträchtigungen im Betrieb der Plattform durch Wartungsarbeiten können so vermieden werden.
+
 
 
 

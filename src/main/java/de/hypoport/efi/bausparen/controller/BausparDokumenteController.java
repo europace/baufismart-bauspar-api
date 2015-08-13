@@ -35,8 +35,8 @@ public class BausparDokumenteController {
       value = "Erzeuge Dokument",
       response = DokumentErzeugenAntwort.class)
   @ApiResponses(value = {
-      @ApiResponse(code = 200, message = "Dokument erzeugt"),
-      @ApiResponse(code = 500, message = "Dokument konnte nicht erzeugt werden")} //TODO code passt nicht
+      @ApiResponse(code = 200, message = "Es wird eine gültige Schnittstellenantwort geliefert"),
+      @ApiResponse(code = 500, message = "Es konnte keine Schnittstellenantwort erstellt werden")}
   )
   public
   @ResponseBody
