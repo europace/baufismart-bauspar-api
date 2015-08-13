@@ -1,0 +1,1 @@
+# europace-bauspar-schnittstelle
