@@ -302,58 +302,60 @@ die fehlenden Daten grob dem Datenhaushalt des Frontends zuzuordnen.
 
 ##### Anfrage
 
-{
-  "tarif": "T1",
-  "bausparSummeInEuro": 50000,
-  "auszahlungsbetragBeiZuteilung": 50000,
-  "sparphaseDokument":
     {
-      "regelsparbeitragInEuro": 168.33,
-      "sparBeginnAb": "2015-09-30",
-      "sparEnde": "2025-08-31",
-      "zahlungsRhythmus": "MONATLICH"
+        "tarif": "T1",
+        "bausparSummeInEuro": 50000,
+        "auszahlungsbetragBeiZuteilung": 50000,
+        "sparphaseDokument":
+        {
+            "regelsparbeitragInEuro": 168.33,
+            "sparBeginnAb": "2015-09-30",
+            "sparEnde": "2025-08-31",
+            "zahlungsRhythmus": "MONATLICH"
+        },
+        "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
+        "abschlussgebuehrHoeheInEuro": 500,
+        "zahlungsbetragEinmalzahlungInEuro" : 0,
+        "antragsteller": [
+        {
+            "anrede": "HERR",
+            "titel": null,
+            "vorname": "Max",
+            "nachName": "Muster",
+            "geburtsDatum": null,
+            "geburtsName": null,
+            "staatsangehoerigkeit": "Deutsch",
+            "adresse": 
+            {
+                "strasse": "Steinweg.",
+                "hausNummer": "8",
+                "wohnOrt": "Garmisch-Partenkirchen",
+                "postleitzahl": "82475",
+                "landWohnsitz": "DE"
+            },
+       "kontakt": 
+       {
+           "telefonNummer": null,
+           "mobilNummer": null,
+           "eMailAdresse": null
+       },
+       "familienStand": "LEDIG",
+       "zahlungsDaten": 
+           {
+               "iban": null,
+               "nameKreditInstitut": null,
+               "zahlungsForm": "LASTSCHRIFT"
+           }
+       }],
+       "vermittlerDaten": 
+       {
+           "nachName": null,
+           "ort": null,
+           "postleitzahl": null,
+           "strasseHausnummer": null,
+           "vorname": null
+       }
     }
-  ,
-  "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
-  "abschlussgebuehrHoeheInEuro": 500,
-  "zahlungsbetragEinmalzahlungInEuro" : 0,
-  "antragsteller": [
-    {
-      "anrede": "HERR",
-      "titel": null,
-      "vorname": "Max",
-      "nachName": "Muster",
-      "geburtsDatum": null,
-      "geburtsName": null,
-      "staatsangehoerigkeit": "Deutsch",
-      "adresse": {
-        "strasse": "Steinweg.",
-        "hausNummer": "8",
-        "wohnOrt": "Garmisch-Partenkirchen",
-        "postleitzahl": "82475",
-        "landWohnsitz": "DE"
-      },
-      "kontakt": {
-        "telefonNummer": null,
-        "mobilNummer": null,
-        "eMailAdresse": null
-      },
-      "familienStand": "LEDIG",
-      "zahlungsDaten": {
-        "iban": null,
-        "nameKreditInstitut": null,
-        "zahlungsForm": "LASTSCHRIFT"
-      }
-    }
-  ],
-  "vermittlerDaten": {
-    "nachName": null,
-    "ort": null,
-    "postleitzahl": null,
-    "strasseHausnummer": null,
-    "vorname": null
-  }
-}
 
 
 | Name                                                                  | Typ          | Beschreibung                                                                                                                                                      |
