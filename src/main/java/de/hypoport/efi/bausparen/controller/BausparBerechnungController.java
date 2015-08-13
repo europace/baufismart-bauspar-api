@@ -21,12 +21,13 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @RestController
 @Api(value = "/bausparangebot", description = "Bausparberechnungs Operationen")
+@RequestMapping(value = "${url.prefix}/bausparangebot")
 public class BausparBerechnungController {
 
   @Autowired
   private ProofOfConceptBausparBerechnung bausparBerechnung;
 
-  @RequestMapping(value = "bausparangebot/", method = POST, produces = APPLICATION_JSON_VALUE + ";charset=UTF-8")
+  @RequestMapping(value = "/", method = POST, produces = APPLICATION_JSON_VALUE + ";charset=UTF-8")
   @ApiOperation(
       value = "Berechne Bauspar Angebot",
       response = BausparBerechnungsAntwort.class)

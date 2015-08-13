@@ -1,14 +1,11 @@
 package de.hypoport.efi.bausparen;
 
-import com.fasterxml.jackson.databind.util.ISO8601DateFormat;
 import com.google.common.base.Predicate;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
@@ -37,6 +34,7 @@ public class Application {
         .apiInfo(apiInfo())
         .directModelSubstitute(LocalDate.class,
                                String.class)
+        .pathMapping(System.getProperty("url.prefix"))
         .select()
         .paths(apiPaths())
         .build();
@@ -45,9 +43,9 @@ public class Application {
 
   private Predicate<String> apiPaths() {
     return or(
-        regex("/bauspartarife.*"),
-        regex("/bausparangebot.*"),
-        regex("/dokumente.*")
+        regex(".*/bauspartarife.*"),
+        regex(".*/bausparangebot.*"),
+        regex(".*/dokumente.*")
     );
   }
 
