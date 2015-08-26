@@ -30,7 +30,7 @@ public class FachlicheBeispiele {
   private ObjectMapper objectMapper;
 
   @Before
-  public void setUp() throws Exception {
+  public void setUp() {
     objectMapper = new ObjectMapper();
     objectMapper.findAndRegisterModules();
   }

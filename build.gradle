@@ -2,7 +2,6 @@ project.ext {
   groupId = 'de.hypoport.efi'
   artifactId = 'bausparschnittstelle'
   version = new Date().format('yyyy-MM-dd-HH-mm-ss')
-  nexusUrl = 'http://nexus-beta.hypoport.local/nexus/content/repositories/efi-releases'
 }
 
 buildscript {
@@ -10,8 +9,7 @@ buildscript {
     springBootStarterVersion = '1.2.5.RELEASE'
   }
   repositories {
-    mavenLocal()
-    maven { url "http://nexus-beta.hypoport.local/nexus/content/repositories/efi" }
+    jcenter()
   }
   dependencies {
     classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootStarterVersion")
@@ -35,8 +33,7 @@ sourceSets {
 }
 
 repositories {
-  mavenLocal()
-  maven { url 'http://nexus-beta.hypoport.local/nexus/content/repositories/efi' }
+  jcenter()
 }
 
 compileJava {
@@ -51,8 +48,8 @@ configurations {
 dependencies {
 
   def springVersion = '4.1.7.RELEASE'
-  def slf4jVersion = '1.7.6'
-  def log4jVersion = '2.0-rc1'
+  def slf4jVersion = '1.7.12'
+  def log4jVersion = '2.3'
   def springfoxVersion = '2.1.1'
 
   compile("org.springframework.boot:spring-boot-starter:$springBootStarterVersion") {
@@ -97,5 +94,4 @@ task tagGit << {
 }
 task wrapper(type: Wrapper) {
   gradleVersion = '2.1'
-  distributionUrl = 'http://nexus-beta.hypoport.local/nexus/service/local/repositories/hypoport-shared-releases/content/gradle/gradle/2.1/gradle-2.1.zip'
 }
