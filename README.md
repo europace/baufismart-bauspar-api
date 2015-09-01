@@ -1,7 +1,7 @@
 # EUROPACE Bauspar API Dokumentation
 
 
-## Beschreibung.
+## Beschreibung
 
 Diese Schnittstelle dient der Einbindung von Bausparangeboten als Tilgungsersatzprodukt und zur Zinsabsicherung in einer Finanzierung sowie als singuläre Bausparangebote in reinen Bausparfrontends. Da sie produktanbieterunabhängig gestaltet ist, ermöglicht sie Angebote von verschiedenen Bausparkassen in Europace anzubieten. Die Schnittstelle wird als REST-Schnittstelle
 (Representational State Transfer) realisiert. 

@@ -1,8 +1,5 @@
-project.ext {
-  groupId = 'de.hypoport.efi'
-  artifactId = 'bausparschnittstelle'
-  version = new Date().format('yyyy-MM-dd-HH-mm-ss')
-}
+version = new Date().format('yyyy-MM-dd-HH-mm-ss')
+group = 'de.hypoport.efi'
 
 buildscript {
   ext {
@@ -86,7 +83,7 @@ dependencies {
 
 task tagGit << {
   exec {
-    commandLine 'git', 'tag', "${project.ext.version}"
+    commandLine 'git', 'tag', "${project.version}"
   }
   exec {
     commandLine 'git', 'push', '--tags'
