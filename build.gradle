@@ -80,7 +80,6 @@ dependencies {
   compile("org.springframework.boot:spring-boot-starter-log4j2:$springBootStarterVersion")
   compile("org.springframework:spring-core:$springVersion")
 
-
   compile('commons-io:commons-io:2.4')
   compile("org.slf4j:slf4j-api:$slf4jVersion")
   compile("org.slf4j:jcl-over-slf4j:$slf4jVersion")
@@ -100,6 +99,11 @@ dependencies {
   testCompile('junit:junit:4.11')
 }
 
+task writeVersionTxt << {
+  new File("$buildDir/version.txt").withWriter { out ->
+    out.print project.version
+  }
+}
 
 task tagGit << {
   exec {
