@@ -6,6 +6,8 @@ buildscript {
     springBootStarterVersion = '1.2.5.RELEASE'
   }
   repositories {
+    mavenLocal()
+    maven { url "http://nexus-beta.hypoport.local/nexus/content/repositories/efi" }
     jcenter()
   }
   dependencies {
@@ -30,7 +32,25 @@ sourceSets {
 }
 
 repositories {
+  mavenLocal()
+  maven { url 'http://nexus-beta.hypoport.local/nexus/content/repositories/efi' }
   jcenter()
+}
+
+uploadArchives {
+  repositories {
+    mavenDeployer {
+      repository(url: "http://nexus-beta.hypoport.local/nexus/content/repositories/efi-releases/") {
+        authentication(userName: 'deployer', password: 'deployer1');
+      }
+      snapshotRepository(url: 'http://nexus-beta.hypoport.local/nexus/content/repositories/efi-snapshots/') {
+        authentication(userName: 'deployer', password: 'deployer1');
+      }
+      pom.groupId = project.group
+      pom.artifactId = 'europace-bauspar-schnittstelle'
+      pom.version = project.version
+    }
+  }
 }
 
 compileJava {
