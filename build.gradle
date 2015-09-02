@@ -31,6 +31,10 @@ sourceSets {
   }
 }
 
+processResources {
+  filesMatching('**/*.properties') { expand(project.properties) }
+}
+
 repositories {
   mavenLocal()
   maven { url 'http://nexus-beta.hypoport.local/nexus/content/repositories/efi' }
