@@ -28,9 +28,6 @@
 
   "abschlussgebuehrHoeheInEuro": 1500,
 
-  "zahlungsbetragEinmalzahlungInEuro" : 10000,
-
-
   "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
 
   "antragsteller": [

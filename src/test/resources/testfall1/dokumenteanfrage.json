@@ -19,8 +19,6 @@
 
   "abschlussgebuehrHoeheInEuro": 500,
 
-  "zahlungsbetragEinmalzahlungInEuro" : 0,
-
   "antragsteller": [
     {
       "anrede": "HERR",

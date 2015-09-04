@@ -14,7 +14,6 @@ public class DokumentErzeugenAnfrage {
   BigDecimal auszahlungsbetragBeiZuteilung;
   Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung;
   BigDecimal abschlussgebuehrHoeheInEuro;
-  BigDecimal zahlungsbetragEinmalzahlungInEuro;
   List<Antragsteller> antragsteller;
   VermittlerDaten vermittlerDaten;
   SparphaseDokument sparphaseDokument;
@@ -69,14 +68,6 @@ public class DokumentErzeugenAnfrage {
 
   public void setVermittlerDaten(VermittlerDaten vermittlerDaten) {
     this.vermittlerDaten = vermittlerDaten;
-  }
-
-  public BigDecimal getZahlungsbetragEinmalzahlungInEuro() {
-    return zahlungsbetragEinmalzahlungInEuro;
-  }
-
-  public void setZahlungsbetragEinmalzahlungInEuro(BigDecimal zahlungsbetragEinmalzahlungInEuro) {
-    this.zahlungsbetragEinmalzahlungInEuro = zahlungsbetragEinmalzahlungInEuro;
   }
 
   public SparphaseDokument getSparphaseDokument() {

@@ -215,7 +215,6 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
           },
           "tarif": "string",
           "vertragsBeginn": "2015-09-01",
-          "zahlungsbetragEinmalzahlungInEuro": 0,
           "zuteilungsTermin": "string"
         }
       }
@@ -230,7 +229,6 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | bausparDarlehen.hoeheBauspardarlehenInEuro                            | Zahl         | Höhe des Bauspardarlehens in Euro.                                                                                                                                |
 | bausparDarlehen.zahlungsRhythmus                                      | Aufzählung   | Zahlungsrhythmus für die Tilgungsrate.  Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``.                 |
 | bauparDarlehen.zahlungsBeitragTilgungsRateInEuro                     | Euro         | Höhe der Tilgungsrate(Zins und Tilgung des Darlehens pro angegebenen Rhythmus)                                                                                    |
-| zahlungsbetragEinmalzahlungInEuro                                     | Zahl         | Einmalzahlung in Euro                                                                                                                                             |
 | sparPhase.zahlungsRhythmus                                            | Aufzählung   | Zahlungsrhytmus für den Sparbeitrag.  Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``.                   |
 | vertragsBeginn                                                        | Datum        |                                                                                                                                                                   |
 | abschlussgebuehrenbehandlung                                          | Aufzählung   | Mögliche Werte sind: ``VERRECHUNG``, ``SOFORTZAHLUNG``.                                                                                                           |
@@ -293,7 +291,6 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
         },
         "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
         "abschlussgebuehrHoeheInEuro": 500,
-        "zahlungsbetragEinmalzahlungInEuro" : 0,
         "antragsteller": [
         {
             "anrede": "HERR",
@@ -349,7 +346,6 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | sparphaseDokument.sparBeginnAb                                        | Datum        | Sparbeginn                                                                                                                                                        |
 | abschlussgebuehrenbehandlung                                          | Aufzählung   | Mögliche Werte sind: ``VERRECHUNG``, ``SOFORTZAHLUNG``.                                                                                                           |
 | abschlussgebuehrHoeheInEuro                                           | Zahl         | Abschlußgebühr                                                                                                                                                    |
-| zahlungsbetragEinmalzahlungInEuro                                     | Zahl         | Einmalzahlung in Euro                                                                                                                                             |
 | antragsteller[0].anrede                                               | Aufzählung   | Mögliche Werte sind: ``HERR``, ``FRAU``.                                                                                                                          |
 | antragsteller[0].titel                                                | String       | Titel                                                                                                                                                             |
 | antragsteller[0].vorname                                              | String       | Vorname                                                                                                                                                           |
