@@ -1,0 +1,26 @@
+<configuration status="warn" monitorInterval="10">
+  <properties>
+    <property name="pattern">%d{ISO8601} level="%level" logger="%logger{1}" %message%n</property>
+  </properties>
+  <appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="${pattern}"/>
+    </Console>
+    <RollingFile name="RollingFile" fileName="/var/log/ebs/ebs-default.log" filePattern="/var/log/ebs/ebs-default-%i.log.gz">
+      <PatternLayout pattern="${pattern}"/>
+      <Policies>
+        <SizeBasedTriggeringPolicy size="20 MB"/>
+      </Policies>
+      <DefaultRolloverStrategy max="10"/>
+    </RollingFile>
+    <Async name="AsyncRollingFile">
+      <AppenderRef ref="RollingFile"/>
+    </Async>
+  </appenders>
+  <loggers>
+    <root level="info">
+      <appender-ref ref="Console"/>
+      <appender-ref ref="AsyncRollingFile"/>
+    </root>
+  </loggers>
+</configuration>

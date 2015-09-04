@@ -3,7 +3,7 @@ group = 'de.hypoport.efi'
 
 buildscript {
   ext {
-    springBootStarterVersion = '1.2.5.RELEASE'
+    springBootVersion = '1.2.5.RELEASE'
   }
   repositories {
     mavenLocal()
@@ -11,7 +11,7 @@ buildscript {
     jcenter()
   }
   dependencies {
-    classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootStarterVersion")
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
   }
 }
 
@@ -73,15 +73,15 @@ dependencies {
   def log4jVersion = '2.3'
   def springfoxVersion = '2.1.1'
 
-  compile("org.springframework.boot:spring-boot-starter:$springBootStarterVersion") {
+  compile("org.springframework.boot:spring-boot-starter:$springBootVersion") {
     exclude module: "spring-boot-starter-logging"
   }
-  compile("org.springframework.boot:spring-boot-starter-web:$springBootStarterVersion") {
+  compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion") {
     exclude module: "spring-boot-starter-logging"
     exclude module: "logback-classic"
   }
-  compile("org.springframework.boot:spring-boot-starter-actuator:$springBootStarterVersion")
-  compile("org.springframework.boot:spring-boot-starter-log4j2:$springBootStarterVersion")
+  compile("org.springframework.boot:spring-boot-starter-actuator:$springBootVersion")
+  compile("org.springframework.boot:spring-boot-starter-log4j2:$springBootVersion")
   compile("org.springframework:spring-core:$springVersion")
 
   compile('commons-io:commons-io:2.4')
