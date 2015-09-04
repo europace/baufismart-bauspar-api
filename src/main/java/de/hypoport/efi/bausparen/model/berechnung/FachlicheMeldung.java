@@ -2,7 +2,7 @@ package de.hypoport.efi.bausparen.model.berechnung;
 
 public class FachlicheMeldung {
 
-  String text;//check
+  String text;
   MeldungsStatus status;
   MeldungsZuordnung zuordnung;
 

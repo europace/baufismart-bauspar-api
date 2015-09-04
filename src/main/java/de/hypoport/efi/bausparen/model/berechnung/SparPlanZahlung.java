@@ -9,7 +9,6 @@ public class SparPlanZahlung {
   BigDecimal saldoNachZahlungInEuro;
   BigDecimal zahlungInEuro;
   BigDecimal zinsInEuro;
-  BigDecimal abgeltungsSteuerInEuro;
   BigDecimal gebuehrenInEuro;
   BigDecimal KontofuehrungsGebuehrInEuro;
 
@@ -59,13 +58,5 @@ public class SparPlanZahlung {
 
   public void setKontofuehrungsGebuehrInEuro(BigDecimal kontofuehrungsGebuehrInEuro) {
     KontofuehrungsGebuehrInEuro = kontofuehrungsGebuehrInEuro;
-  }
-
-  public BigDecimal getAbgeltungsSteuerInEuro() {
-    return abgeltungsSteuerInEuro;
-  }
-
-  public void setAbgeltungsSteuerInEuro(BigDecimal abgeltungsSteuerInEuro) {
-    this.abgeltungsSteuerInEuro = abgeltungsSteuerInEuro;
   }
 }

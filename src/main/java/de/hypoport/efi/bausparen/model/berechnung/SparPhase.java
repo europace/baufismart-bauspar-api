@@ -4,16 +4,15 @@ import java.math.BigDecimal;
 
 public class SparPhase {
 
-  Zahlungsrhythmus zahlungsrhythmus; //check
-  BigDecimal guthabenzinsInProzent;//check
-  BigDecimal guthabenzinsBetragInEuro; //check
-  BigDecimal bonuszinsInProzent; //check
-  BigDecimal bonuszinsBetragInEuro;//check
-  BigDecimal guthabenBeiZuteilungInEuro;//check
-  BigDecimal regelsparbeitragInEuro;//check
-  BigDecimal gesamtleistungSparphaseInEuro;//check
-
-  SparPlan sparPlan;//pruefen
+  Zahlungsrhythmus zahlungsrhythmus;
+  BigDecimal guthabenzinsInProzent;
+  BigDecimal guthabenzinsBetragInEuro;
+  BigDecimal bonuszinsInProzent;
+  BigDecimal bonuszinsBetragInEuro;
+  BigDecimal guthabenBeiZuteilungInEuro;
+  BigDecimal regelsparbeitragInEuro;
+  BigDecimal gesamtleistungSparphaseInEuro;
+  SparPlan sparPlan;
 
   public Zahlungsrhythmus getZahlungsrhythmus() {
     return zahlungsrhythmus;

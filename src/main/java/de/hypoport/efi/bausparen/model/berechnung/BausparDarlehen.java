@@ -5,15 +5,15 @@ import java.time.LocalDate;
 
 public class BausparDarlehen {
 
-  BigDecimal zahlungsBeitragTilgungsRateInEuro; //check
-  Zahlungsrhythmus zahlungsrhythmus; //check
-  BigDecimal hoeheBauspardarlehenInEuro; //check
-  BigDecimal sollzinsInProzent;//check
-  BigDecimal effektiverJahreszinsInProzent;//check
-  Integer darlehenslaufzeitInMonaten;//check
-  LocalDate tilgungsende;//check
-
-  TilgungsPlan tilgungsPlan;//pruefen
+  BigDecimal zahlungsBeitragTilgungsRateInEuro;
+  Zahlungsrhythmus zahlungsrhythmus;
+  BigDecimal hoeheBauspardarlehenInEuro;
+  BigDecimal sollzinsInProzent;
+  BigDecimal effektiverJahreszinsInProzent;
+  Integer darlehenslaufzeitInMonaten;
+  LocalDate tilgungsende;
+  TilgungsPlan tilgungsPlan;
+  BigDecimal gesamtkostenDarlehenInEuro;
 
   public BigDecimal getZahlungsBeitragTilgungsRateInEuro() {
     return zahlungsBeitragTilgungsRateInEuro;
@@ -77,5 +77,13 @@ public class BausparDarlehen {
 
   public void setTilgungsPlan(TilgungsPlan tilgungsPlan) {
     this.tilgungsPlan = tilgungsPlan;
+  }
+
+  public BigDecimal getGesamtkostenDarlehenInEuro() {
+    return gesamtkostenDarlehenInEuro;
+  }
+
+  public void setGesamtkostenDarlehenInEuro(BigDecimal gesamtkostenDarlehenInEuro) {
+    this.gesamtkostenDarlehenInEuro = gesamtkostenDarlehenInEuro;
   }
 }

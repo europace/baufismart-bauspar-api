@@ -9,20 +9,16 @@ import java.util.List;
 
 public class BausparBerechnungsAnfrage {
 
-  String zielTarif; //check
-  BerechnungsZiel berechnungsZiel; //check
-  BigDecimal bausparsummeInEuro; //check
-  BigDecimal auszahlungsbetragBeiZuteilung; //check
-  Integer laufzeitBisZuteilungInMonaten; //check
+  String zielTarif;
+  BerechnungsZiel berechnungsZiel;
+  BigDecimal bausparsummeInEuro;
+  BigDecimal auszahlungsbetragBeiZuteilung;
+  Integer laufzeitBisZuteilungInMonaten;
   LocalDate zuteilungstermin;
   List<SparBeitrag> sparBeitraege;
-
   TilgungsBeitrag tilgungsBeitrag;
-
-  Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung; //check
-
-  DarlehensWunsch darlehensWunsch; //check
-
+  Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung;
+  DarlehensWunsch darlehensWunsch;
   String vermittlerNr;
   String requestId;
 

@@ -4,21 +4,18 @@ import java.time.LocalDate;
 
 public class Antragsteller {
 
-  Anrede anrede; //check
-  String titel; //check
-  String nachName; //check
-  String vorname; //check
-  LocalDate geburtsDatum; //check
-  String geburtsName; //check
-  String staatsangehoerigkeit; //check
-
-  Adresse adresse;//check
-
-  Kontakt kontakt;//check
-
-  FamilienStand familienStand;//check
-
-  ZahlungsDaten zahlungsDaten;//check
+  Anrede anrede;
+  String titel;
+  String nachName;
+  String vorname;
+  LocalDate geburtsDatum;
+  String geburtsName;
+  String staatsangehoerigkeit;
+  Adresse adresse;
+  Kontakt kontakt;
+  FamilienStand familienStand;
+  ZahlungsDaten zahlungsDaten;
+  BeschaeftigungsVerhaeltnis beschaeftigungsVerhaeltnis;
 
   public String getNachName() {
     return nachName;
@@ -106,5 +103,13 @@ public class Antragsteller {
 
   public void setZahlungsDaten(ZahlungsDaten zahlungsDaten) {
     this.zahlungsDaten = zahlungsDaten;
+  }
+
+  public BeschaeftigungsVerhaeltnis getBeschaeftigungsVerhaeltnis() {
+    return beschaeftigungsVerhaeltnis;
+  }
+
+  public void setBeschaeftigungsVerhaeltnis(BeschaeftigungsVerhaeltnis beschaeftigungsVerhaeltnis) {
+    this.beschaeftigungsVerhaeltnis = beschaeftigungsVerhaeltnis;
   }
 }

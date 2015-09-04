@@ -8,27 +8,19 @@ import java.util.List;
 
 public class Bausparangebot {
 
-  String tarif; //check
+  String tarif;
   BerechnungsZiel berechnungsziel;
-
-  BigDecimal bausparsummeInEuro;//check
-  BigDecimal sparbeitragInEuro;//check
-
-  Integer laufzeitBisZuteilungInMonaten;//check
-  LocalDate zuteilungsTermin;//check
-
+  BigDecimal bausparsummeInEuro;
+  BigDecimal sparbeitragInEuro;
+  Integer laufzeitBisZuteilungInMonaten;
+  LocalDate zuteilungsTermin;
   BausparDarlehen bausparDarlehen;
-
-  BigDecimal zahlungsbetragEinmalzahlungInEuro;//check
+  BigDecimal zahlungsbetragEinmalzahlungInEuro;
   SparPhase sparPhase;
-
   Abschlussgebuehr abschlussgebuehr;
-
-  BigDecimal kontogebuehrJaehrlichInEuro;//check
-
-  BigDecimal gesamtleistungKomplettInEuro;//check
-  Integer gesamtlaufzeitKomplettInMonaten;//check
-
+  BigDecimal kontogebuehrJaehrlichInEuro;
+  BigDecimal gesamtleistungKomplettInEuro;
+  Integer gesamtlaufzeitKomplettInMonaten;
   List<FachlicheMeldung> meldungen;
 
   private LocalDate vertragsBeginn;
