@@ -201,7 +201,6 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
             "sparPlan": {
               "zahlungen": [
                 {
-                  "abgeltungsSteuerInEuro": 0,
                   "datum": "string",
                   "gebuehrenInEuro": 0,
                   "kontofuehrungsGebuehrInEuro": 0,
@@ -210,8 +209,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
                   "zinsInEuro": 0
                 }
               ]
-            },
-            "zahlungsrhythmus": "MONATLICH"
+            },            
           },
           "tarif": "string",
           "vertragsBeginn": "2015-09-01",
@@ -229,7 +227,6 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | bausparDarlehen.hoeheBauspardarlehenInEuro                            | Zahl         | Höhe des Bauspardarlehens in Euro.                                                                                                                                |
 | bausparDarlehen.zahlungsRhythmus                                      | Aufzählung   | Zahlungsrhythmus für die Tilgungsrate.  Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``.                 |
 | bauparDarlehen.zahlungsBeitragTilgungsRateInEuro                     | Euro         | Höhe der Tilgungsrate(Zins und Tilgung des Darlehens pro angegebenen Rhythmus)                                                                                    |
-| sparPhase.zahlungsRhythmus                                            | Aufzählung   | Zahlungsrhytmus für den Sparbeitrag.  Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``.                   |
 | vertragsBeginn                                                        | Datum        |                                                                                                                                                                   |
 | abschlussgebuehrenbehandlung                                          | Aufzählung   | Mögliche Werte sind: ``VERRECHUNG``, ``SOFORTZAHLUNG``.                                                                                                           |
 | abschlussgebuehrHoeheInProzent                                        | Zahl         | Abschlussgebühr in Prozent                                                                                                                                        |
@@ -285,9 +282,6 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
         "sparphaseDokument":
         {
             "regelsparbeitragInEuro": 168.33,
-            "sparBeginnAb": "2015-09-30",
-            "sparEnde": "2025-08-31",
-            "zahlungsRhythmus": "MONATLICH"
         },
         "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
         "abschlussgebuehrHoeheInEuro": 500,
