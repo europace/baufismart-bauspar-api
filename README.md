@@ -209,7 +209,15 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
                   "zinsInEuro": 0
                 }
               ]
-            },            
+            },
+            "sparBeitraege": [
+              {
+                "zahlungsrhythmus": "EINMALIG",
+                "beitrag": 0,
+                "zahlungAb": "2015-09-30",
+                "zahlungBis": "2015-09-30"
+              }
+            ]
           },
           "tarif": "string",
           "vertragsBeginn": "2015-09-01",
@@ -225,7 +233,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | laufzeitBisZuteilungInMonaten                                         | Zahl         | Anzahl Monate bis zur Zuteilung                                                                                                                                   |
 | zuteilungsTermin                                                      | Datum        | Zuteilungstermin                                                                                                                                                  |
 | bausparDarlehen.hoeheBauspardarlehenInEuro                            | Zahl         | Höhe des Bauspardarlehens in Euro.                                                                                                                                |
-| bausparDarlehen.zahlungsRhythmus                                      | Aufzählung   | Zahlungsrhythmus für die Tilgungsrate.  Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``.                 |
+| bausparDarlehen.zahlungsrhythmus                                      | Aufzählung   | Zahlungsrhythmus für die Tilgungsrate.  Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``.                 |
 | bauparDarlehen.zahlungsBeitragTilgungsRateInEuro                     | Euro         | Höhe der Tilgungsrate(Zins und Tilgung des Darlehens pro angegebenen Rhythmus)                                                                                    |
 | vertragsBeginn                                                        | Datum        |                                                                                                                                                                   |
 | abschlussgebuehrenbehandlung                                          | Aufzählung   | Mögliche Werte sind: ``VERRECHUNG``, ``SOFORTZAHLUNG``.                                                                                                           |
@@ -239,6 +247,11 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | sparPhase.guthabenBeiZuteilungInEuro                                  | Zahl         |                                                                                                                                                                   |
 | sparPhase.regelsparbeitragInEuro                                      | Zahl         |                                                                                                                                                                   |
 | sparPhase.gesamtleistungSparphaseInEuro                               | Zahl         |                                                                                                                                                                   |
+| sparPhase.sparBeitraege                                               | Liste        | Stellt die Abfolge unterschiedlich hoher Sparbeiträge in der Sparphase dar. Auch Einmalzahlungen werden über diesen Mechanismus abgebildet. Sie Biespiel 2.       |
+| sparPhase.sparBeitraege[i].beitrag                                    | Zahl         | Der Sparbeitrag dieser Zahlung ein Euro. |
+| sparPhase.sparBeitraege[i].zahlungAb                                  | Datum        | Der Startzeitpunkt ab dem dieser Sparbeitrag geleistet wird. |
+| sparPhase.sparBeitraege[i].zahlungBis                                 | Datum        | Der letzte Zeitpunkt bis zu dem dieser Sparbeitrag geleistet wird. |
+| sparPhase.sparBeitraege[i].zahlungsrhythmus                           | Auflistung   | Legt fest, in welchen Intervallen dieser Sparbeitrag gezahlt wird. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
 | bausparDarlehen.sollzinsInProzent                                     | Zahl         |                                                                                                                                                                   |
 | bausparDarlehen.effektiverJahreszinsInProzent                         | Zahl         |                                                                                                                                                                   |
 | bausparDarlehen.darlehenslaufzeitInMonaten                            | Zahl         |                                                                                                                                                                   |
@@ -282,6 +295,14 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
         "sparphaseDokument":
         {
             "regelsparbeitragInEuro": 168.33,
+            "sparBeitraege": [
+              {
+                "zahlungsrhythmus": "EINMALIG",
+                "beitrag": 10000.0,
+                "zahlungAb": "2015-09-30",
+                "zahlungBis": "2015-09-30"
+              }
+            ]
         },
         "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
         "abschlussgebuehrHoeheInEuro": 500,
@@ -335,9 +356,11 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | bausparsummeInEuro                                                    | Zahl         | Betrag der Bausparsumme in Euro                                                                                                                                   |
 | auszahlungsbetragBeiZuteilung                                         | Zahl         | Auszahlungssumme                                                                                                                                                  |
 | sparphaseDokument.regelsparbeitragInEuro                              | Zahl         | Sparbeitrag                                                                                                                                                       |
-| sparphaseDokument.sparBeginnAb                                        | Datum        | Sparbeginn                                                                                                                                                        |
-| sparphaseDokument.sparEnde                                            | Datum        | Ende Sparphase                                                                                                                                                    |
-| sparphaseDokument.sparBeginnAb                                        | Datum        | Sparbeginn                                                                                                                                                        |
+| sparphaseDokument.sparBeitraege                                       | Liste        | Stellt die Abfolge unterschiedlich hoher Sparbeiträge in der Sparphase dar. Auch Einmalzahlungen werden über diesen Mechanismus abgebildet. Sie Biespiel 2.       |
+| sparphaseDokument.sparBeitraege[i].beitrag                            | Zahl         | Der Sparbeitrag dieser Zahlung ein Euro. |
+| sparphaseDokument.sparBeitraege[i].zahlungAb                          | Datum        | Der Startzeitpunkt ab dem dieser Sparbeitrag geleistet wird. |
+| sparphaseDokument.sparBeitraege[i].zahlungBis                         | Datum        | Der letzte Zeitpunkt bis zu dem dieser Sparbeitrag geleistet wird. |
+| sparphaseDokument.sparBeitraege[i].zahlungsrhythmus                   | Auflistung   | Legt fest, in welchen Intervallen dieser Sparbeitrag gezahlt wird. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
 | abschlussgebuehrenbehandlung                                          | Aufzählung   | Mögliche Werte sind: ``VERRECHUNG``, ``SOFORTZAHLUNG``.                                                                                                           |
 | abschlussgebuehrHoeheInEuro                                           | Zahl         | Abschlußgebühr                                                                                                                                                    |
 | antragsteller[0].anrede                                               | Aufzählung   | Mögliche Werte sind: ``HERR``, ``FRAU``.                                                                                                                          |
