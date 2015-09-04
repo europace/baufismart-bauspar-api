@@ -213,7 +213,6 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
             },
             "zahlungsrhythmus": "MONATLICH"
           },
-          "sparbeitragInEuro": 0,
           "tarif": "string",
           "vertragsBeginn": "2015-09-01",
           "zahlungsbetragEinmalzahlungInEuro": 0,
@@ -226,7 +225,6 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | tarif                                                                 | String       | der Tarif wird auf Seiten der BSK ermittelt                                                                                                                       |
 | berechnungsZiel                                                       | Aufzählung   | Mögliche Werte: ``SPARBEITRAG_INKL_VL``, ``BAUSPARSUMME``, ``ZUTEILUNGSTERMIN``, ``LAUFZEIT_BIS_ZUTEILUNG``                                                       |
 | bausparsummeInEuro                                                    | Zahl         | Betrag der Bausparsumme in Euro                                                                                                                                   |
-| sparbeitragInEuro                                                     | Zahl         | Sparbeitrag                                                                                                                                                       |
 | laufzeitBisZuteilungInMonaten                                         | Zahl         | Anzahl Monate bis zur Zuteilung                                                                                                                                   |
 | zuteilungsTermin                                                      | Datum        | Zuteilungstermin                                                                                                                                                  |
 | bausparDarlehen.hoeheBauspardarlehenInEuro                            | Zahl         | Höhe des Bauspardarlehens in Euro.                                                                                                                                |
