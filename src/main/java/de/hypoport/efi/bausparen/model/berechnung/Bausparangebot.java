@@ -11,11 +11,9 @@ public class Bausparangebot {
   String tarif;
   BerechnungsZiel berechnungsziel;
   BigDecimal bausparsummeInEuro;
-  BigDecimal sparbeitragInEuro;
   Integer laufzeitBisZuteilungInMonaten;
   LocalDate zuteilungsTermin;
   BausparDarlehen bausparDarlehen;
-  BigDecimal zahlungsbetragEinmalzahlungInEuro;
   SparPhase sparPhase;
   Abschlussgebuehr abschlussgebuehr;
   BigDecimal kontogebuehrJaehrlichInEuro;
@@ -49,14 +47,6 @@ public class Bausparangebot {
     this.bausparsummeInEuro = bausparsummeInEuro;
   }
 
-  public BigDecimal getSparbeitragInEuro() {
-    return sparbeitragInEuro;
-  }
-
-  public void setSparbeitragInEuro(BigDecimal sparbeitragInEuro) {
-    this.sparbeitragInEuro = sparbeitragInEuro;
-  }
-
   public Integer getLaufzeitBisZuteilungInMonaten() {
     return laufzeitBisZuteilungInMonaten;
   }
@@ -71,14 +61,6 @@ public class Bausparangebot {
 
   public void setZuteilungsTermin(LocalDate zuteilungsTermin) {
     this.zuteilungsTermin = zuteilungsTermin;
-  }
-
-  public BigDecimal getZahlungsbetragEinmalzahlungInEuro() {
-    return zahlungsbetragEinmalzahlungInEuro;
-  }
-
-  public void setZahlungsbetragEinmalzahlungInEuro(BigDecimal zahlungsbetragEinmalzahlungInEuro) {
-    this.zahlungsbetragEinmalzahlungInEuro = zahlungsbetragEinmalzahlungInEuro;
   }
 
   public SparPhase getSparPhase() {

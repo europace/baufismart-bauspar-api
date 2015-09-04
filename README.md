@@ -106,6 +106,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
         "darlehensWunsch": "MIT_DARLEHEN",
         "laufzeitBisZuteilungInMonaten": 112,
         "requestId": "XAJNvEbn",
+        "fallNummer": "123-456-789",
         "sparBeitraege": [
           {
            "beitrag": 150,
@@ -120,7 +121,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
         },
         "vermittlerNr": "A123456",
         "zielTarif": "T1",
-        "zuteilungstermin": "2026-01-01"
+        "zuteilungstermin": "2026-01-01",        
       }
 
 | Feld                               | Typ           | Beschreibung |
@@ -142,6 +143,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | darlehensWunsch                    | Auflistung    | Soll ein Bauspar- oder Zuteilungsdarlehen in Anspruch genommen werden? Mögliche Werte sind: ``MIT_DARLEHEN``, ``OHNE_DARLEHEN``. |
 | vermittlerNr                       | String        | Die ID des Vermittlers im Europace System. |
 | requestId                          | String        | Ordnet die Anfrage einer EUROPACE Anfrage für Loggingzwecke zu. |
+| fallNummer                         | String        | Ordnet die Anfrage einer EUROPACE Fallakte für Loggingzwecke zu. |
 
 
 #### Antwort
@@ -332,7 +334,9 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
            "postleitzahl": null,
            "strasseHausnummer": null,
            "vorname": null
-       }
+       },
+       "fallNummer":"123-456-789",
+       "requestId":"87e6rt5"
     }
 
 
@@ -367,11 +371,13 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | antragsteller[0].zahlungsDaten.iban                                   | String       |                                                                                                                                                                   |
 | antragsteller[0].zahlungsDaten.nameKreditInstitut                     | String       |                                                                                                                                                                   |
 | antragsteller[0].zahlungsDaten.zahlungsForm                           | Aufzählung   | Mögliche Werte sind: ``LASTSCHRIFT``, ``UEBERWEISUNG``.                                                                                                           |
-| vermittlerDaten.nachName                                              | String       |                                                                                                                                                                                           |
+| vermittlerDaten.nachName                                              | String       |                                                                                                                                                                   |
 | vermittlerDaten.ort                                                   | String       |                                                                                                                                                                   |
 | vermittlerDaten.postleitzahl                                          | String       |                                                                                                                                                                   |
 | vermittlerDaten.strasseHausnummer                                     | String       |                                                                                                                                                                   |
 | vermittlerDaten.vorname                                               | String       |                                                                                                                                                                   |
+| requestId                                                             | String       | Ordnet die Anfrage einer EUROPACE Anfrage für Loggingzwecke zu.                                                                                                   |
+| fallNummer                                                            | String       | Ordnet die Anfrage einer EUROPACE Fallakte für Loggingzwecke zu.                                                                                                  |
                                                                                                                                                                                                                                                            
 
 #### Antwort

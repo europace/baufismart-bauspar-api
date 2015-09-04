@@ -1,9 +1,10 @@
 package de.hypoport.efi.bausparen.model.dokumente;
 
 import de.hypoport.efi.bausparen.model.berechnung.Abschlussgebuehrenbehandlung;
-import org.joda.time.LocalDate;
+import de.hypoport.efi.bausparen.model.berechnung.BerechnungsZiel;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 public class DokumentErzeugenAnfrage {
@@ -19,6 +20,8 @@ public class DokumentErzeugenAnfrage {
   SparphaseDokument sparphaseDokument;
   LocalDate vertragsDatum;
   String fallNummer;
+  String requestId;
+
 
   public String getTarif() {
     return tarif;
@@ -106,5 +109,13 @@ public class DokumentErzeugenAnfrage {
 
   public void setFallNummer(String fallNummer) {
     this.fallNummer = fallNummer;
+  }
+
+  public String getRequestId() {
+    return requestId;
+  }
+
+  public void setRequestId(String requestId) {
+    this.requestId = requestId;
   }
 }

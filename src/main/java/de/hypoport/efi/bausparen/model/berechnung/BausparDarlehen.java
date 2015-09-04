@@ -13,7 +13,7 @@ public class BausparDarlehen {
   Integer darlehenslaufzeitInMonaten;
   LocalDate tilgungsende;
   TilgungsPlan tilgungsPlan;
-  BigDecimal gesamtkostenDarlehenInEuro;
+  BigDecimal gesamtleistungDarlehenInEuro;
 
   public BigDecimal getZahlungsBeitragTilgungsRateInEuro() {
     return zahlungsBeitragTilgungsRateInEuro;
@@ -79,11 +79,11 @@ public class BausparDarlehen {
     this.tilgungsPlan = tilgungsPlan;
   }
 
-  public BigDecimal getGesamtkostenDarlehenInEuro() {
-    return gesamtkostenDarlehenInEuro;
+  public BigDecimal getGesamtleistungDarlehenInEuro() {
+    return gesamtleistungDarlehenInEuro;
   }
 
-  public void setGesamtkostenDarlehenInEuro(BigDecimal gesamtkostenDarlehenInEuro) {
-    this.gesamtkostenDarlehenInEuro = gesamtkostenDarlehenInEuro;
+  public void setGesamtleistungDarlehenInEuro(BigDecimal gesamtleistungDarlehenInEuro) {
+    this.gesamtleistungDarlehenInEuro = gesamtleistungDarlehenInEuro;
   }
 }
