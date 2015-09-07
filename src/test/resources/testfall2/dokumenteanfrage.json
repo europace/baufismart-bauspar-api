@@ -100,6 +100,18 @@
         "ausweisNummer": null,
         "austellendeBehoerde": null,
         "ausstellungsDatum": "2010-01-01"
+      },
+      "todesfallBeguenstigter":{
+        "anrede":"HERR",
+        "vorname":"Daniel",
+        "nachname":"Hertz",
+        "geburtsdatum":"1967-04-30",
+        "adresse":{
+          "strasse":"Prenzlauer Allee",
+          "hausNummer":"98",
+          "wohnOrt":"Leipzig",
+          "postleitzahl":"04318"
+        }
       }
     }
   ],

@@ -19,6 +19,7 @@ public class Antragsteller {
   BeschaeftigungsVerhaeltnis beschaeftigungsVerhaeltnis;
   Legitimation legitimation;
   Boolean einkommenssteuerpflichtigInUsa;
+  TodesfallBeguenstigter todesfallBeguenstigter;
 
   public String getNachName() {
     return nachName;
@@ -138,5 +139,13 @@ public class Antragsteller {
 
   public void setEinkommenssteuerpflichtigInUsa(Boolean einkommenssteuerpflichtigInUsa) {
     this.einkommenssteuerpflichtigInUsa = einkommenssteuerpflichtigInUsa;
+  }
+
+  public TodesfallBeguenstigter getTodesfallBeguenstigter() {
+    return todesfallBeguenstigter;
+  }
+
+  public void setTodesfallBeguenstigter(TodesfallBeguenstigter todesfallBeguenstigter) {
+    this.todesfallBeguenstigter = todesfallBeguenstigter;
   }
 }

@@ -54,7 +54,20 @@
         "ausweisNummer": null,
         "austellendeBehoerde": null,
         "ausstellungsDatum": "2010-01-01"
+      },
+      "todesfallBeguenstigter":{
+        "anrede":"HERR",
+        "vorname":"Heinz",
+        "nachname":"Müller",
+        "geburtsdatum":"1974-05-11",
+        "adresse":{
+          "strasse":"Rohrdamm",
+          "hausNummer":"59",
+          "wohnOrt":"Borgholzhausen",
+          "postleitzahl":"33829"
+        }
       }
+
     }
   ],
 
