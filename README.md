@@ -130,7 +130,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | berechnungsZiel                    | Auflistung    | Mögliche Werte: ``SPARBEITRAG_INKL_VL``, ``BAUSPARSUMME``, ``ZUTEILUNGSTERMIN``, ``LAUFZEIT_BIS_ZUTEILUNG`` |
 | bausparSummeInEuro                 | Zahl          | Gewünschte Bausparsumme in Euro |
 | auszahlungsbetragBeiZuteilung      | Zahl          | Der Betrag des Bausparvertrags der bei Zuteilung ausgezahlt wird in Euro |
-| laufzeitBisZuteilungInMonaten      | Zahl          | Die Anzahl Monate zwischen Vertragsbeginn und Zuteilungsdatum. Entweder wird dieses Feld oder ``zuteilungstermin`` geliefert.|
+| laufzeitBisZuteilungInMonaten      | Zahl          | Die Anzahl Monate zwischen Vertragsdatum und Zuteilungsdatum. Entweder wird dieses Feld oder ``zuteilungstermin`` geliefert.|
 | zuteilungstermin                   | Datum         | Das gewünschte Zuteilungsdatum. Alternativ kann ``laufzeitBisZuteilungInMonaten`` geliefert werden. |
 | sparBeitraege                      | Liste         | Ermöglicht die Erfassung mehrerer unterschiedlicher Sparzahlungen oder Einmalzahlungen. |
 | sparBeitraege[i].beitrag           | Zahl          | Der Sparbeitrag dieser Zahlung ein Euro. |
@@ -221,7 +221,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
             ]
           },
           "tarif": "string",
-          "vertragsBeginn": "2015-09-01",
+          "vertragsDatum": "2015-09-01",
           "zuteilungsTermin": "string"
         }
       }
@@ -233,7 +233,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | bausparsummeInEuro                                                    | Zahl         | Betrag der Bausparsumme in Euro                                                                                                                                   |
 | laufzeitBisZuteilungInMonaten                                         | Zahl         | Anzahl Monate bis zur Zuteilung                                                                                                                                   |
 | zuteilungsTermin                                                      | Datum        | Zuteilungstermin                                                                                                                                                  |
-| vertragsBeginn                                                        | Datum        |                                                                                                                                                                   |
+| vertragsDatum                                                         | Datum        |                                                                                                                                                                   |
 | abschlussgebuehrenbehandlung                                          | Aufzählung   | Mögliche Werte sind: ``VERRECHUNG``, ``SOFORTZAHLUNG``.                                                                                                           |
 | abschlussgebuehrHoeheInProzent                                        | Zahl         | Abschlussgebühr in Prozent                                                                                                                                        |
 | abschlussgebuehrBetragInEuro                                          | Zahl         | Abschlussgebühr in Euro                                                                                                                                           |
