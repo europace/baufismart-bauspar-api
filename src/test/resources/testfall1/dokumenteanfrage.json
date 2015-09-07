@@ -29,6 +29,7 @@
       "geburtsName": null,
       "geburtsOrt": null,
       "staatsangehoerigkeit": "Deutsch",
+      "einkommenssteuerpflichtigInUsa":false,
       "adresse": {
         "strasse": "Steinweg.",
         "hausNummer": "8",

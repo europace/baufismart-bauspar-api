@@ -18,6 +18,7 @@ public class Antragsteller {
   ZahlungsDaten zahlungsDaten;
   BeschaeftigungsVerhaeltnis beschaeftigungsVerhaeltnis;
   Legitimation legitimation;
+  Boolean einkommenssteuerpflichtigInUsa;
 
   public String getNachName() {
     return nachName;
@@ -129,5 +130,13 @@ public class Antragsteller {
 
   public void setLegitimation(Legitimation legitimation) {
     this.legitimation = legitimation;
+  }
+
+  public Boolean getEinkommenssteuerpflichtigInUsa() {
+    return einkommenssteuerpflichtigInUsa;
+  }
+
+  public void setEinkommenssteuerpflichtigInUsa(Boolean einkommenssteuerpflichtigInUsa) {
+    this.einkommenssteuerpflichtigInUsa = einkommenssteuerpflichtigInUsa;
   }
 }

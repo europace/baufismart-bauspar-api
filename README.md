@@ -318,6 +318,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
             "geburtsName": null,
             "geburtsOrt": null,
             "staatsangehoerigkeit": "Deutsch",
+            "einkommenssteuerpflichtigInUsa":null,
             "adresse": 
             {
                 "strasse": "Steinweg.",
@@ -399,10 +400,11 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | antragsteller[0].zahlungsDaten.nameKreditInstitut                     | String       |                                                                                                                                                                   |
 | antragsteller[0].zahlungsDaten.zahlungsForm                           | Aufzählung   | Mögliche Werte sind: ``LASTSCHRIFT``, ``UEBERWEISUNG``.                                                                                                           |
 | antragsteller[0].beschaeftigungsVerhaeltnis                           | Aufzählung   | Mögliche Werte sind: ``ANGESTELLTER``, ``ARBEITER``, ``BEAMTER``, ``FREIBERUFLER``, ``SELBSTAENDIGER``, ``BESCHAEFTIGUNGSLOSER``, ``RENTNER``.                    |
-| antragsteller[0].legitimation.ausweisArt                              | Aufzählung   | Mögliche Werte sind: ``PERSONALAUSWEIS``, ``REISEPASS``                                                                                                               |
+| antragsteller[0].legitimation.ausweisArt                              | Aufzählung   | Mögliche Werte sind: ``PERSONALAUSWEIS``, ``REISEPASS``                                                                                                           |
 | antragsteller[0].legitimation.ausweisNummer                           | String       |                                                                                                                                                                   |
 | antragsteller[0].legitimation.austellendeBehoerde                     | String       |                                                                                                                                                                   |
 | antragsteller[0].legitimation.ausstellungsDatum                       | Datum        |                                                                                                                                                                   |
+| antragsteller[0].einkommenssteuerpflichtigInUsa                       | Boolean      | Gibt an, ob der Antragsteller nach dem _Foreign Account Tax Compliance Act_ (FATCA) in den USA steuerpflichtig ist.                                               |
 | vermittlerDaten.nachName                                              | String       |                                                                                                                                                                   |
 | vermittlerDaten.ort                                                   | String       |                                                                                                                                                                   |
 | vermittlerDaten.postleitzahl                                          | String       |                                                                                                                                                                   |
