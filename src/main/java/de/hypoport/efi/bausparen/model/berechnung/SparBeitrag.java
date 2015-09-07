@@ -1,4 +1,4 @@
-package de.hypoport.efi.bausparen.model.berechnung.anfrage;
+package de.hypoport.efi.bausparen.model.berechnung;
 
 import de.hypoport.efi.bausparen.model.berechnung.Zahlungsrhythmus;
 

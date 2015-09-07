@@ -2,6 +2,7 @@ package de.hypoport.efi.bausparen.model.berechnung.anfrage;
 
 import de.hypoport.efi.bausparen.model.berechnung.Abschlussgebuehrenbehandlung;
 import de.hypoport.efi.bausparen.model.berechnung.BerechnungsZiel;
+import de.hypoport.efi.bausparen.model.berechnung.SparBeitrag;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -21,6 +22,7 @@ public class BausparBerechnungsAnfrage {
   DarlehensWunsch darlehensWunsch;
   String vermittlerNr;
   String requestId;
+  String fallNummer;
 
   public LocalDate getZuteilungstermin() {
     return zuteilungstermin;
@@ -116,5 +118,13 @@ public class BausparBerechnungsAnfrage {
 
   public void setTilgungsBeitrag(TilgungsBeitrag tilgungsBeitrag) {
     this.tilgungsBeitrag = tilgungsBeitrag;
+  }
+
+  public String getFallNummer() {
+    return fallNummer;
+  }
+
+  public void setFallNummer(String fallNummer) {
+    this.fallNummer = fallNummer;
   }
 }

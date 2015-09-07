@@ -8,17 +8,25 @@
   "sparphaseDokument":
   {
     "regelsparbeitragInEuro": 333.75,
-    "sparBeginnAb": "2015-09-30",
-    "sparEnde": "2028-01-31",
-    "zahlungsRhythmus": "MONATLICH"
+    "sparBeitraege": [
+      {
+        "zahlungsrhythmus": "EINMALIG",
+        "beitrag": 10000.0,
+        "zahlungAb": "2015-09-30",
+        "zahlungBis": "2015-09-30"
+      },
+      {
+        "zahlungsrhythmus": "MONATLICH",
+        "beitrag": 333.75,
+        "zahlungAb": "2015-09-30",
+        "zahlungBis": "2028-01-31"
+      }
+    ]
   }
 ,
   "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
 
   "abschlussgebuehrHoeheInEuro": 1500,
-
-  "zahlungsbetragEinmalzahlungInEuro" : 10000,
-
 
   "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
 
@@ -78,7 +86,8 @@
         "iban": null,
         "nameKreditInstitut": null,
         "zahlungsForm": "LASTSCHRIFT"
-      }
+      },
+      "beschaeftigungsVerhaeltnis":"ANGESTELLTER"
 
     }
   ],
@@ -88,6 +97,13 @@
     "ort": null,
     "postleitzahl": null,
     "strasseHausnummer": null,
-    "vorname": null
-  }
+    "vorname": null,
+    "firma":null,
+    "telefonNummer":null,
+    "eMailAdresse":null
+  },
+
+  "vertragsDatum":"2015-09-01",
+  "fallNummer":"123-456-789",
+  "requestId":"87e6rt5"
 }
