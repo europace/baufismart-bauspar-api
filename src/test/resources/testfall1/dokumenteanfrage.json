@@ -58,9 +58,9 @@
     "postleitzahl": null,
     "strasseHausnummer": null,
     "vorname": null,
-    "firma":null,
-    "telefonNummer":null,
-    "eMailAdresse":null
+    "firma": null,
+    "telefonNummer": null,
+    "eMailAdresse": null
   },
 
   "vertragsDatum":"2015-09-01",

@@ -20,8 +20,7 @@ public class Bausparangebot {
   BigDecimal gesamtleistungKomplettInEuro;
   Integer gesamtlaufzeitKomplettInMonaten;
   List<FachlicheMeldung> meldungen;
-
-  private LocalDate vertragsBeginn;
+  LocalDate vertragsBeginn;
 
   public String getTarif() {
     return tarif;

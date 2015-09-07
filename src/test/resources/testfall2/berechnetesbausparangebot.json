@@ -11,7 +11,8 @@
       "effektiverJahreszinsInProzent": 2.93,
       "hoeheBauspardarlehenInEuro": 88776.94,
       "sollzinsInProzent": 2.75,
-      "tilgungsPlan": {   "zahlungen":[
+      "tilgungsPlan": {
+        "zahlungen":[
           {"datum":"2028-02-01", "gebuehrenInEuro": 0, "kontofuehrungsGebuehrInEuro":0, "saldoNachZahlungInEuro": -88776.94, "zahlungInEuro": -88776.94,"zinsInEuro": 0},
           {"datum":"2028-02-29", "gebuehrenInEuro": 0, "kontofuehrungsGebuehrInEuro": 0, "saldoNachZahlungInEuro":-88380.39, "zahlungInEuro": 600, "zinsInEuro": 203.45},
           {"datum":"2028-03-31", "gebuehrenInEuro": 0,"kontofuehrungsGebuehrInEuro": 0, "saldoNachZahlungInEuro": -87982.93, "zahlungInEuro":600, "zinsInEuro": 202.54},

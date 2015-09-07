@@ -175,7 +175,8 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
             },
             "tilgungsende": "string",
             "zahlungsBeitragTilgungsRateInEuro": 0,
-            "zahlungsrhythmus": "MONATLICH"
+            "zahlungsrhythmus": "MONATLICH",
+            "gesamtleistungDarlehenInEuro": 0
           },
           "bausparsummeInEuro": 0,
           "berechnungsziel": "SPARBEITRAG_INKL_VL",
@@ -232,14 +233,29 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | bausparsummeInEuro                                                    | Zahl         | Betrag der Bausparsumme in Euro                                                                                                                                   |
 | laufzeitBisZuteilungInMonaten                                         | Zahl         | Anzahl Monate bis zur Zuteilung                                                                                                                                   |
 | zuteilungsTermin                                                      | Datum        | Zuteilungstermin                                                                                                                                                  |
-| bausparDarlehen.hoeheBauspardarlehenInEuro                            | Zahl         | Höhe des Bauspardarlehens in Euro.                                                                                                                                |
-| bausparDarlehen.zahlungsrhythmus                                      | Aufzählung   | Zahlungsrhythmus für die Tilgungsrate.  Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``.                 |
-| bauparDarlehen.zahlungsBeitragTilgungsRateInEuro                     | Euro         | Höhe der Tilgungsrate(Zins und Tilgung des Darlehens pro angegebenen Rhythmus)                                                                                    |
 | vertragsBeginn                                                        | Datum        |                                                                                                                                                                   |
 | abschlussgebuehrenbehandlung                                          | Aufzählung   | Mögliche Werte sind: ``VERRECHUNG``, ``SOFORTZAHLUNG``.                                                                                                           |
 | abschlussgebuehrHoeheInProzent                                        | Zahl         | Abschlussgebühr in Prozent                                                                                                                                        |
 | abschlussgebuehrBetragInEuro                                          | Zahl         | Abschlussgebühr in Euro                                                                                                                                           |
 | kontoGebuehrJaehrlichInEuro                                           | Zahl         |                                                                                                                                                                   |
+| gesamtleistungKomplettInEuro                                          | Zahl         | Summe aller Zahlungen in der Darlehensphase                                                                                                                       |
+| gesamtlaufzeitKomplettInMonaten                                       | Zahl         |                                                                                                                                                                   |
+| bausparDarlehen.hoeheBauspardarlehenInEuro                            | Zahl         | Höhe des Bauspardarlehens in Euro.                                                                                                                                |
+| bausparDarlehen.zahlungsrhythmus                                      | Aufzählung   | Zahlungsrhythmus für die Tilgungsrate.  Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``.                 |
+| bausparDarlehen.zahlungsBeitragTilgungsRateInEuro                     | Zahl         | Höhe der Tilgungsrate(Zins und Tilgung des Darlehens pro angegebenen Rhythmus)                                                                                    |
+| bausparDarlehen.sollzinsInProzent                                     | Zahl         |                                                                                                                                                                   |
+| bausparDarlehen.effektiverJahreszinsInProzent                         | Zahl         |                                                                                                                                                                   |
+| bausparDarlehen.darlehenslaufzeitInMonaten                            | Zahl         |                                                                                                                                                                   |
+| bausparDarlehen.tilgungsende                                          | Datum        |                                                                                                                                                                   |
+| bausparDarlehen.gesamtleistungDarlehenInEuro                          | Zahl         |                                                                                                                                                                   |
+| bausparDarlehen.tilgungsPlan                                          | TILGUNGSPLAN | Jede einzelne Zahlung des Bauspardarlehens bis zur Vollablösung.                                                                                                  |
+| bausparDarlehen.tilgungsPlan.zahlungen[].datum                        | Datum        |                                                                                                                                                                   |
+| bausparDarlehen.tilgungsPlan.zahlungen[].gebuehrenInEuro              | Zahl         |                                                                                                                                                                   |
+| bausparDarlehen.tilgungsPlan.zahlungen[].kontofuehrungsGebuehrInEuro  | Zahl         |                                                                                                                                                                   |
+| bausparDarlehen.tilgungsPlan.zahlungen[].saldoNachZahlungInEuro       | Zahl         |                                                                                                                                                                   |
+| bausparDarlehen.tilgungsPlan.zahlungen[].tilgungInEuro                | Zahl         |                                                                                                                                                                   |
+| bausparDarlehen.tilgungsPlan.zahlungen[].zahlungInEuro                | Zahl         |                                                                                                                                                                   |
+| bausparDarlehen.tilgungsPlan.zahlungen[].zinsInEuro                   | Zahl         |                                                                                                                                                                   |
 | sparPhase.guthabenzinsInProzent                                       | Zahl         |                                                                                                                                                                   |
 | sparPhase.guthabenzinsBetragInEuro                                    | Zahl         |                                                                                                                                                                   |
 | sparPhase.bonuszinsInProzent                                          | Zahl         |                                                                                                                                                                   |
@@ -252,20 +268,6 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | sparPhase.sparBeitraege[i].zahlungAb                                  | Datum        | Der Startzeitpunkt ab dem dieser Sparbeitrag geleistet wird. |
 | sparPhase.sparBeitraege[i].zahlungBis                                 | Datum        | Der letzte Zeitpunkt bis zu dem dieser Sparbeitrag geleistet wird. |
 | sparPhase.sparBeitraege[i].zahlungsrhythmus                           | Auflistung   | Legt fest, in welchen Intervallen dieser Sparbeitrag gezahlt wird. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
-| bausparDarlehen.sollzinsInProzent                                     | Zahl         |                                                                                                                                                                   |
-| bausparDarlehen.effektiverJahreszinsInProzent                         | Zahl         |                                                                                                                                                                   |
-| bausparDarlehen.darlehenslaufzeitInMonaten                            | Zahl         |                                                                                                                                                                   |
-| bausparDarlehen.tilgungsende                                          | Datum        |                                                                                                                                                                   |
-| gesamtleistungKomplettInEuro                                          | Euro         | Summe aller Zahlungen in der Darlehensphase                                                                                                                       |
-| gesamtlaufzeitKomplettInMonaten                                       | Zahl         |                                                                                                                                                                   |
-| bausparDarlehen.tilgungsPlan                                          | TILGUNGSPLAN | Jede einzelne Zahlung des Bauspardarlehens bis zur Vollablösung.                                                                                                  |
-| bausparDarlehen.tilgungsPlan.zahlungen[].datum                        | Datum        |                                                                                                                                                                   |
-| bausparDarlehen.tilgungsPlan.zahlungen[].gebuehrenInEuro              | Zahl         |                                                                                                                                                                   |
-| bausparDarlehen.tilgungsPlan.zahlungen[].kontofuehrungsGebuehrInEuro  | Zahl         |                                                                                                                                                                   |
-| bausparDarlehen.tilgungsPlan.zahlungen[].saldoNachZahlungInEuro       | Zahl         |                                                                                                                                                                   |
-| bausparDarlehen.tilgungsPlan.zahlungen[].tilgungInEuro                | Zahl         |                                                                                                                                                                   |
-| bausparDarlehen.tilgungsPlan.zahlungen[].zahlungInEuro                | Zahl         |                                                                                                                                                                   |
-| bausparDarlehen.tilgungsPlan.zahlungen[].zinsInEuro                   | Zahl         |                                                                                                                                                                   |
 | sparPhase.sparPlan                                                    | SPARPLAN     | Jede Zahlung in das Bausparkonto in der Sparphase.                                                                                                                |
 | sparPhase.sparPlan.zahlungen[].datum                                  | Zahl         |                                                                                                                                                                   |
 | sparPhase.sparPlan.zahlungen[].abgeltungsSteuerInEuro                 | Zahl         |                                                                                                                                                                   |
@@ -336,17 +338,23 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
                "nameKreditInstitut": null,
                "zahlungsForm": "LASTSCHRIFT"
            }
-       }],
+       },
+       "beschaeftigungsVerhaeltnis": "ANGESTELLTER"
+       ],
        "vermittlerDaten": 
        {
            "nachName": null,
            "ort": null,
            "postleitzahl": null,
            "strasseHausnummer": null,
-           "vorname": null
+           "vorname": null,
+           "firma": null,
+           "telefonNummer": null,
+           "eMailAdresse": null
        },
        "fallNummer":"123-456-789",
-       "requestId":"87e6rt5"
+       "requestId":"87e6rt5",
+       "vertragsDatum":"2015-09-30"
     }
 
 
@@ -382,14 +390,19 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | antragsteller[0].zahlungsDaten.iban                                   | String       |                                                                                                                                                                   |
 | antragsteller[0].zahlungsDaten.nameKreditInstitut                     | String       |                                                                                                                                                                   |
 | antragsteller[0].zahlungsDaten.zahlungsForm                           | Aufzählung   | Mögliche Werte sind: ``LASTSCHRIFT``, ``UEBERWEISUNG``.                                                                                                           |
+| antragsteller[0].beschaeftigungsVerhaeltnis                           | Aufzählung   | Mögliche Werte sind: ``ANGESTELLTER``, ``ARBEITER``, ``BEAMTER``, ``FREIBERUFLER``, ``SELBSTAENDIGER``, ``BESCHAEFTIGUNGSLOSER``, ``RENTNER``.                    |
 | vermittlerDaten.nachName                                              | String       |                                                                                                                                                                   |
 | vermittlerDaten.ort                                                   | String       |                                                                                                                                                                   |
 | vermittlerDaten.postleitzahl                                          | String       |                                                                                                                                                                   |
 | vermittlerDaten.strasseHausnummer                                     | String       |                                                                                                                                                                   |
 | vermittlerDaten.vorname                                               | String       |                                                                                                                                                                   |
+| vermittlerDaten.firma                                                 | String       |                                                                                                                                                                   |
+| vermittlerDaten.telefonNummer                                         | String       |                                                                                                                                                                   |
+| vermittlerDaten.eMailAdresse                                          | String       |                                                                                                                                                                   |
 | requestId                                                             | String       | Ordnet die Anfrage einer EUROPACE Anfrage für Loggingzwecke zu.                                                                                                   |
 | fallNummer                                                            | String       | Ordnet die Anfrage einer EUROPACE Fallakte für Loggingzwecke zu.                                                                                                  |
-                                                                                                                                                                                                                                                           
+| vertragsDatum                                                         | Datum        |                                                                                                                                                                   |
+
 
 #### Antwort
     {
