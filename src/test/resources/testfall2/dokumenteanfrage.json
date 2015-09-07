@@ -65,7 +65,9 @@
         "ausweisNummer": null,
         "austellendeBehoerde": null,
         "ausstellungsDatum": "2010-01-01"
-      }
+      },
+      "vermoegenswirksameLeistungenBetragInEuro":30,
+      "vermoegenswirksameLeistungenZahlungsrhythmus":"MONATLICH"
     },
     {
       "anrede": "FRAU",
@@ -112,7 +114,9 @@
           "wohnOrt":"Leipzig",
           "postleitzahl":"04318"
         }
-      }
+      },
+      "vermoegenswirksameLeistungenBetragInEuro":30,
+      "vermoegenswirksameLeistungenZahlungsrhythmus":"MONATLICH"
     }
   ],
 

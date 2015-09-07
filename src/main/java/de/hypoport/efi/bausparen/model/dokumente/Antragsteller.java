@@ -1,5 +1,8 @@
 package de.hypoport.efi.bausparen.model.dokumente;
 
+import de.hypoport.efi.bausparen.model.berechnung.Zahlungsrhythmus;
+
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Antragsteller {
@@ -20,6 +23,8 @@ public class Antragsteller {
   Legitimation legitimation;
   Boolean einkommenssteuerpflichtigInUsa;
   TodesfallBeguenstigter todesfallBeguenstigter;
+  BigDecimal vermoegenswirksameLeistungenBetragInEuro;
+  Zahlungsrhythmus vermoegenswirksameLeistungenZahlungsrhythmus;
 
   public String getNachName() {
     return nachName;
@@ -147,5 +152,21 @@ public class Antragsteller {
 
   public void setTodesfallBeguenstigter(TodesfallBeguenstigter todesfallBeguenstigter) {
     this.todesfallBeguenstigter = todesfallBeguenstigter;
+  }
+
+  public BigDecimal getVermoegenswirksameLeistungenBetragInEuro() {
+    return vermoegenswirksameLeistungenBetragInEuro;
+  }
+
+  public void setVermoegenswirksameLeistungenBetragInEuro(BigDecimal vermoegenswirksameLeistungenBetragInEuro) {
+    this.vermoegenswirksameLeistungenBetragInEuro = vermoegenswirksameLeistungenBetragInEuro;
+  }
+
+  public Zahlungsrhythmus getVermoegenswirksameLeistungenZahlungsrhythmus() {
+    return vermoegenswirksameLeistungenZahlungsrhythmus;
+  }
+
+  public void setVermoegenswirksameLeistungenZahlungsrhythmus(Zahlungsrhythmus vermoegenswirksameLeistungenZahlungsrhythmus) {
+    this.vermoegenswirksameLeistungenZahlungsrhythmus = vermoegenswirksameLeistungenZahlungsrhythmus;
   }
 }
