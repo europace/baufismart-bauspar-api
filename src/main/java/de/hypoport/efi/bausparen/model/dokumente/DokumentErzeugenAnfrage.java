@@ -1,31 +1,26 @@
 package de.hypoport.efi.bausparen.model.dokumente;
 
 import de.hypoport.efi.bausparen.model.berechnung.Abschlussgebuehrenbehandlung;
-import de.hypoport.efi.bausparen.model.berechnung.anfrage.SparBeitrag;
+import de.hypoport.efi.bausparen.model.berechnung.BerechnungsZiel;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.List;
 
 public class DokumentErzeugenAnfrage {
 
-  String tarif; //check
-
-  BigDecimal bausparSummeInEuro; //check
-  BigDecimal auszahlungsbetragBeiZuteilung; //check
-
-
-
-  Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung;//check
+  String tarif;
+  BigDecimal bausparSummeInEuro;
+  BigDecimal auszahlungsbetragBeiZuteilung;
+  Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung;
   BigDecimal abschlussgebuehrHoeheInEuro;
-
-  BigDecimal zahlungsbetragEinmalzahlungInEuro;
-
-  List<Antragsteller> antragsteller;//check
-
-
-  VermittlerDaten vermittlerDaten;//check
-
+  List<Antragsteller> antragsteller;
+  VermittlerDaten vermittlerDaten;
   SparphaseDokument sparphaseDokument;
+  LocalDate vertragsDatum;
+  String fallNummer;
+  String requestId;
+
 
   public String getTarif() {
     return tarif;
@@ -51,7 +46,6 @@ public class DokumentErzeugenAnfrage {
     this.auszahlungsbetragBeiZuteilung = auszahlungsbetragBeiZuteilung;
   }
 
-
   public Abschlussgebuehrenbehandlung getAbschlussgebuehrenbehandlung() {
     return abschlussgebuehrenbehandlung;
   }
@@ -76,14 +70,6 @@ public class DokumentErzeugenAnfrage {
     this.vermittlerDaten = vermittlerDaten;
   }
 
-  public BigDecimal getZahlungsbetragEinmalzahlungInEuro() {
-    return zahlungsbetragEinmalzahlungInEuro;
-  }
-
-  public void setZahlungsbetragEinmalzahlungInEuro(BigDecimal zahlungsbetragEinmalzahlungInEuro) {
-    this.zahlungsbetragEinmalzahlungInEuro = zahlungsbetragEinmalzahlungInEuro;
-  }
-
   public SparphaseDokument getSparphaseDokument() {
     return sparphaseDokument;
   }
@@ -98,5 +84,29 @@ public class DokumentErzeugenAnfrage {
 
   public void setAbschlussgebuehrHoeheInEuro(BigDecimal abschlussgebuehrHoeheInEuro) {
     this.abschlussgebuehrHoeheInEuro = abschlussgebuehrHoeheInEuro;
+  }
+
+  public LocalDate getVertragsDatum() {
+    return vertragsDatum;
+  }
+
+  public void setVertragsDatum(LocalDate vertragsDatum) {
+    this.vertragsDatum = vertragsDatum;
+  }
+
+  public String getFallNummer() {
+    return fallNummer;
+  }
+
+  public void setFallNummer(String fallNummer) {
+    this.fallNummer = fallNummer;
+  }
+
+  public String getRequestId() {
+    return requestId;
+  }
+
+  public void setRequestId(String requestId) {
+    this.requestId = requestId;
   }
 }

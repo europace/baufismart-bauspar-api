@@ -2,8 +2,8 @@ package de.hypoport.efi.bausparen.model.tarife;
 
 public class BausparTarif {
 
-  private String id;
-  private String name;
+  String id;
+  String name;
 
   public String getId() {
     return id;

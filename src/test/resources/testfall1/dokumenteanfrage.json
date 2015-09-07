@@ -1,24 +1,23 @@
 {
   "tarif": "T1",
-
-
   "bausparSummeInEuro": 50000,
   "auszahlungsbetragBeiZuteilung": 50000,
-
-
   "sparphaseDokument":
     {
       "regelsparbeitragInEuro": 168.33,
-      "sparBeginnAb": "2015-09-30",
-      "sparEnde": "2025-08-31",
-      "zahlungsRhythmus": "MONATLICH"
+      "sparBeitraege": [
+        {
+          "zahlungsrhythmus": "MONATLICH",
+          "beitrag": 168.33,
+          "zahlungAb":"2015-09-30",
+          "zahlungBis":"2025-08-31"
+        }
+      ]
     }
   ,
   "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
 
   "abschlussgebuehrHoeheInEuro": 500,
-
-  "zahlungsbetragEinmalzahlungInEuro" : 0,
 
   "antragsteller": [
     {
@@ -28,6 +27,7 @@
       "nachName": "Muster",
       "geburtsDatum": null,
       "geburtsName": null,
+      "geburtsOrt": null,
       "staatsangehoerigkeit": "Deutsch",
       "adresse": {
         "strasse": "Steinweg.",
@@ -42,13 +42,18 @@
         "eMailAdresse": null
       },
       "familienStand": "LEDIG",
-
       "zahlungsDaten": {
         "iban": null,
         "nameKreditInstitut": null,
         "zahlungsForm": "LASTSCHRIFT"
+      },
+      "beschaeftigungsVerhaeltnis":"ANGESTELLTER",
+      "legitimation": {
+        "ausweisArt": "REISEPASS",
+        "ausweisNummer": null,
+        "austellendeBehoerde": null,
+        "ausstellungsDatum": "2010-01-01"
       }
-
     }
   ],
 
@@ -57,6 +62,13 @@
     "ort": null,
     "postleitzahl": null,
     "strasseHausnummer": null,
-    "vorname": null
-  }
+    "vorname": null,
+    "firma": null,
+    "telefonNummer": null,
+    "eMailAdresse": null
+  },
+
+  "vertragsDatum":"2015-09-01",
+  "fallNummer":"123-456-789",
+  "requestId":"7y65xc4v"
 }

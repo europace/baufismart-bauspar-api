@@ -36,8 +36,41 @@ public class FachlicheBeispiele {
   }
 
   @Test
-  public void berechnungsanfrageIstSyntaktischKorrekt() throws IOException {
-    BausparBerechnungsAnfrage bausparBerechnungsAnfrage = objectMapper.readValue(getClass().getResourceAsStream("/testfall1/berechnungsanfrage.json"), BausparBerechnungsAnfrage.class);
+  public void berechnungsanfrageBeispiel1IstSyntaktischKorrekt() throws IOException {
+    berechnungsAnfrageIstGueltig("/testfall1/berechnungsanfrage.json");
+  }
+
+  @Test
+  public void berechnungsanfrageBeispiel2IstSyntaktischKorrekt() throws IOException {
+    berechnungsAnfrageIstGueltig("/testfall2/berechnungsanfrage.json");
+  }
+
+  @Test
+  public void berechnetesBausparangebotBeispiel1IstSyntaktischKorrekt() throws IOException {
+    berechnetesAngebotIstGueltig("/testfall1/berechnetesbausparangebot.json");
+  }
+
+  @Test
+  public void berechnetesBausparangebotBeispiel2IstSyntaktischKorrekt() throws IOException {
+    berechnetesAngebotIstGueltig("/testfall2/berechnetesbausparangebot.json");
+  }
+
+  private void berechnetesAngebotIstGueltig(String zuPruefendesAngebot) throws IOException {
+    BausparBerechnungsAntwort bausparBerechnungsAntwort = objectMapper.readValue(getClass().getResourceAsStream(zuPruefendesAngebot), BausparBerechnungsAntwort.class);
+
+    assertNotNull(bausparBerechnungsAntwort);
+    Bausparangebot berechnetesBausparAngebot = bausparBerechnungsAntwort.getBerechnetesBausparAngebot();
+    assertNotNull(berechnetesBausparAngebot);
+    assertNotNull(berechnetesBausparAngebot.getZuteilungsTermin());
+
+    assertEquals((long) berechnetesBausparAngebot.getGesamtlaufzeitKomplettInMonaten(), ermittleLaufzeit(berechnetesBausparAngebot));
+
+    pruefeSparplan(berechnetesBausparAngebot.getSparPhase().getSparPlan(), berechnetesBausparAngebot.getAbschlussgebuehr().getAbschlussgebuehrBetragInEuro().negate());
+    pruefeTilgungsplan(berechnetesBausparAngebot.getBausparDarlehen().getTilgungsPlan());
+  }
+
+  private void berechnungsAnfrageIstGueltig(String zuPruefendeDatei) throws IOException {
+    BausparBerechnungsAnfrage bausparBerechnungsAnfrage = objectMapper.readValue(getClass().getResourceAsStream(zuPruefendeDatei), BausparBerechnungsAnfrage.class);
 
     assertNotNull(bausparBerechnungsAnfrage);
     assertNotNull(bausparBerechnungsAnfrage.getZielTarif());
@@ -50,34 +83,24 @@ public class FachlicheBeispiele {
       assertNotNull(bausparBerechnungsAnfrage.getAuszahlungsbetragBeiZuteilung() != null);
     }
     assertNotNull(bausparBerechnungsAnfrage.getDarlehensWunsch());
-
   }
 
   @Test
-  public void berechnetesBausparangebotIstSyntaktischKorrekt() throws IOException {
+  public void dokumentenAnfrageBeispiel1IstSyntaktischKorrekt() throws IOException {
 
-    BausparBerechnungsAntwort bausparBerechnungsAntwort = objectMapper.readValue(getClass().getResourceAsStream("/testfall1/berechnetesbausparangebot.json"), BausparBerechnungsAntwort.class);
-
-    assertNotNull(bausparBerechnungsAntwort);
-    Bausparangebot berechnetesBausparAngebot = bausparBerechnungsAntwort.getBerechnetesBausparAngebot();
-    assertNotNull(berechnetesBausparAngebot);
-    assertNotNull(berechnetesBausparAngebot.getZuteilungsTermin());
-
-    assertEquals((long) berechnetesBausparAngebot.getGesamtlaufzeitKomplettInMonaten(), ermittleLaufzeit(berechnetesBausparAngebot));
-
-    pruefeSparplan(berechnetesBausparAngebot.getSparPhase().getSparPlan(), berechnetesBausparAngebot.getAbschlussgebuehr().getAbschlussgebuehrBetragInEuro().negate());
-    pruefeTilgungsplan(berechnetesBausparAngebot.getBausparDarlehen().getTilgungsPlan());
-
+    pruefeDokumentenAnfrage("/testfall1/dokumenteanfrage.json");
   }
 
   @Test
-  public void dokumentenAnfrageIstSyntaktischKorrekt() throws IOException {
+  public void dokumentenAnfrageBeispiel2IstSyntaktischKorrekt() throws IOException {
 
-    DokumentErzeugenAnfrage dokumentErzeugenAnfrage = objectMapper.readValue(getClass().getResourceAsStream("/testfall1/dokumenteanfrage.json"), DokumentErzeugenAnfrage.class);
+    pruefeDokumentenAnfrage("/testfall2/dokumenteanfrage.json");
+  }
+
+  private void pruefeDokumentenAnfrage(String beispielDatei) throws IOException {
+    DokumentErzeugenAnfrage dokumentErzeugenAnfrage = objectMapper.readValue(getClass().getResourceAsStream(beispielDatei), DokumentErzeugenAnfrage.class);
 
     assertNotNull(dokumentErzeugenAnfrage);
-
-
   }
 
   private void pruefeTilgungsplan(TilgungsPlan tilgungsPlan) {
@@ -114,7 +137,7 @@ public class FachlicheBeispiele {
       BigDecimal saldoNachZahlung = saldoErmittler.apply(zahlungsobjektI).setScale(2);
       BigDecimal zahlung = zahlungsErmittler.apply(zahlungsobjektI);
 
-      assertEquals(format("Der %d. Saldo stimmt nicht überein:",i),saldoNachZahlung, letzerSaldo.add(zahlung));
+      assertEquals(format("Der %d. Saldo stimmt nicht überein:", i), saldoNachZahlung, letzerSaldo.add(zahlung));
 
       letzerSaldo = saldoNachZahlung;
     }

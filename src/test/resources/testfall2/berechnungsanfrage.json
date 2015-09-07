@@ -11,5 +11,7 @@
       "zahlungAb": "2015-09-30",
       "zahlungsrhythmus": "EINMALIG"
     }
-  ]
+  ],
+  "fallNummer":"123-456-789",
+  "requestId":"0y9xc8v7y9"
 }

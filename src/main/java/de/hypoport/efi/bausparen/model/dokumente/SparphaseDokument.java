@@ -1,40 +1,14 @@
 package de.hypoport.efi.bausparen.model.dokumente;
 
-import de.hypoport.efi.bausparen.model.berechnung.Zahlungsrhythmus;
+import de.hypoport.efi.bausparen.model.berechnung.SparBeitrag;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.util.List;
 
 public class SparphaseDokument {
 
-  Zahlungsrhythmus zahlungsRhythmus;
-  LocalDate sparBeginnAb;
-  LocalDate sparEnde;
   BigDecimal regelsparbeitragInEuro;
-
-  public Zahlungsrhythmus getZahlungsRhythmus() {
-    return zahlungsRhythmus;
-  }
-
-  public void setZahlungsRhythmus(Zahlungsrhythmus zahlungsRhythmus) {
-    this.zahlungsRhythmus = zahlungsRhythmus;
-  }
-
-  public LocalDate getSparBeginnAb() {
-    return sparBeginnAb;
-  }
-
-  public void setSparBeginnAb(LocalDate sparBeginnAb) {
-    this.sparBeginnAb = sparBeginnAb;
-  }
-
-  public LocalDate getSparEnde() {
-    return sparEnde;
-  }
-
-  public void setSparEnde(LocalDate sparEnde) {
-    this.sparEnde = sparEnde;
-  }
+  List<SparBeitrag> sparBeitraege;
 
   public BigDecimal getRegelsparbeitragInEuro() {
     return regelsparbeitragInEuro;
@@ -42,5 +16,13 @@ public class SparphaseDokument {
 
   public void setRegelsparbeitragInEuro(BigDecimal regelsparbeitragInEuro) {
     this.regelsparbeitragInEuro = regelsparbeitragInEuro;
+  }
+
+  public List<SparBeitrag> getSparBeitraege() {
+    return sparBeitraege;
+  }
+
+  public void setSparBeitraege(List<SparBeitrag> sparBeitraege) {
+    this.sparBeitraege = sparBeitraege;
   }
 }

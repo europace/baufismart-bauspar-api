@@ -4,21 +4,20 @@ import java.time.LocalDate;
 
 public class Antragsteller {
 
-  Anrede anrede; //check
-  String titel; //check
-  String nachName; //check
-  String vorname; //check
-  LocalDate geburtsDatum; //check
-  String geburtsName; //check
-  String staatsangehoerigkeit; //check
-
-  Adresse adresse;//check
-
-  Kontakt kontakt;//check
-
-  FamilienStand familienStand;//check
-
-  ZahlungsDaten zahlungsDaten;//check
+  Anrede anrede;
+  String titel;
+  String nachName;
+  String vorname;
+  LocalDate geburtsDatum;
+  String geburtsName;
+  String geburtsOrt;
+  String staatsangehoerigkeit;
+  Adresse adresse;
+  Kontakt kontakt;
+  FamilienStand familienStand;
+  ZahlungsDaten zahlungsDaten;
+  BeschaeftigungsVerhaeltnis beschaeftigungsVerhaeltnis;
+  Legitimation legitimation;
 
   public String getNachName() {
     return nachName;
@@ -106,5 +105,29 @@ public class Antragsteller {
 
   public void setZahlungsDaten(ZahlungsDaten zahlungsDaten) {
     this.zahlungsDaten = zahlungsDaten;
+  }
+
+  public BeschaeftigungsVerhaeltnis getBeschaeftigungsVerhaeltnis() {
+    return beschaeftigungsVerhaeltnis;
+  }
+
+  public void setBeschaeftigungsVerhaeltnis(BeschaeftigungsVerhaeltnis beschaeftigungsVerhaeltnis) {
+    this.beschaeftigungsVerhaeltnis = beschaeftigungsVerhaeltnis;
+  }
+
+  public String getGeburtsOrt() {
+    return geburtsOrt;
+  }
+
+  public void setGeburtsOrt(String geburtsOrt) {
+    this.geburtsOrt = geburtsOrt;
+  }
+
+  public Legitimation getLegitimation() {
+    return legitimation;
+  }
+
+  public void setLegitimation(Legitimation legitimation) {
+    this.legitimation = legitimation;
   }
 }

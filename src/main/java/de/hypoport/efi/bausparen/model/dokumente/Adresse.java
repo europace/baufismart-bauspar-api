@@ -2,11 +2,11 @@ package de.hypoport.efi.bausparen.model.dokumente;
 
 public class Adresse {
 
-  String strasse;//check
-  String hausNummer;//check
-  String postleitzahl;//check
-  String wohnOrt;//check
-  String landWohnsitz;//check
+  String strasse;
+  String hausNummer;
+  String postleitzahl;
+  String wohnOrt;
+  String landWohnsitz;
 
   public String getStrasse() {
     return strasse;

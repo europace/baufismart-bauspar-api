@@ -1,27 +1,21 @@
 package de.hypoport.efi.bausparen.model.berechnung;
 
 import java.math.BigDecimal;
+import java.util.List;
+
+import java.math.BigDecimal;
 
 public class SparPhase {
 
-  Zahlungsrhythmus zahlungsrhythmus; //check
-  BigDecimal guthabenzinsInProzent;//check
-  BigDecimal guthabenzinsBetragInEuro; //check
-  BigDecimal bonuszinsInProzent; //check
-  BigDecimal bonuszinsBetragInEuro;//check
-  BigDecimal guthabenBeiZuteilungInEuro;//check
-  BigDecimal regelsparbeitragInEuro;//check
-  BigDecimal gesamtleistungSparphaseInEuro;//check
-
-  SparPlan sparPlan;//pruefen
-
-  public Zahlungsrhythmus getZahlungsrhythmus() {
-    return zahlungsrhythmus;
-  }
-
-  public void setZahlungsrhythmus(Zahlungsrhythmus zahlungsrhythmus) {
-    this.zahlungsrhythmus = zahlungsrhythmus;
-  }
+  BigDecimal guthabenzinsInProzent;
+  BigDecimal guthabenzinsBetragInEuro;
+  BigDecimal bonuszinsInProzent;
+  BigDecimal bonuszinsBetragInEuro;
+  BigDecimal guthabenBeiZuteilungInEuro;
+  BigDecimal regelsparbeitragInEuro;
+  BigDecimal gesamtleistungSparphaseInEuro;
+  List<SparBeitrag> sparBeitraege;
+  SparPlan sparPlan;
 
   public BigDecimal getGuthabenzinsInProzent() {
     return guthabenzinsInProzent;
@@ -85,5 +79,13 @@ public class SparPhase {
 
   public void setSparPlan(SparPlan sparPlan) {
     this.sparPlan = sparPlan;
+  }
+
+  public List<SparBeitrag> getSparBeitraege() {
+    return sparBeitraege;
+  }
+
+  public void setSparBeitraege(List<SparBeitrag> sparBeitraege) {
+    this.sparBeitraege = sparBeitraege;
   }
 }

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.util.ISO8601DateFormat;
 import de.hypoport.efi.bausparen.model.berechnung.BerechnungsZiel;
 import de.hypoport.efi.bausparen.model.berechnung.Zahlungsrhythmus;
 import de.hypoport.efi.bausparen.model.berechnung.anfrage.BausparBerechnungsAnfrage;
-import de.hypoport.efi.bausparen.model.berechnung.anfrage.SparBeitrag;
+import de.hypoport.efi.bausparen.model.berechnung.SparBeitrag;
 import org.junit.Test;
 
 import java.math.BigDecimal;

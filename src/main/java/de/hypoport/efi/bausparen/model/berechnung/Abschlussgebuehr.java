@@ -3,9 +3,9 @@ package de.hypoport.efi.bausparen.model.berechnung;
 import java.math.BigDecimal;
 
 public class Abschlussgebuehr {
-  Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung; //check
-  BigDecimal abschlussgebuehrHoeheInProzent;//check
-  BigDecimal abschlussgebuehrBetragInEuro;//check
+  Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung;
+  BigDecimal abschlussgebuehrHoeheInProzent;
+  BigDecimal abschlussgebuehrBetragInEuro;
 
   public Abschlussgebuehrenbehandlung getAbschlussgebuehrenbehandlung() {
     return abschlussgebuehrenbehandlung;

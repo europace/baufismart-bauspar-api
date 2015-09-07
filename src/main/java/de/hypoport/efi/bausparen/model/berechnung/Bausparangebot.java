@@ -8,30 +8,19 @@ import java.util.List;
 
 public class Bausparangebot {
 
-  String tarif; //check
+  String tarif;
   BerechnungsZiel berechnungsziel;
-
-  BigDecimal bausparsummeInEuro;//check
-  BigDecimal sparbeitragInEuro;//check
-
-  Integer laufzeitBisZuteilungInMonaten;//check
-  LocalDate zuteilungsTermin;//check
-
+  BigDecimal bausparsummeInEuro;
+  Integer laufzeitBisZuteilungInMonaten;
+  LocalDate zuteilungsTermin;
   BausparDarlehen bausparDarlehen;
-
-  BigDecimal zahlungsbetragEinmalzahlungInEuro;//check
   SparPhase sparPhase;
-
   Abschlussgebuehr abschlussgebuehr;
-
-  BigDecimal kontogebuehrJaehrlichInEuro;//check
-
-  BigDecimal gesamtleistungKomplettInEuro;//check
-  Integer gesamtlaufzeitKomplettInMonaten;//check
-
+  BigDecimal kontogebuehrJaehrlichInEuro;
+  BigDecimal gesamtleistungKomplettInEuro;
+  Integer gesamtlaufzeitKomplettInMonaten;
   List<FachlicheMeldung> meldungen;
-
-  private LocalDate vertragsBeginn;
+  LocalDate vertragsBeginn;
 
   public String getTarif() {
     return tarif;
@@ -57,14 +46,6 @@ public class Bausparangebot {
     this.bausparsummeInEuro = bausparsummeInEuro;
   }
 
-  public BigDecimal getSparbeitragInEuro() {
-    return sparbeitragInEuro;
-  }
-
-  public void setSparbeitragInEuro(BigDecimal sparbeitragInEuro) {
-    this.sparbeitragInEuro = sparbeitragInEuro;
-  }
-
   public Integer getLaufzeitBisZuteilungInMonaten() {
     return laufzeitBisZuteilungInMonaten;
   }
@@ -79,14 +60,6 @@ public class Bausparangebot {
 
   public void setZuteilungsTermin(LocalDate zuteilungsTermin) {
     this.zuteilungsTermin = zuteilungsTermin;
-  }
-
-  public BigDecimal getZahlungsbetragEinmalzahlungInEuro() {
-    return zahlungsbetragEinmalzahlungInEuro;
-  }
-
-  public void setZahlungsbetragEinmalzahlungInEuro(BigDecimal zahlungsbetragEinmalzahlungInEuro) {
-    this.zahlungsbetragEinmalzahlungInEuro = zahlungsbetragEinmalzahlungInEuro;
   }
 
   public SparPhase getSparPhase() {

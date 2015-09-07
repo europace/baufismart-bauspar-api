@@ -1,4 +1,4 @@
-package de.hypoport.efi.bausparen.model.berechnung.anfrage;
+package de.hypoport.efi.bausparen.model.berechnung;
 
 import de.hypoport.efi.bausparen.model.berechnung.Zahlungsrhythmus;
 
@@ -7,10 +7,10 @@ import java.time.LocalDate;
 
 public class SparBeitrag {
 
-  BigDecimal beitrag; //check
-  LocalDate zahlungAb; //check
-  LocalDate zahlungBis; //check
-  Zahlungsrhythmus zahlungsrhythmus; //check
+  BigDecimal beitrag;
+  LocalDate zahlungAb;
+  LocalDate zahlungBis;
+  Zahlungsrhythmus zahlungsrhythmus;
 
   public BigDecimal getBeitrag() {
     return beitrag;
