@@ -38,6 +38,7 @@
       "nachName": "Muster",
       "geburtsDatum":"1970-03-20",
       "geburtsName": null,
+      "geburtsOrt": null,
       "staatsangehoerigkeit": "Franzoesisch",
       "adresse": {
         "strasse": "Wohnstrasse.",
@@ -52,15 +53,18 @@
         "eMailAdresse": null
       },
       "familienStand": "LEBENSPARTNER",
-
       "zahlungsDaten": {
         "iban": null,
         "nameKreditInstitut": null,
         "zahlungsForm": "LASTSCHRIFT"
       },
-
-      "beschaeftigungsVerhaeltnis": "ARBEITER"
-
+      "beschaeftigungsVerhaeltnis": "ARBEITER",
+      "legitimation": {
+        "ausweisArt": "PERSONALAUSWEIS",
+        "ausweisNummer": null,
+        "austellendeBehoerde": null,
+        "ausstellungsDatum": "2010-01-01"
+      }
     },
     {
       "anrede": "FRAU",
@@ -69,6 +73,7 @@
       "nachName": "Musterfrau",
       "geburtsDatum": "1974-02-21",
       "geburtsName": null,
+      "geburtsOrt": null,
       "staatsangehoerigkeit": "Schweizerisch",
       "adresse": {
         "strasse": "Heideweg.",
@@ -83,14 +88,18 @@
         "eMailAdresse": null
       },
       "familienStand": "LEBENSPARTNER",
-
       "zahlungsDaten": {
         "iban": null,
         "nameKreditInstitut": null,
         "zahlungsForm": "LASTSCHRIFT"
       },
-      "beschaeftigungsVerhaeltnis":"ANGESTELLTER"
-
+      "beschaeftigungsVerhaeltnis":"ANGESTELLTER",
+      "legitimation": {
+        "ausweisArt": "REISEPASS",
+        "ausweisNummer": null,
+        "austellendeBehoerde": null,
+        "ausstellungsDatum": "2010-01-01"
+      }
     }
   ],
 
