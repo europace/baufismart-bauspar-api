@@ -10,12 +10,14 @@ public class Antragsteller {
   String vorname;
   LocalDate geburtsDatum;
   String geburtsName;
+  String geburtsOrt;
   String staatsangehoerigkeit;
   Adresse adresse;
   Kontakt kontakt;
   FamilienStand familienStand;
   ZahlungsDaten zahlungsDaten;
   BeschaeftigungsVerhaeltnis beschaeftigungsVerhaeltnis;
+  Legitimation legitimation;
 
   public String getNachName() {
     return nachName;
@@ -111,5 +113,21 @@ public class Antragsteller {
 
   public void setBeschaeftigungsVerhaeltnis(BeschaeftigungsVerhaeltnis beschaeftigungsVerhaeltnis) {
     this.beschaeftigungsVerhaeltnis = beschaeftigungsVerhaeltnis;
+  }
+
+  public String getGeburtsOrt() {
+    return geburtsOrt;
+  }
+
+  public void setGeburtsOrt(String geburtsOrt) {
+    this.geburtsOrt = geburtsOrt;
+  }
+
+  public Legitimation getLegitimation() {
+    return legitimation;
+  }
+
+  public void setLegitimation(Legitimation legitimation) {
+    this.legitimation = legitimation;
   }
 }
