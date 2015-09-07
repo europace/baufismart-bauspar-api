@@ -130,7 +130,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | berechnungsZiel                    | Auflistung    | Mögliche Werte: ``SPARBEITRAG_INKL_VL``, ``BAUSPARSUMME``, ``ZUTEILUNGSTERMIN``, ``LAUFZEIT_BIS_ZUTEILUNG`` |
 | bausparSummeInEuro                 | Zahl          | Gewünschte Bausparsumme in Euro |
 | auszahlungsbetragBeiZuteilung      | Zahl          | Der Betrag des Bausparvertrags der bei Zuteilung ausgezahlt wird in Euro |
-| laufzeitBisZuteilungInMonaten      | Zahl          | Die Anzahl Monate zwischen Vertragsbeginn und Zuteilungsdatum. Entweder wird dieses Feld oder ``zuteilungstermin`` geliefert.|
+| laufzeitBisZuteilungInMonaten      | Zahl          | Die Anzahl Monate zwischen Vertragsdatum und Zuteilungsdatum. Entweder wird dieses Feld oder ``zuteilungstermin`` geliefert.|
 | zuteilungstermin                   | Datum         | Das gewünschte Zuteilungsdatum. Alternativ kann ``laufzeitBisZuteilungInMonaten`` geliefert werden. |
 | sparBeitraege                      | Liste         | Ermöglicht die Erfassung mehrerer unterschiedlicher Sparzahlungen oder Einmalzahlungen. |
 | sparBeitraege[i].beitrag           | Zahl          | Der Sparbeitrag dieser Zahlung ein Euro. |
@@ -221,7 +221,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
             ]
           },
           "tarif": "string",
-          "vertragsBeginn": "2015-09-01",
+          "vertragsDatum": "2015-09-01",
           "zuteilungsTermin": "string"
         }
       }
@@ -233,7 +233,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | bausparsummeInEuro                                                    | Zahl         | Betrag der Bausparsumme in Euro                                                                                                                                   |
 | laufzeitBisZuteilungInMonaten                                         | Zahl         | Anzahl Monate bis zur Zuteilung                                                                                                                                   |
 | zuteilungsTermin                                                      | Datum        | Zuteilungstermin                                                                                                                                                  |
-| vertragsBeginn                                                        | Datum        |                                                                                                                                                                   |
+| vertragsDatum                                                         | Datum        |                                                                                                                                                                   |
 | abschlussgebuehrenbehandlung                                          | Aufzählung   | Mögliche Werte sind: ``VERRECHUNG``, ``SOFORTZAHLUNG``.                                                                                                           |
 | abschlussgebuehrHoeheInProzent                                        | Zahl         | Abschlussgebühr in Prozent                                                                                                                                        |
 | abschlussgebuehrBetragInEuro                                          | Zahl         | Abschlussgebühr in Euro                                                                                                                                           |
@@ -270,7 +270,6 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | sparPhase.sparBeitraege[i].zahlungsrhythmus                           | Auflistung   | Legt fest, in welchen Intervallen dieser Sparbeitrag gezahlt wird. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
 | sparPhase.sparPlan                                                    | SPARPLAN     | Jede Zahlung in das Bausparkonto in der Sparphase.                                                                                                                |
 | sparPhase.sparPlan.zahlungen[].datum                                  | Zahl         |                                                                                                                                                                   |
-| sparPhase.sparPlan.zahlungen[].abgeltungsSteuerInEuro                 | Zahl         |                                                                                                                                                                   |
 | sparPhase.sparPlan.zahlungen[].gebuehrenInEuro                        | Zahl         |                                                                                                                                                                   |
 | sparPhase.sparPlan.zahlungen[].kontofuehrungsGebuehrInEuro            | Zahl         |                                                                                                                                                                   |
 | sparPhase.sparPlan.zahlungen[].saldoNachZahlungInEuro                 | Zahl         |                                                                                                                                                                   |
@@ -416,7 +415,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | antragsteller[0].todesfallBeguenstigter.adresse.wohnOrt               | String       |                                                                                                                                                                   |
 | antragsteller[0].todesfallBeguenstigter.adresse.landWohnsitz          | String       |                                                                                                                                                                   |
 | antragsteller[0].vermoegenswirksameLeistungenBetragInEuro             | Zahl         | Der Betrag der vermögenswirksamen Leistungen, die der Arbeitgeber des Antragstellers in diesen Bausparvertrag einzahlt. Es werden immer die VL Beträge aller Antragsteller eingezahlt.|
-| antragsteller[0].vermoegenswirksameLeistungenZahlungsrhythmus         | Aufzählung   | Legt fest, in welchen Intervallen die vermögenswirksamen Leistungen gezahlt werden. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
+| antragsteller[0].vermoegenswirksameLeistungenZahlungsrhythmus         | Aufzählung   | Legt fest, in welchen Intervallen die vermögenswirksamen Leistungen gezahlt werden. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``. |
 | vermittlerDaten.nachName                                              | String       |                                                                                                                                                                   |
 | vermittlerDaten.ort                                                   | String       |                                                                                                                                                                   |
 | vermittlerDaten.postleitzahl                                          | String       |                                                                                                                                                                   |
