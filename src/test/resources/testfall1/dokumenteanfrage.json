@@ -27,6 +27,7 @@
       "nachName": "Muster",
       "geburtsDatum": null,
       "geburtsName": null,
+      "geburtsOrt": null,
       "staatsangehoerigkeit": "Deutsch",
       "adresse": {
         "strasse": "Steinweg.",
@@ -41,14 +42,18 @@
         "eMailAdresse": null
       },
       "familienStand": "LEDIG",
-
       "zahlungsDaten": {
         "iban": null,
         "nameKreditInstitut": null,
         "zahlungsForm": "LASTSCHRIFT"
       },
-      "beschaeftigungsVerhaeltnis":"ANGESTELLTER"
-
+      "beschaeftigungsVerhaeltnis":"ANGESTELLTER",
+      "legitimation": {
+        "ausweisArt": "REISEPASS",
+        "ausweisNummer": null,
+        "austellendeBehoerde": null,
+        "ausstellungsDatum": "2010-01-01"
+      }
     }
   ],
 

@@ -316,6 +316,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
             "nachName": "Muster",
             "geburtsDatum": null,
             "geburtsName": null,
+            "geburtsOrt": null,
             "staatsangehoerigkeit": "Deutsch",
             "adresse": 
             {
@@ -325,22 +326,28 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
                 "postleitzahl": "82475",
                 "landWohnsitz": "DE"
             },
-       "kontakt": 
-       {
-           "telefonNummer": null,
-           "mobilNummer": null,
-           "eMailAdresse": null
-       },
-       "familienStand": "LEDIG",
-       "zahlungsDaten": 
+           "kontakt":
+           {
+               "telefonNummer": null,
+               "mobilNummer": null,
+               "eMailAdresse": null
+           },
+           "familienStand": "LEDIG",
+           "zahlungsDaten":
            {
                "iban": null,
                "nameKreditInstitut": null,
                "zahlungsForm": "LASTSCHRIFT"
+           },
+           "beschaeftigungsVerhaeltnis": "ANGESTELLTER",
+           "legitimation":
+           {
+               "ausweisArt": "REISEPASS",
+               "ausweisNummer": null,
+               "austellendeBehoerde": null,
+               "ausstellungsDatum": "2010-01-01"
            }
-       },
-       "beschaeftigungsVerhaeltnis": "ANGESTELLTER"
-       ],
+       }],
        "vermittlerDaten": 
        {
            "nachName": null,
@@ -377,6 +384,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | antragsteller[0].nachname                                             | String       | Nachname                                                                                                                                                          |
 | antragsteller[0].geburtsDatum                                         | Datum        |                                                                                                                                                                   |
 | antragsteller[0].geburtsName                                          | String       |                                                                                                                                                                   |
+| antragsteller[0].geburtsOrt                                           | String       |                                                                                                                                                                   |
 | antragsteller[0].staatsangehoerigkeit                                 | String       |                                                                                                                                                                   |
 | antragsteller[0].adresse.strasse                                      | String       |                                                                                                                                                                   |
 | antragsteller[0].adresse.hausNummer                                   | String       |                                                                                                                                                                   |
@@ -391,6 +399,10 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | antragsteller[0].zahlungsDaten.nameKreditInstitut                     | String       |                                                                                                                                                                   |
 | antragsteller[0].zahlungsDaten.zahlungsForm                           | Aufzählung   | Mögliche Werte sind: ``LASTSCHRIFT``, ``UEBERWEISUNG``.                                                                                                           |
 | antragsteller[0].beschaeftigungsVerhaeltnis                           | Aufzählung   | Mögliche Werte sind: ``ANGESTELLTER``, ``ARBEITER``, ``BEAMTER``, ``FREIBERUFLER``, ``SELBSTAENDIGER``, ``BESCHAEFTIGUNGSLOSER``, ``RENTNER``.                    |
+| antragsteller[0].legitimation.ausweisArt                              | Aufzählung   | Mögliche Werte sind:                                                                                                                                              |
+| antragsteller[0].legitimation.ausweisNummer                           | String       |                                                                                                                                                                   |
+| antragsteller[0].legitimation.austellendeBehoerde                     | String       |                                                                                                                                                                   |
+| antragsteller[0].legitimation.ausstellungsDatum                       | Datum        |                                                                                                                                                                   |
 | vermittlerDaten.nachName                                              | String       |                                                                                                                                                                   |
 | vermittlerDaten.ort                                                   | String       |                                                                                                                                                                   |
 | vermittlerDaten.postleitzahl                                          | String       |                                                                                                                                                                   |
