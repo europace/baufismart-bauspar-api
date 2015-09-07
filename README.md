@@ -318,6 +318,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
             "geburtsName": null,
             "geburtsOrt": null,
             "staatsangehoerigkeit": "Deutsch",
+            "einkommenssteuerpflichtigInUsa":null,
             "adresse": 
             {
                 "strasse": "Steinweg.",
@@ -399,10 +400,23 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | antragsteller[0].zahlungsDaten.nameKreditInstitut                     | String       |                                                                                                                                                                   |
 | antragsteller[0].zahlungsDaten.zahlungsForm                           | Aufzählung   | Mögliche Werte sind: ``LASTSCHRIFT``, ``UEBERWEISUNG``.                                                                                                           |
 | antragsteller[0].beschaeftigungsVerhaeltnis                           | Aufzählung   | Mögliche Werte sind: ``ANGESTELLTER``, ``ARBEITER``, ``BEAMTER``, ``FREIBERUFLER``, ``SELBSTAENDIGER``, ``BESCHAEFTIGUNGSLOSER``, ``RENTNER``.                    |
-| antragsteller[0].legitimation.ausweisArt                              | Aufzählung   | Mögliche Werte sind: ``PERSONALAUSWEIS``, ``REISEPASS``                                                                                                               |
+| antragsteller[0].legitimation.ausweisArt                              | Aufzählung   | Mögliche Werte sind: ``PERSONALAUSWEIS``, ``REISEPASS``                                                                                                           |
 | antragsteller[0].legitimation.ausweisNummer                           | String       |                                                                                                                                                                   |
 | antragsteller[0].legitimation.austellendeBehoerde                     | String       |                                                                                                                                                                   |
 | antragsteller[0].legitimation.ausstellungsDatum                       | Datum        |                                                                                                                                                                   |
+| antragsteller[0].einkommenssteuerpflichtigInUsa                       | Boolean      | Gibt an, ob der Antragsteller nach dem _Foreign Account Tax Compliance Act_ (FATCA) in den USA steuerpflichtig ist.                                               |
+| antragsteller[0].todesfallBeguenstigter                               |              |                                                                                                                                                                   |
+| antragsteller[0].todesfallBeguenstigter.anrede                        | Aufzählung   | Mögliche Werte sind: ``HERR``, ``FRAU``.                                                                                                                          |
+| antragsteller[0].todesfallBeguenstigter.vorname                       | String       |                                                                                                                                                                   |
+| antragsteller[0].todesfallBeguenstigter.nachname                      | String       |                                                                                                                                                                   |
+| antragsteller[0].todesfallBeguenstigter.geburtsdatum                  | Datum        |                                                                                                                                                                   |
+| antragsteller[0].todesfallBeguenstigter.adresse.strasse               | String       |                                                                                                                                                                   |
+| antragsteller[0].todesfallBeguenstigter.adresse.hausNummer            | String       |                                                                                                                                                                   |
+| antragsteller[0].todesfallBeguenstigter.adresse.postleitzahl          | String       |                                                                                                                                                                   |
+| antragsteller[0].todesfallBeguenstigter.adresse.wohnOrt               | String       |                                                                                                                                                                   |
+| antragsteller[0].todesfallBeguenstigter.adresse.landWohnsitz          | String       |                                                                                                                                                                   |
+| antragsteller[0].vermoegenswirksameLeistungenBetragInEuro             | Zahl         | Der Betrag der vermögenswirksamen Leistungen, die der Arbeitgeber des Antragstellers in diesen Bausparvertrag einzahlt. Es werden immer die VL Beträge aller Antragsteller eingezahlt.|
+| antragsteller[0].vermoegenswirksameLeistungenZahlungsrhythmus         | Aufzählung   | Legt fest, in welchen Intervallen die vermögenswirksamen Leistungen gezahlt werden. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
 | vermittlerDaten.nachName                                              | String       |                                                                                                                                                                   |
 | vermittlerDaten.ort                                                   | String       |                                                                                                                                                                   |
 | vermittlerDaten.postleitzahl                                          | String       |                                                                                                                                                                   |
