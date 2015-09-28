@@ -102,7 +102,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
         "abschlussgebuehrenbehandlung": "VERRECHUNG",
         "auszahlungsbetragBeiZuteilung": 50000,
         "bausparsummeInEuro": 50000,
-        "berechnungsZiel": "SPARBEITRAG_INKL_VL",
+        "berechnungsZiel": "SPARBEITRAG",
         "darlehensWunsch": "MIT_DARLEHEN",
         "laufzeitBisZuteilungInMonaten": 112,
         "requestId": "XAJNvEbn",
@@ -122,16 +122,19 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
         "vermittlerNr": "A123456",
         "zielTarif": "T1",
         "zuteilungstermin": "2026-01-01",        
+        "vertragsDatum": "2015-09-01",
       }
 
 | Feld                               | Typ           | Beschreibung |
 |------------------------------------|---------------|--------------|
 | zielTarif                          | String        | Die technische Tarif ID, so wie sie von GET /tarife geliefert wird. |
-| berechnungsZiel                    | Auflistung    | Mögliche Werte: ``SPARBEITRAG_INKL_VL``, ``BAUSPARSUMME``, ``ZUTEILUNGSTERMIN``, ``LAUFZEIT_BIS_ZUTEILUNG`` |
+| berechnungsZiel                    | Auflistung    | Mögliche Werte: ``SPARBEITRAG``, ``BAUSPARSUMME``, ``ZUTEILUNGSTERMIN``, ``LAUFZEIT_BIS_ZUTEILUNG`` |
+| berechnungsArt                     | Auflistung    | Mögliche Werte: ``TILGUNGSAUSSETZUNG``, ``,ZINSABSICHERUNG``, ``BAUSPAREN_OHNE_IMMOBILIENFINANZIERUNG`` |
 | bausparSummeInEuro                 | Zahl          | Gewünschte Bausparsumme in Euro |
 | auszahlungsbetragBeiZuteilung      | Zahl          | Der Betrag des Bausparvertrags der bei Zuteilung ausgezahlt wird in Euro |
 | laufzeitBisZuteilungInMonaten      | Zahl          | Die Anzahl Monate zwischen Vertragsdatum und Zuteilungsdatum. Entweder wird dieses Feld oder ``zuteilungstermin`` geliefert.|
 | zuteilungstermin                   | Datum         | Das gewünschte Zuteilungsdatum. Alternativ kann ``laufzeitBisZuteilungInMonaten`` geliefert werden. |
+| vertragsDatum                      | Datum         | Das gewünschte VertragsDatum. |
 | sparBeitraege                      | Liste         | Ermöglicht die Erfassung mehrerer unterschiedlicher Sparzahlungen oder Einmalzahlungen. |
 | sparBeitraege[i].beitrag           | Zahl          | Der Sparbeitrag dieser Zahlung ein Euro. |
 | sparBeitraege[i].zahlungAb         | Datum         | Der Startzeitpunkt ab dem dieser Sparbeitrag geleistet wird. |
@@ -179,7 +182,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
             "gesamtleistungDarlehenInEuro": 0
           },
           "bausparsummeInEuro": 0,
-          "berechnungsziel": "SPARBEITRAG_INKL_VL",
+          "berechnungsziel": "SPARBEITRAG",
           "gesamtlaufzeitKomplettInMonaten": 0,
           "gesamtleistungKomplettInEuro": 0,
           "kontogebuehrJaehrlichInEuro": 0,
@@ -222,14 +225,17 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
           },
           "tarif": "string",
           "vertragsDatum": "2015-09-01",
-          "zuteilungsTermin": "string"
+          "zuteilungsTermin": "string",
+          "provision" : {
+            "vertriebsProvisionInEuro": 1000
+          }
         }
       }
 
 | Name                                                                  | Typ          | Beschreibung                                                                                                                                                      |
 |-----------------------------------------------------------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | tarif                                                                 | String       | der Tarif wird auf Seiten der BSK ermittelt                                                                                                                       |
-| berechnungsZiel                                                       | Aufzählung   | Mögliche Werte: ``SPARBEITRAG_INKL_VL``, ``BAUSPARSUMME``, ``ZUTEILUNGSTERMIN``, ``LAUFZEIT_BIS_ZUTEILUNG``                                                       |
+| berechnungsZiel                                                       | Aufzählung   | Mögliche Werte: ``SPARBEITRAG``, ``BAUSPARSUMME``, ``ZUTEILUNGSTERMIN``, ``LAUFZEIT_BIS_ZUTEILUNG``                                                       |
 | bausparsummeInEuro                                                    | Zahl         | Betrag der Bausparsumme in Euro                                                                                                                                   |
 | laufzeitBisZuteilungInMonaten                                         | Zahl         | Anzahl Monate bis zur Zuteilung                                                                                                                                   |
 | zuteilungsTermin                                                      | Datum        | Zuteilungstermin                                                                                                                                                  |
@@ -278,6 +284,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | meldungen.text                                                        | STRING       | menschlich lesbare Fehlerbeschreibung   |                                                                                                                         |
 | meldungen.status                                                      | Aufzählung   | Auswirkung der Meldung auf die Annehmbarkeit des Bausparantrags. Mögliche Werte: ``HINWEIS``, ``BERECHNUNG_NICHT_MOEGLICH_AUFGRUND_FEHLENDER_DATEN``, ``VOLLSTAENDIGKEIT_DOKUMENT``, ``NICHT_MACHBAR``, ``TECHNISCHER_FEHLER``.                                                                                       |
 | meldungen.zuordnung                                                   | Aufzählung   | Zuordnung der Meldung zum Datenhaushalt des Frontends. Mögliche Werte: ``DARLEHENSNEHMER1``, ``DARLEHENSNEHMER2``, ``VORHABEN``.                                                  |
+| provision.vertriebsProvisionInEuro                                    | Zahl         | Die Komplette Provision die die Bausparkasse an den Vermittler und die Vertriebsorganisation auszahlt. |
 
 
 ### Schnittstellenressource POST /dokumente/
