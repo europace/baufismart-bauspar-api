@@ -1,7 +1,9 @@
 {
   "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
   "auszahlungsbetragBeiZuteilung": 150000,
-  "berechnungsZiel": "SPARBEITRAG_INKL_VL",
+  "berechnungsZiel": "SPARBEITRAG",
+  "vertragsDatum":"2015-09-01",
+  "berechnungsArt": "TILGUNGSAUSSETZUNG",
   "darlehensWunsch": "MIT_DARLEHEN",
   "laufzeitBisZuteilungInMonaten": 240,
   "zielTarif": "T2",
@@ -13,5 +15,6 @@
     }
   ],
   "fallNummer":"123-456-789",
-  "requestId":"0y9xc8v7y9"
+  "requestId":"0y9xc8v7y9",
+  "vermittlerNr":"4712"
 }

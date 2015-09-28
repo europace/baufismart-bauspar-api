@@ -12,9 +12,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProofOfConceptBausparBerechnung implements InitializingBean{
 
-  public static final String TEST_TARIF = "4711";
-
-
   private ObjectMapper objectMapper;
 
   public BausparBerechnungsAntwort berechneBausparAngebot(BausparBerechnungsAnfrage berechnungsdaten) throws Exception {

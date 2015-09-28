@@ -19,6 +19,7 @@ public class Bausparangebot {
   Integer gesamtlaufzeitKomplettInMonaten;
   List<FachlicheMeldung> meldungen;
   LocalDate vertragsDatum;
+  Provision provision;
 
   public String getTarif() {
     return tarif;
@@ -122,5 +123,13 @@ public class Bausparangebot {
 
   public void setVertragsDatum(LocalDate vertragsDatum) {
     this.vertragsDatum = vertragsDatum;
+  }
+
+  public Provision getProvision() {
+    return provision;
+  }
+
+  public void setProvision(Provision provision) {
+    this.provision = provision;
   }
 }
