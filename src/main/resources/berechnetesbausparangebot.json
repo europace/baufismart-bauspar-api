@@ -383,6 +383,9 @@
 
     },
 
-    "zuteilungsTermin": "2025-09-01"
+    "zuteilungsTermin": "2025-09-01",
+    "provision": {
+      "vertriebsProvisionInEuro": 500.11
+    }
   }
 }

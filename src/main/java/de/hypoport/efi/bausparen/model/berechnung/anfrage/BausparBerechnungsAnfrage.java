@@ -12,10 +12,12 @@ public class BausparBerechnungsAnfrage {
 
   String zielTarif;
   BerechnungsZiel berechnungsZiel;
+  Berechnungsart berechnungsArt;
   BigDecimal bausparsummeInEuro;
   BigDecimal auszahlungsbetragBeiZuteilung;
   Integer laufzeitBisZuteilungInMonaten;
   LocalDate zuteilungstermin;
+  LocalDate vertragsDatum;
   List<SparBeitrag> sparBeitraege;
   TilgungsBeitrag tilgungsBeitrag;
   Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung;
@@ -126,5 +128,21 @@ public class BausparBerechnungsAnfrage {
 
   public void setFallNummer(String fallNummer) {
     this.fallNummer = fallNummer;
+  }
+
+  public LocalDate getVertragsDatum() {
+    return vertragsDatum;
+  }
+
+  public void setVertragsDatum(LocalDate vertragsDatum) {
+    this.vertragsDatum = vertragsDatum;
+  }
+
+  public Berechnungsart getBerechnungsArt() {
+    return berechnungsArt;
+  }
+
+  public void setBerechnungsArt(Berechnungsart berechnungsArt) {
+    this.berechnungsArt = berechnungsArt;
   }
 }

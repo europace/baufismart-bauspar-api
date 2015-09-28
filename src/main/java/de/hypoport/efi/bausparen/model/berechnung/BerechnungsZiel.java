@@ -2,7 +2,7 @@ package de.hypoport.efi.bausparen.model.berechnung;
 
 public enum BerechnungsZiel {
 
-  SPARBEITRAG_INKL_VL,
+  SPARBEITRAG,
   BAUSPARSUMME,
   ZUTEILUNGSTERMIN,
   LAUFZEIT_BIS_ZUTEILUNG;
