@@ -2,7 +2,7 @@
   "berechnetesBausparAngebot": {
     "tarif": "T1",
     "vertragsDatum":"2015-09-01",
-    "berechnungsziel": "SPARBEITRAG_INKL_VL",
+    "berechnungsziel": "SPARBEITRAG",
     "abschlussgebuehr": {
       "abschlussgebuehrBetragInEuro": 500,
       "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG"
