@@ -102,6 +102,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
         "abschlussgebuehrenbehandlung": "VERRECHUNG",
         "auszahlungsbetragBeiZuteilung": 50000,
         "bausparsummeInEuro": 50000,
+        "berechnungsArt": "TILGUNGSAUSSETZUNG",
         "berechnungsZiel": "SPARBEITRAG",
         "darlehensWunsch": "MIT_DARLEHEN",
         "laufzeitBisZuteilungInMonaten": 112,
