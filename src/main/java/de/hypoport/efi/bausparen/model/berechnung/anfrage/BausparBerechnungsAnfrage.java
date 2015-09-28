@@ -12,7 +12,7 @@ public class BausparBerechnungsAnfrage {
 
   String zielTarif;
   BerechnungsZiel berechnungsZiel;
-  Berechnungsart berechnungsArt;
+  BerechnungsArt berechnungsArt;
   BigDecimal bausparsummeInEuro;
   BigDecimal auszahlungsbetragBeiZuteilung;
   Integer laufzeitBisZuteilungInMonaten;
@@ -138,11 +138,11 @@ public class BausparBerechnungsAnfrage {
     this.vertragsDatum = vertragsDatum;
   }
 
-  public Berechnungsart getBerechnungsArt() {
+  public BerechnungsArt getBerechnungsArt() {
     return berechnungsArt;
   }
 
-  public void setBerechnungsArt(Berechnungsart berechnungsArt) {
+  public void setBerechnungsArt(BerechnungsArt berechnungsArt) {
     this.berechnungsArt = berechnungsArt;
   }
 }
