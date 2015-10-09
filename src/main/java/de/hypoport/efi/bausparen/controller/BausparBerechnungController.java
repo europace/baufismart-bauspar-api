@@ -8,6 +8,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -27,7 +28,7 @@ public class BausparBerechnungController {
   @Autowired
   private ProofOfConceptBausparBerechnung bausparBerechnung;
 
-  @RequestMapping(value = "/", method = POST, produces = APPLICATION_JSON_VALUE + ";charset=UTF-8")
+  @RequestMapping(value = "/", method = POST, consumes = MediaType.APPLICATION_JSON_VALUE,produces = APPLICATION_JSON_VALUE + ";charset=UTF-8")
   @ApiOperation(
       value = "Berechne Bauspar Angebot",
       response = BausparBerechnungsAntwort.class)
