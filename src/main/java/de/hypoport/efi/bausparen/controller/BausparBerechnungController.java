@@ -1,5 +1,7 @@
 package de.hypoport.efi.bausparen.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import de.hypoport.efi.bausparen.model.berechnung.BausparBerechnungsAntwort;
 import de.hypoport.efi.bausparen.model.berechnung.anfrage.BausparBerechnungsAnfrage;
 import de.hypoport.efi.bausparen.proofofconcept.ProofOfConceptBausparBerechnung;
@@ -7,6 +9,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,6 +31,8 @@ public class BausparBerechnungController {
   @Autowired
   private ProofOfConceptBausparBerechnung bausparBerechnung;
 
+  private static final org.slf4j.Logger LOG = LoggerFactory.getLogger(BausparBerechnungController.class);
+
   @RequestMapping(value = "/", method = POST, consumes = MediaType.APPLICATION_JSON_VALUE,produces = APPLICATION_JSON_VALUE + ";charset=UTF-8")
   @ApiOperation(
       value = "Berechne Bauspar Angebot",
@@ -39,7 +44,7 @@ public class BausparBerechnungController {
   public
   @ResponseBody
   BausparBerechnungsAntwort berechneBausparAngebot(@RequestBody BausparBerechnungsAnfrage berechnungsdaten, HttpServletResponse rsp) {
-
+    logAnfrage(berechnungsdaten);
     BausparBerechnungsAntwort bausparBerechnungsAntwort = null;
     try {
       bausparBerechnungsAntwort = bausparBerechnung.berechneBausparAngebot(berechnungsdaten);
@@ -50,5 +55,15 @@ public class BausparBerechnungController {
       rsp.setStatus(500);
     }
     return bausparBerechnungsAntwort;
+  }
+
+  private void logAnfrage(Object data) {
+    ObjectMapper objectMapper = new ObjectMapper();
+    try {
+      String string = objectMapper.writeValueAsString(data);
+      LOG.info("anfrage={}",string);
+    }catch (JsonProcessingException p){
+      p.printStackTrace();
+    }
   }
 }
