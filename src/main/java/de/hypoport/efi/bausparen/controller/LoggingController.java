@@ -17,7 +17,7 @@ public class LoggingController {
   private static final org.slf4j.Logger LOG = LoggerFactory.getLogger(BausparBerechnungController.class);
 
   @ModelAttribute
-  public void addAttributes(HttpServletRequest request, HttpServletResponse response,Model model, @RequestBody String requestString, @RequestHeader(value = "User-Agent") String userAgent) {
+  public void addAttributes(@RequestBody String requestString) {
     LOG.info("request="+requestString);
   }
 
