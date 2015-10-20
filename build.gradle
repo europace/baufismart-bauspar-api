@@ -64,6 +64,7 @@ compileJava {
 
 configurations {
   all*.exclude module: 'spring-boot-starter-logging'
+  compile.exclude module: "spring-boot-starter-tomcat"
 }
 
 dependencies {
@@ -80,6 +81,7 @@ dependencies {
     exclude module: "spring-boot-starter-logging"
     exclude module: "logback-classic"
   }
+  compile("org.springframework.boot:spring-boot-starter-jetty:$springBootVersion")
   compile("org.springframework.boot:spring-boot-starter-actuator:$springBootVersion")
   compile("org.springframework.boot:spring-boot-starter-log4j2:$springBootVersion")
   compile("org.springframework:spring-core:$springVersion")
@@ -119,4 +121,5 @@ task tagGit << {
 }
 task wrapper(type: Wrapper) {
   gradleVersion = '2.1'
+
 }
