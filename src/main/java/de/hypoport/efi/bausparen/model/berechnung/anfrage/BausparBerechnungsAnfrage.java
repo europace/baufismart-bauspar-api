@@ -25,6 +25,7 @@ public class BausparBerechnungsAnfrage {
   String vermittlerNr;
   String requestId;
   String fallNummer;
+  String konditionsGruppe;
 
   public LocalDate getZuteilungstermin() {
     return zuteilungstermin;
@@ -144,5 +145,13 @@ public class BausparBerechnungsAnfrage {
 
   public void setBerechnungsArt(BerechnungsArt berechnungsArt) {
     this.berechnungsArt = berechnungsArt;
+  }
+
+  public String getKonditionsGruppe() {
+    return konditionsGruppe;
+  }
+
+  public void setKonditionsGruppe(String konditionsGruppe) {
+    this.konditionsGruppe = konditionsGruppe;
   }
 }

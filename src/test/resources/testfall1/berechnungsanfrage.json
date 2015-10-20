@@ -9,5 +9,6 @@
   "laufzeitBisZuteilungInMonaten": 120,
   "fallNummer":"123-456-789",
   "requestId":"7s0d9f7as9",
-  "vermittlerNr":"4711"
+  "vermittlerNr":"4711",
+  "konditionsGruppe": "Vertrieb A"
 }
