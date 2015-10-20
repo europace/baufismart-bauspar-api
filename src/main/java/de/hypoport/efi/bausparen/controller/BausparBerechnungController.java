@@ -39,7 +39,15 @@ public class BausparBerechnungController {
   @ResponseBody
   BausparBerechnungsAntwort berechneBausparAngebot(@RequestBody BausparBerechnungsAnfrage berechnungsdaten, HttpServletResponse rsp) {
 
-    rsp.setStatus(SC_OK);
-    return bausparBerechnung.berechneBausparAngebot(berechnungsdaten);
+    BausparBerechnungsAntwort bausparBerechnungsAntwort = null;
+    try {
+      bausparBerechnungsAntwort = bausparBerechnung.berechneBausparAngebot(berechnungsdaten);
+      rsp.setStatus(SC_OK);
+    }
+    catch (Exception e) {
+      e.printStackTrace();
+      rsp.setStatus(500);
+    }
+    return bausparBerechnungsAntwort;
   }
 }

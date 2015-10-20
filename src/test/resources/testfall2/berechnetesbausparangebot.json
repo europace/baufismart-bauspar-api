@@ -1,7 +1,8 @@
 {
   "berechnetesBausparAngebot": {
     "tarif": "T2",
-    "berechnungsziel": "SPARBEITRAG_INKL_VL",
+    "vertragsDatum":"2015-09-01",
+    "berechnungsziel": "SPARBEITRAG",
     "abschlussgebuehr": {
       "abschlussgebuehrBetragInEuro": 1500,
       "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG"
@@ -391,7 +392,10 @@
         }
       ]
     },
-    "zuteilungsTermin": "2031-02-01"
+    "zuteilungsTermin": "2031-02-01",
+    "provision": {
+      "vertriebsProvisionInEuro": 1000.11
+    }
   }
 }
 

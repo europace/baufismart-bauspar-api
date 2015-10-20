@@ -62,6 +62,8 @@ public class FachlicheBeispiele {
     Bausparangebot berechnetesBausparAngebot = bausparBerechnungsAntwort.getBerechnetesBausparAngebot();
     assertNotNull(berechnetesBausparAngebot);
     assertNotNull(berechnetesBausparAngebot.getZuteilungsTermin());
+    assertNotNull(berechnetesBausparAngebot.getProvision());
+    assertNotNull(berechnetesBausparAngebot.getProvision().getVertriebsProvisionInEuro());
 
     assertEquals((long) berechnetesBausparAngebot.getGesamtlaufzeitKomplettInMonaten(), ermittleLaufzeit(berechnetesBausparAngebot));
 
@@ -75,6 +77,13 @@ public class FachlicheBeispiele {
     assertNotNull(bausparBerechnungsAnfrage);
     assertNotNull(bausparBerechnungsAnfrage.getZielTarif());
     assertNotNull(bausparBerechnungsAnfrage.getBerechnungsZiel());
+    assertNotNull(bausparBerechnungsAnfrage.getVertragsDatum());
+    assertNotNull(bausparBerechnungsAnfrage.getBerechnungsArt());
+    assertNotNull(bausparBerechnungsAnfrage.getAbschlussgebuehrenbehandlung());
+    assertNotNull(bausparBerechnungsAnfrage.getFallNummer());
+    assertNotNull(bausparBerechnungsAnfrage.getRequestId());
+    assertNotNull(bausparBerechnungsAnfrage.getVermittlerNr());
+    assertNotNull(bausparBerechnungsAnfrage.getDarlehensWunsch());
 
     if (bausparBerechnungsAnfrage.getAuszahlungsbetragBeiZuteilung() == null) {
       assertNotNull(bausparBerechnungsAnfrage.getBausparsummeInEuro() != null);

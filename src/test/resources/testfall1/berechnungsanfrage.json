@@ -1,11 +1,14 @@
 {
+  "zielTarif": "T1",
+  "berechnungsZiel": "SPARBEITRAG",
+  "berechnungsArt": "TILGUNGSAUSSETZUNG",
   "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
   "auszahlungsbetragBeiZuteilung": 50000,
-  "berechnungsZiel": "SPARBEITRAG_INKL_VL",
   "darlehensWunsch": "MIT_DARLEHEN",
+  "vertragsDatum":"2015-09-01",
   "laufzeitBisZuteilungInMonaten": 120,
-  "zielTarif": "T1",
-  "fallNummer": "123-456-789",
-  "requestId": "7s0d9f7as9",
+  "fallNummer":"123-456-789",
+  "requestId":"7s0d9f7as9",
+  "vermittlerNr":"4711",
   "konditionsGruppe": "Vertrieb A"
 }

@@ -3,9 +3,9 @@ package de.hypoport.efi.bausparen.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.util.ISO8601DateFormat;
 import de.hypoport.efi.bausparen.model.berechnung.BerechnungsZiel;
+import de.hypoport.efi.bausparen.model.berechnung.SparBeitrag;
 import de.hypoport.efi.bausparen.model.berechnung.Zahlungsrhythmus;
 import de.hypoport.efi.bausparen.model.berechnung.anfrage.BausparBerechnungsAnfrage;
-import de.hypoport.efi.bausparen.model.berechnung.SparBeitrag;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -23,7 +23,7 @@ public class BausparBerechnungControllerTest {
 
     BausparBerechnungsAnfrage berechnungsdaten = new BausparBerechnungsAnfrage();
     berechnungsdaten.setBausparsummeInEuro(new BigDecimal("100000"));
-    berechnungsdaten.setBerechnungsZiel(BerechnungsZiel.SPARBEITRAG_INKL_VL);
+    berechnungsdaten.setBerechnungsZiel(BerechnungsZiel.SPARBEITRAG);
 
     SparBeitrag sparBeitrag = new SparBeitrag();
     sparBeitrag.setBeitrag(new BigDecimal("100"));

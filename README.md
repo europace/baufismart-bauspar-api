@@ -102,7 +102,8 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
         "abschlussgebuehrenbehandlung": "VERRECHUNG",
         "auszahlungsbetragBeiZuteilung": 50000,
         "bausparsummeInEuro": 50000,
-        "berechnungsZiel": "SPARBEITRAG_INKL_VL",
+        "berechnungsArt": "TILGUNGSAUSSETZUNG",
+        "berechnungsZiel": "SPARBEITRAG",
         "darlehensWunsch": "MIT_DARLEHEN",
         "konditionsGruppe": "Vertrieb A",
         "laufzeitBisZuteilungInMonaten": 112,
@@ -121,18 +122,21 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
           "zahlungsrhythmus": "MONATLICH"
         },
         "vermittlerNr": "A123456",
+        "vertragsDatum": "2015-09-01",
         "zielTarif": "T1",
-        "zuteilungstermin": "2026-01-01"
+        "zuteilungstermin": "2026-01-01"        
       }
 
 | Feld                               | Typ           | Beschreibung |
 |------------------------------------|---------------|--------------|
 | zielTarif                          | String        | Die technische Tarif ID, so wie sie von GET /tarife geliefert wird. |
-| berechnungsZiel                    | Auflistung    | Mögliche Werte: ``SPARBEITRAG_INKL_VL``, ``BAUSPARSUMME``, ``ZUTEILUNGSTERMIN``, ``LAUFZEIT_BIS_ZUTEILUNG`` |
+| berechnungsZiel                    | Auflistung    | Mögliche Werte: ``SPARBEITRAG``, ``BAUSPARSUMME``, ``ZUTEILUNGSTERMIN``, ``LAUFZEIT_BIS_ZUTEILUNG`` |
+| berechnungsArt                     | Auflistung    | Mögliche Werte: ``TILGUNGSAUSSETZUNG``, ``,ZINSABSICHERUNG``, ``BAUSPAREN_OHNE_IMMOBILIENFINANZIERUNG`` |
 | bausparSummeInEuro                 | Zahl          | Gewünschte Bausparsumme in Euro |
 | auszahlungsbetragBeiZuteilung      | Zahl          | Der Betrag des Bausparvertrags der bei Zuteilung ausgezahlt wird in Euro |
-| laufzeitBisZuteilungInMonaten      | Zahl          | Die Anzahl Monate zwischen Vertragsbeginn und Zuteilungsdatum. Entweder wird dieses Feld oder ``zuteilungstermin`` geliefert.|
+| laufzeitBisZuteilungInMonaten      | Zahl          | Die Anzahl Monate zwischen Vertragsdatum und Zuteilungsdatum. Entweder wird dieses Feld oder ``zuteilungstermin`` geliefert.|
 | zuteilungstermin                   | Datum         | Das gewünschte Zuteilungsdatum. Alternativ kann ``laufzeitBisZuteilungInMonaten`` geliefert werden. |
+| vertragsDatum                      | Datum         | Das gewünschte VertragsDatum. |
 | sparBeitraege                      | Liste         | Ermöglicht die Erfassung mehrerer unterschiedlicher Sparzahlungen oder Einmalzahlungen. |
 | sparBeitraege[i].beitrag           | Zahl          | Der Sparbeitrag dieser Zahlung ein Euro. |
 | sparBeitraege[i].zahlungAb         | Datum         | Der Startzeitpunkt ab dem dieser Sparbeitrag geleistet wird. |
@@ -181,7 +185,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
             "gesamtleistungDarlehenInEuro": 0
           },
           "bausparsummeInEuro": 0,
-          "berechnungsziel": "SPARBEITRAG_INKL_VL",
+          "berechnungsziel": "SPARBEITRAG",
           "gesamtlaufzeitKomplettInMonaten": 0,
           "gesamtleistungKomplettInEuro": 0,
           "kontogebuehrJaehrlichInEuro": 0,
@@ -223,19 +227,22 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
             ]
           },
           "tarif": "string",
-          "vertragsBeginn": "2015-09-01",
-          "zuteilungsTermin": "string"
+          "vertragsDatum": "2015-09-01",
+          "zuteilungsTermin": "string",
+          "provision" : {
+            "vertriebsProvisionInEuro": 1000
+          }
         }
       }
 
 | Name                                                                  | Typ          | Beschreibung                                                                                                                                                      |
 |-----------------------------------------------------------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | tarif                                                                 | String       | der Tarif wird auf Seiten der BSK ermittelt                                                                                                                       |
-| berechnungsZiel                                                       | Aufzählung   | Mögliche Werte: ``SPARBEITRAG_INKL_VL``, ``BAUSPARSUMME``, ``ZUTEILUNGSTERMIN``, ``LAUFZEIT_BIS_ZUTEILUNG``                                                       |
+| berechnungsZiel                                                       | Aufzählung   | Mögliche Werte: ``SPARBEITRAG``, ``BAUSPARSUMME``, ``ZUTEILUNGSTERMIN``, ``LAUFZEIT_BIS_ZUTEILUNG``                                                       |
 | bausparsummeInEuro                                                    | Zahl         | Betrag der Bausparsumme in Euro                                                                                                                                   |
 | laufzeitBisZuteilungInMonaten                                         | Zahl         | Anzahl Monate bis zur Zuteilung                                                                                                                                   |
 | zuteilungsTermin                                                      | Datum        | Zuteilungstermin                                                                                                                                                  |
-| vertragsBeginn                                                        | Datum        |                                                                                                                                                                   |
+| vertragsDatum                                                         | Datum        |                                                                                                                                                                   |
 | abschlussgebuehrenbehandlung                                          | Aufzählung   | Mögliche Werte sind: ``VERRECHUNG``, ``SOFORTZAHLUNG``.                                                                                                           |
 | abschlussgebuehrHoeheInProzent                                        | Zahl         | Abschlussgebühr in Prozent                                                                                                                                        |
 | abschlussgebuehrBetragInEuro                                          | Zahl         | Abschlussgebühr in Euro                                                                                                                                           |
@@ -272,7 +279,6 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | sparPhase.sparBeitraege[i].zahlungsrhythmus                           | Auflistung   | Legt fest, in welchen Intervallen dieser Sparbeitrag gezahlt wird. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
 | sparPhase.sparPlan                                                    | SPARPLAN     | Jede Zahlung in das Bausparkonto in der Sparphase.                                                                                                                |
 | sparPhase.sparPlan.zahlungen[].datum                                  | Zahl         |                                                                                                                                                                   |
-| sparPhase.sparPlan.zahlungen[].abgeltungsSteuerInEuro                 | Zahl         |                                                                                                                                                                   |
 | sparPhase.sparPlan.zahlungen[].gebuehrenInEuro                        | Zahl         |                                                                                                                                                                   |
 | sparPhase.sparPlan.zahlungen[].kontofuehrungsGebuehrInEuro            | Zahl         |                                                                                                                                                                   |
 | sparPhase.sparPlan.zahlungen[].saldoNachZahlungInEuro                 | Zahl         |                                                                                                                                                                   |
@@ -281,6 +287,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | meldungen.text                                                        | STRING       | menschlich lesbare Fehlerbeschreibung   |                                                                                                                         |
 | meldungen.status                                                      | Aufzählung   | Auswirkung der Meldung auf die Annehmbarkeit des Bausparantrags. Mögliche Werte: ``HINWEIS``, ``BERECHNUNG_NICHT_MOEGLICH_AUFGRUND_FEHLENDER_DATEN``, ``VOLLSTAENDIGKEIT_DOKUMENT``, ``NICHT_MACHBAR``, ``TECHNISCHER_FEHLER``.                                                                                       |
 | meldungen.zuordnung                                                   | Aufzählung   | Zuordnung der Meldung zum Datenhaushalt des Frontends. Mögliche Werte: ``DARLEHENSNEHMER1``, ``DARLEHENSNEHMER2``, ``VORHABEN``.                                                  |
+| provision.vertriebsProvisionInEuro                                    | Zahl         | Die Komplette Provision die die Bausparkasse an den Vermittler und die Vertriebsorganisation auszahlt. |
 
 
 ### Schnittstellenressource POST /dokumente/
@@ -320,6 +327,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
             "geburtsName": null,
             "geburtsOrt": null,
             "staatsangehoerigkeit": "Deutsch",
+            "einkommenssteuerpflichtigInUsa":null,
             "adresse": 
             {
                 "strasse": "Steinweg.",
@@ -386,7 +394,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | antragsteller[0].nachname                                             | String       | Nachname                                                                                                                                                          |
 | antragsteller[0].geburtsDatum                                         | Datum        |                                                                                                                                                                   |
 | antragsteller[0].geburtsName                                          | String       |                                                                                                                                                                   |
-| antragsteller[0].geburtsOrt                                           | String       |                                                                                                                                                                   |
+| antragsteller[0].geburtsOrt                                           | String       | Dieses Feld ist noch nicht im Frontend enthalten.                                                                                                                                                                  |
 | antragsteller[0].staatsangehoerigkeit                                 | String       |                                                                                                                                                                   |
 | antragsteller[0].adresse.strasse                                      | String       |                                                                                                                                                                   |
 | antragsteller[0].adresse.hausNummer                                   | String       |                                                                                                                                                                   |
@@ -400,11 +408,24 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | antragsteller[0].zahlungsDaten.iban                                   | String       |                                                                                                                                                                   |
 | antragsteller[0].zahlungsDaten.nameKreditInstitut                     | String       |                                                                                                                                                                   |
 | antragsteller[0].zahlungsDaten.zahlungsForm                           | Aufzählung   | Mögliche Werte sind: ``LASTSCHRIFT``, ``UEBERWEISUNG``.                                                                                                           |
-| antragsteller[0].beschaeftigungsVerhaeltnis                           | Aufzählung   | Mögliche Werte sind: ``ANGESTELLTER``, ``ARBEITER``, ``BEAMTER``, ``FREIBERUFLER``, ``SELBSTAENDIGER``, ``BESCHAEFTIGUNGSLOSER``, ``RENTNER``.                    |
-| antragsteller[0].legitimation.ausweisArt                              | Aufzählung   | Mögliche Werte sind: ``PERSONALAUSWEIS``, ``REISEPASS``                                                                                                               |
-| antragsteller[0].legitimation.ausweisNummer                           | String       |                                                                                                                                                                   |
-| antragsteller[0].legitimation.austellendeBehoerde                     | String       |                                                                                                                                                                   |
-| antragsteller[0].legitimation.ausstellungsDatum                       | Datum        |                                                                                                                                                                   |
+| antragsteller[0].beschaeftigungsVerhaeltnis                           | Aufzählung   | Mögliche Werte sind: ``ANGESTELLTER``, ``ARBEITER``, ``ARBEITSLOSER``, ``BEAMTER``, ``FREIBERUFLER``, ``HAUSFRAU_HAUSMANN``,``RENTNER``,``SELBSTAENDIGER``.       |
+| antragsteller[0].legitimation.ausweisArt                              | Aufzählung   | Mögliche Werte sind: ``PERSONALAUSWEIS``, ``REISEPASS``. Dieses Feld ist noch nicht im Frontend enthalten.                                                                                                           |
+| antragsteller[0].legitimation.ausweisNummer                           | String       | Dieses Feld ist noch nicht im Frontend enthalten.                                                                                                                                                                   |
+| antragsteller[0].legitimation.austellendeBehoerde                     | String       | Dieses Feld ist noch nicht im Frontend enthalten.                                                                                                                                                                   |
+| antragsteller[0].legitimation.ausstellungsDatum                       | Datum        | Dieses Feld ist noch nicht im Frontend enthalten.                                                                                                                                                                   |
+| antragsteller[0].einkommenssteuerpflichtigInUsa                       | Boolean      | Gibt an, ob der Antragsteller nach dem _Foreign Account Tax Compliance Act_ (FATCA) in den USA steuerpflichtig ist.  Dieses Feld ist noch nicht im Frontend enthalten. |
+| antragsteller[0].todesfallBeguenstigter                               |              |                                                                                                                                                                   |
+| antragsteller[0].todesfallBeguenstigter.anrede                        | Aufzählung   | Mögliche Werte sind: ``HERR``, ``FRAU``.   Dieses Feld ist noch nicht im Frontend enthalten.                                                                      |
+| antragsteller[0].todesfallBeguenstigter.vorname                       | String       | Dieses Feld ist noch nicht im Frontend enthalten.                                                                                                                                                                    |
+| antragsteller[0].todesfallBeguenstigter.nachname                      | String       | Dieses Feld ist noch nicht im Frontend enthalten.                                                                                                                                                                 |
+| antragsteller[0].todesfallBeguenstigter.geburtsdatum                  | Datum        | Dieses Feld ist noch nicht im Frontend enthalten.                                                                                                                                                                   |
+| antragsteller[0].todesfallBeguenstigter.adresse.strasse               | String       | Dieses Feld ist noch nicht im Frontend enthalten.                                                                                                                                                                    |
+| antragsteller[0].todesfallBeguenstigter.adresse.hausNummer            | String       | Dieses Feld ist noch nicht im Frontend enthalten.                                                                                                                                                                    |
+| antragsteller[0].todesfallBeguenstigter.adresse.postleitzahl          | String       | Dieses Feld ist noch nicht im Frontend enthalten.                                                                                                                                                                    |
+| antragsteller[0].todesfallBeguenstigter.adresse.wohnOrt               | String       | Dieses Feld ist noch nicht im Frontend enthalten.                                                                                                                                                                   |
+| antragsteller[0].todesfallBeguenstigter.adresse.landWohnsitz          | String       | Dieses Feld ist noch nicht im Frontend enthalten.                                                                                                                                                                  |
+| antragsteller[0].vermoegenswirksameLeistungenBetragInEuro             | Zahl         | Der Betrag der vermögenswirksamen Leistungen, die der Arbeitgeber des Antragstellers in diesen Bausparvertrag einzahlt. Es werden immer die VL Beträge aller Antragsteller eingezahlt. Dieses Feld ist noch nicht im Frontend enthalten.|
+| antragsteller[0].vermoegenswirksameLeistungenZahlungsrhythmus         | Aufzählung   | Legt fest, in welchen Intervallen die vermögenswirksamen Leistungen gezahlt werden. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``.  Dieses Feld ist noch nicht im Frontend enthalten.|
 | vermittlerDaten.nachName                                              | String       |                                                                                                                                                                   |
 | vermittlerDaten.ort                                                   | String       |                                                                                                                                                                   |
 | vermittlerDaten.postleitzahl                                          | String       |                                                                                                                                                                   |

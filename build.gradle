@@ -6,7 +6,8 @@ buildscript {
     springBootStarterVersion = '1.2.5.RELEASE'
   }
   repositories {
-    jcenter()
+    mavenLocal()
+    maven { url "http://nexus-beta.hypoport.local/nexus/content/repositories/efi" }
   }
   dependencies {
     classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootStarterVersion")
@@ -30,7 +31,8 @@ sourceSets {
 }
 
 repositories {
-  jcenter()
+  mavenLocal()
+  maven { url "http://nexus-beta.hypoport.local/nexus/content/repositories/efi" }
 }
 
 compileJava {

@@ -1,7 +1,5 @@
 package de.hypoport.efi.bausparen.model.berechnung;
 
-import io.swagger.annotations.ApiModelProperty;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
@@ -20,7 +18,8 @@ public class Bausparangebot {
   BigDecimal gesamtleistungKomplettInEuro;
   Integer gesamtlaufzeitKomplettInMonaten;
   List<FachlicheMeldung> meldungen;
-  LocalDate vertragsBeginn;
+  LocalDate vertragsDatum;
+  Provision provision;
 
   public String getTarif() {
     return tarif;
@@ -118,11 +117,19 @@ public class Bausparangebot {
     this.meldungen = meldungen;
   }
 
-  public LocalDate getVertragsBeginn() {
-    return vertragsBeginn;
+  public LocalDate getVertragsDatum() {
+    return vertragsDatum;
   }
 
-  public void setVertragsBeginn(LocalDate vertragsBeginn) {
-    this.vertragsBeginn = vertragsBeginn;
+  public void setVertragsDatum(LocalDate vertragsDatum) {
+    this.vertragsDatum = vertragsDatum;
+  }
+
+  public Provision getProvision() {
+    return provision;
+  }
+
+  public void setProvision(Provision provision) {
+    this.provision = provision;
   }
 }
