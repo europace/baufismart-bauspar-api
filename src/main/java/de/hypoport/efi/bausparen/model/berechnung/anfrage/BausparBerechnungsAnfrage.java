@@ -23,6 +23,7 @@ public class BausparBerechnungsAnfrage {
   String vermittlerNr;
   String requestId;
   String fallNummer;
+  String konditionsGruppe;
 
   public LocalDate getZuteilungstermin() {
     return zuteilungstermin;
@@ -126,5 +127,13 @@ public class BausparBerechnungsAnfrage {
 
   public void setFallNummer(String fallNummer) {
     this.fallNummer = fallNummer;
+  }
+
+  public String getKonditionsGruppe() {
+    return konditionsGruppe;
+  }
+
+  public void setKonditionsGruppe(String konditionsGruppe) {
+    this.konditionsGruppe = konditionsGruppe;
   }
 }

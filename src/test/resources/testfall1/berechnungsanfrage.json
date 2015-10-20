@@ -5,6 +5,7 @@
   "darlehensWunsch": "MIT_DARLEHEN",
   "laufzeitBisZuteilungInMonaten": 120,
   "zielTarif": "T1",
-  "fallNummer":"123-456-789",
-  "requestId":"7s0d9f7as9"
+  "fallNummer": "123-456-789",
+  "requestId": "7s0d9f7as9",
+  "konditionsGruppe": "Vertrieb A"
 }

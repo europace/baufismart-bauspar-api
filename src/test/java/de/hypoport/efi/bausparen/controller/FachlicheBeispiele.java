@@ -105,7 +105,7 @@ public class FachlicheBeispiele {
 
   private void pruefeTilgungsplan(TilgungsPlan tilgungsPlan) {
     List<TilgungsPlanZahlung> tilgungsPlanZahlungen = tilgungsPlan.getZahlungen();
-    List<LocalDate> tilgungsDaten = elementeAlsListe(tilgungsPlanZahlungen, z -> z.getDatum());
+    List<LocalDate> tilgungsDaten = elementeAlsListe(tilgungsPlanZahlungen, TilgungsPlanZahlung::getDatum);
     assertZahlDatenAufeinanderfolgend(tilgungsDaten);
 
     assertSaldenPassenZuZahlungen(
@@ -117,7 +117,7 @@ public class FachlicheBeispiele {
 
   private void pruefeSparplan(SparPlan sparPlan, BigDecimal auszahlungsgebuehr) {
     List<SparPlanZahlung> sparPlanZahlungen = sparPlan.getZahlungen();
-    List<LocalDate> zahlDaten = elementeAlsListe(sparPlanZahlungen, z -> z.getDatum());
+    List<LocalDate> zahlDaten = elementeAlsListe(sparPlanZahlungen, SparPlanZahlung::getDatum);
     assertZahlDatenAufeinanderfolgend(zahlDaten);
 
     assertSaldenPassenZuZahlungen(
