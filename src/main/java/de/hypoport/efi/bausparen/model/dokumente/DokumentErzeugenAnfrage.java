@@ -2,6 +2,7 @@ package de.hypoport.efi.bausparen.model.dokumente;
 
 import de.hypoport.efi.bausparen.model.berechnung.Abschlussgebuehrenbehandlung;
 import de.hypoport.efi.bausparen.model.berechnung.BerechnungsZiel;
+import de.hypoport.efi.bausparen.model.berechnung.anfrage.BerechnungsArt;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -10,6 +11,7 @@ import java.util.List;
 public class DokumentErzeugenAnfrage {
 
   String tarif;
+  BerechnungsArt berechnungsArt;
   BigDecimal bausparSummeInEuro;
   BigDecimal auszahlungsbetragBeiZuteilung;
   Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung;
@@ -28,6 +30,14 @@ public class DokumentErzeugenAnfrage {
 
   public void setTarif(String tarif) {
     this.tarif = tarif;
+  }
+
+  public BerechnungsArt getBerechnungsArt() {
+    return berechnungsArt;
+  }
+
+  public void setBerechnungsArt(BerechnungsArt berechnungsArt) {
+    this.berechnungsArt = berechnungsArt;
   }
 
   public BigDecimal getBausparSummeInEuro() {

@@ -1,7 +1,6 @@
 {
   "tarif": "T2",
-
-
+  "berechnungsArt": "TILGUNGSAUSSETZUNG",
   "bausparSummeInEuro": 150000,
   "auszahlungsbetragBeiZuteilung": 150000,
 
