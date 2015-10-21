@@ -84,6 +84,7 @@ public class FachlicheBeispiele {
     assertNotNull(bausparBerechnungsAnfrage.getRequestId());
     assertNotNull(bausparBerechnungsAnfrage.getVermittlerNr());
     assertNotNull(bausparBerechnungsAnfrage.getDarlehensWunsch());
+    assertNotNull(bausparBerechnungsAnfrage.getKonditionsGruppe());
 
     if (bausparBerechnungsAnfrage.getAuszahlungsbetragBeiZuteilung() == null) {
       assertNotNull(bausparBerechnungsAnfrage.getBausparsummeInEuro() != null);
