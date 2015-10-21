@@ -105,7 +105,6 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
         "berechnungsArt": "TILGUNGSAUSSETZUNG",
         "berechnungsZiel": "SPARBEITRAG",
         "darlehensWunsch": "MIT_DARLEHEN",
-        "konditionsGruppe": "Vertrieb A",
         "laufzeitBisZuteilungInMonaten": 112,
         "requestId": "XAJNvEbn",
         "fallNummer": "123-456-789",
@@ -123,6 +122,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
         },
         "vermittlerNr": "A123456",
         "vertragsDatum": "2015-09-01",
+        "vertriebsGruppe": "Vertrieb A",
         "zielTarif": "T1",
         "zuteilungstermin": "2026-01-01"        
       }
@@ -149,7 +149,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | vermittlerNr                       | String        | Die ID des Vermittlers im Europace System. |
 | requestId                          | String        | Ordnet die Anfrage einer EUROPACE Anfrage für Loggingzwecke zu. |
 | fallNummer                         | String        | Ordnet die Anfrage einer EUROPACE Fallakte für Loggingzwecke zu. |
-| konditionsGruppe                   | String        | Konditionsgruppe des anfragenden Vertriebs zur Bestimmung der Abschlussgebühr. |
+| vertriebsGruppe                    | String        | Vertriebsgruppe des anfragenden Vertriebs zur Bestimmung der Abschlussgebühr. |
 
 
 #### Antwort

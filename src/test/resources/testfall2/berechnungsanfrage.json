@@ -17,5 +17,5 @@
   "fallNummer":"123-456-789",
   "requestId":"0y9xc8v7y9",
   "vermittlerNr":"4712", 
-  "konditionsGruppe": "Vertrieb B"
+  "vertriebsGruppe": "Vertrieb B"
 }
