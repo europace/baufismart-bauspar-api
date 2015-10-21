@@ -25,7 +25,7 @@ import static junit.framework.Assert.assertEquals;
 import static junit.framework.TestCase.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-public class FachlicheBeispiele {
+public class FachlicheBeispieleTest {
 
   private ObjectMapper objectMapper;
 
@@ -110,6 +110,20 @@ public class FachlicheBeispiele {
     DokumentErzeugenAnfrage dokumentErzeugenAnfrage = objectMapper.readValue(getClass().getResourceAsStream(beispielDatei), DokumentErzeugenAnfrage.class);
 
     assertNotNull(dokumentErzeugenAnfrage);
+    assertNotNull(dokumentErzeugenAnfrage.getTarif());
+    assertNotNull(dokumentErzeugenAnfrage.getBerechnungsArt());
+    assertNotNull(dokumentErzeugenAnfrage.getBausparSummeInEuro());
+    assertNotNull(dokumentErzeugenAnfrage.getAuszahlungsbetragBeiZuteilung());
+    assertNotNull(dokumentErzeugenAnfrage.getAbschlussgebuehrenbehandlung());
+    assertNotNull(dokumentErzeugenAnfrage.getAbschlussgebuehrHoeheInEuro());
+/*
+    List<Antragsteller> antragsteller;
+    VermittlerDaten vermittlerDaten;
+    SparphaseDokument sparphaseDokument;
+*/
+    assertNotNull(dokumentErzeugenAnfrage.getVertragsDatum());
+    assertNotNull(dokumentErzeugenAnfrage.getFallNummer());
+    assertNotNull(dokumentErzeugenAnfrage.getRequestId());
   }
 
   private void pruefeTilgungsplan(TilgungsPlan tilgungsPlan) {

@@ -301,6 +301,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 
     {
         "tarif": "T1",
+        "berechnungsArt": "TILGUNGSAUSSETZUNG",
         "bausparSummeInEuro": 50000,
         "auszahlungsbetragBeiZuteilung": 50000,
         "sparphaseDokument":
@@ -378,6 +379,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | Name                                                                  | Typ          | Beschreibung                                                                                                                                                      |
 |-----------------------------------------------------------------------|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | tarif                                                                 | String       | der Tarif wird auf Seiten der BSK ermittelt                                                                                                                       |
+| berechnungsArt                                                        | Auflistung   | Mögliche Werte: ``TILGUNGSAUSSETZUNG``, ``,ZINSABSICHERUNG``, ``BAUSPAREN_OHNE_IMMOBILIENFINANZIERUNG`` |
 | bausparsummeInEuro                                                    | Zahl         | Betrag der Bausparsumme in Euro                                                                                                                                   |
 | auszahlungsbetragBeiZuteilung                                         | Zahl         | Auszahlungssumme                                                                                                                                                  |
 | sparphaseDokument.regelsparbeitragInEuro                              | Zahl         | Sparbeitrag                                                                                                                                                       |
