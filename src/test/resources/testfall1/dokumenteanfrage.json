@@ -3,23 +3,19 @@
   "berechnungsArt": "TILGUNGSAUSSETZUNG",
   "bausparSummeInEuro": 50000,
   "auszahlungsbetragBeiZuteilung": 50000,
-  "sparphaseDokument":
-    {
-      "regelsparbeitragInEuro": 168.33,
-      "sparBeitraege": [
-        {
-          "zahlungsrhythmus": "MONATLICH",
-          "beitrag": 168.33,
-          "zahlungAb":"2015-09-30",
-          "zahlungBis":"2025-08-31"
-        }
-      ]
-    }
-  ,
+  "sparphaseDokument": {
+    "regelsparbeitragInEuro": 168.33,
+    "sparBeitraege": [
+      {
+        "zahlungsrhythmus": "MONATLICH",
+        "beitrag": 168.33,
+        "zahlungAb": "2015-09-30",
+        "zahlungBis": "2025-08-31"
+      }
+    ]
+  },
   "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
-
   "abschlussgebuehrHoeheInEuro": 500,
-
   "antragsteller": [
     {
       "anrede": "HERR",
@@ -30,7 +26,7 @@
       "geburtsName": null,
       "geburtsOrt": null,
       "staatsangehoerigkeit": "Deutsch",
-      "einkommenssteuerpflichtigInUsa":false,
+      "einkommenssteuerpflichtigInUsa": false,
       "adresse": {
         "strasse": "Steinweg.",
         "hausNummer": "8",
@@ -39,7 +35,7 @@
         "landWohnsitz": "DE"
       },
       "kontakt": {
-        "telefonNummer": null,
+        "telefonNummer": "030 123456",
         "mobilNummer": null,
         "eMailAdresse": null
       },
@@ -49,34 +45,32 @@
         "nameKreditInstitut": null,
         "zahlungsForm": "LASTSCHRIFT"
       },
-      "beschaeftigungsVerhaeltnis":"ANGESTELLTER",
+      "beschaeftigungsVerhaeltnis": "ANGESTELLTER",
       "legitimation": {
         "ausweisArt": "REISEPASS",
         "ausweisNummer": null,
         "austellendeBehoerde": null,
         "ausstellungsDatum": "2010-01-01"
       },
-      "todesfallBeguenstigter":{
-        "anrede":"HERR",
-        "vorname":"Heinz",
-        "nachname":"Müller",
-        "geburtsdatum":"1974-05-11",
-        "adresse":{
-          "strasse":"Rohrdamm",
-          "hausNummer":"59",
-          "wohnOrt":"Borgholzhausen",
-          "postleitzahl":"33829"
+      "todesfallBeguenstigter": {
+        "anrede": "HERR",
+        "vorname": "Heinz",
+        "nachname": "Müller",
+        "geburtsdatum": "1974-05-11",
+        "adresse": {
+          "strasse": "Rohrdamm",
+          "hausNummer": "59",
+          "wohnOrt": "Borgholzhausen",
+          "postleitzahl": "33829"
         }
       },
-      "vermoegenswirksameLeistungenBetragInEuro":30,
-      "vermoegenswirksameLeistungenZahlungsrhythmus":"MONATLICH"
-
+      "vermoegenswirksameLeistungenBetragInEuro": 30,
+      "vermoegenswirksameLeistungenZahlungsrhythmus": "MONATLICH"
     }
   ],
-
   "vermittlerDaten": {
     "nachName": null,
-    "ort": null,
+    "ort": "Berlin",
     "postleitzahl": null,
     "strasseHausnummer": null,
     "vorname": null,
@@ -84,8 +78,7 @@
     "telefonNummer": null,
     "eMailAdresse": null
   },
-
-  "vertragsDatum":"2015-09-01",
-  "fallNummer":"123-456-789",
-  "requestId":"7y65xc4v"
+  "vertragsDatum": "2015-09-01",
+  "fallNummer": "123-456-789",
+  "requestId": "7y65xc4v"
 }
