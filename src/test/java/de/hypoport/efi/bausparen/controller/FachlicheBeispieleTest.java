@@ -3,12 +3,16 @@ package de.hypoport.efi.bausparen.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.hypoport.efi.bausparen.model.berechnung.BausparBerechnungsAntwort;
 import de.hypoport.efi.bausparen.model.berechnung.Bausparangebot;
+import de.hypoport.efi.bausparen.model.berechnung.SparBeitrag;
 import de.hypoport.efi.bausparen.model.berechnung.SparPlan;
 import de.hypoport.efi.bausparen.model.berechnung.SparPlanZahlung;
 import de.hypoport.efi.bausparen.model.berechnung.TilgungsPlan;
 import de.hypoport.efi.bausparen.model.berechnung.TilgungsPlanZahlung;
 import de.hypoport.efi.bausparen.model.berechnung.anfrage.BausparBerechnungsAnfrage;
+import de.hypoport.efi.bausparen.model.dokumente.Antragsteller;
 import de.hypoport.efi.bausparen.model.dokumente.DokumentErzeugenAnfrage;
+import de.hypoport.efi.bausparen.model.dokumente.SparphaseDokument;
+import de.hypoport.efi.bausparen.model.dokumente.VermittlerDaten;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,6 +32,7 @@ import static org.junit.Assert.assertTrue;
 public class FachlicheBeispieleTest {
 
   private ObjectMapper objectMapper;
+  private DokumentErzeugenAnfrage dokumentErzeugenAnfrage;
 
   @Before
   public void setUp() {
@@ -97,18 +102,17 @@ public class FachlicheBeispieleTest {
 
   @Test
   public void dokumentenAnfrageBeispiel1IstSyntaktischKorrekt() throws IOException {
-
     pruefeDokumentenAnfrage("/testfall1/dokumenteanfrage.json");
   }
 
   @Test
   public void dokumentenAnfrageBeispiel2IstSyntaktischKorrekt() throws IOException {
-
     pruefeDokumentenAnfrage("/testfall2/dokumenteanfrage.json");
+    assertTrue(dokumentErzeugenAnfrage.getAntragsteller().size() == 2);
   }
 
   private void pruefeDokumentenAnfrage(String beispielDatei) throws IOException {
-    DokumentErzeugenAnfrage dokumentErzeugenAnfrage = objectMapper.readValue(getClass().getResourceAsStream(beispielDatei), DokumentErzeugenAnfrage.class);
+    dokumentErzeugenAnfrage = objectMapper.readValue(getClass().getResourceAsStream(beispielDatei), DokumentErzeugenAnfrage.class);
 
     assertNotNull(dokumentErzeugenAnfrage);
     assertNotNull(dokumentErzeugenAnfrage.getTarif());
@@ -117,14 +121,51 @@ public class FachlicheBeispieleTest {
     assertNotNull(dokumentErzeugenAnfrage.getAuszahlungsbetragBeiZuteilung());
     assertNotNull(dokumentErzeugenAnfrage.getAbschlussgebuehrenbehandlung());
     assertNotNull(dokumentErzeugenAnfrage.getAbschlussgebuehrHoeheInEuro());
-/*
-    List<Antragsteller> antragsteller;
-    VermittlerDaten vermittlerDaten;
-    SparphaseDokument sparphaseDokument;
-*/
+    assertAntragsteller(dokumentErzeugenAnfrage.getAntragsteller());
+    assertVermittlerDaten(dokumentErzeugenAnfrage.getVermittlerDaten());
+    assertSparphaseDokument(dokumentErzeugenAnfrage.getSparphaseDokument());
     assertNotNull(dokumentErzeugenAnfrage.getVertragsDatum());
     assertNotNull(dokumentErzeugenAnfrage.getFallNummer());
     assertNotNull(dokumentErzeugenAnfrage.getRequestId());
+  }
+
+  private void assertAntragsteller(List<Antragsteller> antragstellerListe) {
+    assertNotNull(antragstellerListe);
+    assertTrue(antragstellerListe.size() > 0);
+    assertAntragsteller(antragstellerListe.iterator().next());
+  }
+
+  private void assertAntragsteller(Antragsteller antragsteller) {
+    assertNotNull(antragsteller.getAnrede());
+    assertNotNull(antragsteller.getEinkommenssteuerpflichtigInUsa());
+    assertNotNull(antragsteller.getAdresse());
+    assertNotNull(antragsteller.getAdresse().getHausNummer());
+    assertNotNull(antragsteller.getKontakt());
+    assertNotNull(antragsteller.getKontakt().getTelefonNummer());
+    assertNotNull(antragsteller.getFamilienStand());
+    assertNotNull(antragsteller.getZahlungsDaten());
+    assertNotNull(antragsteller.getZahlungsDaten().getZahlungsForm());
+    assertNotNull(antragsteller.getBeschaeftigungsVerhaeltnis());
+    assertNotNull(antragsteller.getLegitimation());
+    assertNotNull(antragsteller.getLegitimation().getAusweisArt());
+    assertNotNull(antragsteller.getTodesfallBeguenstigter());
+    assertNotNull(antragsteller.getTodesfallBeguenstigter().getAnrede());
+    assertNotNull(antragsteller.getVermoegenswirksameLeistungenBetragInEuro());
+    assertNotNull(antragsteller.getVermoegenswirksameLeistungenZahlungsrhythmus());
+  }
+
+  private void assertVermittlerDaten(VermittlerDaten vermittlerDaten) {
+    assertNotNull(vermittlerDaten);
+    assertNotNull(vermittlerDaten.getOrt());
+  }
+
+  private void assertSparphaseDokument(SparphaseDokument sparphaseDokument) {
+    assertNotNull(sparphaseDokument);
+    assertNotNull(sparphaseDokument.getRegelsparbeitragInEuro());
+    assertNotNull(sparphaseDokument.getSparBeitraege());
+    assertTrue(sparphaseDokument.getSparBeitraege().size() > 0);
+    SparBeitrag sparBeitrag = sparphaseDokument.getSparBeitraege().iterator().next();
+    assertNotNull(sparBeitrag.getZahlungsrhythmus());
   }
 
   private void pruefeTilgungsplan(TilgungsPlan tilgungsPlan) {
