@@ -99,7 +99,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 #### Anfrage
 
       {
-        "abschlussgebuehrenbehandlung": "VERRECHUNG",
+        "abschlussgebuehrenbehandlung": "VERRENCHUNG",
         "auszahlungsbetragBeiZuteilung": 50000,
         "bausparsummeInEuro": 50000,
         "berechnungsArt": "TILGUNGSAUSSETZUNG",
@@ -144,7 +144,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | sparBeitraege[i].zahlungsrhythmus  | Auflistung    | Legt fest, in welchen Intervallen dieser Sparbeitrag gezahlt wird. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
 | tilgungsBeitrag.rateInEuro         | Zahl          | Höhe der Tilgungsrate(Zins und Tilgung des Darlehens)|
 | tilgungsBeitrag.zahlungsrhythmus   | Auflistung    | Legt fest, in welchen Intervallen die Tilgungsrate gezahlt wird. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
-| abschlussgebuehrenbehandlung       | Auflistung    | Wenn nicht vorgegeben, dann gibt die BSK die Abschlussgebührenverrechnung vor. Mögliche Werte sind: ``VERRECHUNG``, ``SOFORTZAHLUNG``. |
+| abschlussgebuehrenbehandlung       | Auflistung    | Wenn nicht vorgegeben, dann gibt die BSK die Abschlussgebührenverrechnung vor. Mögliche Werte sind: ``VERRENCHUNG``, ``SOFORTZAHLUNG``. |
 | darlehensWunsch                    | Auflistung    | Soll ein Bauspar- oder Zuteilungsdarlehen in Anspruch genommen werden? Mögliche Werte sind: ``MIT_DARLEHEN``, ``OHNE_DARLEHEN``. |
 | vermittlerNr                       | String        | Die ID des Vermittlers im Europace System. |
 | requestId                          | String        | Ordnet die Anfrage einer EUROPACE Anfrage für Loggingzwecke zu. |
@@ -159,7 +159,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
           "abschlussgebuehr": {
             "abschlussgebuehrBetragInEuro": 0,
             "abschlussgebuehrHoeheInProzent": 0,
-            "abschlussgebuehrenbehandlung": "VERRECHUNG"
+            "abschlussgebuehrenbehandlung": "VERRENCHUNG"
           },
           "bausparDarlehen": {
             "darlehenslaufzeitInMonaten": 0,
@@ -243,7 +243,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | laufzeitBisZuteilungInMonaten                                         | Zahl         | Anzahl Monate bis zur Zuteilung                                                                                                                                   |
 | zuteilungsTermin                                                      | Datum        | Zuteilungstermin                                                                                                                                                  |
 | vertragsDatum                                                         | Datum        |                                                                                                                                                                   |
-| abschlussgebuehrenbehandlung                                          | Aufzählung   | Mögliche Werte sind: ``VERRECHUNG``, ``SOFORTZAHLUNG``.                                                                                                           |
+| abschlussgebuehrenbehandlung                                          | Aufzählung   | Mögliche Werte sind: ``VERRENCHUNG``, ``SOFORTZAHLUNG``.                                                                                                           |
 | abschlussgebuehrHoeheInProzent                                        | Zahl         | Abschlussgebühr in Prozent                                                                                                                                        |
 | abschlussgebuehrBetragInEuro                                          | Zahl         | Abschlussgebühr in Euro                                                                                                                                           |
 | kontoGebuehrJaehrlichInEuro                                           | Zahl         |                                                                                                                                                                   |
@@ -388,7 +388,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | sparphaseDokument.sparBeitraege[i].zahlungAb                          | Datum        | Der Startzeitpunkt ab dem dieser Sparbeitrag geleistet wird. |
 | sparphaseDokument.sparBeitraege[i].zahlungBis                         | Datum        | Der letzte Zeitpunkt bis zu dem dieser Sparbeitrag geleistet wird. |
 | sparphaseDokument.sparBeitraege[i].zahlungsrhythmus                   | Auflistung   | Legt fest, in welchen Intervallen dieser Sparbeitrag gezahlt wird. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
-| abschlussgebuehrenbehandlung                                          | Aufzählung   | Mögliche Werte sind: ``VERRECHUNG``, ``SOFORTZAHLUNG``.                                                                                                           |
+| abschlussgebuehrenbehandlung                                          | Aufzählung   | Mögliche Werte sind: ``VERRENCHUNG``, ``SOFORTZAHLUNG``.                                                                                                           |
 | abschlussgebuehrHoeheInEuro                                           | Zahl         | Abschlußgebühr                                                                                                                                                    |
 | antragsteller[0].anrede                                               | Aufzählung   | Mögliche Werte sind: ``HERR``, ``FRAU``.                                                                                                                          |
 | antragsteller[0].titel                                                | String       | Titel                                                                                                                                                             |
