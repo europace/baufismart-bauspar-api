@@ -8,13 +8,13 @@ import java.time.LocalDate;
 public class Antragsteller {
 
   Anrede anrede;
-  String titel;
+  Titel titel;
   String nachName;
   String vorname;
   LocalDate geburtsDatum;
   String geburtsName;
   String geburtsOrt;
-  String staatsangehoerigkeit;
+  Staatsangehoerigkeit staatsangehoerigkeit;
   Adresse adresse;
   Kontakt kontakt;
   FamilienStand familienStand;
@@ -50,11 +50,11 @@ public class Antragsteller {
     this.anrede = anrede;
   }
 
-  public String getTitel() {
+  public Titel getTitel() {
     return titel;
   }
 
-  public void setTitel(String titel) {
+  public void setTitel(Titel titel) {
     this.titel = titel;
   }
 
@@ -74,11 +74,11 @@ public class Antragsteller {
     this.geburtsName = geburtsName;
   }
 
-  public String getStaatsangehoerigkeit() {
+  public Staatsangehoerigkeit getStaatsangehoerigkeit() {
     return staatsangehoerigkeit;
   }
 
-  public void setStaatsangehoerigkeit(String staatsangehoerigkeit) {
+  public void setStaatsangehoerigkeit(Staatsangehoerigkeit staatsangehoerigkeit) {
     this.staatsangehoerigkeit = staatsangehoerigkeit;
   }
 

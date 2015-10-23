@@ -19,13 +19,16 @@
   "antragsteller": [
     {
       "anrede": "HERR",
-      "titel": null,
+      "titel": {
+        "doktor": true,
+        "professor": false
+      },
       "vorname": "Max",
       "nachName": "Muster",
       "geburtsDatum": null,
       "geburtsName": null,
       "geburtsOrt": null,
-      "staatsangehoerigkeit": "Deutsch",
+      "staatsangehoerigkeit": "GERMANY",
       "einkommenssteuerpflichtigInUsa": false,
       "adresse": {
         "strasse": "Steinweg.",
