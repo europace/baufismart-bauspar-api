@@ -26,13 +26,16 @@
   "antragsteller": [
     {
       "anrede": "HERR",
-      "titel": null,
+      "titel": {
+        "doktor": true,
+        "professor": false
+      },
       "vorname": "Max",
       "nachName": "Muster",
       "geburtsDatum": "1970-03-20",
       "geburtsName": null,
       "geburtsOrt": null,
-      "staatsangehoerigkeit": "Franzoesisch",
+      "staatsangehoerigkeit": "FRANCE",
       "einkommenssteuerpflichtigInUsa": false,
       "adresse": {
         "strasse": "Wohnstrasse.",
@@ -76,13 +79,16 @@
     },
     {
       "anrede": "FRAU",
-      "titel": null,
+      "titel": {
+        "doktor": true,
+        "professor": false
+      },
       "vorname": "Anne",
       "nachName": "Musterfrau",
       "geburtsDatum": "1974-02-21",
       "geburtsName": null,
       "geburtsOrt": null,
-      "staatsangehoerigkeit": "Schweizerisch",
+      "staatsangehoerigkeit": "SWITZERLAND",
       "adresse": {
         "strasse": "Heideweg.",
         "hausNummer": "1a",
