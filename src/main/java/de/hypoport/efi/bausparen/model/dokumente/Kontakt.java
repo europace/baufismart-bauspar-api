@@ -22,11 +22,11 @@ public class Kontakt {
     this.mobilNummer = mobilNummer;
   }
 
-  public String getEMailAdresse() {
+  public String geteMailAdresse() {
     return eMailAdresse;
   }
 
-  public void setEMailAdresse(String eMailAdresse) {
+  public void seteMailAdresse(String eMailAdresse) {
     this.eMailAdresse = eMailAdresse;
   }
 }
