@@ -14,7 +14,7 @@ public class Antragsteller {
   LocalDate geburtsDatum;
   String geburtsName;
   String geburtsOrt;
-  Staatsangehoerigkeit staatsangehoerigkeit;
+  String staatsangehoerigkeit;
   Adresse adresse;
   Kontakt kontakt;
   FamilienStand familienStand;
@@ -74,11 +74,11 @@ public class Antragsteller {
     this.geburtsName = geburtsName;
   }
 
-  public Staatsangehoerigkeit getStaatsangehoerigkeit() {
+  public String getStaatsangehoerigkeit() {
     return staatsangehoerigkeit;
   }
 
-  public void setStaatsangehoerigkeit(Staatsangehoerigkeit staatsangehoerigkeit) {
+  public void setStaatsangehoerigkeit(String staatsangehoerigkeit) {
     this.staatsangehoerigkeit = staatsangehoerigkeit;
   }
 
