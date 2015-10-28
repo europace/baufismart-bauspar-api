@@ -331,7 +331,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
             "geburtsDatum": null,
             "geburtsName": null,
             "geburtsOrt": null,
-            "staatsangehoerigkeit": "GERMANY",
+            "staatsangehoerigkeit": "DE",
             "einkommenssteuerpflichtigInUsa":null,
             "adresse": 
             {
@@ -402,12 +402,12 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | antragsteller[0].geburtsDatum                                         | Datum                  |                                                                                                                                                                              |
 | antragsteller[0].geburtsName                                          | String                 |                                                                                                                                                                              |
 | antragsteller[0].geburtsOrt                                           | String                 | Dieses Feld ist noch nicht im Frontend enthalten.                                                                                                                            |
-| antragsteller[0].staatsangehoerigkeit                                 | Aufzählung             | Mögliche Werte sind u.a.: ``AFGHANISTAN``, ``GERMANY``, ``FRANCE``.                                                                                                                                                                              |
+| antragsteller[0].staatsangehoerigkeit                                 | String                 | 2-stelliger ISO 3166 Code                                                                                                                                                    |
 | antragsteller[0].adresse.strasse                                      | String                 |                                                                                                                                                                              |
 | antragsteller[0].adresse.hausNummer                                   | String                 |                                                                                                                                                                              |
 | antragsteller[0].adresse.postleitzahl                                 | String                 |                                                                                                                                                                              |
 | antragsteller[0].adresse.wohnOrt                                      | String                 |                                                                                                                                                                              |
-| antragsteller[0].adresse.landWohnsitz                                 | String                 |                                                                                                                                                                              |
+| antragsteller[0].adresse.landWohnsitz                                 | String                 | 2-stelliger ISO 3166 Code                                                                                                                                                    |
 | antragsteller[0].kontakt.telefonNummer                                | String                 |                                                                                                                                                                              |
 | antragsteller[0].kontakt.mobilNummer                                  | String                 |                                                                                                                                                                              |
 | antragsteller[0].kontakt.eMailAdresse                                 | String                 |                                                                                                                                                                              |

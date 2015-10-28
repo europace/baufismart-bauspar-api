@@ -35,7 +35,7 @@
       "geburtsDatum": "1970-03-20",
       "geburtsName": null,
       "geburtsOrt": null,
-      "staatsangehoerigkeit": "FRANCE",
+      "staatsangehoerigkeit": "FR",
       "einkommenssteuerpflichtigInUsa": false,
       "adresse": {
         "strasse": "Wohnstrasse.",
@@ -88,7 +88,7 @@
       "geburtsDatum": "1974-02-21",
       "geburtsName": null,
       "geburtsOrt": null,
-      "staatsangehoerigkeit": "SWITZERLAND",
+      "staatsangehoerigkeit": "CH",
       "adresse": {
         "strasse": "Heideweg.",
         "hausNummer": "1a",
