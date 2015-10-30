@@ -10,17 +10,23 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ProofOfConceptBausparBerechnung implements InitializingBean{
+public class ProofOfConceptBausparBerechnung implements InitializingBean {
 
   private ObjectMapper objectMapper;
 
   public BausparBerechnungsAntwort berechneBausparAngebot(BausparBerechnungsAnfrage berechnungsdaten) throws Exception {
     BausparBerechnungsAntwort sampleAntwort = null;
-      sampleAntwort = objectMapper.readValue(getClass().getResourceAsStream("/berechnetesbausparangebot.json"), BausparBerechnungsAntwort.class);
+    sampleAntwort = objectMapper.readValue(getClass().getResourceAsStream("/berechnetesbausparangebot.json"), BausparBerechnungsAntwort.class);
 
     Bausparangebot bausparangebot = sampleAntwort.getBerechnetesBausparAngebot();
     bausparangebot.setBausparsummeInEuro(berechnungsdaten.getBausparsummeInEuro());
     bausparangebot.getMeldungen().add(meldung());
+
+    if (berechnungsdaten.getSparBeitraege() != null &&
+        berechnungsdaten.getSparBeitraege().size() > 0 &&
+        berechnungsdaten.getSparBeitraege().get(0).getBeitrag() != null) {
+      bausparangebot.getSparPhase().setRegelsparbeitragInEuro(berechnungsdaten.getSparBeitraege().get(0).getBeitrag());
+    }
 
     return sampleAntwort;
   }
@@ -36,6 +42,5 @@ public class ProofOfConceptBausparBerechnung implements InitializingBean{
   public void afterPropertiesSet() throws Exception {
     objectMapper = new ObjectMapper();
     objectMapper.findAndRegisterModules();
-
   }
 }
