@@ -1,9 +1,9 @@
-package de.hypoport.efi.bausparen.model.berechnung;
+package de.hypoport.efi.bausparen.model.berechnung.angebot;
+
+import de.hypoport.efi.bausparen.model.basis.SparBeitrag;
 
 import java.math.BigDecimal;
 import java.util.List;
-
-import java.math.BigDecimal;
 
 public class SparPhase {
 

@@ -1,4 +1,7 @@
-package de.hypoport.efi.bausparen.model.berechnung;
+package de.hypoport.efi.bausparen.model.berechnung.angebot;
+
+import de.hypoport.efi.bausparen.model.basis.BerechnungsZiel;
+import de.hypoport.efi.bausparen.model.meldungen.FachlicheMeldung;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

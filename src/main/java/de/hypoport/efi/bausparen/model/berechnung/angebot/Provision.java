@@ -1,4 +1,4 @@
-package de.hypoport.efi.bausparen.model.berechnung;
+package de.hypoport.efi.bausparen.model.berechnung.angebot;
 
 import java.math.BigDecimal;
 

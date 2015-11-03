@@ -1,14 +1,17 @@
-package de.hypoport.efi.bausparen.model.berechnung;
+package de.hypoport.efi.bausparen.model.berechnung.angebot;
+
+
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class SparPlanZahlung {
+public class TilgungsPlanZahlung {
 
   LocalDate datum;
   BigDecimal saldoNachZahlungInEuro;
   BigDecimal zahlungInEuro;
   BigDecimal zinsInEuro;
+  BigDecimal tilgungInEuro;
   BigDecimal gebuehrenInEuro;
   BigDecimal KontofuehrungsGebuehrInEuro;
 
@@ -42,6 +45,14 @@ public class SparPlanZahlung {
 
   public void setZinsInEuro(BigDecimal zinsInEuro) {
     this.zinsInEuro = zinsInEuro;
+  }
+
+  public BigDecimal getTilgungInEuro() {
+    return tilgungInEuro;
+  }
+
+  public void setTilgungInEuro(BigDecimal tilgungInEuro) {
+    this.tilgungInEuro = tilgungInEuro;
   }
 
   public BigDecimal getGebuehrenInEuro() {

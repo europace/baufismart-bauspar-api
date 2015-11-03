@@ -1,6 +1,6 @@
 package de.hypoport.efi.bausparen.model.dokumente;
 
-import de.hypoport.efi.bausparen.model.berechnung.FachlicheMeldung;
+import de.hypoport.efi.bausparen.model.meldungen.FachlicheMeldung;
 
 import java.util.List;
 
