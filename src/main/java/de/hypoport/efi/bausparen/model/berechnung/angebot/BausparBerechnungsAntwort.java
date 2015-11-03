@@ -1,4 +1,6 @@
-package de.hypoport.efi.bausparen.model.berechnung;
+package de.hypoport.efi.bausparen.model.berechnung.angebot;
+
+import de.hypoport.efi.bausparen.model.berechnung.angebot.Bausparangebot;
 
 public class BausparBerechnungsAntwort {
 

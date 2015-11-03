@@ -1,6 +1,6 @@
 package de.hypoport.efi.bausparen.model.dokumente;
 
-import de.hypoport.efi.bausparen.model.berechnung.Zahlungsrhythmus;
+import de.hypoport.efi.bausparen.model.basis.Zahlungsrhythmus;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

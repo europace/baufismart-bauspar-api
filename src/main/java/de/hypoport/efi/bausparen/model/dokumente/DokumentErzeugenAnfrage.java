@@ -1,7 +1,6 @@
 package de.hypoport.efi.bausparen.model.dokumente;
 
-import de.hypoport.efi.bausparen.model.berechnung.Abschlussgebuehrenbehandlung;
-import de.hypoport.efi.bausparen.model.berechnung.BerechnungsZiel;
+import de.hypoport.efi.bausparen.model.basis.Abschlussgebuehrenbehandlung;
 import de.hypoport.efi.bausparen.model.berechnung.anfrage.BerechnungsArt;
 
 import java.math.BigDecimal;

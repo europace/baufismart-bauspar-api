@@ -1,10 +1,10 @@
 package de.hypoport.efi.bausparen.proofofconcept;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import de.hypoport.efi.bausparen.model.berechnung.BausparBerechnungsAntwort;
-import de.hypoport.efi.bausparen.model.berechnung.Bausparangebot;
-import de.hypoport.efi.bausparen.model.berechnung.FachlicheMeldung;
-import de.hypoport.efi.bausparen.model.berechnung.MeldungsStatus;
+import de.hypoport.efi.bausparen.model.berechnung.angebot.BausparBerechnungsAntwort;
+import de.hypoport.efi.bausparen.model.berechnung.angebot.Bausparangebot;
+import de.hypoport.efi.bausparen.model.meldungen.FachlicheMeldung;
+import de.hypoport.efi.bausparen.model.meldungen.MeldungsStatus;
 import de.hypoport.efi.bausparen.model.berechnung.anfrage.BausparBerechnungsAnfrage;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;

@@ -1,6 +1,6 @@
 package de.hypoport.efi.bausparen.model.dokumente;
 
-import de.hypoport.efi.bausparen.model.berechnung.SparBeitrag;
+import de.hypoport.efi.bausparen.model.basis.SparBeitrag;
 
 import java.math.BigDecimal;
 import java.util.List;

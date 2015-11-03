@@ -2,9 +2,9 @@ package de.hypoport.efi.bausparen.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.util.ISO8601DateFormat;
-import de.hypoport.efi.bausparen.model.berechnung.BerechnungsZiel;
-import de.hypoport.efi.bausparen.model.berechnung.SparBeitrag;
-import de.hypoport.efi.bausparen.model.berechnung.Zahlungsrhythmus;
+import de.hypoport.efi.bausparen.model.basis.BerechnungsZiel;
+import de.hypoport.efi.bausparen.model.basis.SparBeitrag;
+import de.hypoport.efi.bausparen.model.basis.Zahlungsrhythmus;
 import de.hypoport.efi.bausparen.model.berechnung.anfrage.BausparBerechnungsAnfrage;
 import org.junit.Test;
 
