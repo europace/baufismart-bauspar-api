@@ -149,7 +149,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | vermittlerNr                       | String        | Die ID des Vermittlers im Europace System. |
 | requestId                          | String        | Ordnet die Anfrage einer EUROPACE Anfrage für Loggingzwecke zu. |
 | fallNummer                         | String        | Ordnet die Anfrage einer EUROPACE Fallakte für Loggingzwecke zu. |
-| vertriebsGruppe                    | String        | Vertriebsgruppe des anfragenden Vertriebs zur Bestimmung der Abschlussgebühr. |
+| vertriebsGruppe                    | String        | Vertriebsgruppe des anfragenden Vertriebs zur Bestimmung der Provision. |
 
 
 #### Antwort
