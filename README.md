@@ -373,7 +373,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
            "firma": null,
            "telefonNummer": null,
            "eMailAdresse": null,
-           "vermittlerNr": "A123456",
+           "vermittlerNr": "A123456"
        },
        "fallNummer":"123-456-789",
        "requestId":"87e6rt5",
