@@ -79,7 +79,8 @@
     "vorname": null,
     "firma": null,
     "telefonNummer": null,
-    "eMailAdresse": null
+    "eMailAdresse": null,
+    "vermittlerNr": null
   },
   "vertragsDatum": "2015-09-01",
   "fallNummer": "123-456-789",

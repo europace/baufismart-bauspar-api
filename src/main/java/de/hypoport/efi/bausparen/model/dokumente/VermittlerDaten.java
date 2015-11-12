@@ -10,6 +10,7 @@ public class VermittlerDaten {
   String firma;
   String telefonNummer;
   String eMailAdresse;
+  String vermittlerNr;
 
   public String getVorname() {
     return vorname;
@@ -73,5 +74,13 @@ public class VermittlerDaten {
 
   public void seteMailAdresse(String eMailAdresse) {
     this.eMailAdresse = eMailAdresse;
+  }
+
+  public String getVermittlerNr() {
+    return vermittlerNr;
+  }
+
+  public void setVermittlerNr(String vermittlerNr) {
+    this.vermittlerNr = vermittlerNr;
   }
 }
