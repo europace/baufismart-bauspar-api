@@ -3,14 +3,15 @@ group = 'de.hypoport.efi'
 
 buildscript {
   ext {
-    springBootStarterVersion = '1.2.5.RELEASE'
+    springBootVersion = '1.2.5.RELEASE'
   }
   repositories {
     mavenLocal()
     maven { url "http://nexus-beta.hypoport.local/nexus/content/repositories/efi" }
+    jcenter()
   }
   dependencies {
-    classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootStarterVersion")
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
   }
 }
 
@@ -30,9 +31,30 @@ sourceSets {
   }
 }
 
+processResources {
+  filesMatching('**/*.properties') { expand(project.properties) }
+}
+
 repositories {
   mavenLocal()
-  maven { url "http://nexus-beta.hypoport.local/nexus/content/repositories/efi" }
+  maven { url 'http://nexus-beta.hypoport.local/nexus/content/repositories/efi' }
+  jcenter()
+}
+
+uploadArchives {
+  repositories {
+    mavenDeployer {
+      repository(url: "http://nexus-beta.hypoport.local/nexus/content/repositories/efi-releases/") {
+        authentication(userName: 'deployer', password: 'deployer1');
+      }
+      snapshotRepository(url: 'http://nexus-beta.hypoport.local/nexus/content/repositories/efi-snapshots/') {
+        authentication(userName: 'deployer', password: 'deployer1');
+      }
+      pom.groupId = project.group
+      pom.artifactId = 'europace-bauspar-schnittstelle'
+      pom.version = project.version
+    }
+  }
 }
 
 compileJava {
@@ -42,6 +64,7 @@ compileJava {
 
 configurations {
   all*.exclude module: 'spring-boot-starter-logging'
+  compile.exclude module: "spring-boot-starter-tomcat"
 }
 
 dependencies {
@@ -51,17 +74,17 @@ dependencies {
   def log4jVersion = '2.3'
   def springfoxVersion = '2.1.1'
 
-  compile("org.springframework.boot:spring-boot-starter:$springBootStarterVersion") {
+  compile("org.springframework.boot:spring-boot-starter:$springBootVersion") {
     exclude module: "spring-boot-starter-logging"
   }
-  compile("org.springframework.boot:spring-boot-starter-web:$springBootStarterVersion") {
+  compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion") {
     exclude module: "spring-boot-starter-logging"
     exclude module: "logback-classic"
   }
-  compile("org.springframework.boot:spring-boot-starter-actuator:$springBootStarterVersion")
-  compile("org.springframework.boot:spring-boot-starter-log4j2:$springBootStarterVersion")
+  compile("org.springframework.boot:spring-boot-starter-jetty:$springBootVersion")
+  compile("org.springframework.boot:spring-boot-starter-actuator:$springBootVersion")
+  compile("org.springframework.boot:spring-boot-starter-log4j2:$springBootVersion")
   compile("org.springframework:spring-core:$springVersion")
-
 
   compile('commons-io:commons-io:2.4')
   compile("org.slf4j:slf4j-api:$slf4jVersion")
@@ -82,6 +105,11 @@ dependencies {
   testCompile('junit:junit:4.11')
 }
 
+task writeVersionTxt << {
+  new File("$buildDir/version.txt").withWriter { out ->
+    out.print project.version
+  }
+}
 
 task tagGit << {
   exec {
@@ -93,4 +121,5 @@ task tagGit << {
 }
 task wrapper(type: Wrapper) {
   gradleVersion = '2.1'
+
 }
