@@ -497,7 +497,6 @@ Solange die Schnittstelle eine gültige Antwort erstellen kann, (auch wenn diese
 
 Die Version der Schnittstelle wird durch das Versionspräfix in der URL (aktuell v1) kenntlich gemacht. Zusätzlich zur aktuellen Version sollte mindestens die Version davor ebenfalls verfügbar sein um API Upgrades zu erleichtern.
 
-
 ## Security
 
 Die Sicherheitsvorkehrungen entsprechen dem Standard SSL über HTTPS unter Verwendung von Client- und Server- Zertifikaten mit Freischaltung der IP-Adressen.
