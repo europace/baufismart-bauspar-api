@@ -90,13 +90,8 @@ public class FachlicheBeispieleTest {
     assertNotNull(bausparBerechnungsAnfrage.getVermittlerNr());
     assertNotNull(bausparBerechnungsAnfrage.getDarlehensWunsch());
     assertNotNull(bausparBerechnungsAnfrage.getVertriebsGruppe());
+    assertNotNull(bausparBerechnungsAnfrage.getBausparsummeInEuro() != null);
 
-    if (bausparBerechnungsAnfrage.getAuszahlungsbetragBeiZuteilung() == null) {
-      assertNotNull(bausparBerechnungsAnfrage.getBausparsummeInEuro() != null);
-    }
-    if (bausparBerechnungsAnfrage.getBausparsummeInEuro() == null) {
-      assertNotNull(bausparBerechnungsAnfrage.getAuszahlungsbetragBeiZuteilung() != null);
-    }
     assertNotNull(bausparBerechnungsAnfrage.getDarlehensWunsch());
   }
 
@@ -118,7 +113,6 @@ public class FachlicheBeispieleTest {
     assertNotNull(dokumentErzeugenAnfrage.getTarif());
     assertNotNull(dokumentErzeugenAnfrage.getBerechnungsArt());
     assertNotNull(dokumentErzeugenAnfrage.getBausparSummeInEuro());
-    assertNotNull(dokumentErzeugenAnfrage.getAuszahlungsbetragBeiZuteilung());
     assertNotNull(dokumentErzeugenAnfrage.getAbschlussgebuehrenbehandlung());
     assertNotNull(dokumentErzeugenAnfrage.getAbschlussgebuehrHoeheInEuro());
     assertAntragsteller(dokumentErzeugenAnfrage.getAntragsteller());

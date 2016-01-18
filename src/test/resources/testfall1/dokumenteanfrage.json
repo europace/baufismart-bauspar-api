@@ -2,7 +2,6 @@
   "tarif": "T1",
   "berechnungsArt": "TILGUNGSAUSSETZUNG",
   "bausparSummeInEuro": 50000,
-  "auszahlungsbetragBeiZuteilung": 50000,
   "sparphaseDokument": {
     "regelsparbeitragInEuro": 168.33,
     "sparBeitraege": [

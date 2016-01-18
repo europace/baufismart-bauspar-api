@@ -12,7 +12,6 @@ public class DokumentErzeugenAnfrage {
   String tarif;
   BerechnungsArt berechnungsArt;
   BigDecimal bausparSummeInEuro;
-  BigDecimal auszahlungsbetragBeiZuteilung;
   Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung;
   BigDecimal abschlussgebuehrHoeheInEuro;
   List<Antragsteller> antragsteller;
@@ -45,14 +44,6 @@ public class DokumentErzeugenAnfrage {
 
   public void setBausparSummeInEuro(BigDecimal bausparSummeInEuro) {
     this.bausparSummeInEuro = bausparSummeInEuro;
-  }
-
-  public BigDecimal getAuszahlungsbetragBeiZuteilung() {
-    return auszahlungsbetragBeiZuteilung;
-  }
-
-  public void setAuszahlungsbetragBeiZuteilung(BigDecimal auszahlungsbetragBeiZuteilung) {
-    this.auszahlungsbetragBeiZuteilung = auszahlungsbetragBeiZuteilung;
   }
 
   public Abschlussgebuehrenbehandlung getAbschlussgebuehrenbehandlung() {
