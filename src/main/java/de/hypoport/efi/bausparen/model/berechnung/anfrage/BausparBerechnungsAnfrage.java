@@ -14,7 +14,6 @@ public class BausparBerechnungsAnfrage {
   BerechnungsZiel berechnungsZiel;
   BerechnungsArt berechnungsArt;
   BigDecimal bausparsummeInEuro;
-  BigDecimal auszahlungsbetragBeiZuteilung;
   Integer laufzeitBisZuteilungInMonaten;
   LocalDate zuteilungstermin;
   LocalDate vertragsDatum;
@@ -73,14 +72,6 @@ public class BausparBerechnungsAnfrage {
 
   public void setBausparsummeInEuro(BigDecimal bausparsummeInEuro) {
     this.bausparsummeInEuro = bausparsummeInEuro;
-  }
-
-  public BigDecimal getAuszahlungsbetragBeiZuteilung() {
-    return auszahlungsbetragBeiZuteilung;
-  }
-
-  public void setAuszahlungsbetragBeiZuteilung(BigDecimal auszahlungsbetragBeiZuteilung) {
-    this.auszahlungsbetragBeiZuteilung = auszahlungsbetragBeiZuteilung;
   }
 
   public Integer getLaufzeitBisZuteilungInMonaten() {

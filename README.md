@@ -101,7 +101,6 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 
       {
         "abschlussgebuehrenbehandlung": "VERRECHNUNG",
-        "auszahlungsbetragBeiZuteilung": 50000,
         "bausparsummeInEuro": 50000,
         "berechnungsArt": "TILGUNGSAUSSETZUNG",
         "berechnungsZiel": "SPARBEITRAG",
@@ -134,7 +133,6 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | berechnungsZiel                    | Auflistung    | Mögliche Werte: ``SPARBEITRAG``, ``BAUSPARSUMME``, ``ZUTEILUNGSTERMIN``, ``LAUFZEIT_BIS_ZUTEILUNG`` |
 | berechnungsArt                     | Auflistung    | Mögliche Werte: ``TILGUNGSAUSSETZUNG``, ``,ZINSABSICHERUNG``, ``BAUSPAREN_OHNE_IMMOBILIENFINANZIERUNG`` |
 | bausparSummeInEuro                 | Zahl          | Gewünschte Bausparsumme in Euro |
-| auszahlungsbetragBeiZuteilung      | Zahl          | Der Betrag des Bausparvertrags der bei Zuteilung ausgezahlt wird in Euro |
 | laufzeitBisZuteilungInMonaten      | Zahl          | Die Anzahl Monate zwischen Vertragsdatum und Zuteilungsdatum. Entweder wird dieses Feld oder ``zuteilungstermin`` geliefert.|
 | zuteilungstermin                   | Datum         | Das gewünschte Zuteilungsdatum. Alternativ kann ``laufzeitBisZuteilungInMonaten`` geliefert werden. |
 | vertragsDatum                      | Datum         | Das gewünschte VertragsDatum. |
@@ -304,7 +302,6 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
         "tarif": "T1",
         "berechnungsArt": "TILGUNGSAUSSETZUNG",
         "bausparSummeInEuro": 50000,
-        "auszahlungsbetragBeiZuteilung": 50000,
         "sparphaseDokument":
         {
             "regelsparbeitragInEuro": 168.33,
@@ -374,7 +371,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
            "firma": null,
            "telefonNummer": null,
            "eMailAdresse": null,
-           "vermittlerNr": "A123456",
+           "vermittlerNr": "A123456"
        },
        "fallNummer":"123-456-789",
        "requestId":"87e6rt5",
@@ -387,7 +384,6 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | tarif                                                                 | String                 | der Tarif wird auf Seiten der BSK ermittelt                                                                                                                                  |
 | berechnungsArt                                                        | Auflistung             | Mögliche Werte: ``TILGUNGSAUSSETZUNG``, ``,ZINSABSICHERUNG``, ``BAUSPAREN_OHNE_IMMOBILIENFINANZIERUNG``                                                                      |
 | bausparsummeInEuro                                                    | Zahl                   | Betrag der Bausparsumme in Euro                                                                                                                                              |
-| auszahlungsbetragBeiZuteilung                                         | Zahl                   | Auszahlungssumme                                                                                                                                                             |
 | sparphaseDokument.regelsparbeitragInEuro                              | Zahl                   | Sparbeitrag                                                                                                                                                                  |
 | sparphaseDokument.sparBeitraege                                       | Liste                  | Stellt die Abfolge unterschiedlich hoher Sparbeiträge in der Sparphase dar. Auch Einmalzahlungen werden über diesen Mechanismus abgebildet. Sie Biespiel 2.                  |
 | sparphaseDokument.sparBeitraege[i].beitrag                            | Zahl                   | Der Sparbeitrag dieser Zahlung ein Euro.                                                                                                                                     |
