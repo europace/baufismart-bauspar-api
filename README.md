@@ -376,6 +376,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
        },
        "fallNummer":"123-456-789",
        "requestId":"87e6rt5",
+       "fallAuswahl": false,
        "vertragsDatum":"2015-09-30"
     }
 
@@ -441,6 +442,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | vermittlerDaten.telefonNummer                                         | String                 |                                                                                                                                                                              |
 | vermittlerDaten.eMailAdresse                                          | String                 |                                                                                                                                                                              |
 | vermittlerDaten.vermittlerNr                                          | String                 | Die ID des Vermittlers im Europace System.                                                                                                                                   |
+| fallAuswahl                                                           | Boolean                | True, wenn der Fall mit kostenpflichtigen Diensten angenommen wird. False, in allen anderen Fällen (z.B. bei Angebotsermittlung)                                             |
 | requestId                                                             | String                 | Ordnet die Anfrage einer EUROPACE Anfrage für Loggingzwecke zu.                                                                                                              |
 | fallNummer                                                            | String                 | Ordnet die Anfrage einer EUROPACE Fallakte für Loggingzwecke zu.                                                                                                             |
 | vertragsDatum                                                         | Datum                  |                                                                                                                                                                              |

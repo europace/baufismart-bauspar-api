@@ -1,14 +1,14 @@
 package de.hypoport.efi.bausparen.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import de.hypoport.efi.bausparen.model.basis.SparBeitrag;
+import de.hypoport.efi.bausparen.model.berechnung.anfrage.BausparBerechnungsAnfrage;
 import de.hypoport.efi.bausparen.model.berechnung.angebot.BausparBerechnungsAntwort;
 import de.hypoport.efi.bausparen.model.berechnung.angebot.Bausparangebot;
-import de.hypoport.efi.bausparen.model.basis.SparBeitrag;
 import de.hypoport.efi.bausparen.model.berechnung.angebot.SparPlan;
 import de.hypoport.efi.bausparen.model.berechnung.angebot.SparPlanZahlung;
 import de.hypoport.efi.bausparen.model.berechnung.angebot.TilgungsPlan;
 import de.hypoport.efi.bausparen.model.berechnung.angebot.TilgungsPlanZahlung;
-import de.hypoport.efi.bausparen.model.berechnung.anfrage.BausparBerechnungsAnfrage;
 import de.hypoport.efi.bausparen.model.dokumente.Antragsteller;
 import de.hypoport.efi.bausparen.model.dokumente.DokumentErzeugenAnfrage;
 import de.hypoport.efi.bausparen.model.dokumente.SparphaseDokument;
@@ -121,6 +121,7 @@ public class FachlicheBeispieleTest {
     assertNotNull(dokumentErzeugenAnfrage.getVertragsDatum());
     assertNotNull(dokumentErzeugenAnfrage.getFallNummer());
     assertNotNull(dokumentErzeugenAnfrage.getRequestId());
+    assertNotNull(dokumentErzeugenAnfrage.getFallAuswahl());
   }
 
   private void assertAntragsteller(List<Antragsteller> antragstellerListe) {

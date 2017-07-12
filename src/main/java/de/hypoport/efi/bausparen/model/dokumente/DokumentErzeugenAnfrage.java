@@ -20,7 +20,7 @@ public class DokumentErzeugenAnfrage {
   LocalDate vertragsDatum;
   String fallNummer;
   String requestId;
-
+  Boolean fallAuswahl;
 
   public String getTarif() {
     return tarif;
@@ -108,5 +108,13 @@ public class DokumentErzeugenAnfrage {
 
   public void setRequestId(String requestId) {
     this.requestId = requestId;
+  }
+
+  public Boolean getFallAuswahl() {
+    return fallAuswahl;
+  }
+
+  public void setFallAuswahl(Boolean fallAuswahl) {
+    this.fallAuswahl = fallAuswahl;
   }
 }

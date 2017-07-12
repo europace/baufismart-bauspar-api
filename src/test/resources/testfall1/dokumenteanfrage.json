@@ -83,5 +83,6 @@
   },
   "vertragsDatum": "2015-09-01",
   "fallNummer": "123-456-789",
-  "requestId": "7y65xc4v"
+  "requestId": "7y65xc4v",
+  "fallAuswahl": false
 }
