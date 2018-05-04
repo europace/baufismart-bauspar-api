@@ -492,6 +492,13 @@ Solange die Schnittstelle eine gültige Antwort erstellen kann, (auch wenn diese
 
 Änderungen an der Schnittstelle bzw. am Schema der Schnittstelle müssen abwärtskompatibel umgesetzt werden. Falls es im Rahmen von Weiterentwicklungen zu Änderungen an der Schnittstelle kommt, sollten diese in einem definierten Zeitraum durch alle Bausparkassen umgesetzt werden.
 
+### Umgang mit alten Tarifen
+
+Wird ein Tarif ab einem bestimmten Zeitpunkt nicht mehr angeboten, kann es dennoch sein, dass z.B. im Rahmen von Angebotsaktualisierungen ein veralteter Tarif über die Schnittstelle angefragt wird.
+Beispiele zum Umgang hiermit können sein:
+- eine NICHT_MACHBAR - Meldung, wenn der alte Tarif keine Entsprechung in den neuen Tarifen findet (z.B. ein alter Aktionstarif)
+- eine ANPASSUNG - Meldung und Anpassung auf einen neuen Tarif, falls die Änderungen ausreichend gering sind (z.B. alter Standard-Tarif auf neuen Standard-Tarif)
+
 ## Versionierung
 
 Die Version der Schnittstelle wird durch das Versionspräfix in der URL (aktuell v1) kenntlich gemacht. Zusätzlich zur aktuellen Version sollte mindestens die Version davor ebenfalls verfügbar sein um API Upgrades zu erleichtern.
