@@ -106,6 +106,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
         "berechnungsZiel": "SPARBEITRAG",
         "darlehensWunsch": "MIT_DARLEHEN",
         "laufzeitBisZuteilungInMonaten": 112,
+        "bausparkasseIstDarlehensgeber": true,
         "requestId": "XAJNvEbn",
         "fallNummer": "123-456-789",
         "sparBeitraege": [
@@ -134,6 +135,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | berechnungsArt                     | Aufzählung    | Mögliche Werte: ``TILGUNGSAUSSETZUNG``, ``,ZINSABSICHERUNG``, ``BAUSPAREN_OHNE_IMMOBILIENFINANZIERUNG`` |
 | bausparSummeInEuro                 | Dezimalzahl   | Gewünschte Bausparsumme in Euro |
 | laufzeitBisZuteilungInMonaten      | Ganzzahl      | Die Anzahl Monate zwischen Vertragsdatum und Zuteilungsdatum. Entweder wird dieses Feld oder ``zuteilungstermin`` geliefert.|
+| bausparkasseIstDarlehensgeber      | Boolean       | Ist true, wenn Darlehensgeber und Bausparkasse identisch sind, sonst false
 | zuteilungstermin                   | Datum         | Das gewünschte Zuteilungsdatum. Alternativ kann ``laufzeitBisZuteilungInMonaten`` geliefert werden. |
 | vertragsDatum                      | Datum         | Das gewünschte VertragsDatum. |
 | sparBeitraege                      | Liste         | Ermöglicht die Erfassung mehrerer unterschiedlicher Sparzahlungen oder Einmalzahlungen. |
@@ -317,6 +319,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
         },
         "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
         "abschlussgebuehrHoeheInEuro": 500,
+        "bausparkasseIstDarlehensgeber": true,
         "antragsteller": [
         {
             "anrede": "HERR",
@@ -394,6 +397,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | sparphaseDokument.sparBeitraege[i].zahlungsrhythmus                   | Aufzählung             | Legt fest, in welchen Intervallen dieser Sparbeitrag gezahlt wird. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
 | abschlussgebuehrenbehandlung                                          | Aufzählung             | Mögliche Werte sind: ``VERRECHNUNG``, ``SOFORTZAHLUNG``.                                                                                                                     |
 | abschlussgebuehrHoeheInEuro                                           | Dezimalzahl            | Abschlußgebühr                                                                                                                                                               |
+| bausparkasseIstDarlehensgeber                                         | Boolean                | Ist true, wenn Darlehensgeber und Bausparkasse identisch sind, sonst false                                                                                                                                                              |
 | antragsteller                                                         | Liste                  |                                                                                                                                                                              |
 | antragsteller[i].anrede                                               | Aufzählung             | Mögliche Werte sind: ``HERR``, ``FRAU``.                                                                                                                                     |
 | antragsteller[i].titel.doktor                                         | Boolean                | Doktor                                                                                                                                                                       |

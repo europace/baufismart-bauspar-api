@@ -14,6 +14,7 @@ public class DokumentErzeugenAnfrage {
   BigDecimal bausparSummeInEuro;
   Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung;
   BigDecimal abschlussgebuehrHoeheInEuro;
+  Boolean bausparkasseIstDarlehensgeber;
   List<Antragsteller> antragsteller;
   VermittlerDaten vermittlerDaten;
   SparphaseDokument sparphaseDokument;
@@ -116,5 +117,13 @@ public class DokumentErzeugenAnfrage {
 
   public void setFallAuswahl(Boolean fallAuswahl) {
     this.fallAuswahl = fallAuswahl;
+  }
+
+  public Boolean getBausparkasseIstDarlehensgeber() {
+    return bausparkasseIstDarlehensgeber;
+  }
+
+  public void setBausparkasseIstDarlehensgeber(Boolean bausparkasseIstDarlehensgeber) {
+    this.bausparkasseIstDarlehensgeber = bausparkasseIstDarlehensgeber;
   }
 }

@@ -5,6 +5,7 @@
   "berechnungsArt": "TILGUNGSAUSSETZUNG",
   "darlehensWunsch": "MIT_DARLEHEN",
   "laufzeitBisZuteilungInMonaten": 240,
+  "bausparkasseIstDarlehensgeber": true,
   "zielTarif": "T2",
   "sparBeitraege": [
     {

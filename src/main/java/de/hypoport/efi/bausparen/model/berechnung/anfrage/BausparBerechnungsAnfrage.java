@@ -15,6 +15,7 @@ public class BausparBerechnungsAnfrage {
   BerechnungsArt berechnungsArt;
   BigDecimal bausparsummeInEuro;
   Integer laufzeitBisZuteilungInMonaten;
+  Boolean bausparkasseIstDarlehensgeber;
   LocalDate zuteilungstermin;
   LocalDate vertragsDatum;
   List<SparBeitrag> sparBeitraege;
@@ -144,5 +145,13 @@ public class BausparBerechnungsAnfrage {
 
   public void setVertriebsGruppe(String vertriebsGruppe) {
     this.vertriebsGruppe = vertriebsGruppe;
+  }
+
+  public Boolean getBausparkasseIstDarlehensgeber() {
+    return bausparkasseIstDarlehensgeber;
+  }
+
+  public void setBausparkasseIstDarlehensgeber(Boolean bausparkasseIstDarlehensgeber) {
+    this.bausparkasseIstDarlehensgeber = bausparkasseIstDarlehensgeber;
   }
 }

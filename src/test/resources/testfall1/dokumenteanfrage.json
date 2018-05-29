@@ -15,6 +15,7 @@
   },
   "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
   "abschlussgebuehrHoeheInEuro": 500,
+  "bausparkasseIstDarlehensgeber": true,
   "antragsteller": [
     {
       "anrede": "HERR",

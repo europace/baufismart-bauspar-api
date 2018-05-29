@@ -2,6 +2,7 @@
   "tarif": "T2",
   "berechnungsArt": "TILGUNGSAUSSETZUNG",
   "bausparSummeInEuro": 150000,
+  "bausparkasseIstDarlehensgeber": true,
   "sparphaseDokument": {
     "regelsparbeitragInEuro": 333.75,
     "sparBeitraege": [

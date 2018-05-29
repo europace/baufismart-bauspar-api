@@ -91,6 +91,7 @@ public class FachlicheBeispieleTest {
     assertNotNull(bausparBerechnungsAnfrage.getDarlehensWunsch());
     assertNotNull(bausparBerechnungsAnfrage.getVertriebsGruppe());
     assertNotNull(bausparBerechnungsAnfrage.getBausparsummeInEuro() != null);
+    assertNotNull(bausparBerechnungsAnfrage.getBausparkasseIstDarlehensgeber() != null);
 
     assertNotNull(bausparBerechnungsAnfrage.getDarlehensWunsch());
   }
@@ -122,6 +123,7 @@ public class FachlicheBeispieleTest {
     assertNotNull(dokumentErzeugenAnfrage.getFallNummer());
     assertNotNull(dokumentErzeugenAnfrage.getRequestId());
     assertNotNull(dokumentErzeugenAnfrage.getFallAuswahl());
+    assertNotNull(dokumentErzeugenAnfrage.getBausparkasseIstDarlehensgeber());
   }
 
   private void assertAntragsteller(List<Antragsteller> antragstellerListe) {
