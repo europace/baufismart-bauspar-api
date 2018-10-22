@@ -25,6 +25,9 @@ public class Antragsteller {
   TodesfallBeguenstigter todesfallBeguenstigter;
   BigDecimal vermoegenswirksameLeistungenBetragInEuro;
   Zahlungsrhythmus vermoegenswirksameLeistungenZahlungsrhythmus;
+  BigDecimal bruttoEinkommenVorjahr;
+  BigDecimal bruttoEinkommenAktuellesJahr;
+  Boolean guetertrennungVereinbart;
 
   public String getNachName() {
     return nachName;
@@ -168,5 +171,29 @@ public class Antragsteller {
 
   public void setVermoegenswirksameLeistungenZahlungsrhythmus(Zahlungsrhythmus vermoegenswirksameLeistungenZahlungsrhythmus) {
     this.vermoegenswirksameLeistungenZahlungsrhythmus = vermoegenswirksameLeistungenZahlungsrhythmus;
+  }
+
+  public BigDecimal getBruttoEinkommenVorjahr() {
+    return bruttoEinkommenVorjahr;
+  }
+
+  public void setBruttoEinkommenVorjahr(BigDecimal bruttoEinkommenVorjahr) {
+    this.bruttoEinkommenVorjahr = bruttoEinkommenVorjahr;
+  }
+
+  public BigDecimal getBruttoEinkommenAktuellesJahr() {
+    return bruttoEinkommenAktuellesJahr;
+  }
+
+  public void setBruttoEinkommenAktuellesJahr(BigDecimal bruttoEinkommenAktuellesJahr) {
+    this.bruttoEinkommenAktuellesJahr = bruttoEinkommenAktuellesJahr;
+  }
+
+  public Boolean getGuetertrennungVereinbart() {
+    return guetertrennungVereinbart;
+  }
+
+  public void setGuetertrennungVereinbart(Boolean guetertrennungVereinbart) {
+    this.guetertrennungVereinbart = guetertrennungVereinbart;
   }
 }

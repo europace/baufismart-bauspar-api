@@ -4,11 +4,11 @@
   "berechnungsArt": "TILGUNGSAUSSETZUNG",
   "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
   "darlehensWunsch": "MIT_DARLEHEN",
-  "vertragsDatum":"2015-09-01",
+  "vertragsDatum": "2015-09-01",
   "laufzeitBisZuteilungInMonaten": 120,
   "bausparkasseIstDarlehensgeber": true,
-  "fallNummer":"123-456-789",
-  "requestId":"7s0d9f7as9",
-  "vermittlerNr":"4711",
+  "fallNummer": "123-456-789",
+  "requestId": "7s0d9f7as9",
+  "vermittlerNr": "4711",
   "vertriebsGruppe": "Vertrieb A"
 }

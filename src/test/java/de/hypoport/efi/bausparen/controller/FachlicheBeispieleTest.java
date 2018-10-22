@@ -124,6 +124,7 @@ public class FachlicheBeispieleTest {
     assertNotNull(dokumentErzeugenAnfrage.getRequestId());
     assertNotNull(dokumentErzeugenAnfrage.getFallAuswahl());
     assertNotNull(dokumentErzeugenAnfrage.getBausparkasseIstDarlehensgeber());
+    assertNotNull(dokumentErzeugenAnfrage.getRiesterDaten());
   }
 
   private void assertAntragsteller(List<Antragsteller> antragstellerListe) {

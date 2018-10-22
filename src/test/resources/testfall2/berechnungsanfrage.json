@@ -1,7 +1,7 @@
 {
   "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
   "berechnungsZiel": "SPARBEITRAG",
-  "vertragsDatum":"2015-09-01",
+  "vertragsDatum": "2015-09-01",
   "berechnungsArt": "TILGUNGSAUSSETZUNG",
   "darlehensWunsch": "MIT_DARLEHEN",
   "laufzeitBisZuteilungInMonaten": 240,
@@ -14,8 +14,17 @@
       "zahlungsrhythmus": "EINMALIG"
     }
   ],
-  "fallNummer":"123-456-789",
-  "requestId":"0y9xc8v7y9",
-  "vermittlerNr":"4712", 
-  "vertriebsGruppe": "Vertrieb B"
+  "fallNummer": "123-456-789",
+  "requestId": "0y9xc8v7y9",
+  "vermittlerNr": "4712",
+  "vertriebsGruppe": "Vertrieb B",
+  "riesterDaten": {
+    "riesterzulagenVerwendung": "SONDERZAHLUNG",
+    "zulagenKinderAntragsteller": [
+      {
+        "geburtsdatum": "2018-01-01"
+      }
+    ]
+  }
+
 }

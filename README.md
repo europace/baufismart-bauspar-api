@@ -125,32 +125,69 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
         "vertragsDatum": "2015-09-01",
         "vertriebsGruppe": "Vertrieb A",
         "zielTarif": "T1",
-        "zuteilungstermin": "2026-01-01"        
+        "zuteilungstermin": "2026-01-01",
+        "riesterDaten": 
+          {
+           "riesterzulagenVerwendung": "SONDERZAHLUNG",
+           "geburtsdatumAntragsteller": "1990-01-01",
+           "beschaeftigungAntragsteller": "ANGESTELLTER",
+           "einkommenVorjahrAntragsteller": "50000",
+           "einkommenAktuellesJahrAntragsteller": "35000",
+           "zulagenKinderAntragsteller":
+           {
+              "geburtsdatum": "2018-01-01"
+           },
+           "familienstand": "VERHEIRATET",
+           "gueterTrennungVereinbart": "false",
+           "geburtsdatumEhepartner": "1980-15-02",
+           "beschaeftigungEhepartner": "ANGESTELLTER",
+           "einkommenVorjahrEhepartner": "30000",
+           "einkommenAktuellesJahrEhepartner": "25000",
+           "zulagenKinderEhepartner": 
+           {
+              "geburtsdatum": "2018-01-01"
+           },
+        }       
       }
 
-| Feld                               | Typ           | Beschreibung |
-|------------------------------------|---------------|--------------|
-| zielTarif                          | String        | Die technische Tarif ID, so wie sie von GET /tarife geliefert wird. |
-| berechnungsZiel                    | Aufzählung    | Mögliche Werte: ``SPARBEITRAG``, ``BAUSPARSUMME``, ``ZUTEILUNGSTERMIN``, ``LAUFZEIT_BIS_ZUTEILUNG`` |
-| berechnungsArt                     | Aufzählung    | Mögliche Werte: ``TILGUNGSAUSSETZUNG``, ``,ZINSABSICHERUNG``, ``BAUSPAREN_OHNE_IMMOBILIENFINANZIERUNG`` |
-| bausparSummeInEuro                 | Dezimalzahl   | Gewünschte Bausparsumme in Euro |
-| laufzeitBisZuteilungInMonaten      | Ganzzahl      | Die Anzahl Monate zwischen Vertragsdatum und Zuteilungsdatum. Entweder wird dieses Feld oder ``zuteilungstermin`` geliefert.|
-| bausparkasseIstDarlehensgeber      | Boolean       | Ist true, wenn Darlehensgeber und Bausparkasse identisch sind, sonst false
-| zuteilungstermin                   | Datum         | Das gewünschte Zuteilungsdatum. Alternativ kann ``laufzeitBisZuteilungInMonaten`` geliefert werden. |
-| vertragsDatum                      | Datum         | Das gewünschte VertragsDatum. |
-| sparBeitraege                      | Liste         | Ermöglicht die Erfassung mehrerer unterschiedlicher Sparzahlungen oder Einmalzahlungen. |
-| sparBeitraege[i].beitrag           | Dezimalzahl   | Der Sparbeitrag dieser Zahlung ein Euro. |
-| sparBeitraege[i].zahlungAb         | Datum         | Der Startzeitpunkt ab dem dieser Sparbeitrag geleistet wird. |
-| sparBeitraege[i].zahlungBis        | Datum         | Der letzte Zeitpunkt bis zu dem dieser Sparbeitrag geleistet wird. |
-| sparBeitraege[i].zahlungsrhythmus  | Aufzählung    | Legt fest, in welchen Intervallen dieser Sparbeitrag gezahlt wird. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
-| tilgungsBeitrag.rateInEuro         | Dezimalzahl   | Höhe der Tilgungsrate(Zins und Tilgung des Darlehens)|
-| tilgungsBeitrag.zahlungsrhythmus   | Aufzählung    | Legt fest, in welchen Intervallen die Tilgungsrate gezahlt wird. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
-| abschlussgebuehrenbehandlung       | Aufzählung    | Wenn nicht vorgegeben, dann gibt die BSK die Abschlussgebührenverrechnung vor. Mögliche Werte sind: ``VERRECHNUNG``, ``SOFORTZAHLUNG``. |
-| darlehensWunsch                    | Aufzählung    | Soll ein Bauspar- oder Zuteilungsdarlehen in Anspruch genommen werden? Mögliche Werte sind: ``MIT_DARLEHEN``, ``OHNE_DARLEHEN``. |
-| vermittlerNr                       | String        | Die ID des Vermittlers im Europace System. |
-| requestId                          | String        | Ordnet die Anfrage einer EUROPACE Anfrage für Loggingzwecke zu. |
-| fallNummer                         | String        | Ordnet die Anfrage einer EUROPACE Fallakte für Loggingzwecke zu. |
-| vertriebsGruppe                    | String        | Vertriebsgruppe des anfragenden Vertriebs zur Bestimmung der Provision. |
+| Feld                                                    | Typ           | Beschreibung |
+|---------------------------------------------------------|---------------|--------------|
+| zielTarif                                               | String        | Die technische Tarif ID, so wie sie von GET /tarife geliefert wird. |
+| berechnungsZiel                                         | Aufzählung    | Mögliche Werte: ``SPARBEITRAG``, ``BAUSPARSUMME``, ``ZUTEILUNGSTERMIN``, ``LAUFZEIT_BIS_ZUTEILUNG`` |
+| berechnungsArt                                          | Aufzählung    | Mögliche Werte: ``TILGUNGSAUSSETZUNG``, ``,ZINSABSICHERUNG``, ``BAUSPAREN_OHNE_IMMOBILIENFINANZIERUNG`` |
+| bausparSummeInEuro                                      | Dezimalzahl   | Gewünschte Bausparsumme in Euro |
+| laufzeitBisZuteilungInMonaten                           | Ganzzahl      | Die Anzahl Monate zwischen Vertragsdatum und Zuteilungsdatum. Entweder wird dieses Feld oder ``zuteilungstermin`` geliefert.|
+| bausparkasseIstDarlehensgeber                           | Boolean       | Ist true, wenn Darlehensgeber und Bausparkasse identisch sind, sonst false
+| zuteilungstermin                                        | Datum         | Das gewünschte Zuteilungsdatum. Alternativ kann ``laufzeitBisZuteilungInMonaten`` geliefert werden. |
+| vertragsDatum                                           | Datum         | Das gewünschte VertragsDatum. |
+| sparBeitraege                                           | Liste         | Ermöglicht die Erfassung mehrerer unterschiedlicher Sparzahlungen oder Einmalzahlungen. |
+| sparBeitraege[i].beitrag                                | Dezimalzahl   | Der Sparbeitrag dieser Zahlung ein Euro. |
+| sparBeitraege[i].zahlungAb                              | Datum         | Der Startzeitpunkt ab dem dieser Sparbeitrag geleistet wird. |
+| sparBeitraege[i].zahlungBis                             | Datum         | Der letzte Zeitpunkt bis zu dem dieser Sparbeitrag geleistet wird. |
+| sparBeitraege[i].zahlungsrhythmus                       | Aufzählung    | Legt fest, in welchen Intervallen dieser Sparbeitrag gezahlt wird. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
+| tilgungsBeitrag.rateInEuro                              | Dezimalzahl   | Höhe der Tilgungsrate(Zins und Tilgung des Darlehens)|
+| tilgungsBeitrag.zahlungsrhythmus                        | Aufzählung    | Legt fest, in welchen Intervallen die Tilgungsrate gezahlt wird. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
+| abschlussgebuehrenbehandlung                            | Aufzählung    | Wenn nicht vorgegeben, dann gibt die BSK die Abschlussgebührenverrechnung vor. Mögliche Werte sind: ``VERRECHNUNG``, ``SOFORTZAHLUNG``. |
+| darlehensWunsch                                         | Aufzählung    | Soll ein Bauspar- oder Zuteilungsdarlehen in Anspruch genommen werden? Mögliche Werte sind: ``MIT_DARLEHEN``, ``OHNE_DARLEHEN``. |
+| vermittlerNr                                            | String        | Die ID des Vermittlers im Europace System. |
+| requestId                                               | String        | Ordnet die Anfrage einer EUROPACE Anfrage für Loggingzwecke zu. |
+| fallNummer                                              | String        | Ordnet die Anfrage einer EUROPACE Fallakte für Loggingzwecke zu. |
+| vertriebsGruppe                                         | String        | Vertriebsgruppe des anfragenden Vertriebs zur Bestimmung der Provision. |
+| riesterDaten.riesterzulagenVerwendung                   | String        | Legt die Verwendung der Riesterzulagen fest (SONDERZAHLUNG, VERRECHNUNG). |
+| riesterDaten.geburtsdatumAntragsteller                  | Datum         | Geburtsdatum des Antragstellers |
+| riesterDaten.beschaeftigungAntragsteller                | Aufzählung    | Mögliche Werte: ``ANGESTELLTER``, ``ARBEITER``, ``ARBEITSLOSER``, ``BEAMTER``, ``FREIBERUFLER``, ``HAUSFRAU_HAUSMANN``, ``RENTNER``, ``SELBSTAENDIGER``. | 
+| riesterDaten.einkommenVorjahrAntragsteller              | Ganzzahl      | Höhe des Einkommens des vergangenen Jahres des Antragstellers. |
+| riesterDaten.einkommenAktuellesJahrAntragsteller        | Ganzzahl      | Höhe des Einkommens des aktuellen Jahres des Antragstellers. |
+| riesterDaten.zulagenKinderAntragsteller                 | Liste         | Ermöglicht die Erfassung mehrerer förderfähiger Kinder des Antragstellers.  |
+| riesterDaten.zulagenKind[i].geburtsdatum                | Datum         | Geburtsdatum des förderfähigen Kindes des Antragstellers. |
+| riesterDaten.familienstand                              | Aufzählung    | Mögliche Werte: ``LEDIG``, ``VERHEIRATET``, ``LEBENSPARTNER``, ``GESCHIEDEN``, ``VERWITWET``, ``HAUSFRAU_HAUSMANN``, ``GETRENNT_LEBEND``. |
+| riesterDaten.gueterTrennungVereinbart                   | Boolean       | Ist true, wenn Gütertrennung vereinbart wurde, sonst false. |
+| riesterDaten.geburtsdatumEhepartner                     | Datum         | Geburtsdatum des Ehepartners. |
+| riesterDaten.beschaeftigungEhepartner                   | Aufzählung    | Mögliche Werte: ``ANGESTELLTER``, ``ARBEITER``, ``ARBEITSLOSER``, ``BEAMTER``, ``FREIBERUFLER``, ``HAUSFRAU_HAUSMANN``, ``RENTNER``, ``SELBSTAENDIGER``. |
+| riesterDaten.einkommenVorjahrEhepartner                 | Ganzzahl      | Höhe des Einkommens des vergangenen Jahres des Ehepartners. |
+| riesterDaten.einkommenAktuellesJahrEhepartner           | Ganzzahl      | Höhe des Einkommens des aktuellen Jahres des Ehepartners. |
+| riesterDaten.zulagenKinderEhepartner                    | Liste         | Ermöglicht die Erfassung mehrerer förderfähiger Kinder des Ehepartners. |
+| riesterDaten.zulagenKind[i].geburtsdatum                | Datum         | Geburtsdatum des förderfähigen Kindes des Ehepartners. |
 
 
 #### Antwort
@@ -176,7 +213,8 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
                   "saldoNachZahlungInEuro": 0,
                   "tilgungInEuro": 0,
                   "zahlungInEuro": 0,
-                  "zinsInEuro": 0
+                  "zinsInEuro": 0,
+                  "riesterzulageInEuro": 0
                 }
               ]
             },
@@ -214,7 +252,8 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
                   "kontofuehrungsGebuehrInEuro": 0,
                   "saldoNachZahlungInEuro": 0,
                   "zahlungInEuro": 0,
-                  "zinsInEuro": 0
+                  "zinsInEuro": 0,
+                  "riesterzulageInEuro": 0
                 }
               ]
             },
@@ -266,6 +305,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | bausparDarlehen.tilgungsPlan.zahlungen[i].tilgungInEuro               | Dezimalzahl  |                                                                                                                                                                   |
 | bausparDarlehen.tilgungsPlan.zahlungen[i].zahlungInEuro               | Dezimalzahl  |                                                                                                                                                                   |
 | bausparDarlehen.tilgungsPlan.zahlungen[i].zinsInEuro                  | Dezimalzahl  |                                                                                                                                                                   |
+| bausparDarlehen.tilgungsPlan.zahlungen[i].riesterzulageInEuro         | Dezimalzahl  |                                                                                                                                                                   |
 | sparPhase.guthabenzinsInProzent                                       | Dezimalzahl  |                                                                                                                                                                   |
 | sparPhase.guthabenzinsBetragInEuro                                    | Dezimalzahl  |                                                                                                                                                                   |
 | sparPhase.bonuszinsInProzent                                          | Dezimalzahl  |                                                                                                                                                                   |
@@ -285,6 +325,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | sparPhase.sparPlan.zahlungen[i].saldoNachZahlungInEuro                | Dezimalzahl  |                                                                                                                                                                   |
 | sparPhase.sparPlan.zahlungen[i].zahlungInEuro                         | Dezimalzahl  | Die Sparrate                                                                                                                                                      |
 | sparPhase.sparPlan.zahlungen[i].zinsInEuro                            | Dezimalzahl  | Der Betrag an Guthabenzinsen der zu diesem Datum mit dem Bausparvertrag verrechnet wird.                                                                          |
+| sparPhase.sparPlan.zahlungen[i].riesterzulageInEuro                   | Dezimalzahl  |                                                                           |
 | meldungen                                                             | Liste        |                                         |                                                                                                                         |
 | meldungen[i].text                                                     | String       | menschlich lesbare Fehlerbeschreibung   |                                                                                                                         |
 | meldungen[i].status                                                   | Aufzählung   | Auswirkung der Meldung auf die Annehmbarkeit des Bausparantrags. Mögliche Werte: ``HINWEIS``, ``BERECHNUNG_NICHT_MOEGLICH_AUFGRUND_FEHLENDER_DATEN``, ``VOLLSTAENDIGKEIT_DOKUMENT``, ``NICHT_MACHBAR``, ``ANPASSUNG``, ``TECHNISCHER_FEHLER``.                                                                                       |
@@ -363,7 +404,24 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
                "ausweisNummer": null,
                "austellendeBehoerde": null,
                "ausstellungsDatum": "2010-01-01"
-           }
+           },
+           "todesfallBeguenstigter":
+           {
+               "anrede": "HERR",
+               "vorname": null,
+               "nachname": null,
+               "geburtsdatum": null,
+               "adresse.strasse": null,
+               "adresse.hausNummer": null,
+               "adresse.postleitzahl": null,
+               "adresse.wohnOrt": null,
+               "adresse.landWohnsitz": null
+           },
+            "vermoegenswirksameLeistungenBetragInEuro": null,
+            "vermoegenswirksameLeistungenZahlungsrhythmus": "MONATLICH",
+            "bruttoEinkommenVorjahr": null,
+            "bruttoEinkommenAktuellesJahr": null,
+            "guetertrennungVereinbart": null
        }],
        "vermittlerDaten": 
        {
@@ -381,6 +439,28 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
        "requestId":"87e6rt5",
        "fallAuswahl": false,
        "vertragsDatum":"2015-09-30"
+       "riesterDaten": 
+       {
+            "riesterzulagenVerwendung": "SOFORTZAHLUNG",
+            "geburtsdatumAntragsteller": "1990-01-01",
+            "beschaeftigungAntragsteller": "ANGESTELLTER",
+            "einkommenVorjahrAntragsteller": "50000",
+            "einkommenAktuellesJahrAntragsteller": "35000",
+            "zulagenKinderAntragsteller":
+                {
+                   "geburtsdatum": "2018-01-01"
+                },
+            "familienstand": "VERHEIRATET",
+            "gueterTrennungVereinbart": "false",
+            "geburtsdatumEhepartner": "1983-23-09",
+            "beschaeftigungEhepartner": "ANGESTELLTER",
+            "einkommenVorjahrEhepartner": "35000",
+            "einkommenAktuellesJahrEhepartner": "25000",
+            "zulagenKinderEhepartner": 
+                {
+                   "geburtsdatum": "2018-01-01"
+                },
+        }       
     }
 
 
@@ -437,6 +517,9 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | antragsteller[i].todesfallBeguenstigter.adresse.landWohnsitz          | String                 | Dieses Feld ist noch nicht im Frontend enthalten.                                                                                                                            |
 | antragsteller[i].vermoegenswirksameLeistungenBetragInEuro             | Dezimalzahl            | Der Betrag der vermögenswirksamen Leistungen, die der Arbeitgeber des Antragstellers in diesen Bausparvertrag einzahlt. Es werden immer die VL Beträge aller Antragsteller eingezahlt. Dieses Feld ist noch nicht im Frontend enthalten.|
 | antragsteller[i].vermoegenswirksameLeistungenZahlungsrhythmus         | Aufzählung             | Legt fest, in welchen Intervallen die vermögenswirksamen Leistungen gezahlt werden. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``.  Dieses Feld ist noch nicht im Frontend enthalten.|
+| antragsteller[i].bruttoEinkommenVorjahr                               | Dezimalzahl            | Vorjahreseinkommen des Antragstellers.|
+| antragsteller[i].bruttoEinkommenAktuellesJahr                         | Dezimalzahl            | Aktuelles Jahreseinkommen des Antragstellers.|
+| antragsteller[i].guetertrennungVereinbart                             | Boolean                | Ist true, wenn Gütertrennung vereinbart wurde, sonst false. |
 | vermittlerDaten.nachName                                              | String                 |                                                                                                                                                                              |
 | vermittlerDaten.ort                                                   | String                 |                                                                                                                                                                              |
 | vermittlerDaten.postleitzahl                                          | String                 |                                                                                                                                                                              |
@@ -450,6 +533,21 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | requestId                                                             | String                 | Ordnet die Anfrage einer EUROPACE Anfrage für Loggingzwecke zu.                                                                                                              |
 | fallNummer                                                            | String                 | Ordnet die Anfrage einer EUROPACE Fallakte für Loggingzwecke zu.                                                                                                             |
 | vertragsDatum                                                         | Datum                  |                                                                                                                                                                              |
+| riesterDaten.riesterzulagenVerwendung                                 | String                 | Legt die Verwendung der Riesterzulagen fest (SONDERZAHLUNG, VERRECHNUNG). |
+| riesterDaten.geburtsdatumAntragsteller                                | Datum                  | Geburtsdatum des Antragstellers |
+| riesterDaten.beschaeftigungAntragsteller                              | Aufzählung             | Mögliche Werte: ``ANGESTELLTER``, ``ARBEITER``, ``ARBEITSLOSER``, ``BEAMTER``, ``FREIBERUFLER``, ``HAUSFRAU_HAUSMANN``, ``RENTNER``, ``SELBSTAENDIGER``. | 
+| riesterDaten.einkommenVorjahrAntragsteller                            | Ganzzahl               | Höhe des Einkommens des vergangenen Jahres des Antragstellers. |
+| riesterDaten.einkommenAktuellesJahrAntragsteller                      | Ganzzahl               | Höhe des Einkommens des aktuellen Jahres des Antragstellers. |
+| riesterDaten.zulagenKinderAntragsteller                               | Liste                  | Ermöglicht die Erfassung mehrerer förderfähiger Kinder des Antragstellers.  |
+| riesterDaten.zulagenKind[i].geburtsdatum                              | Datum                  | Geburtsdatum des förderfähigen Kindes des Antragstellers. |
+| riesterDaten.familienstand                                            | Aufzählung             | Mögliche Werte: ``LEDIG``, ``VERHEIRATET``, ``LEBENSPARTNER``, ``GESCHIEDEN``, ``VERWITWET``, ``HAUSFRAU_HAUSMANN``, ``GETRENNT_LEBEND``. |
+| riesterDaten.gueterTrennungVereinbart                                 | Boolean                | Ist true, wenn Gütertrennung vereinbart wurde, sonst false. |
+| riesterDaten.geburtsdatumEhepartner                                   | Datum                  | Geburtsdatum des Ehepartners. |
+| riesterDaten.beschaeftigungEhepartner                                 | Aufzählung             | Mögliche Werte: ``ANGESTELLTER``, ``ARBEITER``, ``ARBEITSLOSER``, ``BEAMTER``, ``FREIBERUFLER``, ``HAUSFRAU_HAUSMANN``, ``RENTNER``, ``SELBSTAENDIGER``. |
+| riesterDaten.einkommenVorjahrEhepartner                               | Ganzzahl               | Höhe des Einkommens des vergangenen Jahres des Ehepartners. |
+| riesterDaten.einkommenAktuellesJahrEhepartner                         | Ganzzahl               | Höhe des Einkommens des aktuellen Jahres des Ehepartners. |
+| riesterDaten.zulagenKinderEhepartner                                  | Liste                  | Ermöglicht die Erfassung mehrerer förderfähiger Kinder des Ehepartners. |
+| riesterDaten.zulagenKind[i].geburtsdatum                              | Datum                  | Geburtsdatum des förderfähigen Kindes des Ehepartners. |
 
 
 #### Antwort

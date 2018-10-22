@@ -2,6 +2,7 @@ package de.hypoport.efi.bausparen.model.berechnung.anfrage;
 
 import de.hypoport.efi.bausparen.model.basis.Abschlussgebuehrenbehandlung;
 import de.hypoport.efi.bausparen.model.basis.BerechnungsZiel;
+import de.hypoport.efi.bausparen.model.basis.RiesterDaten;
 import de.hypoport.efi.bausparen.model.basis.SparBeitrag;
 
 import java.math.BigDecimal;
@@ -26,6 +27,7 @@ public class BausparBerechnungsAnfrage {
   String requestId;
   String fallNummer;
   String vertriebsGruppe;
+  RiesterDaten riesterDaten;
 
   public LocalDate getZuteilungstermin() {
     return zuteilungstermin;
@@ -153,5 +155,13 @@ public class BausparBerechnungsAnfrage {
 
   public void setBausparkasseIstDarlehensgeber(Boolean bausparkasseIstDarlehensgeber) {
     this.bausparkasseIstDarlehensgeber = bausparkasseIstDarlehensgeber;
+  }
+
+  public RiesterDaten getRiesterDaten() {
+    return riesterDaten;
+  }
+
+  public void setRiesterDaten(RiesterDaten riesterDaten) {
+    this.riesterDaten = riesterDaten;
   }
 }

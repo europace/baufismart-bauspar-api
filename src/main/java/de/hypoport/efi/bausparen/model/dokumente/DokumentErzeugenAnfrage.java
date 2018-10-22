@@ -1,6 +1,7 @@
 package de.hypoport.efi.bausparen.model.dokumente;
 
 import de.hypoport.efi.bausparen.model.basis.Abschlussgebuehrenbehandlung;
+import de.hypoport.efi.bausparen.model.basis.RiesterDaten;
 import de.hypoport.efi.bausparen.model.berechnung.anfrage.BerechnungsArt;
 
 import java.math.BigDecimal;
@@ -22,6 +23,7 @@ public class DokumentErzeugenAnfrage {
   String fallNummer;
   String requestId;
   Boolean fallAuswahl;
+  RiesterDaten riesterDaten;
 
   public String getTarif() {
     return tarif;
@@ -125,5 +127,13 @@ public class DokumentErzeugenAnfrage {
 
   public void setBausparkasseIstDarlehensgeber(Boolean bausparkasseIstDarlehensgeber) {
     this.bausparkasseIstDarlehensgeber = bausparkasseIstDarlehensgeber;
+  }
+
+  public RiesterDaten getRiesterDaten() {
+    return riesterDaten;
+  }
+
+  public void setRiesterDaten(RiesterDaten riesterDaten) {
+    this.riesterDaten = riesterDaten;
   }
 }

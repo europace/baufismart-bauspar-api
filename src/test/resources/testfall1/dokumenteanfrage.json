@@ -85,5 +85,13 @@
   "vertragsDatum": "2015-09-01",
   "fallNummer": "123-456-789",
   "requestId": "7y65xc4v",
-  "fallAuswahl": false
+  "fallAuswahl": false,
+  "riesterDaten": {
+    "riesterzulagenVerwendung": "SONDERZAHLUNG",
+    "zulagenKinderAntragsteller": [
+      {
+        "geburtsdatum": "2018-01-01"
+      }
+    ]
+  }
 }
