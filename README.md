@@ -94,7 +94,10 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | ANPASSUNG                                          | Daten aus der Anfrage werden angepasst, um das Angebot zu berechnen.
 | TECHNISCHER_FEHLER                                 | Es ist ein technischer Fehler während der Berechnung aufgetreten. Das Angebot wird verworfen.                                           |
 
+#### Anpassung von Tarifen
 
+Über die Antwort kann auch der gewünschte Tarif angepasst werden. Hierzu muss es eine Meldung mit dem Status 'ANPASSUNG' und einem Text, der das Schlüsselwort 'Tarif' enthält, mitgeliefert werden. Dem Anwender soll so transparent gemacht werden, dass der Tarif geändert wurde und warum.
+Eine Tarif-Anpassung sollte vorwiegend zur Optimierung verwendet werden - primär sollte dem Kundenwunsch entsprochen werden (und dann z.B. eine 'NICHT_MACHBAR'-Meldung generiert werden).
 
 
 #### Anfrage
