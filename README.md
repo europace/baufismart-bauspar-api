@@ -91,14 +91,9 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | BERECHNUNG_NICHT_MOEGLICH_AUFGRUND_FEHLENDER_DATEN | Es fehlen Daten, um ein vollständiges Angebot zu erstellen. Nicht abschließbar. Berechnete Angebotsdaten u.U. nicht vollständig.        |
 | VOLLSTAENDIGKEIT_DOKUMENT                          | Nur für /dokumente Schnittstelle relevant.                                                                                              |
 | NICHT_MACHBAR                                      | Das Angebot konnte berechnet werden, ist aber aufgrund fachlicher Einschränkungen so nicht abschließbar. Beispiel: Sparrate zu niedrig. |
-| ANPASSUNG                                          | Daten aus der Anfrage werden angepasst, um das Angebot zu berechnen.
+| ANPASSUNG                                          | Daten aus der Anfrage werden angepasst, um das Angebot zu berechnen (außer Tarif - hierfür siehe TARIF_ANPASSUNG).
+| TARIF_ANPASSUNG                                    | Der Tarif aus der Anfrage wird angepasst, um das Angebot zu berechnen. Ist nur bei befülltem Tarif-Wunsch der Anfrage zu erzeugen.
 | TECHNISCHER_FEHLER                                 | Es ist ein technischer Fehler während der Berechnung aufgetreten. Das Angebot wird verworfen.                                           |
-
-#### Anpassung von Tarifen
-
-Über die Antwort kann auch der gewünschte Tarif angepasst werden. Hierzu muss es eine Meldung mit dem Status 'ANPASSUNG' und einem Text, der das Schlüsselwort 'Tarif' enthält, mitgeliefert werden. Dem Anwender soll so transparent gemacht werden, dass der Tarif geändert wurde und warum.
-Eine Tarif-Anpassung sollte vorwiegend zur Optimierung verwendet werden - primär sollte dem Kundenwunsch entsprochen werden (und dann z.B. eine 'NICHT_MACHBAR'-Meldung generiert werden).
-
 
 #### Anfrage
 
