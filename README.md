@@ -91,11 +91,9 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | BERECHNUNG_NICHT_MOEGLICH_AUFGRUND_FEHLENDER_DATEN | Es fehlen Daten, um ein vollständiges Angebot zu erstellen. Nicht abschließbar. Berechnete Angebotsdaten u.U. nicht vollständig.        |
 | VOLLSTAENDIGKEIT_DOKUMENT                          | Nur für /dokumente Schnittstelle relevant.                                                                                              |
 | NICHT_MACHBAR                                      | Das Angebot konnte berechnet werden, ist aber aufgrund fachlicher Einschränkungen so nicht abschließbar. Beispiel: Sparrate zu niedrig. |
-| ANPASSUNG                                          | Daten aus der Anfrage werden angepasst, um das Angebot zu berechnen.
+| ANPASSUNG                                          | Daten aus der Anfrage werden angepasst, um das Angebot zu berechnen (außer Tarif - hierfür siehe TARIF_ANPASSUNG).
+| TARIF_ANPASSUNG                                    | Der Tarif aus der Anfrage wird angepasst, um das Angebot zu berechnen. Ist nur bei befülltem Tarif-Wunsch der Anfrage zu erzeugen.
 | TECHNISCHER_FEHLER                                 | Es ist ein technischer Fehler während der Berechnung aufgetreten. Das Angebot wird verworfen.                                           |
-
-
-
 
 #### Anfrage
 
