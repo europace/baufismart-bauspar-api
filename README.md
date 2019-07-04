@@ -15,7 +15,7 @@ Die Kommunikation erfolgt über HTTP/S und REST (Representational State Transfer
 Als ersten Schritt schickt EUROPACE den Bausparwunsch an die durch die jeweilige Bausparkasse bereitzustellende Schnittstelle. Die Berechnung des Bausparangebots erfolgt bei der Bausparkasse.
 An EUROPACE wird das berechnete Bausparangebot zurückgeliefert. EUROPACE fügt das Bausparangebot in die Finanzierung ein. In einem zweiten Schritt werden die benötigten ausgefüllten Dokumente über die Schnittstelle angefragt. 
 
-Der Schnittstellenprozess ist zustandslos, das bedeutet bei jedem Methodenaufruf werden alle relevanten Daten mitgesendet.
+Der Schnittstellenprozess ist zustandslos. Das bedeutet bei jedem Methodenaufruf werden alle relevanten Daten mitgesendet.
 Die Schnittstellenimplementierung muss sich keine Zwischenergebnisse merken.
 
 Der Prozess gestaltet sich im Detail wie folgt:
