@@ -85,15 +85,15 @@ Fehlende Werte in der Anfrage sollten durch die Implementierung durch sinnvolle 
 Treten während der Berechnung Unstimmigkeiten auf, weil die Inputdaten nicht zum Tarif passen, z.B. aufgrund einer zu großen Bausparsumme, so soll die Schnittstelle
 dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Meldungen vor. Jede Meldung trägt einen Status, der die Auswirkung der Meldung anzeigt.
 
-| Meldungsstatus                                     | Auswirkung                                                                                                                              |
-|----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| HINWEIS                                            | Keine, der Bausparvertrag ist in der berechneten Form abschließbar                                                                      |
-| BERECHNUNG_NICHT_MOEGLICH_AUFGRUND_FEHLENDER_DATEN | Es fehlen Daten, um ein vollständiges Angebot zu erstellen. Nicht abschließbar. Berechnete Angebotsdaten u.U. nicht vollständig.        |
-| VOLLSTAENDIGKEIT_DOKUMENT                          | Nur für /dokumente Schnittstelle relevant.                                                                                              |
-| NICHT_MACHBAR                                      | Das Angebot konnte berechnet werden, ist aber aufgrund fachlicher Einschränkungen so nicht abschließbar. Beispiel: Sparrate zu niedrig. |
-| ANPASSUNG                                          | Daten aus der Anfrage werden angepasst, um das Angebot zu berechnen (außer Tarif - hierfür siehe TARIF_ANPASSUNG).
-| TARIF_ANPASSUNG                                    | Der Tarif aus der Anfrage wird angepasst, um das Angebot zu berechnen. Ist nur bei befülltem Tarif-Wunsch der Anfrage zu erzeugen.
-| TECHNISCHER_FEHLER                                 | Es ist ein technischer Fehler während der Berechnung aufgetreten. Das Angebot wird verworfen.                                           |
+| Meldungsstatus                                         | Auswirkung                                                                                                                             |
+|--------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| HINWEIS                                                | Keine, der Bausparvertrag ist in der berechneten Form abschließbar                                                                     |
+| ~~BERECHNUNG_NICHT_MOEGLICH_AUFGRUND_FEHLENDER_DATEN~~ | Es fehlen Daten, um ein vollständiges Angebot zu erstellen. Das Angebot wird nicht angezeigt. ACHTUNG: Dieser Meldungsstatus ist nicht (mehr) zu verwenden, da immer alle für eine Berechnung erforderlichen Daten - ggf. auch Defaultwerte - im Request enthalten sind. |
+| VOLLSTAENDIGKEIT_DOKUMENT                              | Nur für /dokumente Schnittstelle relevant.                                                                                             |
+| NICHT_MACHBAR                                          | Das Angebot konnte berechnet werden, ist aber aufgrund fachlicher Einschränkungen so nicht abschließbar. Beispiel: Sparrate zu niedrig.|
+| ANPASSUNG                                              | Daten aus der Anfrage werden angepasst, um das Angebot zu berechnen (außer Tarif - hierfür siehe TARIF_ANPASSUNG).                     |
+| TARIF_ANPASSUNG                                        | Der Tarif aus der Anfrage wird angepasst, um das Angebot zu berechnen. Ist nur bei befülltem Tarif-Wunsch der Anfrage zu erzeugen.     |
+| TECHNISCHER_FEHLER                                     | Es ist ein technischer Fehler während der Berechnung aufgetreten. Das Angebot wird verworfen.                                          |
 
 #### Anfrage
 
