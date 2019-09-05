@@ -3,7 +3,7 @@
 
 ## Beschreibung
 
-Diese Schnittstelle dient der Einbindung von Bausparangeboten als Tilgungsersatzprodukt und zur Zinsabsicherung in einer Finanzierung sowie als singuläre Bausparangebote in reinen Bausparfrontends. Da sie produktanbieterunabhängig gestaltet ist, ermöglicht sie Angebote von verschiedenen Bausparkassen in Europace anzubieten. Die Schnittstelle wird als REST-Schnittstelle
+Diese Schnittstelle dient der Einbindung von Bausparangeboten als Tilgungsersatzprodukt und zur Zinsabsicherung in einer Finanzierung, sowie als singuläre Bausparangebote in reinen Bausparfrontends. Da sie produktanbieterunabhängig gestaltet ist, ermöglicht sie Angebote von verschiedenen Bausparkassen in Europace anzubieten. Die Schnittstelle wird als REST-Schnittstelle
 (Representational State Transfer) realisiert. 
 
 ## Technik
@@ -27,7 +27,7 @@ bereitgestellt werden.
 
 3) Für ein berechnetes Angebot werden über eine weitere REST-Anfrage unter der URL `http://host/europace-bausparen/v1/dokumente/` mit einem POST Befehl die zum Angebot generierten Dokumente geholt. 
 
-Weitere Informationen und eine genauere Beschreibung der REST-Schnittstelle sowie die Beschreibung der Daten werden in Beispiel Aufrufen und weiteren Tabellen dargestellt.
+Weitere Informationen und eine genauere Beschreibung der REST-Schnittstelle sowie die Beschreibung der Daten werden in Beispiel-Aufrufen und weiteren Tabellen dargestellt.
 
 
 ## Schnittstellenprototyp
