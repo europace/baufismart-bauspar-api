@@ -19,6 +19,7 @@ public class BausparBerechnungsAnfrage {
   Boolean bausparkasseIstDarlehensgeber;
   LocalDate zuteilungstermin;
   LocalDate vertragsDatum;
+  LocalDate sparBeginn;
   List<SparBeitrag> sparBeitraege;
   TilgungsBeitrag tilgungsBeitrag;
   Abschlussgebuehrenbehandlung abschlussgebuehrenbehandlung;
@@ -131,6 +132,14 @@ public class BausparBerechnungsAnfrage {
 
   public void setVertragsDatum(LocalDate vertragsDatum) {
     this.vertragsDatum = vertragsDatum;
+  }
+
+  public LocalDate getSparBeginn() {
+    return sparBeginn;
+  }
+
+  public void setSparBeginn(LocalDate sparBeginn) {
+    this.sparBeginn = sparBeginn;
   }
 
   public BerechnungsArt getBerechnungsArt() {

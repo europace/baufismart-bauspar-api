@@ -20,6 +20,7 @@ public class DokumentErzeugenAnfrage {
   VermittlerDaten vermittlerDaten;
   SparphaseDokument sparphaseDokument;
   LocalDate vertragsDatum;
+  LocalDate sparBeginn;
   String fallNummer;
   String requestId;
   Boolean fallAuswahl;
@@ -95,6 +96,14 @@ public class DokumentErzeugenAnfrage {
 
   public void setVertragsDatum(LocalDate vertragsDatum) {
     this.vertragsDatum = vertragsDatum;
+  }
+
+  public LocalDate getSparBeginn() {
+    return sparBeginn;
+  }
+
+  public void setSparBeginn(LocalDate sparBeginn) {
+    this.sparBeginn = sparBeginn;
   }
 
   public String getFallNummer() {

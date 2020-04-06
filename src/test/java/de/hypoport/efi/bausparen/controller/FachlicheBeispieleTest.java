@@ -83,6 +83,7 @@ public class FachlicheBeispieleTest {
     assertNotNull(bausparBerechnungsAnfrage.getZielTarif());
     assertNotNull(bausparBerechnungsAnfrage.getBerechnungsZiel());
     assertNotNull(bausparBerechnungsAnfrage.getVertragsDatum());
+    assertNotNull(bausparBerechnungsAnfrage.getSparBeginn());
     assertNotNull(bausparBerechnungsAnfrage.getBerechnungsArt());
     assertNotNull(bausparBerechnungsAnfrage.getAbschlussgebuehrenbehandlung());
     assertNotNull(bausparBerechnungsAnfrage.getFallNummer());
@@ -120,6 +121,7 @@ public class FachlicheBeispieleTest {
     assertVermittlerDaten(dokumentErzeugenAnfrage.getVermittlerDaten());
     assertSparphaseDokument(dokumentErzeugenAnfrage.getSparphaseDokument());
     assertNotNull(dokumentErzeugenAnfrage.getVertragsDatum());
+    assertNotNull(dokumentErzeugenAnfrage.getSparBeginn());
     assertNotNull(dokumentErzeugenAnfrage.getFallNummer());
     assertNotNull(dokumentErzeugenAnfrage.getRequestId());
     assertNotNull(dokumentErzeugenAnfrage.getFallAuswahl());

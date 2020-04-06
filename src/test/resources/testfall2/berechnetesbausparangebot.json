@@ -2,6 +2,7 @@
   "berechnetesBausparAngebot": {
     "tarif": "T2",
     "vertragsDatum":"2015-09-01",
+    "sparBeginn": "2016-01-01",
     "berechnungsziel": "SPARBEITRAG",
     "abschlussgebuehr": {
       "abschlussgebuehrBetragInEuro": 1500,

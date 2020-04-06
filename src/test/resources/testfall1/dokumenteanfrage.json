@@ -83,6 +83,7 @@
     "vermittlerNr": null
   },
   "vertragsDatum": "2015-09-01",
+  "sparBeginn": "2016-01-01",
   "fallNummer": "123-456-789",
   "requestId": "7y65xc4v",
   "fallAuswahl": false,
