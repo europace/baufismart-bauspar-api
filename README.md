@@ -121,6 +121,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
         },
         "vermittlerNr": "A123456",
         "vertragsDatum": "2015-09-01",
+        "sparBeginn": "2016-01-01",
         "vertriebsGruppe": "Vertrieb A",
         "zielTarif": "T1",
         "zuteilungstermin": "2026-01-01",
@@ -158,6 +159,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | bausparkasseIstDarlehensgeber                           | Boolean       | Ist true, wenn Darlehensgeber und Bausparkasse identisch sind, sonst false
 | zuteilungstermin                                        | Datum         | Das gewünschte Zuteilungsdatum. Alternativ kann ``laufzeitBisZuteilungInMonaten`` geliefert werden. |
 | vertragsDatum                                           | Datum         | Das gewünschte VertragsDatum. |
+| sparBeginn                                              | Datum         | Der gewünschte Sparbeginn. |
 | sparBeitraege                                           | Liste         | Ermöglicht die Erfassung mehrerer unterschiedlicher Sparzahlungen oder Einmalzahlungen. |
 | sparBeitraege[i].beitrag                                | Dezimalzahl   | Der Sparbeitrag dieser Zahlung ein Euro. |
 | sparBeitraege[i].zahlungAb                              | Datum         | Der Startzeitpunkt ab dem dieser Sparbeitrag geleistet wird. |
@@ -266,6 +268,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
           },
           "tarif": "string",
           "vertragsDatum": "2015-09-01",
+          "sparBeginn": "2016-01-01",
           "zuteilungsTermin": "string",
           "provision" : {
             "vertriebsProvisionInEuro": 1000
@@ -281,6 +284,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | laufzeitBisZuteilungInMonaten                                         | Ganzzahl     | Anzahl Monate bis zur Zuteilung                                                                                                                                   |
 | zuteilungsTermin                                                      | Datum        | Zuteilungstermin                                                                                                                                                  |
 | vertragsDatum                                                         | Datum        |                                                                                                                                                                   |
+| sparBeginn                                                            | Datum        |                                                                                                                                                                   |
 | abschlussgebuehrenbehandlung                                          | Aufzählung   | Mögliche Werte sind: ``VERRECHNUNG``, ``SOFORTZAHLUNG``.                                                                                                           |
 | abschlussgebuehrHoeheInProzent                                        | Dezimalzahl  | Abschlussgebühr in Prozent                                                                                                                                        |
 | abschlussgebuehrBetragInEuro                                          | Dezimalzahl  | Abschlussgebühr in Euro                                                                                                                                           |
@@ -436,7 +440,8 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
        "fallNummer":"123-456-789",
        "requestId":"87e6rt5",
        "fallAuswahl": false,
-       "vertragsDatum":"2015-09-30"
+       "vertragsDatum":"2015-09-30",
+       "sparBeginn":"2016-01-01",
        "riesterDaten": 
        {
             "riesterzulagenVerwendung": "SOFORTZAHLUNG",
@@ -531,6 +536,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | requestId                                                             | String                 | Ordnet die Anfrage einer EUROPACE Anfrage für Loggingzwecke zu.                                                                                                              |
 | fallNummer                                                            | String                 | Ordnet die Anfrage einer EUROPACE Fallakte für Loggingzwecke zu.                                                                                                             |
 | vertragsDatum                                                         | Datum                  |                                                                                                                                                                              |
+| sparBeginn                                                            | Datum                  |                                                                                                                                                                              |
 | riesterDaten.riesterzulagenVerwendung                                 | String                 | Legt die Verwendung der Riesterzulagen fest (SONDERZAHLUNG, VERRECHNUNG). |
 | riesterDaten.geburtsdatumAntragsteller                                | Datum                  | Geburtsdatum des Antragstellers |
 | riesterDaten.beschaeftigungAntragsteller                              | Aufzählung             | Mögliche Werte: ``ANGESTELLTER``, ``ARBEITER``, ``ARBEITSLOSER``, ``BEAMTER``, ``FREIBERUFLER``, ``HAUSFRAU_HAUSMANN``, ``RENTNER``, ``SELBSTAENDIGER``. | 

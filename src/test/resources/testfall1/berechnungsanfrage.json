@@ -5,6 +5,7 @@
   "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
   "darlehensWunsch": "MIT_DARLEHEN",
   "vertragsDatum": "2015-09-01",
+  "sparBeginn": "2016-01-01",
   "laufzeitBisZuteilungInMonaten": 120,
   "bausparkasseIstDarlehensgeber": true,
   "fallNummer": "123-456-789",

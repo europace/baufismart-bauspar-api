@@ -2,6 +2,7 @@
   "abschlussgebuehrenbehandlung": "SOFORTZAHLUNG",
   "berechnungsZiel": "SPARBEITRAG",
   "vertragsDatum": "2015-09-01",
+  "sparBeginn": "2016-01-01",
   "berechnungsArt": "TILGUNGSAUSSETZUNG",
   "darlehensWunsch": "MIT_DARLEHEN",
   "laufzeitBisZuteilungInMonaten": 240,
