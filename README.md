@@ -377,6 +377,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
             "geburtsName": null,
             "geburtsOrt": null,
             "staatsangehoerigkeit": "DE",
+            "steuerId":"75041163828"
             "einkommenssteuerpflichtigInUsa":null,
             "adresse": 
             {
@@ -491,6 +492,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | antragsteller[i].geburtsName                                          | String                 |                                                                                                                                                                              |
 | antragsteller[i].geburtsOrt                                           | String                 | Dieses Feld ist über Zusatzangeben im Frontend enthalten. Bitte wenden Sie sich an Europace, um eine Bank hierfür freizuschalten.                                                                                                                           |
 | antragsteller[i].staatsangehoerigkeit                                 | String                 | 2-stelliger ISO 3166 Code                                                                                                                                                    |
+| antragsteller[i].steuerId                                             | String                 |                                                                                                                                                                              |
 | antragsteller[i].adresse.strasse                                      | String                 |                                                                                                                                                                              |
 | antragsteller[i].adresse.hausNummer                                   | String                 |                                                                                                                                                                              |
 | antragsteller[i].adresse.postleitzahl                                 | String                 |                                                                                                                                                                              |
