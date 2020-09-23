@@ -592,9 +592,11 @@ Die folgenden 2 Beispielen zeigen wie die Kommunikation zwischen EUROPACE und de
 
 ## Fehlerbehandlung
 
-Solange die Schnittstelle eine gültige Antwort erstellen kann, (auch wenn diese Meldungen enthält) wird HTTP Statuscode 200 geliefert.
- Kann die Schnittstellenimplementierung in einem Fall nicht mit einem gültigen JSON Dokument antworten, so wird HTTP Statuscode 500
- geliefert ggf. mit einer Fehlemeldung.
+Solange die Schnittstelle eine gültige Antwort erstellen kann, wird HTTP Statuscode 200 geliefert. Ein gültige Antwort 
+kann dabei auch fachliche Fehlermeldungen enthalten, dass bspw. mit den Eingabedaten nicht gerechnet werden kann.
+ 
+Liegt ein technischer Fehler vor und kann die Schnittstellenimplementierung nicht mit einem gültigen JSON Dokument antworten, so wird HTTP Statuscode 500
+ geliefert ggf. mit einer Fehlermeldung.
 
 ## Abwärtskompatiblität
 
