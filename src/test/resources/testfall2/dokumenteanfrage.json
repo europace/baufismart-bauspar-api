@@ -143,6 +143,16 @@
   },
   "vertragsDatum": "2015-09-01",
   "sparBeginn": "2016-01-01",
+  "berechnungsZiel": "SPARBEITRAG",
+  "darlehensWunsch": "MIT_DARLEHEN",
+  "vertriebsGruppe": "Vertrieb A",
+  "laufzeitBisZuteilungInMonaten": 120,
+  "zielTarif": "T1",
+  "zuteilungstermin": "2025-09-01",
+  "tilgungsBeitrag": {
+    "rateInEuro": 100,
+    "zahlungsrhythmus": "MONATLICH"
+  },
   "fallNummer": "123-456-789",
   "requestId": "87e6rt5",
   "fallAuswahl": true,

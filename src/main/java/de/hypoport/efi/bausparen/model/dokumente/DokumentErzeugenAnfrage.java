@@ -1,7 +1,10 @@
 package de.hypoport.efi.bausparen.model.dokumente;
 
 import de.hypoport.efi.bausparen.model.basis.Abschlussgebuehrenbehandlung;
+import de.hypoport.efi.bausparen.model.basis.BerechnungsZiel;
 import de.hypoport.efi.bausparen.model.basis.RiesterDaten;
+import de.hypoport.efi.bausparen.model.basis.DarlehensWunsch;
+import de.hypoport.efi.bausparen.model.basis.TilgungsBeitrag;
 import de.hypoport.efi.bausparen.model.berechnung.anfrage.BerechnungsArt;
 
 import java.math.BigDecimal;
@@ -25,6 +28,13 @@ public class DokumentErzeugenAnfrage {
   String requestId;
   Boolean fallAuswahl;
   RiesterDaten riesterDaten;
+  BerechnungsZiel berechnungsZiel;
+  DarlehensWunsch darlehensWunsch;
+  Integer laufzeitBisZuteilungInMonaten;
+  String vertriebsGruppe;
+  String zielTarif;
+  LocalDate zuteilungstermin;
+  TilgungsBeitrag tilgungsBeitrag;
 
   public String getTarif() {
     return tarif;
@@ -145,4 +155,61 @@ public class DokumentErzeugenAnfrage {
   public void setRiesterDaten(RiesterDaten riesterDaten) {
     this.riesterDaten = riesterDaten;
   }
+
+  public BerechnungsZiel getBerechnungsZiel() {
+    return berechnungsZiel;
+  }
+
+  public void setBerechnungsZiel(BerechnungsZiel berechnungsZiel) {
+    this.berechnungsZiel = berechnungsZiel;
+  }
+
+  public DarlehensWunsch getDarlehensWunsch() {
+    return darlehensWunsch;
+  }
+
+  public void setDarlehensWunsch(DarlehensWunsch darlehensWunsch) {
+    this.darlehensWunsch = darlehensWunsch;
+  }
+
+  public Integer getLaufzeitBisZuteilungInMonaten() {
+    return laufzeitBisZuteilungInMonaten;
+  }
+
+  public void setLaufzeitBisZuteilungInMonaten(Integer laufzeitBisZuteilungInMonaten) {
+    this.laufzeitBisZuteilungInMonaten = laufzeitBisZuteilungInMonaten;
+  }
+
+  public String getVertriebsGruppe() {
+    return vertriebsGruppe;
+  }
+
+  public void setVertriebsGruppe(String vertriebsGruppe) {
+    this.vertriebsGruppe = vertriebsGruppe;
+  }
+
+  public String getZielTarif() {
+    return zielTarif;
+  }
+
+  public void setZielTarif(String zielTarif) {
+    this.zielTarif = zielTarif;
+  }
+
+  public LocalDate getZuteilungstermin() {
+    return zuteilungstermin;
+  }
+
+  public void setZuteilungstermin(LocalDate zuteilungstermin) {
+    this.zuteilungstermin = zuteilungstermin;
+  }
+
+  public TilgungsBeitrag getTilgungsBeitrag() {
+    return tilgungsBeitrag;
+  }
+
+  public void setTilgungsBeitrag(TilgungsBeitrag tilgungsBeitrag) {
+    this.tilgungsBeitrag = tilgungsBeitrag;
+  }
+
 }
