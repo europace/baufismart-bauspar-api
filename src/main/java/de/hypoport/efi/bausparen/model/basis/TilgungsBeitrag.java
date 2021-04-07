@@ -1,7 +1,5 @@
 package de.hypoport.efi.bausparen.model.basis;
 
-import de.hypoport.efi.bausparen.model.basis.Zahlungsrhythmus;
-
 import java.math.BigDecimal;
 
 public class TilgungsBeitrag {
