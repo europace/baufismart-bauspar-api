@@ -1,6 +1,4 @@
-package de.hypoport.efi.bausparen.model.berechnung.anfrage;
-
-import de.hypoport.efi.bausparen.model.basis.Zahlungsrhythmus;
+package de.hypoport.efi.bausparen.model.basis;
 
 import java.math.BigDecimal;
 

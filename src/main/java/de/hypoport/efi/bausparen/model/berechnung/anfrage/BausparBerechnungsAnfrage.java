@@ -2,8 +2,10 @@ package de.hypoport.efi.bausparen.model.berechnung.anfrage;
 
 import de.hypoport.efi.bausparen.model.basis.Abschlussgebuehrenbehandlung;
 import de.hypoport.efi.bausparen.model.basis.BerechnungsZiel;
+import de.hypoport.efi.bausparen.model.basis.DarlehensWunsch;
 import de.hypoport.efi.bausparen.model.basis.RiesterDaten;
 import de.hypoport.efi.bausparen.model.basis.SparBeitrag;
+import de.hypoport.efi.bausparen.model.basis.TilgungsBeitrag;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

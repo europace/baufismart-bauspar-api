@@ -443,6 +443,17 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
        "fallAuswahl": false,
        "vertragsDatum":"2015-09-30",
        "sparBeginn":"2016-01-01",
+       "berechnungsZiel": "SPARBEITRAG",
+       "darlehensWunsch": "MIT_DARLEHEN",
+       "vertriebsGruppe": "Vertrieb A",
+       "laufzeitBisZuteilungInMonaten": 120,
+       "zielTarif": "T1",
+       "zuteilungstermin": "2025-09-01",
+       "tilgungsBeitrag":
+       {
+           "rateInEuro": 100,
+           "zahlungsrhythmus": "MONATLICH"
+       },
        "riesterDaten": 
        {
             "riesterzulagenVerwendung": "SOFORTZAHLUNG",
@@ -539,6 +550,14 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | fallNummer                                                            | String                 | Ordnet die Anfrage einer EUROPACE Fallakte für Loggingzwecke zu.                                                                                                             |
 | vertragsDatum                                                         | Datum                  |                                                                                                                                                                              |
 | sparBeginn                                                            | Datum                  |                                                                                                                                                                              |
+| berechnungsZiel                                                       | Aufzählung             | Mögliche Werte: ``SPARBEITRAG``, ``BAUSPARSUMME``, ``ZUTEILUNGSTERMIN``, ``LAUFZEIT_BIS_ZUTEILUNG`` |
+| darlehensWunsch                                                       | Aufzählung             | Soll ein Bauspar- oder Zuteilungsdarlehen in Anspruch genommen werden? Mögliche Werte sind: ``MIT_DARLEHEN``, ``OHNE_DARLEHEN``. |
+| vertriebsGruppe                                                       | String                 | Vertriebsgruppe des anfragenden Vertriebs zur Bestimmung der Provision. |
+| laufzeitBisZuteilungInMonaten                                         | Ganzzahl               | Die Anzahl Monate zwischen Vertragsdatum und Zuteilungsdatum. Entweder wird dieses Feld oder ``zuteilungstermin`` geliefert.|
+| zielTarif                                                             | String                 | Die technische Tarif ID, so wie sie von GET /tarife geliefert wird. |
+| zuteilungstermin                                                      | Datum                  | Das gewünschte Zuteilungsdatum. Alternativ kann ``laufzeitBisZuteilungInMonaten`` geliefert werden. |
+| tilgungsBeitrag.rateInEuro                                            | Dezimalzahl            | Höhe der Tilgungsrate(Zins und Tilgung des Darlehens)|
+| tilgungsBeitrag.zahlungsrhythmus                                      | Aufzählung             | Legt fest, in welchen Intervallen die Tilgungsrate gezahlt wird. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
 | riesterDaten.riesterzulagenVerwendung                                 | String                 | Legt die Verwendung der Riesterzulagen fest (SONDERZAHLUNG, VERRECHNUNG). |
 | riesterDaten.geburtsdatumAntragsteller                                | Datum                  | Geburtsdatum des Antragstellers |
 | riesterDaten.beschaeftigungAntragsteller                              | Aufzählung             | Mögliche Werte: ``ANGESTELLTER``, ``ARBEITER``, ``ARBEITSLOSER``, ``BEAMTER``, ``FREIBERUFLER``, ``HAUSFRAU_HAUSMANN``, ``RENTNER``, ``SELBSTAENDIGER``. | 

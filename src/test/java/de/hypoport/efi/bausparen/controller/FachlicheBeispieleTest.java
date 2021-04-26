@@ -2,6 +2,7 @@ package de.hypoport.efi.bausparen.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.hypoport.efi.bausparen.model.basis.SparBeitrag;
+import de.hypoport.efi.bausparen.model.basis.TilgungsBeitrag;
 import de.hypoport.efi.bausparen.model.berechnung.anfrage.BausparBerechnungsAnfrage;
 import de.hypoport.efi.bausparen.model.berechnung.angebot.BausparBerechnungsAntwort;
 import de.hypoport.efi.bausparen.model.berechnung.angebot.Bausparangebot;
@@ -122,6 +123,13 @@ public class FachlicheBeispieleTest {
     assertSparphaseDokument(dokumentErzeugenAnfrage.getSparphaseDokument());
     assertNotNull(dokumentErzeugenAnfrage.getVertragsDatum());
     assertNotNull(dokumentErzeugenAnfrage.getSparBeginn());
+    assertNotNull(dokumentErzeugenAnfrage.getLaufzeitBisZuteilungInMonaten());
+    assertNotNull(dokumentErzeugenAnfrage.getVertriebsGruppe());
+    assertNotNull(dokumentErzeugenAnfrage.getZielTarif());
+    assertNotNull(dokumentErzeugenAnfrage.getZuteilungstermin());
+    assertNotNull(dokumentErzeugenAnfrage.getBerechnungsZiel());
+    assertNotNull(dokumentErzeugenAnfrage.getDarlehensWunsch());
+    assertTilgungsBeitrag(dokumentErzeugenAnfrage.getTilgungsBeitrag());
     assertNotNull(dokumentErzeugenAnfrage.getFallNummer());
     assertNotNull(dokumentErzeugenAnfrage.getRequestId());
     assertNotNull(dokumentErzeugenAnfrage.getFallAuswahl());
@@ -133,6 +141,12 @@ public class FachlicheBeispieleTest {
     assertNotNull(antragstellerListe);
     assertTrue(antragstellerListe.size() > 0);
     assertAntragsteller(antragstellerListe.iterator().next());
+  }
+
+  private void assertTilgungsBeitrag(TilgungsBeitrag tilgungsBeitrag) {
+    assertNotNull(tilgungsBeitrag);
+    assertNotNull(tilgungsBeitrag.getZahlungsrhythmus());
+    assertNotNull(tilgungsBeitrag.getRateInEuro());
   }
 
   private void assertAntragsteller(Antragsteller antragsteller) {
