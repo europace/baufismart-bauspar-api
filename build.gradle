@@ -3,7 +3,7 @@ group = 'de.hypoport.efi'
 
 buildscript {
   ext {
-    springBootVersion = '1.2.5.RELEASE'
+    springBootVersion = '1.5.22.RELEASE'
   }
   repositories {
     mavenLocal()
@@ -22,12 +22,10 @@ apply plugin: 'spring-boot'
 
 sourceSets {
   main {
-    output.classesDir = "$buildDir/classes/main"
-    output.resourcesDir = "$buildDir/classes/main"
+    output.resourcesDir = new File(buildDir, 'classes/java/main')
   }
   test {
-    output.classesDir = "$buildDir/classes/test"
-    output.resourcesDir = "$buildDir/classes/test"
+    output.resourcesDir = new File(buildDir, 'classes/java/test')
   }
 }
 
@@ -44,11 +42,13 @@ repositories {
 uploadArchives {
   repositories {
     mavenDeployer {
+      def nexusUserName = System.getenv('PEP_NEXUS_USER')
+      def nexusPassword = System.getenv('PEP_NEXUS_PASSWORD')
       repository(url: "http://nexus-beta.hypoport.local/nexus/content/repositories/efi-releases/") {
-        authentication(userName: 'deployer', password: 'deployer1');
+        authentication(userName: "${nexusUserName}", password: "${nexusPassword}")
       }
       snapshotRepository(url: 'http://nexus-beta.hypoport.local/nexus/content/repositories/efi-snapshots/') {
-        authentication(userName: 'deployer', password: 'deployer1');
+        authentication(userName: "${nexusUserName}", password: "${nexusPassword}")
       }
       pom.groupId = project.group
       pom.artifactId = 'europace-bauspar-schnittstelle'
@@ -69,8 +69,8 @@ configurations {
 
 dependencies {
 
-  def springVersion = '4.1.7.RELEASE'
-  def slf4jVersion = '1.7.12'
+  def springVersion = '4.3.25.RELEASE'
+  def slf4jVersion = '1.7.26'
   def log4jVersion = '2.3'
   def springfoxVersion = '2.1.1'
 
@@ -105,21 +105,21 @@ dependencies {
   testCompile('junit:junit:4.11')
 }
 
-task writeVersionTxt << {
-  new File("$buildDir/version.txt").withWriter { out ->
-    out.print project.version
+task writeVersionTxt {
+  doLast {
+    new File("$buildDir/version.txt").withWriter { out ->
+      out.print project.version
+    }
   }
 }
 
-task tagGit << {
-  exec {
-    commandLine 'git', 'tag', "${project.version}"
+task tagGit {
+  doLast {
+    exec {
+      commandLine 'git', 'tag', "${project.version}"
+    }
+    exec {
+      commandLine 'git', 'push', '--tags'
+    }
   }
-  exec {
-    commandLine 'git', 'push', '--tags'
-  }
-}
-task wrapper(type: Wrapper) {
-  gradleVersion = '2.1'
-
 }
