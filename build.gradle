@@ -71,7 +71,7 @@ dependencies {
 
   def springVersion = '4.3.25.RELEASE'
   def slf4jVersion = '1.7.26'
-  def log4jVersion = '2.15.0'
+  def log4jVersion = '2.16.0'
   def springfoxVersion = '2.1.1'
 
   compile("org.springframework.boot:spring-boot-starter:$springBootVersion") {
