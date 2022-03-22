@@ -639,8 +639,14 @@ Die Sicherheitsvorkehrungen entsprechen dem Standard SSL über HTTPS unter Verwe
 
 ## Nichtfunktionale Anforderungen
 
-Die Antwortzeiten vom Absenden des Request bis zum Erhalt der Antwort (ausgenommen Dokumente, die asynchron nachgeliefert werden können) liegen unterhalb von 500 ms, damit dem Anwender das Bausparangebot ohne bemerkbare Verzögerung angezeigt werden kann.
-Die Schnittstelle muss in der Lage sein eine erwartete Last von bis zu 10 Requests pro Sekunde zu verarbeiten. Die Schnittstelle muss grundsätzlich 24 Stunden an allen Wochentagen verfügbar sein. Ausgenommen hiervon sind Wartungsintervalle die außerhalb der Geschäftszeiten liegen. Beeinträchtigungen im Betrieb der Plattform durch Wartungsarbeiten können so vermieden werden.
+Die Antwortzeiten vom Absenden des Request bis zum Erhalt der Antwort (ausgenommen Dokumente, die asynchron nachgeliefert werden können) sollten als Richtwert unterhalb von 500 ms liegen, damit dem Anwender das Bausparangebot ohne bemerkbare Verzögerung angezeigt werden kann.
+Die Schnittstelle muss in der Lage sein, eine erwartete Last von bis zu 10 Requests pro Sekunde innerhalb dieser Zeitvorgabe zu verarbeiten.
+Nach wenigen Sekunden, wir behalten uns vor, die Grenze im Sinne der System-Stabilität immer wieder anzupassen, wird der Request mit einem technischen Timeout abgebrochen.
+Tritt der Timeout häufiger auf, kann die Schnittstelle zur Sicherung der Systemstabilität für eine bestimmten Zeitraum automatisiert "abgeklemmt" werden, was zur Folge hat, dass innerhalb dieses Zeitraums keine Bauspar-Angebote der jeweiligen Bausparkasse auf der Plattform angeboten werden.
+
+Die Schnittstelle muss grundsätzlich 24 Stunden an allen Wochentagen verfügbar sein. 
+Ausgenommen hiervon sind Wartungsintervalle die außerhalb der Geschäftszeiten liegen. 
+Beeinträchtigungen im Betrieb der Plattform durch Wartungsarbeiten können so vermieden werden.
 
 
 
