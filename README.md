@@ -103,6 +103,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
         "berechnungsArt": "TILGUNGSAUSSETZUNG",
         "berechnungsZiel": "SPARBEITRAG",
         "darlehensWunsch": "MIT_DARLEHEN",
+        "mindestTilgungInProzent": 2.5,
         "laufzeitBisZuteilungInMonaten": 112,
         "bausparkasseIstDarlehensgeber": true,
         "requestId": "XAJNvEbn",
@@ -169,6 +170,7 @@ dies über fachliche Meldungen mitteilen. Hierfür sieht die Antwort das Feld Me
 | tilgungsBeitrag.zahlungsrhythmus                        | Aufzählung    | Legt fest, in welchen Intervallen die Tilgungsrate gezahlt wird. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
 | abschlussgebuehrenbehandlung                            | Aufzählung    | Wenn nicht vorgegeben, dann gibt die BSK die Abschlussgebührenverrechnung vor. Mögliche Werte sind: ``VERRECHNUNG``, ``SOFORTZAHLUNG``. |
 | darlehensWunsch                                         | Aufzählung    | Soll ein Bauspar- oder Zuteilungsdarlehen in Anspruch genommen werden? Mögliche Werte sind: ``MIT_DARLEHEN``, ``OHNE_DARLEHEN``. |
+| mindestTilgungInProzent                                 | Dezimalzahl   | Seitens des Darlehensgebers gewünschte jährliche Mindesttilgung in Prozent. |
 | vermittlerNr                                            | String        | Die ID des Vermittlers im Europace System. |
 | requestId                                               | String        | Ordnet die Anfrage einer EUROPACE Anfrage für Loggingzwecke zu. |
 | fallNummer                                              | String        | Ordnet die Anfrage einer EUROPACE Fallakte für Loggingzwecke zu. |
