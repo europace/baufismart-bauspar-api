@@ -479,7 +479,21 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
                 {
                    "geburtsdatum": "2018-01-01"
                 },
-        }       
+        }
+       "sonderZahlungen": [
+           {
+                "betrag": 200,
+                "zahlungsrhythmus": "MONATLICH",
+                "anzahl": 1,
+                "termin": "2015-05-01" 
+           },
+           {
+               "betrag": 300,
+               "zahlungsrhythmus": "MONATLICH",
+               "anzahl": 1,
+               "termin": "2016-05-01" 
+          }
+       ]
     }
 
 
@@ -579,7 +593,11 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | riesterDaten.einkommenAktuellesJahrEhepartner                         | Ganzzahl               | Höhe des Einkommens des aktuellen Jahres des Ehepartners. |
 | riesterDaten.zulagenKinderEhepartner                                  | Liste                  | Ermöglicht die Erfassung mehrerer förderfähiger Kinder des Ehepartners. |
 | riesterDaten.zulagenKind[i].geburtsdatum                              | Datum                  | Geburtsdatum des förderfähigen Kindes des Ehepartners. |
-
+| sonderZahlungen                                                       | Liste                  |                                                                                                                                                                              |
+| sonderZahlungen[i].betrag                                             | Dezimalzahl            | Betrag der Sonderzahlung in Euro                                                                                                                                             |
+| sonderZahlungen[i].zahlungsrhythmus                                   | Aufzählung             | Legt fest, in welchen Intervallen dieser Sparbeitrag gezahlt wird. Mögliche Werte sind: ``MONATLICH``, ``VIERTELJAEHRLICH``, ``HALBJAEHRLICH``, ``JAEHRLICH``, ``EINMALIG``. |
+| sonderZahlungen[i].termin                                             | Datum                  |                                                                                                                                                                              |
+| sonderZahlungen[i].anzahl                                             | Zahl                   |                                                                                                                                                                              |
 
 #### Antwort
     {

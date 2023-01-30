@@ -35,6 +35,7 @@ public class DokumentErzeugenAnfrage {
   String zielTarif;
   LocalDate zuteilungstermin;
   TilgungsBeitrag tilgungsBeitrag;
+  List<SonderZahlung> sonderZahlungen;
 
   public String getTarif() {
     return tarif;
@@ -212,4 +213,11 @@ public class DokumentErzeugenAnfrage {
     this.tilgungsBeitrag = tilgungsBeitrag;
   }
 
+  public List<SonderZahlung> getSonderZahlungen() {
+    return sonderZahlungen;
+  }
+
+  public void setSonderZahlungen(List<SonderZahlung> sonderZahlungen) {
+    this.sonderZahlungen = sonderZahlungen;
+  }
 }

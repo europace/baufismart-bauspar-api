@@ -167,5 +167,19 @@
         "geburtsdatum": "2018-01-01"
       }
     ]
-  }
+  },
+  "sonderZahlungen": [
+    {
+      "betrag": 200,
+      "zahlungsrhythmus": "MONATLICH",
+      "termin": "2015-09-01",
+      "anzahl": 1
+    },
+    {
+      "betrag": 200,
+      "zahlungsrhythmus": "MONATLICH",
+      "termin": "2015-11-01",
+      "anzahl": 1
+    }
+  ]
 }
