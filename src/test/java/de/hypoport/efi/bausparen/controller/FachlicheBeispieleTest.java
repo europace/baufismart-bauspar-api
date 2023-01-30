@@ -158,6 +158,7 @@ public class FachlicheBeispieleTest {
     assertNotNull(antragsteller.getKontakt().getTelefonNummer());
     assertNotNull(antragsteller.getFamilienStand());
     assertNotNull(antragsteller.getZahlungsDaten());
+    assertNotNull(antragsteller.getZahlungsDaten().getBic());
     assertNotNull(antragsteller.getZahlungsDaten().getZahlungsForm());
     assertNotNull(antragsteller.getBeschaeftigungsVerhaeltnis());
     assertNotNull(antragsteller.getLegitimation());
@@ -166,6 +167,7 @@ public class FachlicheBeispieleTest {
     assertNotNull(antragsteller.getTodesfallBeguenstigter().getAnrede());
     assertNotNull(antragsteller.getVermoegenswirksameLeistungenBetragInEuro());
     assertNotNull(antragsteller.getVermoegenswirksameLeistungenZahlungsrhythmus());
+    assertNotNull(antragsteller.getBeruf());
   }
 
   private void assertVermittlerDaten(VermittlerDaten vermittlerDaten) {

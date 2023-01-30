@@ -399,6 +399,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
            "zahlungsDaten":
            {
                "iban": null,
+               "bic": null,
                "nameKreditInstitut": null,
                "zahlungsForm": "LASTSCHRIFT"
            },
@@ -426,7 +427,8 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
             "vermoegenswirksameLeistungenZahlungsrhythmus": "MONATLICH",
             "bruttoEinkommenVorjahr": null,
             "bruttoEinkommenAktuellesJahr": null,
-            "guetertrennungVereinbart": null
+            "guetertrennungVereinbart": null,
+            "beruf": null,
        }],
        "vermittlerDaten": 
        {
@@ -516,6 +518,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | antragsteller[i].kontakt.eMailAdresse                                 | String                 |                                                                                                                                                                              |
 | antragsteller[i].familienStand                                        | Aufzählung             | Mögliche Werte sind: ``LEDIG``, ``VERHEIRATET``,  ``LEBENSPARTNER``, ``GESCHIEDEN``, ``VERWITWET``, ``GETRENNT_LEBEND``.                                                     |
 | antragsteller[i].zahlungsDaten.iban                                   | String                 |                                                                                                                                                                              |
+| antragsteller[i].zahlungsDaten.bic                                    | String                 |                                                                                                                                                                              |
 | antragsteller[i].zahlungsDaten.nameKreditInstitut                     | String                 |                                                                                                                                                                              |
 | antragsteller[i].zahlungsDaten.zahlungsForm                           | Aufzählung             | Mögliche Werte sind: ``LASTSCHRIFT``, ``UEBERWEISUNG``. Aktuell wird nur ``LASTSCHRIFT`` verwendet.                                                                                                                      |
 | antragsteller[i].beschaeftigungsVerhaeltnis                           | Aufzählung             | Mögliche Werte sind: ``ANGESTELLTER``, ``ARBEITER``, ``ARBEITSLOSER``, ``BEAMTER``, ``FREIBERUFLER``, ``HAUSFRAU_HAUSMANN``,``RENTNER``,``SELBSTAENDIGER``.                  |
@@ -538,6 +541,7 @@ Die automatische Feldausfüllung funktioniert nach dem best-effort Prinzip: Für
 | antragsteller[i].bruttoEinkommenVorjahr                               | Dezimalzahl            | Vorjahreseinkommen des Antragstellers.|
 | antragsteller[i].bruttoEinkommenAktuellesJahr                         | Dezimalzahl            | Aktuelles Jahreseinkommen des Antragstellers.|
 | antragsteller[i].guetertrennungVereinbart                             | Boolean                | Ist true, wenn Gütertrennung vereinbart wurde, sonst false. |
+| antragsteller[i].beruf                                                | String                 |                                                                                                                                                                              |
 | vermittlerDaten.nachName                                              | String                 |                                                                                                                                                                              |
 | vermittlerDaten.ort                                                   | String                 |                                                                                                                                                                              |
 | vermittlerDaten.postleitzahl                                          | String                 |                                                                                                                                                                              |

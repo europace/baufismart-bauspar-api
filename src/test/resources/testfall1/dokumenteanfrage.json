@@ -45,6 +45,7 @@
       "familienStand": "LEDIG",
       "zahlungsDaten": {
         "iban": null,
+        "bic": "CHEKDE81XXX",
         "nameKreditInstitut": null,
         "zahlungsForm": "LASTSCHRIFT"
       },
@@ -68,7 +69,8 @@
         }
       },
       "vermoegenswirksameLeistungenBetragInEuro": 30,
-      "vermoegenswirksameLeistungenZahlungsrhythmus": "MONATLICH"
+      "vermoegenswirksameLeistungenZahlungsrhythmus": "MONATLICH",
+      "beruf": "Fleischer"
     }
   ],
   "vermittlerDaten": {

@@ -3,7 +3,7 @@ package de.hypoport.efi.bausparen.model.dokumente;
 public class ZahlungsDaten {
 
   String iban;
-
+  String bic;
   String nameKreditInstitut;
   ZahlungsForm zahlungsForm;
 
@@ -13,6 +13,14 @@ public class ZahlungsDaten {
 
   public void setIban(String iban) {
     this.iban = iban;
+  }
+
+  public String getBic() {
+    return bic;
+  }
+
+  public void setBic(String bic) {
+    this.bic = bic;
   }
 
   public String getNameKreditInstitut() {
