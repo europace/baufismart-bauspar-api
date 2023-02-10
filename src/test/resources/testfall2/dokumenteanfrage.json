@@ -52,6 +52,7 @@
       "familienStand": "LEBENSPARTNER",
       "zahlungsDaten": {
         "iban": null,
+        "bic": "CHEKDE81XXX",
         "nameKreditInstitut": null,
         "zahlungsForm": "LASTSCHRIFT"
       },
@@ -75,7 +76,8 @@
         }
       },
       "vermoegenswirksameLeistungenBetragInEuro": 30,
-      "vermoegenswirksameLeistungenZahlungsrhythmus": "MONATLICH"
+      "vermoegenswirksameLeistungenZahlungsrhythmus": "MONATLICH",
+      "beruf": "Fachinformatiker"
     },
     {
       "anrede": "FRAU",
@@ -104,6 +106,7 @@
       "familienStand": "LEBENSPARTNER",
       "zahlungsDaten": {
         "iban": null,
+        "bic": "CHEKDE81XXX",
         "nameKreditInstitut": null,
         "zahlungsForm": "LASTSCHRIFT"
       },
@@ -127,7 +130,8 @@
         }
       },
       "vermoegenswirksameLeistungenBetragInEuro": 30,
-      "vermoegenswirksameLeistungenZahlungsrhythmus": "MONATLICH"
+      "vermoegenswirksameLeistungenZahlungsrhythmus": "MONATLICH",
+      "beruf": "Fleischer"
     }
   ],
   "vermittlerDaten": {
@@ -163,5 +167,19 @@
         "geburtsdatum": "2018-01-01"
       }
     ]
-  }
+  },
+  "sonderZahlungen": [
+    {
+      "betrag": 200,
+      "zahlungsrhythmus": "MONATLICH",
+      "termin": "2015-09-01",
+      "anzahl": 1
+    },
+    {
+      "betrag": 200,
+      "zahlungsrhythmus": "MONATLICH",
+      "termin": "2015-11-01",
+      "anzahl": 1
+    }
+  ]
 }

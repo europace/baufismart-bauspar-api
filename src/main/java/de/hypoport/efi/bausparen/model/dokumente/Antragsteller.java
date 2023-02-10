@@ -28,6 +28,7 @@ public class Antragsteller {
   BigDecimal bruttoEinkommenVorjahr;
   BigDecimal bruttoEinkommenAktuellesJahr;
   Boolean guetertrennungVereinbart;
+  String beruf;
 
   public String getNachName() {
     return nachName;
@@ -195,5 +196,13 @@ public class Antragsteller {
 
   public void setGuetertrennungVereinbart(Boolean guetertrennungVereinbart) {
     this.guetertrennungVereinbart = guetertrennungVereinbart;
+  }
+
+  public String getBeruf() {
+    return beruf;
+  }
+
+  public void setBeruf(String beruf) {
+    this.beruf = beruf;
   }
 }

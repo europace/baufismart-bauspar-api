@@ -12,6 +12,7 @@ import de.hypoport.efi.bausparen.model.berechnung.angebot.TilgungsPlan;
 import de.hypoport.efi.bausparen.model.berechnung.angebot.TilgungsPlanZahlung;
 import de.hypoport.efi.bausparen.model.dokumente.Antragsteller;
 import de.hypoport.efi.bausparen.model.dokumente.DokumentErzeugenAnfrage;
+import de.hypoport.efi.bausparen.model.dokumente.SonderZahlung;
 import de.hypoport.efi.bausparen.model.dokumente.SparphaseDokument;
 import de.hypoport.efi.bausparen.model.dokumente.VermittlerDaten;
 import org.junit.Before;
@@ -135,6 +136,7 @@ public class FachlicheBeispieleTest {
     assertNotNull(dokumentErzeugenAnfrage.getFallAuswahl());
     assertNotNull(dokumentErzeugenAnfrage.getBausparkasseIstDarlehensgeber());
     assertNotNull(dokumentErzeugenAnfrage.getRiesterDaten());
+    assertSonderZahlungen(dokumentErzeugenAnfrage.getSonderZahlungen());
   }
 
   private void assertAntragsteller(List<Antragsteller> antragstellerListe) {
@@ -158,6 +160,7 @@ public class FachlicheBeispieleTest {
     assertNotNull(antragsteller.getKontakt().getTelefonNummer());
     assertNotNull(antragsteller.getFamilienStand());
     assertNotNull(antragsteller.getZahlungsDaten());
+    assertNotNull(antragsteller.getZahlungsDaten().getBic());
     assertNotNull(antragsteller.getZahlungsDaten().getZahlungsForm());
     assertNotNull(antragsteller.getBeschaeftigungsVerhaeltnis());
     assertNotNull(antragsteller.getLegitimation());
@@ -166,6 +169,7 @@ public class FachlicheBeispieleTest {
     assertNotNull(antragsteller.getTodesfallBeguenstigter().getAnrede());
     assertNotNull(antragsteller.getVermoegenswirksameLeistungenBetragInEuro());
     assertNotNull(antragsteller.getVermoegenswirksameLeistungenZahlungsrhythmus());
+    assertNotNull(antragsteller.getBeruf());
   }
 
   private void assertVermittlerDaten(VermittlerDaten vermittlerDaten) {
@@ -249,5 +253,18 @@ public class FachlicheBeispieleTest {
 
   private long monateZwischen(LocalDate erstesDatum, LocalDate zweitesDatumInklusive) {
     return Period.between(erstesDatum, zweitesDatumInklusive.plusDays(1)).toTotalMonths();
+  }
+
+  private void assertSonderZahlungen(List<SonderZahlung> sonderZahlungen){
+    assertNotNull(sonderZahlungen);
+    assertTrue(sonderZahlungen.size() > 0);
+    assertSonderZahlung(sonderZahlungen.iterator().next());
+  }
+
+  private void assertSonderZahlung(SonderZahlung sonderZahlung){
+    assertNotNull(sonderZahlung.getAnzahl());
+    assertNotNull(sonderZahlung.getBetrag());
+    assertNotNull(sonderZahlung.getTermin());
+    assertNotNull(sonderZahlung.getZahlungsrhythmus());
   }
 }
