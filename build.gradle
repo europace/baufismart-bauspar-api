@@ -7,7 +7,7 @@ buildscript {
   }
   repositories {
     mavenLocal()
-    maven { url "http://nexus-beta.hypoport.local/nexus/content/repositories/efi" }
+    maven { url "https://nexus.shared.ep.aws.it-hps.de/nexus/content/repositories/efi" }
     jcenter()
   }
   dependencies {
@@ -35,7 +35,7 @@ processResources {
 
 repositories {
   mavenLocal()
-  maven { url 'http://nexus-beta.hypoport.local/nexus/content/repositories/efi' }
+  maven { url 'https://nexus.shared.ep.aws.it-hps.de/nexus/content/repositories/efi' }
   jcenter()
 }
 
@@ -44,10 +44,10 @@ uploadArchives {
     mavenDeployer {
       def nexusUserName = System.getenv('PEP_NEXUS_USER')
       def nexusPassword = System.getenv('PEP_NEXUS_PASSWORD')
-      repository(url: "http://nexus-beta.hypoport.local/nexus/content/repositories/efi-releases/") {
+      repository(url: "https://nexus.shared.ep.aws.it-hps.de/nexus/content/repositories/efi-releases/") {
         authentication(userName: "${nexusUserName}", password: "${nexusPassword}")
       }
-      snapshotRepository(url: 'http://nexus-beta.hypoport.local/nexus/content/repositories/efi-snapshots/') {
+      snapshotRepository(url: 'https://nexus.shared.ep.aws.it-hps.de/nexus/content/repositories/efi-snapshots/') {
         authentication(userName: "${nexusUserName}", password: "${nexusPassword}")
       }
       pom.groupId = project.group
